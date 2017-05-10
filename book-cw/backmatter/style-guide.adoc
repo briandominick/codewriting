@@ -1,0 +1,75 @@
+= The Codewriting Style Guide
+
+I realize it's a bit "meta" to include a style guide inside the only document it applies to, but I couldn't resist.
+
+The risk of discouraging contributions by insisting on strict style/formatting requirements seems potentially self-defeating.
+It's not like dozens of people are clamoring to write this book, or else someone would have by now.
+I'd rather have highly flawed submissions than none.
+I realize it may not be worth learning a style just to commit a few paragraphs.
+That said, if you're contributing, you must be a tech writer for at least part of your job, _so show us your stuff!_
+
+Here are the style standards employed in writing this book.
+
+== Writing Format
+
+If you've already read the book or looked at its source, you'll know I'm writing in AsciiDoc.
+Tempting as it is to somehow allow contributors to at least write in their preferred language, contributions have to be done in AsciiDoc (unless you're contributing non-textually, such as images or diagrams, of course).
+
+=== AsciiDoc Conventions
+
+Asciidoctor has the best AsciiDoc and general formatting conventions I have seen.
+
+TIP: In general, use the preferred conventions of http://asciidoctor.org/docs/asciidoc-writers-guide/[Asciidoctor Writer's Guide].
+
+Here are some highlights/additions:
+
+1-sentence per line::
+To make a space after a sentence-terminating punctuation, use the return key instead of the spacebar.
+This gives you at-a-glance insight into sentence strength and paragraph structure, as well as making for easier diff reviewing.
+* See “link:http://codewriting.org/blog/ventilated-prose-hanging-indentation[Ventilated Prose and Hanging Indentation]” for more.
+
+no hard line wrap::
+Some styles insist on chopping source lines at 80 characters or so.
+Liberate yourself!
+Let those lines linger.
+* This one is also covered in “link:http://codewriting.org/blog/ventilated-prose-hanging-indentation[Ventilated Prose and Hanging Indentation]”.
+
+insert classes liberally::
+Use the `[.classname]` delimiter tag markup for assigning a CSS class to significant blocks in AsciiDoc.
+Use this feature liberally but consistently, marking each block of that type and _specific kind of application or in a given series_ consistently.
+For example, this feature is used to mark all of my sidebars (\**** wrapped) that reference a running theme, so that I can specifically style just the blocks in that series later on.
++
+.Example -- Scenario-classed sideblocks
+----
+[.scenario.scenario-a]
+****
+This is some text about the ongoing scenario example about a startup narrated throughout this book (or however I decide to use this).
+****
+----
++
+This block will for instance output with the `class="sidebarblock scenario"` attribute in its HTML5 tag, which can be selected and styled (or even acted on with JavaScript) using `DIV.sidebarblock.scenario.scenario-a` (`<div class="sidebarblock scenario scenario-a">`).
+This is forward-thinking semantic markup; I'm not even sure how I intend to use it yet.
+
+4-char block delimiters::
+As in the http://asciidoctor.org/docs/asciidoc-writers-guide/#delimited-blocks[Asciidoc guide], do not be tempted to mess around with block delimiter markup.
+Always use the 4-character minimum (for example, `|===` or `----`), not anything longer.
+The sole exception to this is the `--` open (generic) block delimiter and the `<<<` triple-LT for page breaks.
+
+Here are some *_exceptions_* to Asciidoctor style:
+
+admonition format::
+Prepend admonitions with bracketed type selectors on their own lines (rather than inline, colon-delimited).
++
+[source,asciidoc]
+.Example -- Warming admonition style
+----
+[WARNING]
+This is the text of a warning admonition block.
+----
+
+== Style & Voice
+
+The most important style is consistency.
+Feel free to bring your own voice to guest blocks, but see if you can approximate mine in the main body, or wherever you make edits.
+
+Tech writers _do_ have voices.

@@ -1,0 +1,56 @@
+= Cookbook of DocOps Recipes
+
+This is a list of explainers, some of which directly document how parts of this book were made.
+Super meta, eh?
+
+== The Glossary Snippets
+
+The example Glossary snippet from <<managing-complexity>> is called into the page with the following line of code sandwiched between the markup to start and stop a code listing:
+
+[source,asciidoc]
+.Example -- Including a subset of a source file with AsciiDoc tagging
+--------
+----
+\include::../_data/glossary.yml[tags=cco-example]
+----
+--------
+
+Inside `_data/glossary.yml`, a section of code is marked with tags like so:
+
+[[tags-for-inclusion]]
+[source,yaml]
+.Example -- Wrapping source code in AsciiDoc tags for inclusion
+----
+# tag::cco-example[]
+include::../_data/glossary.yml[tags=cco-example]
+# end::cco-example[]
+----
+
+That tag markup (`tag::cco-example[]` and `end::cco-example[]`) is prepended by the source language's comment marker (a single `#` for YAML), so AsciiDoc include tags will be invisible when the source file is called here or elsewhere in your build.
+
+[CAUTION]
+Cheesy, snooty tip title ahead.
+
+You'll note those same tags are indicated in the `tags=cco-example` argument of the AsciiDoc include macro, which will restrict the include to the content _between_ those tags.
+
+[WARNING]
+You were warned about the self-important tip title, right?
+
+[TIP]
+.Recursive Meta Inclusion (forgive me)
+
+--
+I actually had to add the AsciiDoc tags manually to the previous example because Asciidoctor suppresses all such tags, even inside a literal block.
+This is probably a feature, not a bug, as there are use cases when I would want to hide nested AsciiDoc comments when calling their parent code.
+
+Here's how my <<tags-for-inclusion>> example above is coded, with the tags written in around the include macro.
+
+----
+# tag::cco-example[]
+\include::../_data/glossary.yml[tags=cco-example]
+# end::cco-example[]
+----
+
+That's right, I faked my own example, and I'd do it again.
+
+--

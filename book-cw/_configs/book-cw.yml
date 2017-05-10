@@ -1,0 +1,15 @@
+parse:
+publish:
+  sources:
+    index: index-book.adoc
+    attributes: book-cw/_data
+    doctype: book
+    builds:
+      -
+        publish: true
+        output: _output/codewriting-book.html
+        backend: asciidoctor
+      -
+        publish: true
+        output: _output/codewriting-book.pdf
+        backend: asciidoctor-pdf

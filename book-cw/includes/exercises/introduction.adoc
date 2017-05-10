@@ -1,0 +1,54 @@
+.‘A Magic Docs Box’
+****
+You are excited for your first day at a small, lean startup that has hired you as employee number `3`, all to make sure they have the absolute best documentation system imaginable.
+The interview process was brief, but the founders had already raised a $3 million seed round, because Silicon Valley, so you accepted their generous offer, heaped with even more generous praise at your interview performance and the “organization of your LinkedIn profile.”
+
+And they have good reason to want good docs: their product _is_ documentation.
+
+That's right: you've gotten in on the ground floor as Chief DocOps Engineer for a seed-stage Shark Tank-backed company building what you were told was a “disruptive, distributed documentation platform for DevOps in collaborative, continuously integrated agile development environments.”
+And that all sounded pretty good.
+After all, the only un-sexy word in that description is “documentationhat could go wrong?
+But you're understandably eager for details.
+
+When you show up at the office, Codexio CEO Homer Wilcox practically ambushes you, unable to contain his excitement that you've joined the team.
+“I don't know much about this product space,” Homer says, “but I do know good docs are important in a product that makes docs.”
+
+“Did you say you don'
+
+“Never had much use for docs myself,” Homer says, pouring himself a cowboy-sized bourbon and offering you one.
+When you turn him down by gesturing to your watch to indicate it's barely 9 a.m., Homer grants himself your portion.
+“I'm more of an intuitive learner -- I took apart my first rifle when I was a mere calf, my first radio just a few years later.
+I rarely consult manuals.”
+
+Disconcerting as this is, dwelling on it won't help.
+“I look forward to hearing just what Codexio does,” you say.
+
+“I'll leave that for the CTO to explain,” Homer says, suddenly looking over your shoulder.
+The CTO, a towering jock named Dirk Hammer, jumps off an elliptical in a corner of the large open floorplan office, and before you know it he's taken you by the shoulder, startling you as much with his sudden presence as with his present answer.
+
+In a booming, self-assured voice, CTO Dirk Hammer blares, “With Codexio Recursive Editing Platform -- Enterprise Edition, users can input data in all kinds of formats, and the platform will spit it back out in all kinds of other formats.
+Platform.”
+
+“The product is called _Creepy_?” you ask hesitantly, unsure whether you caught the acronym.
+
+“It's pronounced _Creppie_,” Homer the CEO steps in.
+“The branding is still in the works.
+We're also A/B testing slogans: which do you prefer, ‘A magic box of docs’ or ‘A magic docs box’?”
+
+Before you can respond, the CTO rejoins.
+“Look, the product isn't important right now.
+At the end of the day, we are a lean docs platform, ready to iterate on new ideas.”
+
+“Besides,” Homer adds, “we can pivot if you come up with a better name.”
+
+Assignment::
++
+--
+// tag::assignment[]
+The first exercise assignment is a freebie: read _Codewriting_ to learn how to pull together a great technical documentation environment, apparently to document a nascent enterprise documentation platform.
+
+But while you're at it, can you come up with a better product name?
+
+// end::assignment[]
+--
+****

@@ -1,0 +1,25 @@
+= Beyond Technical Communications
+
+There may be numerous as-yet-unproven applications of the docs-as-code approach in fields beyond software and in fact beyond engineering.
+Anywhere documentation can gain from sharing and collaboration, firms of all kinds could have documentarians and copywriters sharing the non-proprietary parts of their work product.
+
+I don't have tremendous confidence that there is a particularly significant amount of money in this area, but I do see lots of need.
+
+== Legal Docs
+
+== Collaborative Journalism
+
+== Protocol & Policy Codexes
+
+Any organization that has certain ways of doing things needs these ways documented.
+More often than not, this does not need to be unique -- a customized derivative of another group's policies and procedures would suffice.
+If groups shared their policy documentation, other groups could clone and modify it to suit their needs.
+Perhaps the copy would diverge over time, or perhaps it would stay mostly in sync even as both groups (or maybe just the original group, or maybe only the copying group) evolved the policies.
+
+== Cookbooks
+
+Here I mean actual culinary cookbooks (which tend to be codexes in their own right) as well as technology “cookbooksets of “recipes” for optimal customization of a software product.
+
+== <Your Idea Here>
+
+This spot is begging for contributions. (Seriously, I'm beggig you; I bet you can come up with some applications.)

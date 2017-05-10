@@ -1,0 +1,4 @@
+attributes:
+  imagesdir: assets/images
+  chapter-label: Chapter
+  experimental: true

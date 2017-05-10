@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:element name="property">
+    <xs:complexType>
+      <xs:attribute name="key" use="required"/>
+      <xs:attribute name="component" use="required"/>
+      <xs:sequence>
+        <xs:element ref="status"/>
+        <xs:element ref="description" maxOccurs="unbounded"/>
+        <xs:element ref="required"/>
+        <xs:element ref="default" maxOccurs="unbounded"/>
+        <xs:element ref="options"/>
+        <xs:element ref="example"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="status">
+    <xs:complexType>
+      <xs:attribute name="deprecated" use="optional" type="xs:NMTOKEN"/>
+      <xs:attribute name="introduced" use="required" type="xs:NMTOKEN"/>
+      <xs:attribute name="removed" use="optional" type="xs:NMTOKEN"/>
+      <xs:attribute name="supercededBy" use="optional"/>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="required">
+    <xs:complexType>
+      <xs:simpleContent>
+        <xs:extension base="xs:boolean">
+          <xs:attribute name="component" use="optional" type="xs:NCName" default="all"/>
+          <xs:attribute name="condition" use="optional"/>
+        </xs:extension>
+      </xs:simpleContent>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="default">
+    <xs:complexType>
+      <xs:simpleContent>
+        <xs:extension base="xs:boolean">
+          <xs:attribute name="component" use="optional"/>
+        </xs:extension>
+      </xs:simpleContent>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="options">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element maxOccurs="unbounded" ref="option"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="option" type="xs:NCName"/>
+  <xs:element name="example">
+    <xs:complexType mixed="true">
+      <xs:sequence>
+        <xs:element minOccurs="0" maxOccurs="unbounded" ref="description"/>
+      </xs:sequence>
+      <xs:attribute name="type" use="optional" type="xs:NCName" default="code" />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="description">
+    <xs:complexType mixed="true">
+      <xs:attribute name="component" type="xs:NCName"/>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

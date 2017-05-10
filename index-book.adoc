@@ -1,0 +1,165 @@
+:doctype: book
+:bookdir: {basedir}/book-cw
+:includedir: {bookdir}/includes
+:imagesdir: book-cw/images
+:datadir: _data
+:icons: font
+:icon-set: fa
+:sectnumlevels: 1
+:toc: auto
+:chapter-label: Chapter
+:text-alignment: left
+// include title from README, since I keep changing it
+include::./README.adoc[lines=1]
+Brian Dominick <badominick@gmail.com>
+
+[frame=topbot]
+|===
+^|*_Codewriting_* (C) Brian Dominick 2017 +
+Provided under Creative Commons Attribution-ShareAlike 3.0 Unported -- see `LICENSE.md`.
+|===
+
+:leveloffset: 1
+:!sectnums:
+[[preface]]
+[preface]
+include::./book-cw/frontmatter/preface.adoc[]
+
+[[acknowledgements]]
+include::./book-cw/frontmatter/acknowledgements.adoc[]
+
+[[foreword]]
+include::./book-cw/frontmatter/foreword.adoc[]
+
+[[introduction]]
+include::./book-cw/frontmatter/introduction.adoc[]
+[[exercise-00]]
+//include::{includedir}/exercises/introduction.adoc[]
+
+// resume chapter numbering
+:sectnums:
+
+//PART ONE: WRITING
+[[part-writing]]
+include::./book-cw/part-1-writing/writing.adoc[leveloffset=-1]
+[[chapter-writing-docs]]
+include::./book-cw/part-1-writing/docs.adoc[]
+[[exercise-01]]
+//include::{includedir}/exercises/write-the-readme.adoc[]
+
+[[chapter-writing-code]]
+include::./book-cw/part-1-writing/code.adoc[]
+[[exercise-02]]
+//include::{includedir}/exercises/markup.adoc[]
+
+[[chapter-writing-content]]
+include::./book-cw/part-1-writing/content.adoc[]
+[[exercise-03]]
+//include::{includedir}/exercises/chunked-writing.adoc[]
+
+[[chapter-writing-users]]
+include::./book-cw/part-1-writing/users.adoc[]
+[[exercise-04]]
+//include::{includedir}/exercises/lean-docs.adoc[]
+
+//PART TWO: CODING
+[[part-coding]]
+include::./book-cw/part-2-coding/coding.adoc[leveloffset=-1]
+
+[[chapter-coding-source]]
+include::./book-cw/part-2-coding/source.adoc[]
+[[exercise-05]]
+//include::{includedir}/exercises/git-out.adoc[]
+
+[[chapter-coding-content]]
+include::./book-cw/part-2-coding/content.adoc[]
+
+[[chapter-coding-integration]]
+include::./book-cw/part-2-coding/integration.adoc[]
+
+
+//PART THREE: DELIVERING
+[[part-delivering]]
+include::./book-cw/part-3-delivering/delivering.adoc[leveloffset=-1]
+
+[[chapter-delivering-hacking]]
+include::./book-cw/part-3-delivering/hacking.adoc[]
+
+[[chapter-delivering-deployment]]
+include::./book-cw/part-3-delivering/deployment.adoc[]
+
+[[chapter-delivering-quality]]
+include::./book-cw/part-3-delivering/quality.adoc[]
+
+
+//PART FOUR: MANAGING
+[[part-managing]]
+include::./book-cw/part-4-managing/managing.adoc[leveloffset=-1]
+
+[[chapter-managing-collaboration]]
+include::./book-cw/part-4-managing/collaboration.adoc[]
+
+[[chapter-managing-aging]]
+include::./book-cw/part-4-managing/dissonance.adoc[]
+
+[[chapter-managing-complexity]]
+include::./book-cw/part-4-managing/complexity.adoc[]
+
+[[chapter-managing-scaling]]
+include::./book-cw/part-4-managing/scaling.adoc[]
+
+
+//PART FIVE: EVOLVING
+[[part-evolving]]
+include::./book-cw/part-5-evolving/evolving.adoc[leveloffset=-1]
+
+[[chapter-evolving-driving]]
+include::./book-cw/part-5-evolving/driving-techcomm.adoc[]
+
+[[chapter-evolving-ide]]
+include::./book-cw/part-5-evolving/ide.adoc[]
+
+[[chapter-evolving-beyond]]
+include::./book-cw/part-5-evolving/beyond-techcomm.adoc[]
+
+// Disable chapter numbering again
+:!sectnums:
+:leveloffset: -1
+= Back Matter
+:leveloffset: +1
+
+* <<glossary,Glossary>>
+* <<bibliography,Bibliography>>
+* <<cookbook,DocOps Recipes>>
+* <<appendix-contributing>>
+* <<style-guide,Code Writing Style Guide>>
+* <<creative-commons,Creative Commons License>>
+
+//APPENDICES
+[appendix]
+[[glossary]]
+include::./book-cw/backmatter/glossary.adoc[]
+
+[appendix]
+[[resources]]
+include::./book-cw/backmatter/resources.adoc[]
+
+[appendix]
+[[bibliography]]
+include::./book-cw/backmatter/bibliography.adoc[]
+
+[appendix]
+[[cookbook]]
+include::./book-cw/backmatter/cookbook.adoc[]
+
+[appendix]
+[[appendix-contributing]]
+include::./book-cw/backmatter/contributing.adoc[]
+
+[appendix]
+[[style-guide]]
+include::./book-cw/backmatter/style-guide.adoc[]
+
+[appendix]
+[[creative-commons]]
+// include::./LICENSE.md[]

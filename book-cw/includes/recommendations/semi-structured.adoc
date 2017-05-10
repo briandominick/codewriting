@@ -1,0 +1,16 @@
+_All else being equal…_, YAML is the winner for semi-structured data.
+The runners up are XML and JSON, both far more popular in most areas than my semi-structured markup of choice.
+
+YAML isn't keen on custom schemas, so it's harder to force valid YAML beyond the default schema.
+JSON and especially XML accept custom schemas to constrain how users have to structure and use the language in each instance.
+
+Still, YAML is so infinitely nicer to write, and so much more intuitive and forgiving than either JSON or YAML, you and engineers will prefer YAML when it comes to actually marking up flat files.
+
+Moreover, YAML is used by lots of Ruby applications for configuration and metadata, including Jekyll and hopefully to an increasing extent, Asciidoctor.
+YAML's ease of use wins the day.
+
+Unfortunately, semi-structured data support in technical documentation tooling is dominated by XML and DITA, where it is handled by expensive, closed source solutions.
+XML is unwieldy, and in my experience engineers dislike it (as they dislike complex, multi-attribute tags in general).
+That said, if you're buying into docs-as-code, for now you may have to accept paltry integration for your semi-structured data needs, or else go with a commercial solution.
+
+Try the link:https://yaml-online-parser.appspot.com/[Online YAML Parser] to see if YAML is for you.

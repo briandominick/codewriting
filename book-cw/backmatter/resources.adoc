@@ -1,0 +1,185 @@
+[[appendix-resources]]
+= Resources
+
+This is a curated page of resources helpful to exploring and implementing a docs-as-code approach to technical documentation.
+You are strongly encouraged to submit a pull request including your own favorites!
+
+== Source Control
+
+At this point, I'm not going to list or explore source-control systems other than Git.
+It just doesn't seem worth it.
+That said, you should understand _why_ source control and version control are important and the philosophy behind their use.
+
+* https://betterexplained.com/articles/a-visual-guide-to-version-control/[Betterexplained's "A Visual Guide to Version Control"] +
+I wish I had read this series when I was first learning Git.
+
+=== Git
+
+* http://www.codeschool.com/courses/try-git[CodeSchool's Try Git tutorial]
+
+* http://gitimmersion.com/lab_01.html[Git Immersion] +
+Includes a great quickstart guide to help you get up and running on your own machine.
+
+== LML: Lightweight Markup Languages
+
+This is one of the controversial defining factors of docs-as-code; you don't _have to_ use a lightweight markup language to keep your docs in source and think programmatically.
+But as long as the language isn't too light to include semantic markup (such as most forms of Markdown and most Wiki MLs), it's hard to justify the added burden and expense of tag-based languages (HTML, DITA, Docbook, etc.).
+
+=== AsciiDoc
+
+I haven't tried to hide it; I love AsciiDoc, even though I recognize its limitations and don't find all of its syntax elegant or intuitive.
+
+* link:http://asciidoctor.org[Asciidoctor.org] +
+The prime resource for contemporary AsciiDoc, offered in Ruby and beyond.
+
+.My Favorite AsciiDoc Guides
+****
+* link:http://www.vogella.com/tutorials/AsciiDoc/article.html[Using AsciiDoc and Asciidoctor to Write Documentation] +
+A great general purpose primer/quickstart.
+
+* link:http://asciidoctor.org/docs/user-manual[The Asciidoctor User Manual] +
+Truly the gold standard of language documentation. Asciidoctor himself Dan Allen is arguably the best practitioner of the language he resuscitated in just a handful of years.
+
+* link:http://asciidoctor.org/docs/asciidoc-writers-guide/[AsciiDoc Writer's Guide]
+Another Dan Allen/Asciidoctor production. Also my favorite tech-writing style guide.
+****
+
+* link:https://leanpub.com/awesomeasciidoctornotebook/read[Awesome Asciidoctor Notebook] +
+A compilation of excellent blog posts examining intermediate and advanced topics in AsciiDoc.
+
+=== ReStructuredText
+
+=== MarkDown
+
+== SSG: Static Site Generators
+
+=== Jekyll
+
+This is the only of the latest generation of static site generators I've tried seriously so far, owing largely to the https://github.com/asciidoctor/jekyll-asciidoc[jekyll-asciidoc plugin] (Asciidoctor strikes again).
+
+* https://jekyllrb.com/[The official Jekyll site] +
+This is a pretty great resource; I find myself using it as my primary reference.
+
+.A Note on Ruby
+****
+You could be forgiven if you've started to suspect I have a bias for applications coded in Ruby programming language.
+It's true: Git, Asciidoctor, and Jekyll are all Ruby gems.
+
+However, quite unfortunately, I actually dislike Ruby and am a total newb at it.
+With my limited programming acumen, I find Ruby difficult to learn, though even I am able to tinker here and there.
+That said, these tools are all truly excellent, and there are a great many resources on Ruby, especially on https://stackoverflow.com/tags/ruby/info[StackOverflow], which is a pretty good place to start learning Ruby, and _the_ place to go when you get stuck.
+****
+
+== Conversion and Migration Tools
+
+=== Pandoc
+
+This tool is amazing.
+It is the near-perfect Rosetta Stone for markup languages and text-file formats, able to convert almost anything to almost anything else.
+It lacks any real framework and can require some heavy lifting to integrate, but Pandoc is the closest thing to docs in a box.
+Short of such programmatic applications, you can explore Pandoc simply by converting source files to alternate output formats from the command line.
+
+* http://pandoc.org/[pandoc.org]
+*  https://publishing.sfu.ca/2013/11/building-publishing-workflows-with-pandoc-and-git/[Building Publishing Workflows with Pandoc and Git] (blog entry)
+
+=== Swagger
+
+=== Doxygen
+
+=== Other Conversion/Migration Tools
+
+For dealing with offline files, you really only need Pandoc, but below we share a few tools that will get you through special conversion challenges.
+
+AsciiDoc Processor Google Docs add-on::
+This tool will quickly and effectively output properly-formatted AsciiDoc markup for Google Docs.
+
+* link:https://chrome.google.com/webstore/detail/asciidoc-processor/eghlmnhjljbjodpeehjjcgfcjegcfbhk?utm_source=permalink[Add-on Page]
+
+gdocs2md-html Google Docs script::
+This hacky-to-install but well-documented tool will convert your Google Docs handily to Markdown.
+
+* https://github.com/lmmx/gdocs2md-html[GitHub repo]
+
+== CCMS: Component Content Management Systems
+
+Here's where things start to get hairy.
+The CCMS world seems to be dominated by DITA, IBM's XML-based markup language for technical documentation.
+Since the DITA ecosystem is mostly closed-source, it may be a nonstarter for serious DocOps-minded hackers.
+But I _do_ want to see more holistic systems such as DITA CCMSes, which help _manage_ your docs and files in ways most of the raw flat-file publishing “systems” don't even try.
+
+In the spirit of promoting more concerted open source development in this space, I'll research and list a number of proprietary CCMS platforms here here.
+
+Corilla::
+A techcomm CCMS that uses Markdown and a simple, friendly GUI for associating topics and files.
+
+* http://corilla.com/[Corilla signup]
+
+=== oXygen XML Editor
+
+[[resources-hosted-documentation-platforms]]
+== Hosted Documentation Platforms
+
+AsciiBinder::
+An AsciiDoc-based publishing platform.
+
+* link:http://www.asciibinder.org/[AsciiBinder site]
+* link:https://github.com/redhataccess/ascii_binder[GitHub repo]
+
+DocumentUp::
+A Markdown-based publishing platform.
+
+* link:https://documentup.com/jeromegn/documentup[DocumentUp site]
+* link:https://github.com/jeromegn/DocumentUp[GitHub repo]
+
+Read the Docs::
+A popular platform that enables reStructuredText- and Markdown-based formatting.
+
+* link:https://readthedocs.org/[Read the Docs site]
+
+GitBook::
+Perhaps this platform's coolest feature is the elegant editor they provide for free.
+It's simple but effective for writing in both Markdown and AsciiDoc.
+
+* link:https://www.gitbook.com/[GitBook site]
+* link:https://www.gitbook.com/editor[GitBook editor]
+
+LeanPub::
+LeanPub is the productization of the “Lean Publishing” strategy we're basically following with this book, though _Codewriting_ adds direct content contributions to the mix.
+LeanPub is a great way for authors to self-publish; it includes an e-commerce system that will pass along 90% of your book's revenues, which I think is unheard-of elsewhere in tech publishing.
+
+* link:https://leanpub.com[Leanpub site]
+
+[TIP]
+Don't see your favorite platform here? Suggest it in the Issues for this GitHub project or in the
+
+== Blogs
+
+=== Tech Writing and Docs Management
+
+I'd Rather Be Writing::
+
+* http://idratherbewriting.com/[I'd Rather Be Writing]
+
+Just Write Click::
+
+* link:https://justwriteclick.com/[Just Write Click]
+
+Every Page is Page One::
+
+* http://everypageispageone.com/
+
+Read the Docs::
+
+* https://blog.readthedocs.com/[Read the Docs]
+
+hack.write()::
+
+* http://hackwrite.com/[hack.write()]
+
+The Content Wrangler::
+Though not particularly docs-as-code oriented, this site occasionally features decent articles about tech writing strategy and tactics.
+
+* link:http://thecontentwrangler.com/[The Content Wrangler]
+
+[[resources-git-tooling]]
+== Git Tooling

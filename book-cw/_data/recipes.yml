@@ -1,0 +1,50 @@
+# NOT CURRENTLY IN USE
+- id: egg-boiled-hard
+  title: Hard Boiled Egg
+  introduction: A hard boiled egg is simple and nutritious.
+  ingredients: # ['ingredient', quantity, 'unit'] unit is optional
+     - ['eggs', 12]
+     - ['water', 2, 'qt']
+  preparation:
+     - step: Place eggs in pan and cover with water.
+       time: 1m
+     - step: Bring water to a boil.
+       time: ~4m
+     - step: Remove from heat and cover for 12 minutes.
+       time: 12m
+     - step: Place eggs in cold water to stop cooking.
+       time: 2m
+     - step: Peel and serve.
+  serves: 6
+  matches:
+  wine: champagne and orange juice
+  beverage: orange juice
+  nutrition:
+     serving: 1 large egg (50 g)
+     nutrients:
+       calories: 78
+       total-fat: [5, 'g']
+       saturated-fat: [0.7, 'g']
+       polyunsaturated-fat: [0.7, 'g']
+       monounsaturated-fat: [2, 'g']
+       cholesterol: [186.5, 'mg']
+       sodium: [62, 'mg']
+       potassium: [63, 'mg']
+       total-carbohydrate: [0.6, 'g']
+       dietary-fiber: [0, 'g']
+       sugar: [0.6, 'g']
+       protein: [6, 'g']
+
+- id: egg-boiled-soft
+  title: Soft Boiled Egg
+  clones: egg-boiled-hard
+  preparation:
+    - step: Place eggs in pan and cover with water.
+      time: 1m
+    - step: Bring water to a boil.
+    - step: Remove from heat and cover for 12 minutes.
+      time: 12m
+    - step: Place eggs in cold water to stop cooking.
+      time: 2m
+    - step: Peel and serve.
+  wine-match: bordeau

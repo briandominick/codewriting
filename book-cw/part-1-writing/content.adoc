@@ -1,0 +1,235 @@
+= Writing Content
+
+[abstract]
+A lot more goes into good user docs than clear instructions and illustrative screenshots, but it is not always obvious which elements users will need.
+The kitchen-sink approach is tempting… until you sit down to work facing a deadline.
+How do we decide what our users need, what would be nice but unnecessary, and what is superfluous or distracting?
+
+From the end-user's perspective, there are only two aspects of documentation that matter: content and delivery.
+Even if users could learn all about _how_ you made the docs, they wouldn't be interested, and they wouldn't appreciate it.
+That's life.
+Our job is to create docs that are helpful and to get them to users in a sensible format where and when they need them.
+
+This and other chapters will touch on _what_ goes into good docs, but _how_ we keep our docs in good shape remains the main focus.
+In maintaining good docs, no concept is more importance than the ability to establish and maintain the elusive “single source of truth” for all the content you generate, be it in the docs or in the product.
+
+== Keeping Docs DRY
+
+Putting all the information a user needs right at their fingertips without creating half a dozen sources of truth for every fact.
+The developer's mantra of "Don't Repeat Yourself" (DRY) applies every bit as much to technical content source as to product source code.
+You may display the same table two different ways in four or fourteen different places, just to be sure it is always at your user's fingertips, but keep only one copy of that table or its source data.
+
+In the technical documentation world, you're more likely to hear this concept called _single sourcing_, which I'm also down with.
+
+// TODO
+// Quotes and descriptions about single-sourcing in tech docs
+
+// TODO
+// .Source vs Expression sidebar
+
+// Explain the difference between a canonical source and the way we express it.
+// This is exemplified in the next section, so it might be nice to have a
+// reference, or maybe this should just be moved down there.
+
+
+== Topic-based Authoring
+
+One of the key contributions of the DITA community is the strategic modularization of content in reusable chunks, which aids single sourcing but also helps us think about how we organize and deliver content.
+Known as _topic-based authoring_, this approach favors clean reuse of content source in different contexts by helping us think about content in its simplest useful form.
+
+Wikipedia does the strategy some justice:
+
+[quote,Wikipedia,2017-04-29]
+____
+A topic is a discrete piece of content that is about a specific subject, has an identifiable purpose, and can stand alone (does not need to be presented in context for the end-user to make sense of the content). Topics are also reusable. They can, when constructed properly (without reliance on other content for its meaning), be reused in any context anywhere needed.
+____
+
+I'll get into some examples momentarily, but I don't want to introduce this topic without expressing its greater value to content strategy.
+As a side effect, topic-based authoring prompts us to think of content in logical blocks.
+I'm sure every team/style/project will define topic parameters and properties differently, but I must admit I've found this enormously helpful in my own work
+Even as it suggests I should make Herculean efforts to overhaul the structure of so much of my work, I know the benefits will be huge.
+Formally achieving what I'll call topic-based DRYness will give me all the building blocks of a truly modular docs system at Rocana.
+Publishing all those various guides and knowledge bases for various user audiences will then be a matter of just listing topics to appear in each final document.
+
+=== Topical Thinking
+
+In its simplest form, topic-based authoring has come to mean keeping my content files to the minimum size I could reasonably approve of devoting a web page to.
+Right out of the gate, that's a subjective judgment, but since I have spent 20 years building websites, I have a pretty concrete idea of what size and scope of information should get a dedicated page on a website, and what scopes should not.
+
+For example, a complete series of simple installation instructions deserves a web page; each step in that simple process most likely does not.
+A bibliography or glossary deserves its own page on a website; a single citation or term definition does not.
+
+Another way of looking at it: if a discrete content item might serve well in a “popover”-style element on a web page, it probably lacks the makings of a topic.
+The page it is on is likely made up of one or more topics.
+
+The supersets of topics tend to be “documents”, to invoke a dangerously broad class term.
+Think of _web pages_, _articles_, and _chapters_ as documents, even where they are also children of parent documents (_website_, _periodical_, and _book_, respectively).
+
+In any case, a document is suited for topic-based authoring when it:
+
+. must reflect highly technical and exact information
+
+. contains various types of content sub-elements, such as
+
+* code listings
+* admonitions
+* instruction steps
+* diagrams
+* sidebars
+* citations
+
+. includes content that is best reused elsewhere in order to constrain divergence
+
+Point 3 here is crucial: we're only going to use this method for content that should not be expressed in substantially different ways such that just writing it differently each time makes more sense.
+This excludes concepts that should be re-expressed with nuance or fundamental differences in various places, if only to help different users learn something a different way or from a different perspective.
+
+.Single-sourcing vs inline expression
+****
+In our product Rocana Ops, the most fundamental concept we need our users to truly understand is how we treat a type of data we call an _event_.
+We're not the only ones in the industry to call it an event, and not everything that we call an _event_ is actually what you would think of as an event.
+For this reason, there are several paragraphs throughout our docs that help users understand what we mean by an _event_ in Rocana Ops.
+
+In the Introduction chapter and other materials that might be read by somewhat less-technical users, an event is described in a way a Chief Information Officer at an enterprise might need to know it.
+This person knows at least generally how IT works and can conceptualize what our product specifically means when we describe this type of data.
+
+As the chapters go on, more-specific roles of user necessitate different contextual understandings of the event structure and usage, so in each place, I simply write about events in a context-appropriate way.
+
+But when it comes to the strict AVRO data schema that defines and constrains these data objects we call _events_, divergence from the exact truth is pretty dangerous.
+Ideally, we want to make sure the example event schema shown in the the Reference Guide is drawn from _exactly_ the same file that is used by the product itself.
+Engineers can thus make edits to this canonical file that will automatically be reflected in all our docs talking about the event schema.
+
+If the changes are significant, they'll probably need to be reflected elsewhere in the docs, perhaps even in some of those various descriptive paragraphs about _events_.
+But at least our literal expression of the event schema will stay consistent.
+
+****
+
+This concept of choosing _not_ to treat certain discrete items as topics in and of themselves may require its own treatment.
+We'll start with an example that works in the other direction, where we definitely want to use consistent language.
+
+Let's consider a commonly reused admonition for a dangerous upgrade procedure:
+
+[WARNING]
+Back up your data before performing this step.
+
+Here is how I defined this chunk of content in my source, which I've just typed into the very same file this current text is typed into:
+
+[source,asciidoc,subs="none"]
+----
+[WARNING]
+Back up your data before performing this step.
+----
+
+In my view, this block is too small to constitute a topic in and of itself.
+I conclude this even though I may reuse that language in 36 places across three versions of a product being maintained, with four to nine places this exact admonition text appears in each.
+
+With content like this, it would not even be the end of the world if we decide to update this language some day and have to do a source-wide search-and-replace operation across the docs portion of our codebase.
+(In fact, even most database-backed content-management systems enable this.)
+
+I'm also not likely to want to create a new source file for each instance of such a simple snippet of content.
+You won't find this anywhere in my several projects of AsciiDoc files.
+
+.Example File -- topics/admonitions/backup_warning.adoc
+[source,asciidoc,subs="none"]
+----
+[WARNING]
+Back up your data before performing this step.
+----
+
+No, you won't find files containing such simplistic, limited content, but you will find me craving the convenience of knowing that kind of precise knowledge or language is maintained in and drawn from a canonical source, and that I don't have to remember to search-and-replace any change to it.
+I find it too burdensome to give each such element its own file, but I want the advantages of single-sourcing.
+
+Consider the elegance of being able to simply edit a single source for this discrete chunk of text.
+It has been brought to our attention that our users think backing their data up to their own account on the server suffices for this step, but we really want them to download a backup.
+We'll explain this elsewhere, but when we drop the warning in various places in our docs, we want them to be reminded that we mean saving the backup to their local machine.
+We'll do this by adding the simple instruction to every admonition.
+
+.Example File -- topics/admonitions.adoc
+[source,asciidoc,subs="none"]
+----
+// tag::backup[]
+// tag::backup-title[]
+.Backup Warning!
+// end::backup-title[]
+// tag::backup-warning[]
+[WARNING]
+// end::backup-warning[]
+// tag::backup-text[]
+Back up your data _locally_ before performing this step.
+// end::backup-text[]
+// end::backup[]
+----
+
+This source arrangement gives us some decent flexibility in how we output this later.
+
+Imagine being able to keep the core statement of our admonition while enabling us to give it greater or lesser emphasis when we call that core text.
+
+.Example dynamic expression of discrete data
+[source,asciidoc,subs="none"]
+----
+. Update the data schema.
++
+\include::topics/admonitions.adoc[tags="backup"]
+----
+
+This source will call up the whole block, like so:
+
+====
+. Update the data schema.
++
+.Backup Warning!
+[WARNING]
+Back up your data _locally_ before performing this step.
+
+====
+
+Maybe we want to apply a little less emphasis on the warning later.
+
+.Example restricted expression of discrete data
+[source,asciidoc,subs="none"]
+----
+. Update the data schema.
++
+[TIP]
+\include::topics/admonitions.adoc[tags="backup-text"]
+----
+
+This turns our admonition into:
+
+====
+. Update the data schema.
++
+[TIP]
+Back up your data _locally_ before performing this step.
+
+====
+
+
+// TODO
+// Add more here about whether these discrete items are many topics to a file, or if the file/category themselves is the topic, and these are just sub-elements of a reference topic _type_.
+
+
+== Overinstruction
+
+Provide all the information a user may need without overburdening them with content.
+This is easier said than done, since you cannot predict what a particular user will need.
+
+This often means putting more detail into our docs than we expect many users require.
+While you might worry this is distracting (and you might be right, depending on the user), the bigger concern is that it will instruct unnecessary effort.
+
+Overinstruction strategy should always be clear in its aim, and advanced users should be able to quickly determine if an instruction applies to them, or if they can skip it.
+For me, this means using consistent patterns in examples, so users can quickly determine if there is something distinct about an example that they need to pay close attention to.
+
+It can be annoying to encounter seemingly trivial or assumed steps spelled out in painstaking detail, but we also all know how frustrating it can be when docs assume more knowledge (or interest and ingenuity) than we actually possess.
+
+== Breadcrumbs and Circles in Docs
+
+Documentations should never have dead ends.
+Every topic is related to at least one other.
+This does not mean we have to mandate an order to our docs; remember, reference docs are used, not read.
+We are curators with tremendous power over the common source and diverse expressions of our exhibits.
+
+A way back is as important as a way through.
+
+Optimally, the entrance to and exit from a given topic are not the same parent or sibling topic, though this can happen, especially in early iterations.
+Zooming in to write or edit individual topics, or to work on a family of topics, should be complemented by frequent zoom-out sessions to establish a project-wide perspective.
+With the macro lens affixed, map out your content, try to detect holes and missing links, then fill them.

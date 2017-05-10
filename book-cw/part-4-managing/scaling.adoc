@@ -1,0 +1,4 @@
+= Managing (at) Scale
+
+[abstract]
+Using extensible publishing and delivery technologies to accommodate the growth of your organization, the quantity and maturity of your products, and the hopefully diversifying user base that makes up your audience.

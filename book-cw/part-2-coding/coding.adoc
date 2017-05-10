@@ -1,0 +1,9 @@
+= Part Two: Coding
+
+[partintro]
+--
+DocOps is about maximizing diversity on both ends of the content continuum: an open-ended potential array of content contributors, with content source kept in one distributed repository, and delivered in myriad forms and formats, as needed, to all the right endpoints.
+
+Here we begin a slightly more formal exploration of DocOps as a development and technical writing subspecialty.
+More than establishing rules, these chapters lay the groundwork for solving complex documentation challenges in forward-thinking ways.
+--

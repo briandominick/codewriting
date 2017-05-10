@@ -1,0 +1,132 @@
+= Driving TechComm Forward
+
+[abstract]
+Just when you were getting excited about tech writing, automation starts nipping at our heels.
+Tech writers must learn to stay ahead of the game, not just the field.
+
+To use a cringe-worthy term, _thought leadership_ is sparse in the technical documentation field.
+This has shocked me during my brief tenure practicing the craft.
+I can't help seeing irony in the lack of accessible writing about how to do documentation right.
+When coders stepped out of their closed-source silos and joined the revolution about 15 years ago, technical writers largely stayed behind.
+Those who have been doing it “right” so far seem to have uncharacteristically largely failed to share their successful strategies and tactics, myself included.
+
+[NOTE]
+There are some notable exceptions I hope to have called out plentifully throughout this book.
+Even behind the scenes in various unsung repositories, code-comfy tech writers and word-happy coders have shared repos, snippets, and gists with lots of great gems.
+Please contribute your favorites to <<appendix-resources>>.
+
+If DocOps is to emerge (perhaps under some better name) as a concrete methodology we can more clearly instruct, it must to undergo rigorous field testing and collaborative iteration.
+_Writing Code_ is one step in the development of a mature framework for wrestling complicated software products into clusters of coherent descriptions, illustrations, instructions, and inspirations, then delivering them to users.
+
+Writing a book in a pubic repo is my attempt to nudge the field forward in its mindset.
+We're a bunch of grown ups used to corralling testy engineers and conjuring stale prose to earn a crust; of course we can collaborate with fellow pros to co-write a user manual for a next-gen docs methodology.
+If you've been hoping somebody would do this, join the club.
+Literally.
+
+== Foresee the Threat
+
+This is where we get back to the threat posed by automation.
+You might think I'm joking, and it is indeed a strange topic for a tech-writing book, but in truth, very soon (surely within 10 years) it will become possible to automate a significant portion of technical writing effort without a major loss of overall quality.
+
+If you think I am exaggerating, look at what powerful AI instances such as DeepMind and Watson are already doing.
+
+Google's DeepMind is able to learn to play and defeat video games just by using the pixels on the screen and employing advanced trial and error to figure out the rules and “physics” of the game.
+With no docs to read and no insight into the product not available to an actual end user, a machine can perfectly learn a complicated program.
+
+DeepMind meanwhile likely has no ability to explain what it sees, let alone to determine what to share with a user vs what to leave for them to figure out.
+
+IBM's Watson _can_ read docs, and it can establish what looks like contextualized understandings of complicated matters of fact and even concept.
+It can also generate seemingly original summary output based on relatively complicated and highly diverse inputs.
+
+The kind of feedback a screen-viewing, trying-and-erring bot like DeepMind will provide, converted to some reporting format, would be of incalculable value to GUI developers.
+QA engineers will be all over tools that can _use_ software via the front-end interface.
+The minute some smart-ass QA engineer decides to hit btn:[print] while using DeepWatson to debug an app, stock in my trade goes way down.
+Once the machine's observations are expressed as descriptions of on-screen occurrences, tech writers get an amazing tool, and also possibly lose some coworkers.
+
+This will likely reach way beyond the world of software docs, since nearly all products are digitally engineered today.
+Any product whose source and specs can be read is subject to at least partially automated documentation.
+In a just world, that would be exciting -- it sounds like we get tools to alleviate the more routine aspects of our gig so we can focus on the more interesting stuff anyway.
+
+Except the world isn't just; bosses will always hog the profits afforded by innovations.
+They aren't going to keep funding tech writers and docs managers out of the goodness of their hearts.
+Some might reallocate writer resources to get way better docs on top of such new tools, but I expect most will want cheaper adequate docs.
+That means big layoffs with better tooling, even if someone will always need to be around to run them.
+
+My inclination is to call for overthrowing capitalism, but I can't explain that strategy in these pages.
+We're stuck with becoming invaluable to our teams, or maybe to professionals in some less-technical field who need DocOps hackers to establish and instruct collaborative docs environments.
+
+We won't be alone among the slashed.
+Only the best tiers among our software developer friends -- the ones who innovate chaotically and radically -- will make it all the way to the Singularity as professional engineers.
+Technical writers' half life may already have been spent.
+The good news is, if you are reading this particular document, you are almost certainly in the group that can't be so easily replaced: the ones who actually _care_ about excellence in technical documentation.
+As of yet, no machine can be programmed to desire to improve a user's life (or their day or minute) by helping them connect with a product they believe they need to use.
+
+[.cyncicscorner]
+.Are we asking for it?
+****
+Maybe it has already crossed your mind that if we programmatize the technical writing environment too much, and involve engineers too directly, might we as well just be signing our own pink slips?
+Dig it: the more we integrate developers into the documentation process, the less we're needed.
+
+Wouldn't we be better off if our Robot Overlords had to slog it out with Microsoft Word or some Adobe product that still comes on CD-ROM?
+Maybe if we do not invent the framework for our demise, we'll stave it off.
+But the writing is on the wall: we can either innovate and increase our value to the engineering and support organizations we are in today, or we can find strategies to entrench ourselves and resist progress.
+
+We need to go in fully aware that we are giving our colleagues and bosses incredible power with which to more or less replace us.
+Except, of course, for the fact that we do so much more for the team.
+****
+
+Think about it: to the extent technical writers are copying/pasting, categorizing, styling, and testing engineers' notes and comments, we're talking processes ripe for automation.
+Engineers and capitalists would _love_ to recuperate those tech writer salaries and their CCMS license fees.
+
+So how do you shore up your position without resisting progress?
+
+== Add Value
+
+In a profession that has sort of prided itself on the ability to standardize and blend in, the way forward is finding ways to stand out.
+Become able to identify those aspects of our work that would be hardest to automate -- those that do not feel like routine, with new challenges from job to job.
+But also be aware of the areas we might get boxed in as the need for documentation dries up.
+
+Then innovate on the hot spots; find your way closer to the cutting edge of the field, make a difference to users _and_ the rest of the product team.
+
+We won't be the only field of John Henrys out there racing the machine, and eventually it will catch up with us.
+But for now the frontier is open.
+Let's outrun the bots for as long as we can.
+
+=== Lighten the Toolset
+
+One way to thwart this trend -- to everyone's benefit, I might add -- is to lighten the churn burden of documentation systems.
+
+// TODO finish this
+
+=== Sweeten the Docs with a Human Touch
+
+Another critical strategy is to increase the value of documentation by enhancing it with a profoundly human dimension and a uniquely strategic outlook on the role of documenting software products.
+The last thing machines are likely to master is the ability to reflect a user's purpose and intent.
+
+// TODO finish this
+
+=== Internal Docs
+
+Facilitate or lead the development of an internal documentation platform, as explored in <<internal-docs-lifecycle>> and much further in <<engineering_docs>>.
+There are truly countless ways to provide services directly to your colleagues, including Customer Support, QA, DevOps/infrastructure, IT/ITOps, and so forth.
+Yes, companies with large teams in all these categories typically have their own writers; but do they have a DocOps specialist working as an internal-docs manager?
+
+=== Organize Resources, in the Source
+
+Continuing on the internal-docs theme, perhaps the most beneficial act would be to centralize complex resources, storing it all in source where it's most useful to engineers.
+I'm always shocked at how few teams do this, until I'm reminded how significant the challenge is.
+I've spoken with documentation consultants who were baffled by the very notion that I would attempt to crack this nut; many of them had never even considered it.
+
+I don't think this is commonly addressed by docs specialists, but the truth is, reference resources are a huge problem for engineers.
+Teams have recently flocked to cloud-based solutions like Google Docs & Drive or Zoho, which enable real-time collaboration on all kinds of docs, including spreadsheets.
+This way multiple members of the same team, or even multiple teams across the organization, can maintain complicated, layered listings of commonly required data.
+
+But engineers notoriously hate most of these tools.
+The only thing I find they nearly all agree on is Git.
+Help them treat all canonical content they way they treat their code, and your value will not be in doubt.
+
+=== Improve Docs Delivery
+
+Don't settle for _writing_ or even _managing_ the docs; forge new ways to _deliver_ docs.
+
+// TODO more here

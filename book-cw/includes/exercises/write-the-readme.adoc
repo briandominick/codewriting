@@ -1,0 +1,46 @@
+.Write the README
+****
+“Any good coding project starts with good documentation,” says Dirk Hammer, Codexio's rock-jawed CTO.
+“But here at Codexio, that's doubly true, wouldn't you say?”
+
+You nod in agreement, thrilled to finally have a gig where the docs will come first.
+
+“So where do you think any good software project starts?” Hammer asks, his eyes squinting in indication that your answer will be graded.
+
+You think the query over like it's a riddle.
+You seemed to be saying all the right things during the interviews, but now the pressure is really on you to execute.
+Say something clever, dammit!
+
+“How about in the README file, Dirk?” you finally stammer.
+
+“It's ‘Hammer’,” your new boss snaps, correcting you as if adjusting his tie, “or ‘Mr. Hammer’ if you prefer.”
+The CTO's sense of formality catches you off guard, but you recover quickly.
+After all, it's 2017; these are strange times.
+
+Just when you think you've offended the company's number two guy, Hammer reaches out and pats you on the shoulder, suddenly grinning ear to ear.
+“Indeed, any good software project starts with the README,” Hammer says, adding, “Great answer, you,” a line delivered such that you realize he's forgotten your name.
+
+“I'd love to see our README, uh, Mr. Hammer, sir?” you manage.
+
+“Why, that sounds like a document to me,” Hammer says.
+That toothy used-car smile is back.
+“Our README has to be the best README of them all.
+But we're a lean machine here at Codexio, so you can start by just outlining our project.
+Have it on my desk by Tuesday.”
+
+Assignment::
++
+--
+// tag::assignment[]
+Create a basic outline for the README introducing an open source documentation platform.
+
+Somewhere on your filesystem, make a new directory for the product.
+Put a file in it called `README.md`, and use Markdown notation to create at least the category headings you think any good README should have.
+
+The Codexio founders haven't given you much to work with;
+you may have to use your own ingenuity about product direction if you want anything beyond a generic outline.
+
+Check out link:https://github.com/matiassingers/awesome-readme[Mattias Singers' “curated list of awesome READMEs”] if you need ideas, tips, or inspiration.
+// end::assignment[]
+--
+****

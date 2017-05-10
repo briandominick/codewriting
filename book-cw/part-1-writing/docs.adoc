@@ -1,0 +1,154 @@
+= Writing Docs
+
+[abstract]
+The cliche advice for writers of all kinds is that we should read more to get better.
+Mere reading does not suffice for technical writers.
+It is a hard pill to swallow, but there is no way around the first rule of writing, modified for our field: you have to _use_ lots of product documentation in order to write good product documentation.
+
+== What Docs Are
+
+As you'll see, I have a liberal view of what constitutes “technical documentation” at a software company -- probably more in tune with what many call “technical communications”.
+I also have a broad definition of what falls under the purview of technical documentation management.
+I prefer to be within one hop of every significant technology document the Engineering organization touches, from knowledge base articles to slide decks to drafts of blog posts and white papers.
+This does not mean I want to be in charge of it all; I certainly don't want to review it, let alone edit it.
+I just like to know what is where, or at least how to find everything.
+And it means I want the engineers I work with to know I care about all that stuff.
+
+I work regularly with developers and project managers in Engineering, as well as everybody in Customer Success.
+Having _their_ docs in order makes my life better in numerous ways which we'll explore throughout this book.
+For now, I want to introduce the theme that bad documentation is everybody's problem, not just users'.
+And documentation itself is way more than just the docs you prepare for end users or third-party developers, or even anything you might need to produce for Marketing.
+It's all of the meeting notes, specs, task-management issues, Git commit messages, help desk tickets, and on and on.
+Well kept, these are also your assets.
+
+This book is going to dwell a lot on what tech docs _are_, but first let's clear up what docs _aren't_.
+
+== Docs Are Not for Reading
+
+I try not to refer to “reading” docs, but rather _using_ them.
+That is because I believe, quite simply, that _good technical writing is not even meant to be read_.
+
+Okay, if you consider books like this one to be _technical writing_, then _some_ technical writing is meant to be read like prose -- although I do not expect it to be read cover-to-cover or even in order.
+Still, most product-related technical documentation will _not be_ read, no matter how it was intended by its authors.
+And if your work will not be read conventionally, it makes little sense to write it as if it will be read conventionally.
+
+If you're a technical writer more than you are a developer (and no, engineers, it doesn't count that you _feel like_ you spend more time writing docs than code), you probably love to write as much as any novelist, journalist, or poet.
+If you're anything like me, you're working on a novel or three, and maybe you'll get the nerve to submit that cookbook to an agent someday soon.
+But the only thing that's getting _published_ at the moment is that damn user manual, so you'd better believe we're going to _write_ that thing as if someone is _reading_ it.
+
+Usually there is even a spot here or there, in the introduction or a sidebar, where we can open up that throttle and write a few contiguous paragraphs of prose, really let the wind of the open page have its way with our free-flowing hair.
+We cherish the relative latitude and runway of these interludes.
+
+But mostly we don't write; instead:
+
+* We _keep track of_ content that fits better in tables, charts, and lists than in paragraphs;
+* We _follow our own instructions_, hoping to catch docs bugs before customers or developers do.
+* We _chase down developers_, explaining that cave etchings are preferred to nothing, but secretly wondering why people who can code in seven programming languages can't be bothered to write a formatted list in English.
+* We _pester our users and coworkers_ about the docs, whether they use them, "Why not?", "Could you maybe just give them a try?", and of course the old, "Yes, they were included with the installation and are on our website".
+* We _prune, reformat, and edit_ scribbles, notes, and sometimes well-written content from SMEs.
+* And we _create visualizations_ we hope make sense to people who actually use this stuff (be that an end user or a designer who will upgrade our graphics).
+
+When you look at a given page of a user manual or a section of a README, there might seem to be about as much of the _writer_ in _product documentation_ as there is the _jockey_ in a _horse race_.
+It absolutely matters who is on the horse, but everybody knows the best horse will win as long as the jockey is competent.
+
+But this analogy falls apart when you consider the variety of modern software products, and just how easy it is for today's software to depart from convention and require unorthodox documentation.
+If you are fortunate enough to document a product that is trying to reinvent its space, there may be no blueprint for how to convey that product to users.
+They may be more dependent on your contextualization and conceptualization of the product than they typically need to be when they encounter a "new" solution, since most product interfaces are essentially ripoffs of the most successful player in the space.
+
+Just because we do not always get to spout off freely as I am right now does not mean decisions made by technical writers are not critical to the success of a product.
+Docs may not close deals very often, but bad docs can frustrate, costing degrees of a potential customer's confidence.
+
+== Reading Docs
+
+All of that said, I do think one can appreciate good docs at face value.
+Sometimes when I'm looking for a way to solve a problem, I run into some incidental aspect of another product's documentation, which I can appreciate only in the abstract.
+Even at a glance, I recognize excellence in presentation, and the hair stands on the back of my neck.
+We lucky kinksters who appreciate good docs on an aesthetic level have a distinct advantage.
+
+.Techdocuphilia Exam
+****
+
+Perhaps you are one of us.
+Which of the following scenarios applies to you?
+For each, answer *Not at all*, *Somewhat applies*, or *Oh, yeah, that's my jam*.
+
+[options="header",cols="6,1,1,1"]
+.Documentation Arousal Test
+|===
+| Scenario | Nope | Mabes | My Jam
+| You encounter an elegant quickstart landing page starting with a prominent `brew install <delightfulness>` or `apt-get install <something-dangerous>` command. |||
+| Google led to the wrong product version, but once on the vendor's website, you were only one click away from the corresponding page for the needed version. |||
+| Just what the doctor ordered: a particularly well-formatted table with a perfect theme and cadence to column headers, plus just the right data in a just-right arrangement. |||
+| No matter where you look in a product's docs, a frequently used reference is available wherever it may come in handy -- each version identical and accurate, no hyperlink required. |||
+| A list of examples ends at the ideal length. |||
+|===
+
+****
+
+There is no shame in loving good docs.
+In fact, there is no shame in loving _bad_ docs.
+
+=== Docs Tell a Story
+
+Product documentation contributes to users' general impression of the product and the company that made it.
+Much as I'll talk about modular docs (see <<topic-based-authoring>>) that can be parachuted into, documentation should paint a complete and accurate picture.
+They should make _mastering_ your product seem plausible.
+
+// @TODO citations re about docs as narrative
+
+I originally titled this subsection “Docs _Should_ Tell a Story”, but the truth is, even poor docs tell a story.
+We'll get to that story in a second.
+
+== Reading Bad Docs
+
+One of the first things you'll hear when you take over technical documentation for an organization is which of their competitors or upstream vendors they do _not_ want their product's docs to turn out like.
+Take heed of this; while it's possible some bias against the third-party product is tainting their attitude toward the docs, the opposite is far more likely.
+Your new coworkers are probably referring to poor documentation of a product they actually admire, if not a product they regularly use and may even adore.
+Learn what frustrates your coworkers about those docs, then try actually using the docs with that third-party product.
+
+We'll talk a lot about getting to know how developers operate.
+Earn the respect of coders you work with by walking in their shoes.
+If several engineers on your team are frustrated because they've been told to work with a dependency library they don't love, there's a very good chance the library is poorly documented.
+Go investigate and maybe play with that dependency.
+Even if it's above your skill level and you fail, the process will yield benefits, empathy not least among them.
+You will have a better understanding of what developers are talking and complaining about, and you'll have a functional analysis of what is frustrating about docs your coworkers use every day.
+
+If you can repeat this process with users, whether they be third-party developers or end consumers, you'll glean even more insights.
+We'll look into each of these topics later on in <<developer-experience>> and <<user-experience>>.
+
+== Talking Docs
+
+Ask your friends and family whether and how they use docs.
+
+// TODO: Add some parameters for approaching this conversation
+
+== Docs are for Using, So Use Away
+
+Use lots of documentation, and keep track of how you use it.
+
+// TODO: Include examples of excellent docs that can be followed along with. Perhaps a Git tutorial and some other tools that our readers will be most likely to use.
+
+== Skim the Docs
+
+Also in the "let's not kid ourselves" category: let's not pretend people _read_ the section of the docs they're using, even when they must use the docs.
+Probably the smarter they (think they) are, the less attention they actually pay to documentation.
+
+This is certainly true for me.
+I must admit I tend to skip to the place I need -- not just the section, but then within that section.
+I have a tendency to skip over introductory text and go right to a reference or list of steps.
+This is poor practice on my part, but good documentation is ready for it.
+
+Good docs bold (or otherwise highlight) critical information in large text blocks.
+
+Admonition (a.k.a. "callout") blocks are even more unmistakable.
+They should be used judiciously; crying wolf with lots of bright, scary boxes of `WARNING` and `NOTE` content can desensitize users.
+Admonitions are incredibly valuable, so earn users' trust by keeping them concise and critical.
+
+== README, the Root Doc
+
+The README file is the heart of any software project.
+A good README contains all the basics needed by core engineers, third-party developers, and daring end users alike.
+Even for a polished product that can be delivered through an app store or a package manager, the README holds it all together.
+
+At risk of exaggerating its importance, I really do believe the README is the most important file in any software project -- it's the starting point for code and docs alike.
+And this is where our first exercise comes in, intended to keep us thinking about that lean, iterative approach to building out a product's docs.

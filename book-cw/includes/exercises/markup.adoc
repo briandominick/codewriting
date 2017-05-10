@@ -1,0 +1,83 @@
+.LML LULz
+****
+“You're doing real fine work,” CTO Dirk Hammer says after reviewing the README file outline you turned in.
+He waves the printout of the `README.md` file in front of him.
+“Darn fine work, in fact.
+Those little markings you added in there: those were just plain crafty.
+Similar to those ones that help me bold text when I StackShame n00bs for not knowing the difference between boolean and Boolean.”
+
+“It's called Markdown,” you find yourself telling the CTO.
+“It's all the rage with developers these days.
+It can be parsed into rich-text and formatted output.”
+
+“Fascinating. Just fascinating,” Hammer says, staring off over your shoulder during an awkward pause.
+“This Markdown -- do you think our product should use it?”
+
+“Like I said, it is very popular with developers.”
+
+“Popular is good.”
+
+“However,” you say, watching Hammer adopt a childish frown, “it has limitations.”
+You explain that while Markdown is fast and elegant, it has no dynamic or programmatic functionality, and it has frustratingly limited built-in block types.
+
+“So what would be better?”
+
+“Well, is the product going to be written in Python, by any chance?” you ask, wondering if ReStructuredText might have an advantage.
+
+“Yes,” Hammer beamed. “But also in Java, Node.js, C++, JavaScript with a jQuery-React hybrid framework, and Golang.
+Also some Perl.”
+
+“Wow, that's quite a stack.
+Perhaps we should try AsciiDoc.”
+
+“Ascii-_what_?
+This is strictly a Unicode shop, friend.”
+
+“No, AsciiDoc is kind of a misnomer,” you explain.
+“It's a dynamic lightweight markup language, kind of like Markdown, but with more options and easier extensibility.”
+
+“We love extensibility,” Hammer says.
+
+“Who doesn't?” you agree.
+“Shall I convert the README to AsciiDoc then?”
+
+“Sure, but maybe you should add some filler content in order to show off what these Ascii Docs can do.
+When it's ready, I'll pass the README to Homer so we can discuss it at the next meeting with the Board.”
+
+Assignment::
++
+--
+// tag::assignment[]
+Your assignment is to recast the README as `README.adoc`.
+First translate the markup from Markdown to AsciiDoc syntax, then add a section showing off the power of AsciiDoc.
+
+You can make subsections that display different snippets as code listings and example boxes, like so:
+
+.Example Code listing / Example pairings
+--------
+=== The Power of AsciiDoc
+
+Here are some examples of AsciiDoc markup in action!
+
+==== Bulleted Lists
+
+.Example bulleted list AsciiDoc source
+[source,asciidoc]
+----
+* item 1
+* item 2
+** item 2.1
+** item 2.2
+----
+
+.Example bulleted list HTML output
+====
+* item 1
+* item 2
+** item 2.1
+** item 2.2
+====
+--------
+--
+// end::assignment[]
+****

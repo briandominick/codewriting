@@ -1,0 +1,257 @@
+= Docs Coding
+
+[abstract]
+Getting engineers involved in thinking about DocOps, as well as directly contributing to docs can be a big win; just be sure to avoid pitfalls.
+This chapter looks at collaborative docs platforms and workflows.
+
+Engineers are notoriously averse to writing documentation.
+Except the many who are not -- those who do a diligent job pretty much every time, or who at least ensure technical writers have everything they need to produce good docs.
+Whatever the case, if you're taking an engineering approach to the docs, engineers may be more likely to approach the docs.
+This is definitely what I and some others have found so far.
+
+== Getting Engineers to Write Docs
+
+Your subject-matter experts probably do a fair bit of writing as part of their docs-related tasks.
+That is, while you might get lots of information during real-time meetings, I bet for the most part you and the engineers whose work you document have found yourselves sharing quite a lot -- especially the details -- through digital, textual means.
+
+If you're getting everything you need via e-mail, you may be beyond help.
+More likely, notes come in through a task-management system or a file-management system -- often both.
+There may instead or also be a wiki involved, or perhaps a knowledge-base CMS for internal documentation integrated with Customer Support.
+
+Whatever the system is, if it isn't the product codebase, in or adjacent to the product repository using Git, then it's probably a solid step outside their focus.
+The IDE and the terminal are the coder's main tools.
+Engineers spend the bulk of their time between these two applications, and many wish they could spend more time there.
+
+Meet the engineers in their preferred habitat: the development ecosystem.
+
+=== Engineers and Lightweight Markup
+
+When I talk to technical writers and engineers about lightweight markup languages, I typically get a version of one of following three responses:
+
+. [Engineers] don't want to learn another language.
+
+. [Engineers] already use Markdown on GitHub, StackOverflow, and a gazillion other places, so we should standardize around that.
+
+. AsciiDoc sounds amazing! How soon can we switch to it from [anything else]?
+
+Most of the people reading this have probably worked with more engineers than I have in my career, much of which was spent hacking away nearly alone, but my recent experience just doesn't bear the first two responses out.
+The notion that developers balk at learning new languages used _with good reason_ seems absurd to me.
+This response was given to me off-hand by one of the engineers on my current team, but he picked up AsciiDoc gracefully; now he's a fan.
+
+Here is the combined sentiment of 1 and 2 in the words of link:https://news.ycombinator.com/item?id=11293592[Hacker News commenter _zmmmmm_]:
+
+[quote]
+____
+Markdown has a lot of faults, but it solves the one single biggest problem in writing documentation that basically overrides every single other consideration: getting people to actually write it. Basically nothing else matters except this.
+____
+
+(This was in response to a posting of Eric Holscher's “link:http://ericholscher.com/blog/2016/mar/15/dont-use-markdown-for-technical-docs/[Why You Shouldn't Use 'Markdown' for Documentation]”, which I recommend.)
+
+This commenter wants to have it both ways: the engineer has to write in a format helpful to the tech writer, but engineers can't be bothered to learn a fundamentally superior language.
+They must stick with the one they're invested in -- the one they likely learned in under ten minutes total.
+Engineers are notoriously against learning. Right?
+
+The truth is, Markdown is not challenging enough for engineers who care about good docs; it is too limited, covering only elements all engineers know and could hand-code in HTML.
+
+Most of the actual elegance of Markdown translates directly or almost directly to AsciiDoc.
+While there are more use-cases for Markdown, AsciiDoc is growing fast, and I believe it will effectively close the integrations gap, if not gain equivalent popularity among serious developers.
+
+A lot of technical writers think our job is to cater to the most reticent subject-matter experts -- the ones we have to drag scribbled notes out of.
+And I do cater to such developers; I treat them as kind of a separate case, at least until they come around.
+I don't complain about it, and I'm not sure I even mind it.
+People contribute differently; it's no big deal.
+
+It's the SME's who want to contribute more fully or more directly that I build and curate docs solutions for.
+The ones who recognize we can do great work together get a different kind of attention from me.
+I don't merely translate their rough notes into something a user can make use of.
+They write and I enhance, or maybe I just review and copy edit.
+
+Some devs are never going to love contributing directly to user-facing docs, whatever their opinion of your markup choice.
+Even engineers who hate directly writing docs are typically eager to get you what you need to do it.
+Then move on and work more with the folks who want to take docs to a new level and leverage the power of collaborative writing and powerful publishing and delivery options.
+
+.Too Many Cooks in the Kitchen
+****
+Docs-as-code runs most of the same collaboration risks as programming source code does -- namely the dreaded “merge conflict”.
+And these can be extra frustrating when they involve blocks of text, as engineers constantly note while watching me wrestle with rough merges.
+
+A merge conflict comes about when two or more branches make changes to the same section of a file.
+Resolving a merge conflict entails registering a preference -- a process made much easier by GitHub's reconciliation tool.
+
+The far bigger threat of poorly wrangled contributors is that they'll make messes of your filesystem, naming conventions, and the like.
+Somebody needs to referee the docs directories, and I'm afraid most of the docs-as-code systems lack great (or really any) content-management features.
+If you love filesystems and don't mind their limitations, you'll do great.
+Otherwise, you will find a significant part of your job involves manually enforcing taxonomy, organization, and naming conventions without the help of a CMS.
+
+This is no small task, but it's far from impossible.
+At scale, it requires more wranglers coordinating with each other.
+But at a certain scale that isn't massive, you should be able to devote some resources to developing tools that help manage the mess.
+When you do, please share with the rest of us!
+****
+
+== DocOps
+
+Whether you're a tech writer with some interest in coding or a coder who wants to do docs right, somebody is going to have to do some hacking.
+DevOps rarely involves coding from scratch; devs supporting devs are more likely to be cobbling open source systems together using APIs.
+
+.DocOps Overview
+image::diagram-docops-detailed.png[]
+
+If your needs are at all complex, your DocOps system may similarly require a patchwork of various tools to form an appropriate platform.
+Even if your various requirements are all perfectly normal, it's unlikely there's a packaged solution that will suit your needs out of the box.
+
+.Challenge Engineers with DocOps
+****
+Few engineers like technical writing of any kind, and fewer still want to actually document their own work.
+They may do it, but they'll never call it “fun”.
+But if it looks like you're having a great time putting together a documentation platform using some new open source technology they've heard of but never had an excuse to try out, they may grow interested in helping out when they can spare some time.
+(I know, I know, but just give them a chance to miraculously discover some bandwidth if you've got something interesting going on.)
+
+This has turned out to be the case at Rocana.
+Not that I would say any of my engineers are uninterested in docs, but for most, documentation is not the highlight of the product cycle.
+That said, most of their ears perk up when I talk about building platforms, and several have followed through on offers to help.
+****
+
+[[internal-docs]]
+== The Specter of Internal Docs
+
+A lot of technical writers only work with user-facing product docs, handling none of the developers' internal specifications, resources, diagrams, and write-ups, except maybe using some of them as references after the SMEs are all done creating them.
+
+This is a mistake.
+Tech writers and docs managers should play an active role in facilitating internal documentation.
+I argue this for two critical reasons below, but first let's explore what we mean by internal documentation.
+
+include::../includes/resource-types-list.adoc[tags=references]
+
+The codebase may be the sexiest part of the Engineering playground, but product quality requires a collaborative, resource-rich work environment.
+Tools and resources should be at developers' fingertips.
+There's nothing gorgeous about IDE configurations, but engineers working in a common language against a common codebase and build infrastructure should be sharing their IDE configs.
+It makes life easier.
+
+Creating and curating an attractive, tidy space where developers can contribute to common resources is a huge value add; making it possible for them to do this without leaving their favorite tools is showing them you care.
+Make the tooling inclusive enough to encourage product and project managers, QA and DevOps engineers, the CTO, and the whole team to use it and use it properly.
+This is your chance to tutor Git and markup newbies and help them get comfortable with version control and flat-file scripting, however simplistic.
+These are terrific professional skills; nobody has ever been harmed by having learned Git or a lightweight markup language.
+
+[WARNING]
+I sadly cannot promise the same for JSON or XML.
+
+Now that you know what I mean by internal docs and how they can be an additional area of collaboration, allow me to offer why this is so valuable.
+
+Reason 1: Internal docs become user docs.::
+
+We'll explore this potentiality in <<engineering_docs>>, but it's worth mentioning here as a key motivation for getting involved with internal docs.
+At the very least, knowing what docs are floating around Engineering should give you some great ideas for supplementary resources users can make use of without too much extra work on your part, even if the material is only of marginal or novel interest.
+The point is to consider every doc to have potential direct value to outside users, especially when at least some of those users are third-party developers looking to extend your platform.
+
+Reason 2: Internal docs are an inroad.::
+
+I got my team interested in collaborative docs-as-code when I built a Jekyll-based website sourced in AsciiDoc flat files for our internal Engineering documentation.
+The site is password protected, so it includes
+
+* official workplace policies to feature specs,
+* testing plans,
+* test results,
+* service port usage registry,
+* language style guides,
+* Git and JIRA usage guides, and
+* seemingly some new category every week.
+
+Once they saw the value of the system for their own needs, many of the developers started asking if they could provide their SME product content by directly contributing to the source.
+I haven't dragged anybody to docs-as-code, but they come along one by one, not least because I try to make it look fun.
+
+== Docs Maturation Process
+
+Ideally, nearly every internal doc should eventually give way to a user-facing doc.
+
+[WARNING]
+Rant ahead in 3… 2… 1…
+
+Even with its many qualifiers and wiggle words, I realize that is a bold statement, so let's take a moment with it.
+I definitely do not mean that every internal document will directly become a user-facing document.
+(What a nightmare.)
+But if it was worth creating in the first place, a technical document will eventually at least inform something in the product.
+The accuracy of product content such as labels, instructions, icons, and other elements includes synchronicity with technical docs and even marketing and legal materials.
+
+[.didyouknow]
+[NOTE]
+.It's like that, and that's the way it is
+A full-fledged internal-to-external process is called a _recursive unilateral document maturation cycle_, or _RUnDMC_.
+
+This may not be an intuitive concept, but it's been valuable to me.
+We record institutional knowledge so that we can perform our jobs better inside that work environment.
+But with software products -- unlike nearly anything else one can produce -- the value of ingredients often lasts beyond the current instance of this product.
+It's not just new designs based on existing designs; we're talking about code and docs written on top of existing product source, forking and modifying it, typically supporting multiple versions at once.
+New versions will be built on the same matter as the first, on down the line.
+
+Moreover, software is made to allow its insides to be exposed.
+Think of a good API.
+Nowadays, good client-server development for web and mobile applications centers around REST APIs.
+APIs aren't just for third-party extensibility, either.
+They're best-practice architecture for proprietary/private parts of a company's own product (such as the GUI) that interact with core/common parts of the backend.
+Facebook's website and numerous mobile apps use the same API as Tinder programmers and share-on-FB widget developers.
+
+Think about that: engineers are writing proprietary code as if they were building an external API, often fully documented and using highly logical user-facing endpoint paths and parameters.
+Good development technique means interacting with your product the way you would want to see third-party developers and to some extent end users engage with it.
+This can and should lead to the slow release of hidden parts of the product, as their utility to outside users begins to catch up with that appreciated by core developers.
+Private tools get open sourced or otherwise released.
+Developer recipes and hacks are exposed to third-party developers, metrics and test results make their way to Marketing and others who can make use of them.
+
+This is all great news.
+All else being in order, more released product documentation is almost always better.
+Of course, “all else” in this case includes good organization, indexing, and delivery systems, as well as respected security protocols, privacy measures, and regular content audits.
+
+Most importantly, product code and docs code should be handled with care throughout their lifecycle, and as much of it eventually revealed as possible.
+The best way to identify a piece of code or documentation that has reached the end of its lifecycle is to plan its management from birth onward.
+
+Graceful deprecation is a gift to developers and users alike.
+
+That means imbuing internal docs with an extra round of integrity during creation, editing, and upkeep may edge them that much closer to release or retirement.
+Imagine all those benchmark notes taken during hours of rigorous performance testing, workarounds and patches that never quite qualified for official release, sample files used in development, responses to one-off inquiries from Support, Sales, or Marketing.
+This is the stuff no bot is going to come up with anytime soon.
+
+.Releasing work product can be rewarding
+****
+If it doesn't require much extra effort, selectively releasing "work product" can be a rewarding experience for many developers and support staff.
+Even when just as uncredited as their source code contributions, developers like to see the fruit of their work get exposed and potentially make a difference to someone.
+
+This goes for nearly everyone at any company, all the way to the remote contractor -- everybody wants to impact customers.
+Look to team members you don't work with as often, such as QA testers, automation and DevOps specialists, project managers.
+Anyone who has information that might help users succeed with or extend the product is a potential source.
+****
+
+If you've encouraged DocOps best practices for internal documentation, lots of internal content should be one edit and review away from releasability.
+
+=== For God's Sake, Don't Release It All!
+
+All the above being said, for the love of all that remains unspoilt on this forsaken ball of crusted molten matter, be judicious in what you release.
+
+Release only what you can and will maintain.
+Keeping track of all released documentation means _having a system in place_.
+If you do this right, the amount of released material could grow exponentially, with a consistent flow between internal drafts to inclusion in released artifacts.
+In the process, source material will undergo vetting, deprecation, pruning, distillation, and redaction as needed.
+
+Make no mistake, however; getting this wrong can mean orphaned documents all over the Web and inside search engine indexes and users' browser bookmarks.
+To some extent, this is just what we deal with; often the best we can do is keep every released document updated and readily available to users.
+
+The key is to make it easy for users to find their way to the right docs as soon as they figure out they don't have the best version available.
+
+[TIP]
+.Docs should enable verification of currency
+Every released artifact should have prominently embedded in it a phone-home URL.
+Make it something short and sweet that will quickly provide assurance that the user has access to the latest version of the information, in whatever form that takes at the moment.
+
+// TODO Oh so much more here
+
+== Style Guides & Conventions
+
+== Workflow Guides
+
+== Reference Registries
+
+== Drafting Capabilities
+
+== Knowledge Bases and Inter-team Sharing
+
+[[internal-version-control]]
+== Version Control & Deprecation in Internal Docs

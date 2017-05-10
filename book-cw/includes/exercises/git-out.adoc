@@ -1,0 +1,53 @@
+.Git Out
+****
+“Thanks for coming in,” says CEO Homer when you head over to his corner of the open office.
+Homer is using a stone to sharpen the blade of what he told you is a “tactical tomahawk”.
+Without looking up, he says, “Hammer told me your concerns about having the word ‘Recursive’ in our flagship product name if the product cannot even be used to document itself.”
+
+You swallow hard.
+Sparks emit from the sharpening stone, the scrape of which sends chills through you.
+
+“I slept on the matter, and I've decided to take it out,” Homer says, much to your relief.
+I'm asking the Board at our next meeting, but I think for now, you can change any documentation to reflect that.”
+
+“Sure thing,” you say, relieved.
+“So I'll remove the word _Recursive_ and the __R__ in CRE -- in CEPEE -- Ceepee_?”
+
+“Oh, no, that sounds terrible,” Homer says.
+You sigh gratefully, until he follows with, “Keep the _R_.”
+
+“You want ‘Recursive’ back in?”
+
+“No, no, just the _R_.”
+
+“You want just the _R_ there, like a placeholder?”
+
+“Sure,” says Homer.
+“That gives me an idea.
+Let me talk to the Board and get back to you. on it.
+
+“For now,” Homer says, “I wanted to tell you we've got a new Senior Lead Engineer IC-4R starting this afternoon.”
+
+“That's excellent.
+I look forward to meeting…”
+
+“Joy Shafar,” Homer said.
+“During her interview, Joy mentioned something called Git a lot.
+Maybe we should practice up on this Git, so we don't look like a bunch of fools when Joy shows up tomorrow.”
+
+“How about we create a Git repo for the project, and we commit our README to it?” you offer.
+
+Assignment::
++
+--
+// tag::assignment[]
+Initiate a Git repository for your project, and commit your README to it.
+
+Now that you know you're using Git, you can add some content to your doc wherever you explain how to contribute.
+Put what you know about the Git setup in there for Joy to find when she clones the repo and checks out the README.
+Be sure to commit it when you're done.
+
+Use Git tools recommended in <<resources-git-tools>>.
+// end::assignment[]
+--
+****

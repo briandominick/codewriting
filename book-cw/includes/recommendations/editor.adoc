@@ -1,0 +1,12 @@
+_All else being equal…_, Atom is the most reliable code editor with advanced AsciiDoc features.
+This recommendation comes with some bias, as I have not spent a lot of time with the alternatives.
+
+When I recommended AsciiDoc as LML of choice, I suggested using AsciidocFX for learning.
+Though AFX is a decent editor, and it is superior at rendering AsciiDoc live in the preview panel, I have not found it to be stable enough for my needs.
+AFX lacks a lot of the features I expect in a mature code editor, which I find frustrating, possibly because I'm old and intolerant.
+Version 1.5 is a big leap ahead for AFX, and I look forward to using it increasingly as it improves.
+
+But Atom is a tried-and-true example of an IDE that offers great extensibility without being overly complicated.
+There are hundreds of great packages for extending Atom, including several pertinent to AsciiDoc, Markdown, reStructuredText, and writing/text more generally.
+
+* https://atom.io/[Download Atom]

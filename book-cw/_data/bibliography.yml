@@ -1,0 +1,86 @@
+# FORMAT
+# This format is based on CSL standard
+# http://docs.citationstyles.org/en/stable/index.html
+#
+# I've only spent about 6 hours researching bibliography/citation styles/structures/standards,
+# so this implementation is pretty limited. Must do more research and explore some of the
+# tools like https://github.com/inukshuk/citeproc-ruby.
+#
+# - id: unique-slug
+#   title: "Titles Including Colons: Should Be Wrapped in Quotes"
+#   title-short: If There's a Short Title
+#   type: book # See 'Valid Item Types' below
+#   author: # and/or editor
+#     - given: Firstname
+#       family: Lastname
+#   publisher: Self
+#   location: Where Published
+#   edition:
+#   issue:
+#   issued: # publication date,
+#     date-parts:
+#       year: 2017 # required
+#       month: 12 # optional
+#       day: 16 # optional
+#   url:
+#
+# Valid Item Types
+# partial list, more here: https://github.com/citation-style-language/schema/blob/master/csl-types.rnc
+  # article-magazine
+  # article-newspaper
+  # book
+  # chapter
+  # dataset
+  # entry
+  # entry-dictionary
+  # entry-encyclopedia
+  # figure
+  # graphic
+  # interview
+  # paper-conference
+  # patent
+  # personal_communication
+  # post
+  # post-weblog
+  # report
+  # review
+  # review-book
+  # speech
+  # webpage
+
+
+items:
+  - id: modern
+    title: "Modern Technical Writing: An Introduction to Software Documentation"
+    edition: Kindle Edition
+    type: book
+    author:
+      given: Andrew
+      family: Etter
+    publisher: Self
+    issued:
+      date-parts:
+        year: 2016
+  - id: leanpub
+    title: Lean Publishing
+    edition:
+    type: book
+    author:
+      given: Peter
+      family: Armstrong
+    publisher: Leanpub
+    issued:
+      date-parts:
+        year: 2016
+    url: http://leanpub.com/lean
+  - id: docslikecode
+    title: "Docs Like Code: Write, Review, Merge, Deploy, Repeat"
+    author:
+      given: Anne
+      family: Gentle
+    type: book
+    publisher: Just Write Click
+    issued:
+      date-parts:
+        year: 2017
+    url: http://docslikecode.com

@@ -1,0 +1,171 @@
+= Coding Content
+
+I forgive you if you gathered from the previous chapter that I somehow diminish the relevance of the _developer_ to their eventual human audience: the user.
+This is, after all, the very same user that is the tech writer's primary audience.
+
+The truth is, coders are always adopting new ways of ensuring their output meets users needs and expectations.
+Good developers know they are _not_ just finessing code for a digital audience that perfectly interprets it on behalf of the end user.
+Those end-user meat computers we all serve are still going to interact with some kind of UI the developer's source code ultimately generates, and interactive systems are hard to get right.
+
+== Content Development
+
+Product developers have spawned robust systems for user testing and feedback during all phases, from prototyping to post-shipping, all in order to ensure users get the most out of those developers' work.
+This may not be something we can precisely reproduce with early docs drafts or iterations, given the nature of our output and the potential for confusing real users.
+But clever observers of product owners' latest UX learning techniques have begun applying such “lean/agile” lessons to docs.
+
+This way the DocOps discipline can eventually establish processes and tooling to significantly reduce documentation bugs -- places where we get it wrong, or where our output falls short of expectations.
+
+In the meantime, however, with even the best writing tools, there is no automated feedback mechanism that will flag a statement that disagrees with reality.
+
+Good documentation requires:
+
+Pre-release::
+
+* reliable *research*
+* clear, organized *writing*/*diagramming*
+* thorough, interested *review* (for accuracy)
+* frank *editing* (for clarity)
+* systematic *testing* (pre-release)
+
+Post-release::
+
+* periodic *reassessment* (pertinence review)
+* systematic *retesting* (regression)
+* pruning, editing, and rewriting as needed
+
+Code bugs suck, but well-tooled development environments may discover dozens of errors for every bug uncovered later by QA testers and end users.
+
+Reducing bugs in documentation is at least as important but poorly assisted.
+Text editors and word processors have no idea about your context.
+They don’t know if you’re writing about a fantastical land of elves and unicorns or how to program a robot; they certainly don’t grok the code your coworkers write, and they can't really interface with it.
+
+.Dev vs Docs: the Environmental Advantage
+****
+When we discuss the concept of “DocOps”, we’ll delve farther into this analogy, but for now consider the tools developers have made available for themselves.
+
+Programmers use IDEs, which are code editors that live in the context of their development environments.
+An IDE basically enables testing the product in real time, even as the developer works her magic.
+
+By contrast, even the best text editors only give sentence-level insight on spelling or grammar.
+We have to guess how it will be received by the reader.
+
+I don’t mean to exaggerate the power of the programmer’s IDE, either; it definitely does not tell her if her software will do what the user expects.
+But in a properly configured environment, the programmer has a lot of advantages when it comes to finding bugs before they ship.
+
+This parallel is a good illustration of the opportunities ahead for thinking in a DocOps mindset.
+When will tech writers have what we need to predict how our work will be used and received?
+
+We'll explore this frontier topic in great depth in Part Five's <<docs-ide>>.
+****
+
+An unforgiving but immediately responsive silicone audience is far and away more desirable than any meat-based audience; the latter are sure to be fickle, distant, even ornery.
+Your organically eyeballed reader will move on with life; a REST API will wait eternally for a developer to send a properly formatted request.
+Don’t let the coders you’re surrounded by convince you otherwise.
+They think the reason you exist is that their time is more valuable spent writing in programming languages.
+Prove you’re there to abstract their sparsely commented code and poor English notes into a more “human readable format”; that should shut them up.
+
+[TIP]
+The programmer’s dirty secret is that she may spend innumerable hours setting up the IDE and broader dev environment, but eventually teams figure out the best environments and standardize their setup, automating and preconfiguring as much as possible.
+You can help with this.
+*Development environment setup* should be fully and effectively documented for new hires, as well as to establish a standard for existing developers to reference and work toward.
+Help your team document these standardizations collaboratively, and they'll each thank you for it next time they have to set up a new MacBook.
+
+We will also discuss communicating with users in other sections of this book.
+What we need to appreciate about users for now is the similarity between _writing code without any docs_ and _writing documentation without understanding users’ expectations_ on the other hand.
+Most unfortunately, human audiences don’t come with APIs -- documented or otherwise.
+
+You’re not thinking like a developer until you look at technical writing as _content development_.
+This isn’t the same as writing software; it’s more like coding prose.
+The methodology is what counts, and content development is an approach that incorporates
+
+* source control
+* version control
+* iteration
+* testing
+* automation
+
+== Way Beyond Code
+
+[WARNING]
+If tech writers only write and think in code, we’re setting ourselves up to be automated.
+
+We will discuss the above described threat much further in <<part-5-evolution>>; for now I just want to secure your attention.
+In all honestly, I am pretty confident that I am helping to build a technical documentation infrastructure that may make it trivial for writing bots (coded by real engineers, mind you) to do a tremendous amount of our work for us... or instead of us.
+
+The good news is, what makes a tech writer human is actually valuable to users, and thus valuable to our organizations.
+Computers are probably a ways off from writing _interesting_ docs that provide user-appropriate insights.
+We'll look at the hair-raising powers of existing AI later on, but the upshot will be the ironic ways such sophisticated and thorough routines do not appreciate abstraction the way we have come to.
+
+Then again, so are most human tech writers.
+
+When the bots come for those who excel at compiling reference guides, you will have long since climbed to the higher ground of scenario-based documentation.
+When the bots lay off everyone who writes use-cases, you’ll be safely making diagrams and constructing relatable example screenshots.
+And when they come for the illustrators, you will still be the one who gets why the user wants the software in the first place, and somewhere, someone who appreciates that difference may be hiring.
+
+== Every Page a UI
+
+Our job as tech writers, in two words or less, is to _explain interfaces_.
+(You knew I wasn’t going to go for fewer than two words.)
+I am tempted to say we _explain relationships_ (to products), but that would be cheating.
+The truth is, we think we document products, but it’s essentially only in terms of how they relate to their users or their context.
+
+Even if you're dryly listing the technical attributes of a product, you do this so the user can make better use of it.
+Even if you're merely explaining what the product _does_ to some third-party (it _sends a message_ or _it spits out confetti_), you are describing the way the product interfaces with something external.
+
+We don’t write for gift-buyers (consumer products) or purchasing agents (enterprise), conveying how and why the product will make their spouse or boss happy.
+Marketing handles content for those audiences by adding yet another layer of abstraction that separates usage from value.
+
+If at every turn you think of the actual _writing_ part of your job as explaining interfaces or explaining users’ relationship to a product, you may have an easier time looking at a blank screen.
+
+You describe interfaces all day long; it's time to recognize your job involves designing interfaces, as well.
+
+* Reference tables are interfaces.
+
+* Definition lists are interfaces.
+
+* Diagrams are interfaces.
+
+* Indexes, glossaries, admonitions, example code, and of course screenshots -- all interfaces.
+
+These tools make up _your interface_ to the user; they are how you break through and get information across a barrier, by providing it in formats users will grasp intuitively.
+
+== User Manual
+
+Another theme woven throughout this book is the idea that the tech writer’s value is in her _insights_.
+Anyone can write down the steps _they took_ to do something.
+Any engineer can write down the “correct” steps for performing that same task.
+The hard part of our job is not describing the technology and its use in a way we can later defend is technically accurate.
+The hard part of our job is bridging the gap between user’s _expectations_ and the product.
+We make the product make sense where it is unintuitive, and we expose relevance at every stage.
+
+Tech writers answer _why_, and we supplement user interfaces with well-placed insights and well-organized references.
+
+.You’re still thinking about a robot taking your job, aren’t you?
+****
+If you have not already skipped ahead to Part Five, you are at least distracted by what must have felt like my unexpected forecast of your professional demise in a book of professional advice.
+
+Perhaps you are discomforted by the irony of falling victim to some open source platform this book convinced you to contribute to.
+Maybe it’s the _tick-tock_ effect of some AI engine iterating off in the distance somewhere, whirling closer and closer.
+Or maybe it’s the eerie expectation of one day googling a tech writing tool and finding the landing page of some startup promising three steps to integrating their tech-writing API into your company’s favorite build tool.
+
+You fully expect to curse my name when you discover the automation guys have a private Git repo called `techwriter-killer-gradle-plugin`.
+And that's fair.
+
+Please try not to worry.
+Part Five is actually quite optimistic.
+If you’re reading this, there is an excellent chance you will survive the robot jobocalypse.
+
+Now, I need you to pay attention to this one last bit.
+****
+
+Content development as an approach to technical writing is your reverse User Manual.
+It is the closest thing you'll ever get to the elusive EUPI -- end-user programming interface.
+
+Content development is a _framework_ for lean documentation development, including a _workflow strategy_ for getting the job done.
+It offers a basic approach to assessing the gap between your product and its users then collaboratively bridging it with your whole team.
+
+The journey to establishing your User Manual starts with becoming the ultimate user -- not just of your own product, but of product documentation more broadly.
+
+== Lean Content
+
+// TODO

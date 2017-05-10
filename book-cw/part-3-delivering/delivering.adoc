@@ -1,0 +1,10 @@
+= Part Three: Delivering
+
+[partintro]
+--
+Formerly called "publishing", the act of getting your technical content in front of readers' eyes involves much more than dumping it somewhere they can find it.
+Our readers don't line up outside Barnes & Noble.
+For technical docs, delivery means meeting the user where they are, when they need us, and frankly staying out of their way the rest of the time.
+Delivery also refers to the next step in our implementation journey; in Part Three, we're delivering the beginnings of a content platform, either to ourselves or our team.
+
+--

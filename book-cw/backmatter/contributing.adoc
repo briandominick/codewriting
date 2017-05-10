@@ -1,0 +1,17 @@
+= Collaborative Authorship & Lean Publishing
+
+This book is an experiment, and you are invited to partake.
+
+_Codewriting_ being developed kind of like a software product, using the approach introduced by Peter Armstrong in https://leanpub.com/lean[_Lean Publishing_].
+I can't put it better than Peter:
+
+Some people are apparently making money off books on this subject, and if they have more confidence than I do that their work is an authoritative contribution, that's cool: by all means, check out their work.
+It's in the bibliography, and I really enjoyed reading it.
+
+I think this field needs more adoption and propagation, for the benefit of us all, so I want to make this book as acceptable as possible.
+If a technical publsiher -- or any publisher -- is interested in putting out an edition, I would gladly consider any arrangement that allows me to maintain a fully open-source copy in my own repo.
+Whatever gets these ideas into more minds who can take it to new places, and hopefully bring it back around to this book.
+
+== From the README
+
+include::../../README.adoc[tags="contribute-cw"]

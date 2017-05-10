@@ -1,0 +1,2 @@
+_All else being equal…_, Git is the clear winner for distributed version control, a.k.a source control.
+There isn't much need to belabor this point: go with Git, and don't look back.

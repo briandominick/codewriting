@@ -1,0 +1,52 @@
+= Delivering Quality
+
+[abstract]
+Which practices and protocols best facilitate accuracy, clarity, and thoroughness of coverage?
+
+== Assuring Accuracy
+
+I'm going to make a frightening suggestion to shock you a bit, only to walk it back slightly right afterward:
+_technical documentation managers should own product accuracy_.
+
+Right, so I don't mean we should take on quality assurance's job of making sure the released product meets specifications.
+I mean documentation should consider maintaining the state of what the product requires and supports, not just what it does.
+Let's face it, we end up being the last ones checking whatever spreadsheets whomever is keeping to track what is going into the product.
+At some point, pretty much everybody has had hands on certain kinds of references: Product Management, project managers, at least one developer, maybe testing/QA, maybe even you if you came across it and got fussy.
+
+=== References
+
+Documentation of this nature is a good candidate for evaluating different systems to see what works now (and will be most likely scale) with your team.
+This is strictly objective material -- product metadata, if you will -- about which there is a discernible truth: currently supported versions, current third-party integrations, licensed dependencies, known limitations.
+In other words, product metadata is pretty much anything that is falsifiable about how the product fits into its market or ecosystem.
+
+One collaborative platform will be more effective than the others in enabling your team to establish canonical documentation which aligns with existential truth.
+That is, documentation that is definitive and accurately reflects reality.
+If you have to allow Markdown, Excel, or WYSIWYG tools to ensure participation, just find a way to respect the "everything in code" mantra, and set up whatever tools will suit the task.
+
+=== Diagrams
+
+Another place where unifying engineers, product managers, and technical writers could be critical is maintaining internal and customer-facing diagrams.
+Any depictions of product architecture, workflow, and so forth, are prime candidates for complex collaboration.
+
+Whether you use UML (Ascii text-based diagram markup), OmniGraffle (full-featured diagramming WYSIWYG with XML source), or something in between, the key again is "everything in code".
+Reviewers should be able to clearly see what has changed in a revision, and everyone needs to be able to contribute.
+
+Keeping basic, canonical diagrams is more critical than teams realize.
+Visualization is one of the best ways to establish cohesion of understanding internally.
+This is where developers and product managers will often surface the different ways they see a product.
+Standardize the way your organization does diagrams, and choose a tool with which everyone can at least tinker, if not create.
+
+== Testing Docs
+
+It is obvious that documentation can be manually tested, much the same way users test the product itself.
+The practice usually involves users following along with the docs and making sure what happens on the screen matches what's in the documentation.
+
+=== Manual Testing
+
+While it's obvious what manual docs testing is, there are lots of best practices a good DocOps specialist will be mindful of.
+
+=== Linters as Docs Tests
+
+=== Accuracy Testing
+
+=== Automating Docs Tests

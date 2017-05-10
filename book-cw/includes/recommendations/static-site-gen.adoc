@@ -1,0 +1,2 @@
+_All else being equal…_, Jekyll is the best all-around static site generator.
+Even if you prefer Markdown to AsciiDoc, Jekyll has you covered.

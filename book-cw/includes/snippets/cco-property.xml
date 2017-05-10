@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<parameters>
+	<key>scratch.location.path</key>
+	<label>scratch location</label>
+	<type>string</type>
+	<attributes>
+		<description>The path to which we should save temporary files
+used in the build process, relative to the product
+root or as an absolute path with leading `/`.
+Accepts the tokens `{{ output-type }}` and
+`{{ environment }}`.
+</description>
+		<required>false</required>
+		<required-caveat />
+		<default-value>_scratch</default-value>
+	</attributes>
+	<example>
+		<type>listing</type>
+		<content>output.location = /tmp/documator/scratch
+</content>
+	</example>
+	<status>
+		<introduced>0.9.0</introduced>
+		<deprecated />
+		<removed />
+	</status>
+	<environments>
+		<name>Enterprise</name>
+		<present>true</present>
+		<customizations>
+			<override>
+				<deprecated>1.6.0</deprecated>
+				<removed />
+			</override>
+		</customizations>
+	</environments>
+	<environments>
+		<name>Developer</name>
+		<present>true</present>
+	</environments>
+	<environments>
+		<name>Cloud</name>
+		<present>false</present>
+	</environments>
+</parameters>

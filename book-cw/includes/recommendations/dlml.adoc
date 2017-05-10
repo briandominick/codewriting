@@ -1,0 +1,16 @@
+_All else being equal…_, my choice for lightweight markup language would definitely be AsciiDoc.
+Markdown is widely known, but only because there's not much to learn… or do, strictly using Markdown.
+Having to add HTML tags to your lightweight markup very much defeats the purpose of using an LML.
+
+AsciiDoc is mostly elegant, with some exceptions.
+For instance, I think its conditional logic could be handled much better, and it is in dire need of looping functionality.
+These are places
+
+More importantly, it empowers you with variables, conditionals, includes, and numerous other programmatic features.
+AsciiDoc will also impress engineers rather than frighten them, whatever you've been taught to expect.
+
+To try AsciiDoc syntax, I recommend link:http://asciidocfx.com[downloading AsciidocFX], an IDE specially designed for writing in AsciiDoc.
+I use Atom for my day-to-day use, but AsciidocFX has better live preview and far better in-context help.
+Their onboard AsciiDoc Cheat Sheet is a great place to start tinkering.
+
+I do not recommend using the link:http://asciidoclive.com[AsciiDoc Live] website; their suggested syntax does not show off AsciiDoc's best markup alternatives.

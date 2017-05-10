@@ -1,0 +1,199 @@
+= Writing for Use(rs)
+
+[abstract]
+You’ll never know how to reach your audience if you don’t first get to know their challenges the way product developers do.
+If your audience is developers themselves, you've got your work cut out for you.
+
+== Use the Product
+
+This is the obvious one.
+I have no shocking statistics on the portion of tech writers who do not actually use the product they document, but I bet it's a bunch of us.
+
+This section is not called “_master_ the product” for good reason: mastery is rarely the point.
+Master users are abnormal, and unless you’ve been specifically tasked with appealing to outliers, you may glean little advantage from knowing how a master user engages with your product.
+The more complicated a product, the more likely there is no one way to master it, and the more likely there is a broad range of user expertise you must cater to.
+
+.How I Relate
+****
+My company makes enterprise IT ops software.
+Since I am not an IT ops agent monitoring a massive datacenter, I have little call to use our software the way our end users do.
+Even as we use it to monitor our own company infrastructure, that's not in my job description.
+But that doesn't mean I cannot seek out the perspective and pain points of users.
+
+A major part of my actual audience is made up of Customer Success engineers and Field Sales engineers -- coworkers of mine who service customers with high-touch assistance.
+I talk to them regularly about how they use the docs, and about how end users engage with the docs.
+****
+
+It also just cannot be critical that we be able to “master” the product we document.
+Take for example highly complex products like Photoshop or Drupal or Salesforce.
+Proficiency with these products merely means you know how to figure out how to achieve things with them; of course it does not imply you already know everything there is to know, every permutation of every configuration or possible use case.
+
+This extends to consumer products as well.
+I’d be willing to wager some of the video game docs you’ve seen were not produced exclusively by tech writers who had personally reached and killed the game’s final boss.
+If you've ever read a video game walkthrough, however, you'll see that technical writing can in fact demonstrate a breathtaking level of mastery.
+For enterprise or other business software products, we tend to see thoroughness in references, but not necessarily complete data saturation in instructions.
+
+If you’re documenting a scripting language or a complex API, forget about it -- you'll still need to reference your own docs at least once in a while, which is just fine.
+Virtually all modern programming languages fit the bill of _too complex to truly master_.
+This is mainly because languages develop methodological tribes around frameworks and conventions and architectures.
+In this way a thriving software language tends to grow exponentially, led in different directions by fresh thinkers with varying needs and preferences.
+
+Moreover, the risk of thinking fluently in any language is forgetting what it was like to find that language strange and off-putting.
+The best instructors readily empathize with the uncomfortable, disorienting experience learning an unfamiliar and possibly unintuitive system can be for the student.
+The people who find your product’s interface intuitive may never look to your docs; they're not your key audience.
+Masters and poseurs have a tendency to kick over the ladder once they’re up, leaving newbies behind.
+Technical writers cannot afford to leave anyone behind.
+
+[.analogy.stretched]
+.Ski School vs Ski Patrol
+****
+Your product is a mountain.
+Your users are skiers.
+Technical writers (you) are the ski instructors.
+Customer support agents are ski patrol (professionals who respond to slopeside emergencies).
+
+Your instructions can take an intermediate skier out onto an experts-only trail, but they had better get that skier back down in one piece.
+The ski patrol will rightly be upset if they find some mangled student of yours abandoned in the trees.
+Whether you left them behind or gave them the wrong idea and sent them off a cliff, it's your fault they crashed.
+Take care of your users in such a way that Customer Support never has to clean up after you.
+****
+
+[.realtalk]
+.Of Course You Should Master the Product
+****
+All the above bullshit aside, hell yes master the foundation right out from under that product.
+Live, breathe, and love the product.
+
+I do believe many documentation projects would suffer a net loss overall in terms of quality if they were only documented by masters of that product.
+However, I have also followed along with a 500-page unofficial user guide written by a master of a product and been bowled over by the sheer relevance and accuracy of that massive tome.
+
+I am one of the few people at my company who looks under the hood at pretty much every aspect of our product.
+In that regard, I am a “master” of the product.
+That said, I don't know any part of the product as well as _any_ of the engineers who works regularly on that component.
+****
+
+== Docs == Knowledge
+
+One of the biggest mistakes a tech writer can make is to confuse oneself with the Reference Manual one maintains.
+What its author _knows_ and what a doc actually expresses are two decidedly distinct things.
+
+Throw in the third set of knowables (objective reality), and you get the ingredients for a graphical chuckle:
+
+.Venn Diagram of Knowledge–Docs–Truth Trinity
+image::venn-docs-knowledge-truth.png[width=350]
+
+That’s _funny haha_ (worth a few emoticon clicks when you post it to Slack), but the reality feels a little less comfortable, if a bit more familiar:
+
+.Venn Diagram of _Real_ Knowledge-Docs-Truth Trinity
+image::venn-docs-knowledge-truth-proportionate.png[width=350]
+
+The proportions may vary depending on all the obvious variables.
+The question is, do you know the shape of your Venn diagram?
+
+== Learn Your Users’ Motivation
+
+Most users aren't using your docs to get a clinical overview of the product.
+They've come because they're trying to get something done.
+Either they're habitual docs users or they're looking for a specific solution.
+In any case, your users' objectives are critical.
+
+== Use Competitors’ Products
+
+I used to think only product designers and Sales and Marketing needed to be familiar with the competition.
+Then I figured out all our customers were expecting our product to work like our dominant competitor’s offering.
+The good news is that I can actually explore the world customers think they’re getting when they first crack open our product.
+So informed, the theory is I can better ease the user’s transition from expectation to satisfaction, all without them so much as passing through the panic stage (at least so long as they open the docs on time).
+
+By using competitors’ products, you will learn about your own users.
+Now you are visualizing your users’ expectations.
+
+Does your product do something you call _parsing_, which your chief competitor has called _processing_ for 10 years?
+You may have good reason for it, and users may not care.
+What they may need is to see the word _processing_ somewhere in the sentence that introduces your _parsing_ functionality.
+
+Does your product call for *File menu:[>] Export* for an operation some competitors use *File menu:[>] Save* to perform?
+Again, you can be agnostic about which is better (I don't even know what your product does), or you can be downright opposed to abusing “Export” the way you feel your engineers have.
+All that matters for your docs is that you intervene gracefully where you expect new users might reflexively look, pointing them to the new home of the functionality they desire.
+(This is good advice to pass on to product developers, as well, if quality assurance is a team-wide effort at your shop.)
+
+Most importantly, use your competitors' docs so you will know what it will take to establish a clear differentiator out of documentation.
+What will it take to get your docs decisively in the Pros column?
+
+[.great-docs]
+.The Splunk DM's Shield
+****
+In October 2015, the first time I met Rocana's then-new Director of Product in person, he threw down a gauntlet.
+He wanted me to see what our direct competition was capable of, and I was humbled by the artifact he handed me.
+
+Unfolding in my hands on glossy card-stock, a splendrous 6-panel, 25"x11" reference spread made up of notations and tables, together conveying much of what is most needed by our competitor's users throughout the day.
+That user is also our intended user: an ITOps engineer or analyst.
+
+Having been a hardcore nerd in my youth, I immediately notice this documentation concept is reminiscent of a Dungeon Master's shield, a global quick-reference for the referee of a Advanced Dungeons and Dragons adventure.
+
+I know some of you are judging me right now.
+Laugh it up -- my hunch proved right!
+Splunk senior technical writer Matt Ness gave a talk in which he explained the AD&D-derived origins of this ingenious document.
+But more pertinent to our purpose here, I beheld a form of documentation I will forever kick myself for not having done first.
+Since I couldn't deny the genius of the DM shield (including its marketing angle), it put me on notice that docs can make a real difference in our product's specific space.
+
+I think I'm good at my job, and I hope Rocana edges Splunk out of our corner of the market someday, but I'm glad to know I'm up against a formidable counterpart.
+The temptation to copy Ness's innovation is great, especially when I consider the challenge of single-sourcing the whole thing right out of the product code repo.
+For now, the Rocana shield waits; I'm headed in other directions.
+****
+
+== Lean Documentation
+
+It's hard to believe, but there are still startups today that do not emphasize a lean UX approach.
+There can be virtually no doubt that early product testing and rapid iteration in response to validated and invalidated learning are critical; the days of inflicting a product blindly on a market are coming to a much-deserved end.
+
+// TODO More here
+
+=== Docs are UX
+
+Technical writers have to get on this train, even if that means hopping it without a ticket.
+Docs should get tested alongside the product, including the evaluation of multiple approaches.
+
+Do you know the value of a diagram or illustration?
+
+How about the efficacy of a “quickstart” version of your installation instructions?
+
+Unlike in software development, almost every bit of a technical writer's work is UX oriented.
+Many users will never see our docs, but almost every word and image in our docs is part of the product's user experience.
+
+=== Everything is UX
+
+While not as common as overlooking the fact that docs are pure UX, many product managers and developers do not recognize how many interfaces a complex enterprise product may have.
+Anywhere users interact with the product is an interface.
+This means command lines, installers, configuration files, plugins.
+Good docs affect the user's experience of every UI, and there is likely always a better way to reach the user in a given context.
+
+// TODO more here
+
+== Docs User Testing
+
+=== Test Systematically
+
+=== Measure Traction
+
+== Add Value
+
+You've been told your documentation should make yourself invaluable to your employers.
+You've been told that this should generally be done by heading off support requests from customers, or at least by providing Customer Support with a great reference for handling such requests from users who ignore the docs.
+
+However, the truth is you should be providing a margin of value directly to customers.
+For the end user, the technical writer alone -- more than the marketer or the UI devs -- can provide layers of appreciation for the product that cannot be articulated during a transaction.
+Away from clicking and purchasing, the end user is most open to appreciate the application either (1) right before they begin using it or (2) when they realize a new level of the product's complexity.
+That is where solid technical writing comes in.
+
+Good docs are ready with a sweeping overview for the intimidated new user.
+For complex products or those requiring contextualization, some users head straight to the manual.
+This means they're not fully distracted by the developers' and designers' crafty handiwork.
+Instead, _you_ are more or less alone with the user.
+Not to take ourselves too seriously, but good docs help close transactions and calls to action.
+
+Good docs help experienced users avert or curtail frustration.
+Coming to the rescue is fun.
+I realize you don't even get to be there for the adventure, and it's not like you're pulling anyone from a burning vehicle -- I didn't say we're heroes.
+But your docs may save countless hours of user aggravation, and that's not nothing.
+
+And just imagine if you can introduce the product or prevent user frustration while enriching their experience with humor or usage-enhancing context.

@@ -1,0 +1,126 @@
+= Integrated Documentation Environment
+
+[abstract]
+One key objective of DocOps must be the conceptualization and development of true Integrated Documentation Environments-- code/text editors that are “source-code aware”.
+
+To my knowledge, no truly integrated documentation tool is openly available today.
+Before you suggest your favorite IDE or CCMS, let me explain a little more of what I mean by _truly integrated_.
+
+Imagine the following: You are typing along in your favorite lightweight markup language (let's call it AsciiDoc), and you need to express the default value of something.
+
+[source,asciidoc]
+.Example value expression in AsciiDoc
+----
+The default value of *login.allowed-attempts* is `3`.
+----
+
+What happens when this default changes in the product codebase?
+Typically a tech writer has to be notified, or they must discover the change during a review of some database where settings and their defaults are stored.
+Then the tech writer must manually change the value and republish the docs.
+
+It would obviously be better to use a variable here, especially if this default is going to be expressed anywhere else.
+
+[source,asciidoc]
+.Example value expression in AsciiDoc
+----
+The default value of *allowed.login.attempts* is `{login_allowed-attempts__default}`.
+----
+
+Okay, that looks a little bit better, but it doesn't solve the problem of requiring someone to change the value of the AsciiDoc variable login_allowed-attempts__default wherever it is defined.
+
+Now imagine that variable is sourced from a common registry which is edited by the developer when the default for the core setting login.allowed-attempts was changed.
+Suddenly your intervention is no longer needed on the trivial matter of a changed setting value, because the value of your AsciiDoc variable (login_allowed-attempts_default) is drawn from that registry.
+
+This is a mature integrated docs environment, possessing potentially robust awareness of the product once integrated.
+Such a system could incorporate unit tests and regression tests to ensure the docs always reflect the proper value of an existing parameter.
+
+== Docs Generators
+
+The embedded documentation generators associated with various programming languages are an important cousin to my idea of an integrated docs environment, and they've been around for quite a while.
+Systems like JavaDoc, PyDoc, YARD (Ruby), Perldoc, JSDoc, phpDocumentor, and several others essentially transform developers' structured code comments into automated documentation output.
+This form of docs-as-code has been around for many years, but it is notoriously limited, as it is more like code-as-docs or docs-__of__-code.
+
+In Part Four, we talked about <<swagger>>.
+Both Swagger and Doxygen are excellent black boxes that take complicated inputs and produce well-structured, predictable output.
+They can meet developers on their turf, deep inside the codebase.
+Working with such tools requires up-front planning, configuration, and testing, but it can be worth it for the developer proximity they enable.
+
+But embedded and integrated docs generators are just not good enough to produce great user-facing product docs.
+They might be good enough
+These tools are more oriented toward developers who need to know how to interface with or directly hack a product's inner components.
+So while these embedded generators may suffice for producing API docs or developer references, they don't necessarily correspond in any direct way to the end-user interface.
+For most products with GUIs, source code and interface do not line up 1:1.
+
+Besides, engineers are less than keen to have tech writers poking around in their source files.
+Surely any engineers reluctant to edit your markup files may be even less pumped about you editing their `.rb` or `.java` files.
+
+And through all of this, we haven't solved the matter of needing the involvement of a professional writer focused on end users' interests.
+Someone will always need to make up for those devs who don't love doing docs, as well as provide consistency through editing the work of those who take docs seriously.
+
+Docs generators are cool, but they pertain to developer documentation.
+DocOps projects can likely take advantage of many of these tools, especially where structured data can be kept outside scripting files that express actual functionality.
+This way, content/data in such files can be pulled into your docs environment for hands-on management, judiciously placed and output in different formats as needed.
+
+[[rest]]
+.REST APIs
+****
+// This probably needs to move
+I love REST APIs.
+A very talented engineer I worked with once assigned me Roy Thomas Fielding's epic dissertation on https://www.ics.uci.edu/~fielding/pubs/dissertation/top.htm[_Architectural Styles and
+the Design of Network-based Software Architectures_].
+I cannot claim to have read every word, but I found in it a new level of appreciation for REST interfaces _and_ for technical writing.
+I also found a metaphor in the REST API; the elegance of API abstraction correlates to problem solving in DocOps.
+
+A REST API is a set of URLs that can be connected to remotely via HTTP/S protocol, either by another server or a client such as a mobile app or Javascript in your laptop browser.
+Every interaction between a client and a REST API is a request (precisely like every web page call or form posting by a browser -- a distinct, “stateless” interaction).
+The server running a REST API is prepared to respond to the specifics of each interaction with a client:
+
+* the URL (“endpoint”) the client is requesting
+* the request's “verb” (`POST`, `GET`, `PUT`, `DELETE`, etc.)
+* any parameters contained in the request
+
+A REST API request can be a terrifically powerful and highly complex command.
+Some REST APIs exchange extraordinary amounts of structured data between machines on an ongoing basis without human intervention.
+Others are closer to serving as the middleware of a consumer application -- the way a server-side application interfaces with multiple, disparate clients such as browsers or mobile apps.
+Suddenly, this sounds like a problem documentation managers are familiar with: lots of requests from various corners, with the need for universalized handling.
+
+Facebook's REST API is an obvious example.
+Every interface Facebook provides has to work with the same, big server-side product.
+The ideal way to handle this is to provide a universal interface to which all clients must conform.
+A REST API is client agnostic; it accepts properly addressed and formatted requests from clients, including authentication data for security, without caring whether the client was Javascript in a web browser or a server on Wall Street.
+****
+
+== Output to Product
+
+The trend in software product interfaces is toward structuring any strings and other data associated with UIs in JSON format.
+Everything from labels to inline instructions is passed to the UI as semi-structured text.
+
+Yet very few CCMSes or general documentation processors generate JSON, whether that data starts as HTML, XML, or lightweight markup languages.
+There are converters that produce JSON, but DITA CCMSes, reStructuredText, Markdown, and AsciiDoc are not tooled to spit out their own content in a format UIs need.
+
+This limitation means that in order to obey the _write-once_ rule, content intended for the UI may need to start and stay in the engineers' domain, closer to where it will be output.
+This is very likely fine for most interfaces.
+The front-end team doesn't need you tinkering directly with the strings used in their UI.
+
+However, in cases where dynamic data is used in the UI _and_ in your docs, the DRY directive suggests two options:
+
+. Your docs build need to pull (query) those strings from the developers' arena, however and wherever they're stored.
+
+. You need a tool that allows proper maintenance of such content on neutral ground -- somewhere they can change significant details and you can correct grammatical errors and typos, all while the content remains equally reusable by both the UI compiler and the docs compiler.
+
+== Platform Integration
+
+Of course, it isn't just the product codebase with which I want to integrate.
+I get excited every time I see one of my Atom plugins has been updated, hoping it will be even a small step toward greater convenience in my daily operations.
+Whenever Atom gets a little more aware -- such as when it learned to display locally relative includes in the AsciiDoc Preview pane -- I feel that much closer to having a better window into my final product.
+
+There are lots of complicating factors that make it non-trivial to show you perfectly how your docs will look by generating a reasonable proximity in realtime.
+If you write in LML, you're used to this preprocessed rich-text display version alongside your markup.
+
+I'm not asking for pure WYSIWYG power with the ability to write _inside_ my data.
+Our point in writing in LML is not that we wish to stare the code in the eye.
+Rather, we appreciate the irreducible complexity of the content models we're trying to convey.
+We don't wish to hide semantic elements, such as indicators that a dynamically generated object will appear in the place of this object.
+And in most cases, we may not even wish to see our copy mixed in with the dynamic data that will eventually populate our variables and other placeholders.
+
+What we do need is the ability to quickly preview our content and design with the data it documents, preferably without having to rebuild every time and check it in another application altogether (such as a browser).

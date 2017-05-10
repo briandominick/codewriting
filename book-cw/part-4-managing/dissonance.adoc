@@ -1,0 +1,68 @@
+= Content Dissonance
+
+[abstract]
+As projects scale laterally and evolve over time, they require better handling of dimensions like versioning, forking, and localization.
+Only a distributed source management system will offer the flexibility needed for such growth in a docs-as-code environment, but what if you start losing track of all that content?
+
+== Version Entropy
+
+Software and documentation have a natural tendency to diverge.
+Given time, even with consistent attention, more gaps between word and truth appear.
+In fact, if you're a _good_ technical writer, like I think I am, you're too interested in adding new content to fuss over constantly improving the existing stuff.
+Only a _great_ technical writer sets aside that universal urge and always attends to the existing landscape.
+
+Product artifacts in which the code no longer matches the expectations set by docs has suffered what I call _version rot_.
+A sometimes-fatal affliction, version rot is almost always preceded by phases such as _version decay_ and _version wilting_, all due to the tendency of products to undergo _version entropy_ across release cycles.
+
+[NOTE]
+The malady _version lag_, by which documentation merely trails a released version, is a fundamentally different matter.
+That said, version lag and version rot often mingle at the same engineering outfits.
+
+This phenomenon can affect SaaS platforms at least as much as it affects installable artifacts, especially given how differently (and poorly) cloud-service operations sometimes handle releases.
+
+[TIP]
+If you are the tech writer for a SaaS shop with only one released, centralized version of one product, congratulations.
+Keep this to yourself at the next meetup, though.
+
+[[keeping-track]]
+=== Keeping Track of Released Material
+
+There are probably about a million ways to release software.
+Consider the following data structure, intended to reflect several of the major considerations of releasing a software product.
+If documentation management is your career, consider the permutations of potential disarray you may someday encounter, or the range of variables you may see from job to job.
+
+ifdef::backend-pdf[<<<]
+[source,yaml]
+.Software Release Chaos Matrix (YAML)
+----
+include::../includes/snippets/chaos-matrix.yml[tags=software]
+----
+
+And that's just the software you have to document.
+Now consider all the different ways that software needs to be documented, with that documentation delivered across the various channels through which the product is distributed.
+
+ifdef::backend-pdf[<<<]
+[source,yaml]
+.Documentation Coverage & Delivery Chaos Matrix (YAML)
+----
+include::../includes/snippets/chaos-matrix.yml[tags=docs]
+----
+
+ifdef::backend-pdf[<<<]
+Add several other factors that are difficult to appreciate even graphically, including
+
+* the size of the documentation team;
+* its relationship to Engineering, Product, Support, and possibly other organizations; not to mention
+* the actual frequency of releases, each presumably carrying some default overhead.
+
+The range of possibilities is truly enormous.
+Nobody is going to have all the answers for all the possible permutations of a given set of documentation challenges.
+
+As much as I presented this as an attempt either to impress or intimidate, the true purpose of the above listing is to demonstrate why this book has a strategic focus, rather than a tactical one.
+Instead of trying to lay out a plan for every combination of factors and resources, let's examine how to use a systems approach to documentation challenges.
+
+=== Feature Status Tracking
+
+When stuff changes about a feature, it needs to get documented.
+
+== Localization

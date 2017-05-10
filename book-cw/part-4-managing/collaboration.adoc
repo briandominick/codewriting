@@ -1,0 +1,141 @@
+= Collaboration
+
+[abstract]
+Working with engineers and fellow tech writers to ship complete, accurate, useful, and engaging docs every time.
+
+== Working with Existing Development Processes
+
+Engineers typically expect technical writers to work around them.
+Tech writers tend not to have much power in the situation.
+I cannot stress enough how important it is to minimize disruption to developers' flow, even though sometimes disruption is precisely what is called for.
+
+If you track developers' work in a project management system (including a Kanban board or other dashboard-style objective instrument), you have probably found a systematic way to communicate with developers through it.
+I won't go into the boring details of our solution, but we use JIRA, configured with a field for *Release Notes*, which will be exported to source prior to compiling the docs.
+
+Our JIRA also has an issue type called "Docs Sub-Task", which is a way for engineers to create stubs, assigned to themselves, for documenting work that is scheduled or underway.
+This way, I can see these tickets in the pipeline as flags for work that should be hitting my desk soon.
+
+This is an elaborate alternative to tagging the work ticket "Needs Docs" or something.
+In our case, we need a way to ensure code tickets don't get closed until their associated documentation work is ready, but we also do need a place for the developer to stick their notes.
+The next iteration of this system that we'll test will hopefully lighten the load.
+
+== Adapting Dev Workflows to Sync with Docs
+
+== Tech Writers Are Not Stenographers
+
+Some professional writers have horror stories about subject-matter experts treating them like assistants.
+Yet I have heard tech writers remark that they have no choice but to let engineers do most of the writing, since it's their code, their concept, and so forth.
+We all know that sometimes, in explaining new or complicated aspects of a product to us, SMEs practically write the whole segment.
+I find myself copy editing installation instructions as often as writing them from experience first.
+
+== Working with Engineers
+
+I imagine some professional tech writers have been muttering at half these pages, “As if, you lucky sonofa -- ”
+I get it that not all are lucky enough to find themselves working with teams that highly value or elevate documentation.
+There are different ways to approach this problem that may work better in various organizations; I would not purport such problem-solving among my skills.
+However, I do know something about helping engineers see documentation differently than they've come to expect.
+
+Every time a new engineer joins the team, I ping him or her on Slack and schedule a sync up.
+I present a bit about how I approach documentation, as well as what is expected from them.
+I want them to appreciate early on that my job is to help them do two of the parts of their job they wish could be automated: _accessing local knowledge_ and _documenting their own code_.
+I also make it clear that I get purchase for the requisite initiatives from their support for and engagement with my procedures and technologies.
+
+=== The Promise of Good Docs
+
+Various constituencies at Rocana depend on the docs that fall under my purview.
+What each constituency needs out of my docs is quite different, and it might seem like I'm pulled in different directions.
+
+But the truth is everybody wants the same thing.
+No matter how I get it done, I basically have to make sure the docs are always:
+
+* **S**earchable
+* **O**rganized
+* **A**ccurate
+* **R**eadable
+* **C**anonical
+* **E**ditable
++
+(Yes, I saw a pneumonic and I went for it.
+All I had to do was rearrange them, because yes, _canonical_ was in the original list (meaning a single source of truth).
+And _accurate_ stayed in when _unimpeachable_ would have made _SOURCE_, because _accurate_ is what I meant, and _editable_ implies impeachability.)
+
+Let me introduce you to my immediate constituents.
+
+Engineering::
+
+I need the engineering managers to see the devs are working more accurately and more efficiently under my systems.
+I also need them to see that, in collaboration with project managers, our documentation systems are catching the more passive documentation tasks, such as
+
+* maintaining bill-of-materials requirements (a NOTICE file);
+* announcing and following up on product feature deprecations;
+* preparing content about the product for inclusion in the UI; and
+* processing and copy editing the Release Notes and Changelog.
+
+Product/CTO::
+The Director of Product and the CTO together determine priorities for engineering resources.
+I need them to see the devs are doing more of the work in Java, JavaScript, and Golang that make up the digital assets we're selling.
+All of that research, coding, and testing has truly exponential value, and the docs are just there to make sure that value can be realized.
+That's humility I have, and it's perspective I don't mind Product having, as long as they appreciate that the docs form a critical layer, if not a profit-magnifying one.
++
+Mind you, I have to deduct from my systems' ROI for any engineering time I depend on to establish tooling, as well as time spent reorienting the team to some new workflow routine.
+I have to be judicious with the engineering resources I'm afforded.
++
+Product shouldn't really know I'm around except to see my content flowing, and to learn I'm freeing up _more_ engineers' time, not hogging their resources.
+They care about the docs, but
+
+Support and Field Engineers::
+The other constituency I deal with directly is made up of engineers in our Customer Success department, as well as the Sales Engineers who have first contact with our end users.
+These are my primary audience, in fact; they are often literally on site with our customers while our end users engage with the product, and that means my docs need to minimize if not eliminate embarrassing frustrations.
+It's not unusual for a support engineer to check in with me just before a release to ask if there are any surprises, or to make sure some aspect of the product was updated.
++
+My docs are truly for this situation, if they're for anything at all.
+When a highly paid product mentor from my own company is shoulder-to-shoulder with a user in a customer's IT department, both following along with my Reference Guide.
+I want them to find what they need, where and when they need it, and of course I want them to find only accurate information, consistent wherever and however it is presented.
++
+These men and women are also often the first to discover bugs in my docs, which is of course invaluable for me.
+The field teams need a responsive system for submitting documentation bugs, and I need them to feel empowered to contribute heavily and directly to resolving docs bugs.
+
+That may sound like a lot of pressure and a lot of varying interests to satisfy, and I admit that's often how it feels.
+Whenever this task feels like I'm exploring some uncharted territory of technical documentation, I just remember I work on a team that includes ReactJS coders, a machine-learning engineer, a whole bunch of Big Data platform engineers, and DevOps engineers (don't tell them I called them that -- it's complicated).
+
+Note consistency of these three interests just amo
+ng my collaborators.
+_SOARCE_ truly covers the whole array.
+If I maintain and facilitate good docs, everybody wins, even if almost nobody notices.
+
+If, however, I fail to achieve those objectives, everybody notices.
+So there's that.
+
+== Collaborating with Users
+
+All of the above is not even to have mentioned the end-users themselves, or with developers extending the product for their own end users.
+
+Most open source projects and an increasing number of contributor-driven commercial outfits are encouraging users to contribute directly to docs.
+
+=== The Old Ways
+
+Wikis::
+The most recent wave of collaborative documentation may just be the second wind of the last collaborative craze. stems from very mixed, and probably mostly negative, experiences with opening wikis up to user contrubutions.
+
+Discussion Boards::
+Once upon a time, and still more often than I can bear, bulletin boards and discussion forums were used in the service of documentation.
+When used to solicit participation and feedback which in turn informs and improves official documentation, such as managed knowledge bases, use cases, and tutorials.
++
+Sometimes, however -- and let's face it, drearier times -- discussion forums are used as the docs themselves.
+Maybe a developer initiates threads in some of the channels, but each becomes a free-for-all of guesses and what-ifs, sometimes spiraling into flame wars.
+These arrangements become ne'er-pruned unofficial knowledge bases, mixing support requests with complaints, bad user advice with tardy official advice.
+
+
+IRC::
+IRC channels are ephemeral, flowing, and conversational formats, where one might expect to find an edge-case request mentioned, but no one would think to consider a sacred source of truth, something more valuable can be built.
+They are relatively anonymous, and somewhat hit or miss.
+Nevertheless, they always seem to have an authentic feel.
+A lot of times you get direct, realtime and symmetrical dialog with somene central to the project you need help on, right when you need that help.
+There's something to be said for that.
++
+The limitations of IRC are obvious.
+The more recent wave, with chat platforms like Gitter and Slack, product teams are interacting with extension developers and users in real time, with some sense of organization, flow, and a reliable archive.
+It seems to me these contemporary tools haven't necessarily attracted the trolls or the Google-overloading wastelands that stale Discussion Board pages become.
++
+In the end, I'm not sure I would include this category as documentation.
+Even if technical writers participate from time to time or derive content from such sources, I maybe it's lack of permanence or adherence to SOARCE disqualifies it.

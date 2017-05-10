@@ -1,0 +1,6 @@
+.Deadline for {objective}
+[cols="1s,1"]
+|===
+|Deadline
+|{deadline}
+|===

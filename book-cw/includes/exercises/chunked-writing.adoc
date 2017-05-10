@@ -1,0 +1,10 @@
+.Topic Based Authoring
+****
+Assignment::
++
+--
+// tag::assignment[]
+
+// end::assignment[]
+--
+****

@@ -1,0 +1,23 @@
+= Hacking
+
+[abstract]
+Establishing a mature (or maybe adolescent), flexible toolchain that suits your current and future needs.
+
+Getting your docs out the right way is always a matter of cobbling together the right toolchain, with a document structure and workflow that are “right enough” for the current problem with the existing team.
+
+Successful documentation means integrating our docs into the user's workflow in a manner that does not disrupt or distract from use of the product.
+
+== Extensible Content Platforms
+
+Consider text-centric content platforms that facilitate heavy customization and collaboration, as well as those that offer highly tailored layouts.
+These systems host APIs that enable developers to extend the platform.
+These APIs make content management systems drastically more appealing to publishers with complex or divergent use cases, which should be pretty much everyone doing something more sophisticated than a microblog (e.g., Twitter, Tumblr) or photo feed (e.g., Instagram, Pinterest).
+
+== Continuous Integration
+
+DevOps people look at continuous integration, or CI, as a fully immersed development, testing, and even production building environment (especially for SaaS products).
+The idea of CI is to establish a seamless flow between writing, testing, and integrating new code into the existing product base.
+
+== Roll Your Own Platform
+
+Although we will continue to explore best practices for establishing a great documentation environment, this is a remarkably immature space, so almost every solution requires some hacking, cobbling, and patching.

@@ -1,0 +1,75 @@
+.The Lean README
+****
+“Boy did the Board love those Ascii Docs.
+They really think Ascii Docs are the wave of the future!”
+It takes you a second to adjust to talking to an upside-down boss, but here is Dirk Hammer on an inversion table when you arrive at his office for what was billed as a “quick strategy session”.
+
+“I'm pleased to hear the Board liked the new AsciiDoc formatting in the README,” you say.
+
+“They sure did.
+This morning, I sent off a tweet at 4 a.m. with Ascii Docs markup in it.
+Twitter didn't show it properly, but I got two likes and a retweet.”
+
+“That's terrific, sir,” you say.
+
+“Unfortunately, the retweeter had second thoughts later on and retracted the RT.”
+
+“That's most unfortunate.
+Maybe it'll stick next time.”
+
+“Maybe,” responded Dirk Hammer, blood swelling his cranium, his untanned eyelids pinking up like little boiled tomato rinds.
+“Anyway, that's not what I called you in for, friend.
+Today I want to talk about the product space.
+You sure seem to know some things about technical documentation.
+
+“Now, I know you're itching to hack up some kind of fancy DocOps toolchain, like you hotshot DocOps people are always doing.
+But before you go off half cocked, I want you to look into what's out there already from vendors in the product-documentation platform space.”
+
+“To tell you the truth,” you say, “I was hoping I could use CRE -- CREP -- er, our product to, you know, document our product.”
+You point out to your inverted boss that the product “even has ‘Recursive’ in the name.”
+
+Without warning, Dirk's inversion table flips over and he is suddenly sprung upright, like Hannibal Lecter strapped to the hand-truck gurney, yet somehow more menacing as his face returns to its normal, unnatural hue.
+“Excuse me, but do you have a Computer Science degree from Stanford or a comparable if less-renowned school?”
+
+“No,” you admit.
+
+“And are you the Acting Product Manager at Codexio?”
+
+You shake your head, even as you're beginning to wonder about that one.
+
+“Well then, how about we let _me_ decide what ‘recursive’ means in this context.”
+
+“What _does_ ‘recursive’ mean in the context of our product?” you ask sincerely.
+
+“That's not important right now,” Hammer says, reaching for his personal smoothie shaker.
+“At the end of the day, we can't use our own product to make our own product.
+That would be a perpetual-motion machine, and those are impossible.
+I was a physics major before I transferred to CS.”
+
+“Of course you were, sir.”
+
+“Point is, we need a great docs platform if we're going to get our product docs off to a good start.
+We don't really have much of a product built yet.
+It's still mostly wireframes and a Launchrock page.”
+
+“I see.”
+
+“So why don't you get out there and see if there's a system that will be flexible enough for our needs, which is documenting the most tremendous documentation system ever made.”
+
+Your brow furrows reflexively, but you choose your battles.
+“So by ‘talk about strategy’, you meant _have me write about our competitors_?”
+
+“Pretty much, yup.”
+
+Assignment::
++
+--
+// tag::assignment[]
+With apologies if you're just as disappointed with this exercise as your fictitious avatar is, but tooling is critical to DocOps.
+Start digging around the technical documentation platform space to see what kinds of tools are out there.
+
+Add an “Alternatives” section or subsection to your README, listing at least a few platforms, noting their strengths.
+You can find suggestions in <<hosted-documentation-platforms>>.
+// end::assignment[]
+--
+****

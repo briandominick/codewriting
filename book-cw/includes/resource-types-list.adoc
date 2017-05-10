@@ -1,0 +1,27 @@
+* product specs
+* task tickets
+* diagrams
+* references, such as
+// tag::references[]
+** registries of
+*** settings
+*** reserved terms
+*** ports
+*** protocols
+*** endpoints
+** development, testing, and staging platform info
+// end::references[]
+* coding styles and conventions
+* glossaries/taxonomies
+* Quality assurance test plans and results
+* tradecraft
+** code recipes
+** scripts and command-line tools
+* knowledge base entries
+* support tickets
+* SME content marketing materials
+** blog posts
+** white papers
+** conference presentations
+*** script
+*** slide deck

@@ -1,0 +1,11 @@
+= Part One: Writing
+
+[partintro]
+--
+No matter what else you learn or forget about the work of technical documentation, remember as much as you can about _writing_ and _writing technically_.
+The rest changes a lot from gig to gig, but the need for clear, concise, and compelling technical content will remain.
+Documentation workflows and methodologies, platforms and toolchains -- all the stuff you need proficiency in to call yourself a DocOps practitioner matters not at all if you cannot write complete, accessible product explanations and instructions.
+
+The chapters in Part One address the craft of writing about software products.
+The rest of the noise of the field can wait; the one thing we all have in common is a love of language, so there we'll start.
+--

@@ -1,0 +1,11 @@
+sources:
+- source:
+  data: book-cw/_data/glossary.yml
+  builds:
+  - template: _layouts/glossary.asciidoc
+    output: book-cw/backmatter/glossary.adoc
+- source:
+  data: book-cw/_data/bibliography.yml
+  builds:
+  - template: _layouts/bibliography.asciidoc
+    output: book-cw/backmatter/bibliography.adoc

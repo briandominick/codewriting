@@ -1,0 +1,3 @@
+_All else being equal…_, I love GitHub Issues. It's simple and boasts minimal features, but it works, and it's in the right place, with full integration with your repo.
+
+If you don't need an elaborate solution for large team and you don't already have one in place -- both big __if__s, I'm aware -- GitHub's Issues facility is simple to configure and learn, so you'll be up and running pretty much the moment you create your repo.

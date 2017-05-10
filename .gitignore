@@ -1,0 +1,4 @@
+_output*
+Gemfile.lock
+.sass-cache
+_scraps*

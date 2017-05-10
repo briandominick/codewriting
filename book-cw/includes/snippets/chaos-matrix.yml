@@ -1,0 +1,102 @@
+# tag::software[]
+software-attributes:
+  markets:
+    consumer:
+    business:
+    enterprise:
+  release:
+    currently-supported-versions:
+      - 1.8:
+        - 1.8.0
+        - 1.8.1
+        - 1.8.2
+      - 2.0:
+        - 2.0.0
+        - 2.0.1
+        - 2.0.2
+        - 2.0.3
+    cadence:
+      continuous delivery:
+      manual release:
+        - time-boxed
+        - fixed-scope
+    outlets:
+      appstores:
+        - apple
+        - android
+        - amazon
+        - steam
+  distro-environments:
+    - webapp-responsive
+    - webapp-mobile
+    - ios-iphone
+    - ios-ipad
+    - android
+    - windows
+    - linux
+    - macosx
+  source-endpoints:
+    - github.com
+    - sourceforge.com
+  dependencies:
+    libraries:
+      java:
+      javascript:
+    prerequisites:
+      preinstall:
+        codecs:
+        sdks:
+      compatabilities:
+        operating system versions:
+        hardware requirements:
+# end::software[]
+# tag::docs[]
+documentation-attributes:
+  output-formats:
+    - xml
+    - pdf
+    - html
+    - json
+    - manpage
+    - ebook
+  delivery-endpoints:
+    hosted-distro:
+      - github.com
+      - sourceforge.com
+    api:
+      - REST API
+    client:
+      - mobile app
+      - desktop app
+    in-app-content:
+    print-materials:
+  subject-matter:
+    graphical-user-interface:
+    command-line-interface:
+    developer:
+      - REST API
+      - command-line interface
+      - domain-specific language
+    instructions:
+      - installation
+      - usage
+      - troubleshooting
+    references:
+      - configuration-settings
+      - product-attributes
+      - support-channels
+    legal:
+      - licensing
+      - warrantee
+      - notices
+  localization:
+    languages:
+      - english
+      - spanish
+      - french
+      - mandarin
+      - arabic
+    interfaces:
+      - north-america
+      - international
+# end::docs[]

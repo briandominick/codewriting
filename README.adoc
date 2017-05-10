@@ -1,0 +1,227 @@
+= Codewriting: Collaborative Technical Documentation for the Agile Age
+// tag::global-settings[]
+:github-repo-uri: https://github.com/briandominick/codewriting
+:site-blog-uri: https://codewriting.org/blog
+:site-book-uri: https://codewriting.org/codewriting-book
+// This README file serves as canonical source for some text and other code.
+// Denoted by specially formatted comments like the tag:: and end:: references
+// above and below this comment. These are hidden macros that enable me to mark
+// sections of a file for selective inclusion (think of it as embedding) into a
+// parent file elsewhere in my source repo.
+// end::global-settings[]
+
+// tag::preamble[]
+_Codewriting_ is an open, hopefully collaborative writing project to document current best practices and forward thinking in the field of technical communications, specifically documentation for software projects.
+
+A manual for establishing optimal documentation environments, _Codewriting_ explores the “docs-as-code” or “DocOps” approach to documenting and instructing software.
+This iteratively written, open-source volume explores the unconventional strategies in use by many of today's hottest startups and teams at several tech-industry stalwarts.
+
+As a living, collaborative document, _Codewriting_ employs many of the techniques it teaches -- written in lightweight markup code, this book's codebase (its text) can be forked and modified by anyone for any reason (<<creative-commons,see the Creative Commons ShareAlike license>>).
+
+_Codewriting_ is for the tech writer and engineer alike, and it covers systems that involve everyone in the development circle, such as DevOps, project management, and product ownership.
+Coders and writers will find advice for integrating the others' skills and tools for building better docs, as well as improved collaboration around docs and interfaces, user- and developer-facing alike.
+From writing and docs-planning techniques to blending the product's build and content source, _Codewriting_ is about upgrading how we communicate the products we make.
+// end::preamble[]
+
+== Build
+// tag::build-cw[]
+This book is being written in a lightweight markup language.
+That means it starts as source code, and it must be compiled to a cohesive document in a friendlier format for reading.
+
+_Codewriting_ is totally free, and the latest public draft will always be made available here -- all you have to do is pull the source repository and run a simple command to build a 1-page HTML page or PDF document.
+Here is how.
+
+In order to operate the publishing tool included in this repo, you'll need Ruby.
+If you're on a *Mac OSX or Linux* system, you likely have an appropriate version of Ruby installed.
+
+For *Windows*, download and run link:http://rubyinstaller.org/[RubyInstaller].
+
+[WARNING]
+The packaged scripts have not yet been tested on Windows.
+Instructions below assume Mac OS or Linux.
+
+To really engage with this book, you will want to use Git.
+To set up Git, go to the link:https://git-scm.com/downloads[Git downloads page] and select your operating system.
+
+If you are brand new to Git, check out link:https://try.github.io/levels/1/challenges/1[GitHub's Try Git tutorial].
+
+The last tool you need is your preferred *terminal/command prompt*.
+
+. In the terminal, navigate to a workspace directory.
++
+----
+cd ~/Documents/workspace
+----
+
+. Clone this repo.
++
+----
+git clone git@github.com:briandominick/codewriting.git
+----
++
+[TIP]
+If you don't wish to run Git and clone the repo, you can always download and unzip link:https://github.com/briandominick/codewriting/archive/prime.zip[the archive of this repo] anywhere on your hard drive.
+
+. Change directory to the repo.
++
+----
+cd codewriting
+----
+
+. Install the Bundler gem.
++
+----
+gem install bundler
+----
++
+This is a special package manager for Ruby gems; it will ensure you always have the right dependencies installed.
+
+. Run Bundler's install command to establish local Ruby gem dependencies.
++
+----
+bundle install
+----
+
+. Make the build and parse scripts executable.
++
+.MacOS/Linux Example
+----
+chmod 755 scripts/publish.rb
+chmod 755 scripts/liquidoxify.rb
+----
++
+[TIP]
+For Windows environments, perhaps try the most appropriate solution from this link:https://stackoverflow.com/questions/1422380/how-to-i-launch-a-ruby-script-from-the-command-line-by-just-its-name[Stack Overflow Q/A].
+
+. Build the book in PDF and HTML.
++
+----
+bundle exec scripts/publish.rb -i index-book.adoc -o codewriting-book-draft -l
+----
+
+Now you can open `_output/codewriting-book.html` in your preferred browser or open `_output/codewriting-book.pdf` in your favorite PDF viewer.
+Please give this latest draft a read and let me know what you think!
+
+To keep updated, link:{github-repo-uri}/subscription[follow this repo on GitHub].
+// end::build-cw[]
+
+== Contribute
+// tag::contribute-cw[]
+*All proposed edits and additions are eagerly welcomed.*
+
+=== What to Contribute
+
+Here are some forms of content contributions I would love to receive:
+
+quotations::
+Quote yourself as if I interviewed you for three hours and kept some of your best advice.
+Write yourself right into the text, either with an outright quote or a paraphrase.
+
+guest blocks::
+Make a text block that conveys your commentary on a topic, in context.
+
+=== Guest Block Syntax & Guidance
+
+The two main types of block contributions are admonition blocks (either generic or branded) and guest sidebars, for longer prose.
+
+admonition block::
++
+--
+You can either author a generic admonition, to be credited in the Acknowledgements and the Git repo, or you can brand an admonition with your name (or GH username) and mug.
+Admonition blocks should be kept to one short paragraph, at most.
+
+generic admonition::
+
+[source,asciidoc]
+----
+[TIP]
+Here is my opinion about this topic.
+----
+
+branded admonition::
+
+[source,asciidoc]
+----
+[BRANDED.yourGHusername]
+I'll make this do something cool by the time we “go to press”.
+----
+
+In this case, also place a 150x150 pixel PNG file to use as an avatar for you.
+Make it your headshot or a caricature or some symbol you want to rep your mug.
+Name it `yourGHusername.png` and place it in `book-cw/images/avatars`.
+
+--
+
+guest sidebar::
+
+Make a sidebar for multi-paragraph contributions.
++
+[source,asciidoc]
+----
+[guest_contribution]
+.Your Sidebar's Clever Title
+****
+Here is the text of your sidebar.
+Keep it witty, and remember to use one-sentence-per-line and other styles from the Style Guide.
+
+You can use paragraphing, images, tables, and so forth.
+Just keep it tidy, witty, and informative.
+
+-- Tag Yourself (link:https://twitter.com/@memememe[memememe])
+****
+----
+
+To make these items most modular, it is best that you contribute them in their own `filename.adoc` file.
+Your pull request is welcome to also incporporate the `include::filename.adoc[]` macro in the place you think your content best fits.
+Otherwise, it's fine to leave it for me to suggest a placement.
+
+=== How to Contribute
+
+Here are the technical steps to contributing.
+If you don't know how to use Git or AsciiDoc yet, you may wish to read the book before trying to contribute.
+In fact, that's a good general recommendation, so you don't duplicate something that's already included, and maybe you should be enhancing existing content.
+
+. Fork the GitHub repo.
+
+. Create a branch.
+
+. Edit the appropriate AsciiDoc file, or create and appropriately include a new one.
+
+. Build locally to make sure your contribution builds as both PDF and HTML.
+
+. Issue a pull request to my repo. +
+{github-repo-uri}
+
+. I'll review your contribution and respond to it as soon as I can.
+
+[TIP]
+If you wish to propose a contribution before you start writing/coding, create an Issue and label it `proposal`.
+I'll review it and let you know what I think.
+
+=== Editorial Process
+
+Only once we're both happy with the final state of a proposed change will I incorporate any of your work, and all contributors will be prominently credited, as well as remain in the git log for all eternity.
+One of the commits in your first PR should add yourself to the appropriate contributors' list in `book-cw/frontmatter/acknowledgements.adoc`.
+
+I do reserve the right to include lessons from your contributions even if we cannot agree on the specific final text; any particular ideas reflected will be duly credited.
+As a journalist in my past life, I was fanatical about attribution, accuracy, and integrity in news media.
+As evidence, I submit  link:http://newstandardnews.net/contributors/handbook_v2.0.pdf[this journalism guide]) I helped write.
+I assure you I take proper representation and credit very seriously.
+// tag::contribute-cw[]
+
+== Plans for Codewriting
+
+Words!::
+Lots more content coming, across several chapters
+
+Slides!::
+I want to make a bulleted summary of each chapter/section as a "slide", which can be included in each section as well as compiled into a slide deck for presentations.
+I hope others will modify them to their liking and make use of them spreading the word about DocOps!
+
+Site!::
+I've purchased `codewriting.org` and will eventually build a static site there, including a landing page, a blog, and lots of side resources.
+
+== Legal Stuff
+
+The Codewriting codebase is covered by two licenses: MIT for functional code; "Creative Commons ShareAlike 3.0 Unported" for content.
+For details, see `LICENSE.md` for full details and complete license text.
