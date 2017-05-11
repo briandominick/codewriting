@@ -1,21 +1,25 @@
-= Docs Coding
+= Docs-Code Integration
 
 [abstract]
 Getting engineers involved in thinking about DocOps, as well as directly contributing to docs can be a big win; just be sure to avoid pitfalls.
 This chapter looks at collaborative docs platforms and workflows.
+
+== Docs + Code, Sitting in a Tree
 
 Engineers are notoriously averse to writing documentation.
 Except the many who are not -- those who do a diligent job pretty much every time, or who at least ensure technical writers have everything they need to produce good docs.
 Whatever the case, if you're taking an engineering approach to the docs, engineers may be more likely to approach the docs.
 This is definitely what I and some others have found so far.
 
-== Getting Engineers to Write Docs
+// section-fleshout
+
+== Getting Engineers to Contribute
 
 Your subject-matter experts probably do a fair bit of writing as part of their docs-related tasks.
 That is, while you might get lots of information during real-time meetings, I bet for the most part you and the engineers whose work you document have found yourselves sharing quite a lot -- especially the details -- through digital, textual means.
 
 If you're getting everything you need via e-mail, you may be beyond help.
-More likely, notes come in through a task-management system or a file-management system -- often both.
+More likely, notes come in through a project-management system or a file-management system -- often both.
 There may instead or also be a wiki involved, or perhaps a knowledge-base CMS for internal documentation integrated with Customer Support.
 
 Whatever the system is, if it isn't the product codebase, in or adjacent to the product repository using Git, then it's probably a solid step outside their focus.
@@ -24,7 +28,7 @@ Engineers spend the bulk of their time between these two applications, and many 
 
 Meet the engineers in their preferred habitat: the development ecosystem.
 
-=== Engineers and Lightweight Markup
+== Engineers and Lightweight Markup
 
 When I talk to technical writers and engineers about lightweight markup languages, I typically get a version of one of following three responses:
 
@@ -222,8 +226,10 @@ Anyone who has information that might help users succeed with or extend the prod
 
 If you've encouraged DocOps best practices for internal documentation, lots of internal content should be one edit and review away from releasability.
 
-=== For God's Sake, Don't Release It All!
+The key is to make it easy for users to find their way to the right docs as soon as they figure out they don't have the best version available.
 
+.For God's Sake, Don't Release It All!
+****
 All the above being said, for the love of all that remains unspoilt on this forsaken ball of crusted molten matter, be judicious in what you release.
 
 Release only what you can and will maintain.
@@ -233,25 +239,33 @@ In the process, source material will undergo vetting, deprecation, pruning, dist
 
 Make no mistake, however; getting this wrong can mean orphaned documents all over the Web and inside search engine indexes and users' browser bookmarks.
 To some extent, this is just what we deal with; often the best we can do is keep every released document updated and readily available to users.
+****
 
-The key is to make it easy for users to find their way to the right docs as soon as they figure out they don't have the best version available.
+== What Developers Need
 
-[TIP]
-.Docs should enable verification of currency
-Every released artifact should have prominently embedded in it a phone-home URL.
-Make it something short and sweet that will quickly provide assurance that the user has access to the latest version of the information, in whatever form that takes at the moment.
+// TODO section-start
 
-// TODO Oh so much more here
+=== Style Guides & Conventions
 
-== Style Guides & Conventions
+// TODO section-start
 
-== Workflow Guides
+=== Workflow Guides
 
-== Reference Registries
+// TODO section-start
 
-== Drafting Capabilities
+=== Reference Registries
 
-== Knowledge Bases and Inter-team Sharing
+// TODO section-start
+
+=== Drafting Capabilities
+
+// TODO section-start
+
+=== Knowledge Bases and Inter-team Sharing
+
+// TODO section-start
 
 [[internal-version-control]]
 == Version Control & Deprecation in Internal Docs
+
+// TODO section-start

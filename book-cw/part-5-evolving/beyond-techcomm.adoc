@@ -7,7 +7,24 @@ I don't have tremendous confidence that there is a particularly significant amou
 
 == Legal Docs
 
+Legal boilerplate language complicates contracts.
+Lawyers who manage tons of clients would rather not risk divergence in the language of similar documents between clients.
+
+// TODO section-fleshout
+
+=== Forking & Maintaining Boilerplate Language
+
+// TODO section-fleshout
+
+=== Open Sourcing Legal Docs
+
+// TODO section-start
+// TODO section-research
+
 == Collaborative Journalism
+
+// TODO section-start
+// TODO section-research
 
 == Protocol & Policy Codexes
 
@@ -16,10 +33,16 @@ More often than not, this does not need to be unique -- a customized derivative 
 If groups shared their policy documentation, other groups could clone and modify it to suit their needs.
 Perhaps the copy would diverge over time, or perhaps it would stay mostly in sync even as both groups (or maybe just the original group, or maybe only the copying group) evolved the policies.
 
+// TODO section-fleshout
+
 == Cookbooks
 
-Here I mean actual culinary cookbooks (which tend to be codexes in their own right) as well as technology “cookbooksets of “recipes” for optimal customization of a software product.
+Here I mean actual culinary cookbooks (which tend to be codexes in their own right) as well as technology “cookbooks“ -- sets of “recipes” for optimal customization of a software product.
+
+// TODO section-fleshout
 
 == <Your Idea Here>
 
-This spot is begging for contributions. (Seriously, I'm beggig you; I bet you can come up with some applications.)
+This spot is begging for contributions.
+
+// TODO section-invite

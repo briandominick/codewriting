@@ -1,5 +1,41 @@
 = Deployment
 
-== References
+// TODO chapter-abstract
 
-== Release History
+== Static Site Generators
+
+// TODO section-research
+// TODO section-start
+
+=== Static Extensibility
+
+// TODO section-research
+// TODO section-start
+
+=== Static Hosting
+
+// TODO section-research
+// TODO section-start
+
+=== Continuous Integration
+
+// TODO section-research
+// TODO section-start
+
+== Cloud Solutions
+
+// TODO section-start
+
+== Build and Package
+
+// TODO section-start
+
+=== Generating Packaged Artifacts
+
+// TODO section-research
+// TODO section-start
+
+=== Into the UI
+
+// TODO section-research
+// TODO section-start

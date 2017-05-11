@@ -36,17 +36,34 @@ Visualization is one of the best ways to establish cohesion of understanding int
 This is where developers and product managers will often surface the different ways they see a product.
 Standardize the way your organization does diagrams, and choose a tool with which everyone can at least tinker, if not create.
 
+// TODO sidebar-start
+// Sidebar sharing diagramming markup powers of Asciidoctor
+
 == Testing Docs
 
 It is obvious that documentation can be manually tested, much the same way users test the product itself.
 The practice usually involves users following along with the docs and making sure what happens on the screen matches what's in the documentation.
 
+// TODO section-fleshout
+
 === Manual Testing
 
 While it's obvious what manual docs testing is, there are lots of best practices a good DocOps specialist will be mindful of.
 
+// TODO section-start
+
 === Linters as Docs Tests
+
+// TODO section-research
+// TODO section-start
+// Not sure about this one
 
 === Accuracy Testing
 
+// TODO section-research
+// TODO section-start
+
 === Automating Docs Tests
+
+// TODO section-research
+// TODO section-start

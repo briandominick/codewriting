@@ -1,7 +1,9 @@
 = Hacking
 
 [abstract]
-Establishing a mature (or maybe adolescent), flexible toolchain that suits your current and future needs.
+We've talked a lot about _what_ we want to do with our docs, and _whom_ we are writing and building them for.
+Now it's time to talk about _how_ we make it all happen.
+Here we explore the craft of customizing delivery systems to meet _our_ needs, simple and extraordinary alike.
 
 Getting your docs out the right way is always a matter of cobbling together the right toolchain, with a document structure and workflow that are “right enough” for the current problem with the existing team.
 
@@ -13,11 +15,17 @@ Consider text-centric content platforms that facilitate heavy customization and 
 These systems host APIs that enable developers to extend the platform.
 These APIs make content management systems drastically more appealing to publishers with complex or divergent use cases, which should be pretty much everyone doing something more sophisticated than a microblog (e.g., Twitter, Tumblr) or photo feed (e.g., Instagram, Pinterest).
 
+// TODO section-fleshout
+
 == Continuous Integration
 
 DevOps people look at continuous integration, or CI, as a fully immersed development, testing, and even production building environment (especially for SaaS products).
 The idea of CI is to establish a seamless flow between writing, testing, and integrating new code into the existing product base.
 
+// TODO section-fleshout
+
 == Roll Your Own Platform
 
 Although we will continue to explore best practices for establishing a great documentation environment, this is a remarkably immature space, so almost every solution requires some hacking, cobbling, and patching.
+
+// TODO section-fleshout

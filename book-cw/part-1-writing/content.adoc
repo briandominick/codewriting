@@ -5,6 +5,8 @@ A lot more goes into good user docs than clear instructions and illustrative scr
 The kitchen-sink approach is tempting… until you sit down to work facing a deadline.
 How do we decide what our users need, what would be nice but unnecessary, and what is superfluous or distracting?
 
+== The Craft
+
 From the end-user's perspective, there are only two aspects of documentation that matter: content and delivery.
 Even if users could learn all about _how_ you made the docs, they wouldn't be interested, and they wouldn't appreciate it.
 That's life.
@@ -21,16 +23,15 @@ You may display the same table two different ways in four or fourteen different 
 
 In the technical documentation world, you're more likely to hear this concept called _single sourcing_, which I'm also down with.
 
-// TODO
+// TODO section-fleshout
 // Quotes and descriptions about single-sourcing in tech docs
 
-// TODO
-// .Source vs Expression sidebar
-
-// Explain the difference between a canonical source and the way we express it.
-// This is exemplified in the next section, so it might be nice to have a
-// reference, or maybe this should just be moved down there.
-
+// TODO sidebar-start
+////
+.Source vs Expression sidebar
+Explain the difference between a canonical source and the way we express it.
+This is exemplified in the next section, so it might be nice to have a reference, or maybe this should just be moved down there.
+////
 
 == Topic-based Authoring
 
@@ -203,10 +204,8 @@ Back up your data _locally_ before performing this step.
 
 ====
 
-
-// TODO
+// TODO section-wrapup
 // Add more here about whether these discrete items are many topics to a file, or if the file/category themselves is the topic, and these are just sub-elements of a reference topic _type_.
-
 
 == Overinstruction
 
@@ -233,3 +232,6 @@ A way back is as important as a way through.
 Optimally, the entrance to and exit from a given topic are not the same parent or sibling topic, though this can happen, especially in early iterations.
 Zooming in to write or edit individual topics, or to work on a family of topics, should be complemented by frequent zoom-out sessions to establish a project-wide perspective.
 With the macro lens affixed, map out your content, try to detect holes and missing links, then fill them.
+
+// TODO section-fleshout
+// cite Every Page is Page One

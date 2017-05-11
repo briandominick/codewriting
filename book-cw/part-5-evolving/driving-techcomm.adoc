@@ -100,20 +100,22 @@ Let's outrun the bots for as long as we can.
 
 One way to thwart this trend -- to everyone's benefit, I might add -- is to lighten the churn burden of documentation systems.
 
-// TODO finish this
+// TODO section-fleshout
 
 === Sweeten the Docs with a Human Touch
 
 Another critical strategy is to increase the value of documentation by enhancing it with a profoundly human dimension and a uniquely strategic outlook on the role of documenting software products.
 The last thing machines are likely to master is the ability to reflect a user's purpose and intent.
 
-// TODO finish this
+// TODO section-fleshout
 
 === Internal Docs
 
 Facilitate or lead the development of an internal documentation platform, as explored in <<internal-docs-lifecycle>> and much further in <<engineering_docs>>.
 There are truly countless ways to provide services directly to your colleagues, including Customer Support, QA, DevOps/infrastructure, IT/ITOps, and so forth.
 Yes, companies with large teams in all these categories typically have their own writers; but do they have a DocOps specialist working as an internal-docs manager?
+
+// TODO section-fleshout
 
 === Organize Resources, in the Source
 
@@ -133,4 +135,4 @@ Help them treat all canonical content they way they treat their code, and your v
 
 Don't settle for _writing_ or even _managing_ the docs; forge new ways to _deliver_ docs.
 
-// TODO more here
+// TODO section-fleshout
