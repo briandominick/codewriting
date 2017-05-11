@@ -15,13 +15,17 @@ There are some notable exceptions I hope to have called out plentifully througho
 Even behind the scenes in various unsung repositories, code-comfy tech writers and word-happy coders have shared repos, snippets, and gists with lots of great gems.
 Please contribute your favorites to <<appendix-resources>>.
 
-If DocOps is to emerge (perhaps under some better name) as a concrete methodology we can more clearly instruct, it must to undergo rigorous field testing and collaborative iteration.
-_Writing Code_ is one step in the development of a mature framework for wrestling complicated software products into clusters of coherent descriptions, illustrations, instructions, and inspirations, then delivering them to users.
+== Experiment with Me
+
+If DocOps is to emerge (perhaps under some better name) as a concrete methodology we can more clearly instruct, it must undergo rigorous field testing and collaborative iteration.
+_Codewriting_ is one step in the development of a mature framework for wrestling complicated software products into comprehensible clusters of coherent descriptions, illustrations, instructions, and inspirations -- then delivering them to users.
 
 Writing a book in a pubic repo is my attempt to nudge the field forward in its mindset.
 We're a bunch of grown ups used to corralling testy engineers and conjuring stale prose to earn a crust; of course we can collaborate with fellow pros to co-write a user manual for a next-gen docs methodology.
 If you've been hoping somebody would do this, join the club.
 Literally.
+
+// TODO section-fleshout
 
 == Foresee the Threat
 
