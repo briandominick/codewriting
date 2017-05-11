@@ -113,7 +113,7 @@ end
 def build_asciidoctor_html
   attributes = set_attributes(@attributes)
   move_assets(@assets_source_path, @output_path)
-  command = "bundle exec asciidoctor -n -o #{@output_path}/#{@output_filename}.html #{@input_file} #{attributes} -a imagedir=assets/images"
+  command = "bundle exec asciidoctor -n -o #{@output_path}/#{@output_filename}.html #{@input_file} #{attributes} -a imagedir=assets/images #{@verbose_tag}"
   if @verbose
     puts "Building Asciidoctor HTML."
   end
@@ -126,7 +126,7 @@ end
 
 def build_asciidoctor_pdf
   attributes = set_attributes(@attributes)
-  command = "bundle exec asciidoctor-pdf -o #{@output_path}/#{@output_filename}.pdf #{@input_file} #{attributes} -a pdf-style=#{@pdf_theme_file} -a pdf-fontsdir=#{@fonts_dir}"
+  command = "bundle exec asciidoctor-pdf -o #{@output_path}/#{@output_filename}.pdf #{@input_file} #{attributes} -a pdf-style=#{@pdf_theme_file} -a pdf-fontsdir=#{@fonts_dir} #{@verbose_tag}"
   if @verbose
     puts "Building PDF....."
   end
@@ -138,7 +138,7 @@ def build_asciidoctor_pdf
 end
 
 def build_jekyll
-  command = "bundle exec jekyll serve"
+  command = "bundle exec jekyll serve  #{@verbose_tag}"
   system command
 end
 
@@ -197,6 +197,7 @@ parser = OptionParser.new do|opts|
 
   opts.on("--verbose", "Verbose output." ) do |n|
     @verbose = true
+    @verbose_tag = "--verbose"
   end
 
   opts.on("-h", "--help", "Returns help.") do
