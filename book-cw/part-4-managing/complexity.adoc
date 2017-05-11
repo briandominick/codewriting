@@ -308,6 +308,8 @@ The challenge is to:
 
 After months of hemming and hawing over the best way, which included talking with consultants about how to handle the matter, I finally sat down and took a shot at coding a solution.
 
+== Introducing “LiquiDoc”
+
 My system is simple. It's a script that can ingest data, pass that data to templates for substitution, and then saves the populated templates as new files in the appropriate format.
 A simple configuration system lets me coordinate source files (YAML) with templates (Liquid) to save the results as.
 
@@ -360,6 +362,11 @@ settings:
 
 // TODO Add genericized example files from LiquiDoc
 
-For now, I run this system manually whenever an engineer makes changes to a setting's definition, and that output gets added to the trunk along with the edits to the YAML source file, typically in the same merge request.
-Eventually, continuous integration will remove this additional step, and our configuration properties will not exist as AsciiDoc files in the source codebase at all.
-The build will just call my script, and those files will be generated during the build, then compiled along with the rest of the docs as if they'd been sitting there all along.
+=== Where This is Going
+
+For now, I run this system manually whenever an engineer makes changes to a setting's definition, and that output gets added to the trunk.
+This could be done along with the edits to the YAML source file, or it could be done in a separate merge request.
+Various workflows are possible, but any deliberate protocol and procedure should do trick.
+
+Eventually, continuous integration may remove this additional step, and our configuration properties will not exist as AsciiDoc files in the source codebase at all.
+In that case, the build will just call a script, and those files will be generated during the build, then compiled along with the rest of the docs as if they'd been sitting there all along.
