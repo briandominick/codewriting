@@ -20,7 +20,7 @@ I don’t want you to just read this book; _I want you to contribute to it_.
 
 _Codewriting_ is a living document being written on a public GitHub repository.
 You are welcome and encouraged to contribute by forking the repo, contributing edits, and issuing a pull request (PR).
-For detailed instructions, see <<appendix-contributing>>.
+For detailed instructions, see <<contributing>>.
 
 Be sure to add your name to the contributors list with your PR!
 
@@ -71,6 +71,6 @@ It may never rise to the level of an _art form_, but I’ll take _craftsperson_ 
 I’m not trying to get rich or famous off this book (if that was not already obvious, you might be in the wrong place; _try <<tech-writer-journalist,tech journalism>>_).
 You can take this text and do what you want with it, so long as you leave a crumb trail of credit as described in the <<creative-commons,copyright and licensing notice>>.
 
-I would be honored if a free-thinking colleague ever decided to fork this, whether to contribute substantively and propose a re-merge, or to take this idea in another direction--_so long as you freely share anything you share at all_.
+I would be honored if a free-thinking colleague ever decided to fork this, whether to contribute substantively and propose a re-merge, or to take this idea in another direction, even in their own voice -- _so long as you freely share anything you share at all_.
 
-See the ground rules in <<creative-commons>>.
+See the ground rules in the link:{github-repo-uri}/blob/prime/LICENSE.md[`LICENSE.md`] file.

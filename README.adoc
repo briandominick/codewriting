@@ -282,4 +282,4 @@ index-book.adoc # <11>
 == Legal Stuff
 
 The Codewriting codebase is covered by two licenses: MIT for functional code; "Creative Commons ShareAlike 3.0 Unported" for content.
-For details, see `LICENSE.md` for full details and complete license text.
+For details, see link:{github-repo-uri}/blob/prime/LICENSE.md[`LICENSE.md`] for full details and complete license text.
