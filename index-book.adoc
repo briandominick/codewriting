@@ -42,6 +42,7 @@ include::./book-cw/frontmatter/introduction.adoc[]
 //PART ONE: WRITING
 [[part-writing]]
 include::./book-cw/part-1-writing/writing.adoc[leveloffset=-1]
+
 [[chapter-writing-docs]]
 include::./book-cw/part-1-writing/docs.adoc[]
 [[exercise-01]]
