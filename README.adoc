@@ -105,6 +105,9 @@ Please give this latest draft a read and let me know what you think!
 To keep updated, link:{github-repo-uri}/subscription[follow this repo on GitHub].
 // end::build-cw[]
 
+[NOTE]
+For more about the build scripts and the overall framework (what goes where), see <<framework-and-build,Framework and Build>> below.
+
 == Contribute
 // tag::contribute-cw[]
 *All proposed edits and additions are eagerly welcomed.*
@@ -220,6 +223,35 @@ I hope others will modify them to their liking and make use of them spreading th
 
 Site!::
 I've purchased `codewriting.org` and will eventually build a static site there, including a landing page, a blog, and lots of side resources.
+
+[[framework-and-build]]
+== Framework and Build
+
+Here are some notes on what goes where and how it's all built.
+
+[source,yaml]
+----
+_data: # <1>
+_layouts: # <2>
+assets: # <3>
+  images:
+book-cw: # <4>
+scripts: # <5>
+theme: # <6>
+  fonts:
+  pdf-theme.yml
+Gemfile # <7>
+index-book.adoc # <8>
+----
+
+<1> Global data source files, not specific to Codewriting book
+<2> Liquid templates for mapping data to variables in precompiled files
+<3> Images and other content used directly in output
+<4> Book content files; everything that goes _in_ the book
+<5> The build scripts (`publish.rb` and `liquidoxify.rb`)
+<6> Files used to style output; hopefully these will evolve to consolidate across media
+<7> The project's Ruby dependency collection
+<8> The book index (document map).
 
 == Legal Stuff
 
