@@ -106,7 +106,7 @@ For now, I wanted to demonstrate how *docs are both user interface and abstracti
 == Like a Bot, But Way Better (For Now)
 
 Consider how all of your duties at work make you an abstraction of sorts.
-If you're a technical writer, _you are a self-aware, actively learning black box_--one that can be given commands such as “document this new feature".
+If you're a technical writer, _you are a self-aware, actively learning black box_ -- one that can be given commands such as “Document this new feature".
 Once you're oriented at your job, you no longer require detailed instructions of how that gets done.
 You accept input; magic happens; docs come out.
 
@@ -308,7 +308,7 @@ The programmer does not have to name variables, objects, or methods creatively, 
 She needn't worry that her choice of a `switch` statement over an `if` statement may clash with Marketing's preferences -- those most impacted by her choices are usually close at hand.
 And she sure as hell shouldn’t have to restate anything in her source code in order for the computer to “get it”.
 
-=== Yes, Text Can Be Harder Than Code
+== Yes, Text Can Be Harder Than Code
 
 Let me clarify that section title a little:
 It’s rarely harder to _describe in text_ the most complex software concept as it is to _program_ anything complicated in code.
