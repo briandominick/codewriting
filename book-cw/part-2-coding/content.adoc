@@ -134,6 +134,7 @@ These tools make up _your interface_ to the user; they are how you break through
 Another theme woven throughout this book is the idea that the tech writer’s value is in her _insights_.
 Anyone can write down the steps _they took_ to do something.
 Any engineer can write down the “correct” steps for performing that same task.
+
 The hard part of our job is not describing the technology and its use in a way we can later defend is technically accurate.
 The hard part of our job is bridging the gap between user’s _expectations_ and the product.
 We make the product make sense where it is unintuitive, and we expose relevance at every stage.
@@ -168,4 +169,4 @@ The journey to establishing your User Manual starts with becoming the ultimate u
 
 == Lean Content
 
-// TODO
+// TODO section-start

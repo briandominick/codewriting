@@ -1,4 +1,4 @@
-= Writing Docs
+= Docs
 
 [abstract]
 The cliche advice for writers of all kinds is that we should read more to get better.
@@ -94,10 +94,12 @@ Product documentation contributes to users' general impression of the product an
 Much as I'll talk about modular docs (see <<topic-based-authoring>>) that can be parachuted into, documentation should paint a complete and accurate picture.
 They should make _mastering_ your product seem plausible.
 
-// @TODO citations re about docs as narrative
+// TODO citations re about docs as narrative
 
 I originally titled this subsection “Docs _Should_ Tell a Story”, but the truth is, even poor docs tell a story.
 We'll get to that story in a second.
+
+// TODO section-fleshout
 
 == Reading Bad Docs
 
@@ -120,13 +122,14 @@ We'll look into each of these topics later on in <<developer-experience>> and <<
 
 Ask your friends and family whether and how they use docs.
 
-// TODO: Add some parameters for approaching this conversation
+// TODO section-fleshout Add some parameters for approaching this conversation
 
 == Docs are for Using, So Use Away
 
 Use lots of documentation, and keep track of how you use it.
 
-// TODO: Include examples of excellent docs that can be followed along with. Perhaps a Git tutorial and some other tools that our readers will be most likely to use.
+// TODO section-fleshout
+// Include examples of excellent docs that can be followed along with. Perhaps a Git tutorial and some other tools that our readers will be most likely to use.
 
 == Skim the Docs
 
@@ -152,3 +155,5 @@ Even for a polished product that can be delivered through an app store or a pack
 
 At risk of exaggerating its importance, I really do believe the README is the most important file in any software project -- it's the starting point for code and docs alike.
 And this is where our first exercise comes in, intended to keep us thinking about that lean, iterative approach to building out a product's docs.
+
+// TODO section-wrapup

@@ -5,11 +5,11 @@ Technical content isn't only complicated from the macro perspective we took in t
 Discrete content items can themselves be highly complex, especially when those content items need to be delivered in various ways.
 In this chapter we'll take a strategic look at handling complex content.
 
+== The Challenge
+
 Handling what I call complex content objects (CCOs) is one of the biggest challenges faced by a team dealing with lots of distinct, structured content items.
 A content object is semi-structured data you deal with in every page, article, or topic of content you write in any markup language.
 The markup is structuring a complex content object, even adding metadata of at least some kind (minimally dates such as when created and modified).
-
-== The Challenge
 
 What I mean by CCOs are all the secondary and tertiary types of content you need to maintain and reuse.
 Besides pages and their subordinate content objects (such as blocks, links, and so forth), you probably need your documentation solution to handle an array of less-standard items or collections of items, including product metadata and settings.
@@ -273,7 +273,8 @@ License fees range from $50 to over a hundred dollars a month _per seat_, making
 Despite my idealistic description above, these tools also tend to be somewhat clunky, and they are very much Windows-oriented.
 Engineers tend to dislike clunkiness and Windows, not coincidentally.
 
-// TODO Investigate if DITA CCMSes integrate with build systems.
+// TODO section-research
+// Investigate if DITA CCMSes integrate with build systems.
 
 Localization and translation management are another major advantage of DITA-based systems.
 Thanksfully, this is not a requirement for my current product docs.
@@ -357,7 +358,7 @@ settings:
       another.setting-name = whatever
 ----
 
-// @TODO Add genericized example files from LiquiDoc
+// TODO Add genericized example files from LiquiDoc
 
 For now, I run this system manually whenever an engineer makes changes to a setting's definition, and that output gets added to the trunk along with the edits to the YAML source file, typically in the same merge request.
 Eventually, continuous integration will remove this additional step, and our configuration properties will not exist as AsciiDoc files in the source codebase at all.

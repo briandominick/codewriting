@@ -3,6 +3,8 @@
 [abstract]
 One key objective of DocOps must be the conceptualization and development of true Integrated Documentation Environments-- code/text editors that are “source-code aware”.
 
+== What We Lack
+
 To my knowledge, no truly integrated documentation tool is openly available today.
 Before you suggest your favorite IDE or CCMS, let me explain a little more of what I mean by _truly integrated_.
 
@@ -124,3 +126,15 @@ We don't wish to hide semantic elements, such as indicators that a dynamically g
 And in most cases, we may not even wish to see our copy mixed in with the dynamic data that will eventually populate our variables and other placeholders.
 
 What we do need is the ability to quickly preview our content and design with the data it documents, preferably without having to rebuild every time and check it in another application altogether (such as a browser).
+
+== Admin Powers
+
+// TODO section-research
+// TODO section-start
+////
+* File management
+* Custom fuzzy search replace (markup obscures text search)
+* Consolidated document metadata (uber-YAML?)
+* Document/page orphan control
+* Testing frameworks?
+////

@@ -1,17 +1,6 @@
 = Part Four: Managing
 
 [partintro]
---
 Good DocOps practice involves establishing workflows to gather and coordinate content and possibly coworkers.
 Management of technical content is a labor-intensive operation pretty much regardless of tooling, but technology is your only true ally on this front.
 Even if your memory is perfect and you can keep track of what is where and whether it's current or needs to be updated or deleted, your coworkers unfortunately lack this talent.
-
-As a DocOps leader, you will:
-
-* Coordinate collaboration around docs.
-* Monitor docs as they age.
-* Maintain collections of complex content.
-* Handle growth of the product team and the product itself.
-
-The following chapters discuss these and other challenges.
---

@@ -63,6 +63,10 @@ Instead of trying to lay out a plan for every combination of factors and resourc
 
 === Feature Status Tracking
 
-When stuff changes about a feature, it needs to get documented.
+// TODO section-start
+// When stuff changes about a feature, it needs to get documented.
 
 == Localization
+
+// TODO section-research
+// TODO section-start

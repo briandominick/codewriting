@@ -5,6 +5,8 @@ One of the more common attributes of "docs-as-code" is writing docs directly in 
 This brings documentation a step closer to product code, even if you're not yet keeping the docs in flat files inside the product source repository.
 Just as importantly for many, it liberates the writing process from proprietary tooling and overwrought interfaces.
 
+== What's with that Chapter Title?
+
 I wasn't sure whether I wanted to title this chapter “Writing _in_ Code” or “Writing Code”, and I thought there was some chance I might make it “Writing in Code, about Code” or some other permutation.
 The uncertainty is perfect for introducing one of the most crucial technical elements of codewriting: dynamism.
 Allow me to demonstrate.
@@ -23,7 +25,6 @@ As we'll explore more when we look at how best to serve users' needs, the abilit
 This is especially true for mature products with multiple tiers or roles of users, such as enterprise platforms.
 
 What I've typed to make the chapter title above is the following string:
-
 
 [source,asciidoc]
 ----
@@ -136,6 +137,9 @@ Source code is source code, as we'll explore much further in <<source-coding>>.
 And we have more than enough orthodoxy and invalidation in this world -- there's no need to draw us/them boundaries among people trying to achieve a common goal of collaborative documentation inside the product codebase.
 
 == Semantic Structure
+
+// TODO section-fix
+// This whole section bugs me -- I don't know what I'm talking about yet
 
 When I first learned to “write” HTML in 1996, I did not actually write very much HTML.
 The WYSIWYG (what you see is what you get) editor had already emerged, and it got all those `<i>italic</i>` and `<a href="some-long-url">link</a>` tags out of the way.
@@ -276,3 +280,5 @@ It's early days, and we'll discuss this more in <<chapter-delivering-hacking>>.
 
 The point of a CMS platform or a codewriting framework is that something is in place to help you get started producing content.
 It's not just a blinking cursor on a command line.
+
+// TODO chapter-wrapup
