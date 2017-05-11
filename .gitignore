@@ -1,4 +1,6 @@
-_output*
+_output/
 Gemfile.lock
 .sass-cache
-_scraps*
+book-cw/_scraps/
+book-cw/backmatter/bibliography.adoc
+book-cw/backmatter/glossary.adoc
