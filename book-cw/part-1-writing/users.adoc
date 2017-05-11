@@ -1,17 +1,21 @@
 = Writing for Use(rs)
 
 [abstract]
-You’ll never know how to reach your audience if you don’t first get to know their challenges the way product developers do.
-If your audience is developers themselves, you've got your work cut out for you.
+You’ll never know how to reach your audience if you don’t first get to know their challenges the way good UI/UX developers do.
+If your audience consists of developers themselves, you've got your work cut out for you.
 
 == Use the Product
 
 This is the obvious one.
-I have no shocking statistics on the portion of tech writers who do not actually use the product they document, but I bet it's a bunch of us.
+I have no shocking statistics on the portion of tech writers who do not actually use outside of work the product they document for work, but I bet it's a bunch of us.
 
 This section is not called “_master_ the product” for good reason: mastery is rarely the point.
 Master users are abnormal, and unless you’ve been specifically tasked with appealing to outliers, you may glean little advantage from knowing how a master user engages with your product.
 The more complicated a product, the more likely there is no one way to master it, and the more likely there is a broad range of user expertise you must cater to.
+
+We see this distinction clearly in the difference between a product's official reference guide/user manual and the various aftermarket books that pop up to explore the product in different ways.
+From _...for Dummies_ coverage to the O'Reilly treatment, unofficial documentarians rule the specialized regions, often with direct support from the product team.
+And this is likely as it should be, at least until you make some room to get daring with your docs.
 
 .How I Relate
 ****
@@ -31,15 +35,17 @@ Proficiency with these products merely means you know how to figure out how to a
 This extends to consumer products as well.
 I’d be willing to wager some of the video game docs you’ve seen were not produced exclusively by tech writers who had personally reached and killed the game’s final boss.
 If you've ever read a video game walkthrough, however, you'll see that technical writing can in fact demonstrate a breathtaking level of mastery.
-For enterprise or other business software products, we tend to see thoroughness in references, but not necessarily complete data saturation in instructions.
 
-If you’re documenting a scripting language or a complex API, forget about it -- you'll still need to reference your own docs at least once in a while, which is just fine.
-Virtually all modern programming languages fit the bill of _too complex to truly master_.
-This is mainly because languages develop methodological tribes around frameworks and conventions and architectures.
+For enterprise or other business software products, we tend to see thoroughness in references, but not necessarily complete saturation in instructions.
+The more divergent ways a product may be used, the more official documentation needs to teach users core elements of “how to fish”.
+
+If you’re documenting a scripting language or a large, complex API, forget about it -- you'll still need to check your own docs at least once in a while, which is just fine.
+Virtually all major contemporary programming languages arguably fit the bill of _too complex to truly master_.
+This is mainly because languages develop methodological tribes around frameworks, integrations, conventions, and architectures.
 In this way a thriving software language tends to grow exponentially, led in different directions by fresh thinkers with varying needs and preferences.
 
 Moreover, the risk of thinking fluently in any language is forgetting what it was like to find that language strange and off-putting.
-The best instructors readily empathize with the uncomfortable, disorienting experience learning an unfamiliar and possibly unintuitive system can be for the student.
+The best instructors readily empathize with the uncomfortable, disorienting experience of learning an unfamiliar and possibly unintuitive system can be for the student.
 The people who find your product’s interface intuitive may never look to your docs; they're not your key audience.
 Masters and poseurs have a tendency to kick over the ladder once they’re up, leaving newbies behind.
 Technical writers cannot afford to leave anyone behind.
@@ -56,20 +62,6 @@ Your instructions can take an intermediate skier out onto an experts-only trail,
 The ski patrol will rightly be upset if they find some mangled student of yours abandoned in the trees.
 Whether you left them behind or gave them the wrong idea and sent them off a cliff, it's your fault they crashed.
 Take care of your users in such a way that Customer Support never has to clean up after you.
-****
-
-[.realtalk]
-.Of Course You Should Master the Product
-****
-All the above bullshit aside, hell yes master the foundation right out from under that product.
-Live, breathe, and love the product.
-
-I do believe many documentation projects would suffer a net loss overall in terms of quality if they were only documented by masters of that product.
-However, I have also followed along with a 500-page unofficial user guide written by a master of a product and been bowled over by the sheer relevance and accuracy of that massive tome.
-
-I am one of the few people at my company who looks under the hood at pretty much every aspect of our product.
-In that regard, I am a “master” of the product.
-That said, I don't know any part of the product as well as _any_ of the engineers who works regularly on that component.
 ****
 
 == Docs == Knowledge
@@ -90,12 +82,28 @@ image::venn-docs-knowledge-truth-proportionate.png[width=350]
 The proportions may vary depending on all the obvious variables.
 The question is, do you know the shape of your Venn diagram?
 
-== Learn Your Users’ Motivation
+[.realtalk]
+.Of Course You Should Master the Product
+****
+All the above bullshit aside, hell yes master the foundation right out from under that product.
+Live, breathe, and love the product.
+
+I do believe many documentation projects would suffer a net loss overall in terms of quality if they were only documented by masters of that product.
+However, I have also followed along with a 500-page unofficial user guide written by a master of a product and been bowled over by the sheer relevance and accuracy of that massive tome.
+
+I am one of the few people at my company who looks under the hood at pretty much every aspect of our product.
+In that regard, I am a “master” of the product.
+That said, I don't know any part of the product as well as _any_ of the engineers who works regularly on that component.
+****
+
+== Learn Users’ Motivations
 
 Most users aren't using your docs to get a clinical overview of the product.
 They've come because they're trying to get something done.
 Either they're habitual docs users or they're looking for a specific solution.
 In any case, your users' objectives are critical.
+
+// TODO section-fleshout
 
 == Use Competitors’ Products
 
@@ -146,7 +154,7 @@ For now, the Rocana shield waits; I'm headed in other directions.
 It's hard to believe, but there are still startups today that do not emphasize a lean UX approach.
 There can be virtually no doubt that early product testing and rapid iteration in response to validated and invalidated learning are critical; the days of inflicting a product blindly on a market are coming to a much-deserved end.
 
-// TODO More here
+// TODO section-fleshout
 
 === Docs are UX
 
@@ -165,15 +173,24 @@ Many users will never see our docs, but almost every word and image in our docs 
 While not as common as overlooking the fact that docs are pure UX, many product managers and developers do not recognize how many interfaces a complex enterprise product may have.
 Anywhere users interact with the product is an interface.
 This means command lines, installers, configuration files, plugins.
-Good docs affect the user's experience of every UI, and there is likely always a better way to reach the user in a given context.
+Good docs affect the user's _experience_ of every UI, and there is likely always a better way to reach the user in a given context.
 
-// TODO more here
+// TODO section-fleshout
 
 == Docs User Testing
 
+// TODO section-research
+// TODO section-start
+
 === Test Systematically
 
+// TODO section-research
+// TODO section-start
+
 === Measure Traction
+
+// TODO section-research
+// TODO section-start
 
 == Add Value
 
