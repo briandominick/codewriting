@@ -102,6 +102,20 @@ bundle exec scripts/publish.rb -i index-book.adoc -o codewriting-book-draft -l
 Now you can open `_output/codewriting-book.html` in your preferred browser or open `_output/codewriting-book.pdf` in your favorite PDF viewer.
 Please give this latest draft a read and let me know what you think!
 
+[TIP]
+
+--
+To learn more about the build tool:
+
+++++
+bundle exec scripts/publish.rb --help
+bundle exec scripts/liquidoxify.rb --help
+++++
+
+Or explore the files in the repo!
+
+--
+
 To keep updated, link:{github-repo-uri}/subscription[follow this repo on GitHub].
 // end::build-cw[]
 
