@@ -68,16 +68,26 @@ terms:
     definition: |
       Abbreviation for reStructuredText.
 
+  - term: SaaS
+    definition: |
+      Acronym for _software as a service_. Subscription-licensed tools hosted in “the cloud”, SaaS products require no user maintenance and provide thin-client remote access (e.g., browsers, mobile apps).
+      Relevant examples include Wordpress.com, GitHub, Slack, and Office 365.
+      Pronounced _sass_.
+
   - term: SME
     definition: |
       Subject matter expert.
-      Someone close familiar the source/product who contributes this expertise to the docs process.
+      Someone close to or highly familiar with the source/product who contributes this expertise to the documentation process.
       Please don't pronounce this _sme_ or for god's sake _shme_.
 
   - term: topic
     definition: |
       A discrete content item intended to be included (embedded or referenced) in parent document.
       See <<topic-based-authoring>>.
+
+  - term: QA
+    definition: |
+      Initialism for _quality assurance_.
 
   - term: UI
     definition: |
