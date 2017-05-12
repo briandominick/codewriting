@@ -1,4 +1,4 @@
-= Introduction: Documentation Operations
+= Introduction to Codewriting
 
 This project is my attempt to bridge a gap I straddle between two worlds of writing: the world of words and the world of code.
 I have spent my career (over two decades) in and out of media and software, almost always mixing the two in some way, even when mixing them has not been my primary role.
@@ -14,7 +14,7 @@ Here technical writers sometimes feel quite apart from developers.
 We aren't the ones who deliver the part of the product users love; we make the part they resort to in frustration.
 Good docs strive to surprise users, if simply by being good docs.
 
-== Who is This Book For?
+== Who is Codewriting For?
 
 Several audience roles are front of mind for _Codewriting_, but I hope thematic lessons will somehow reach beyond people who regularly consider themselves technical communicators.
 So much knowledge is poorly organized, and true collaborative, open-source writing remains unpopular despite it's astounding advantages.
@@ -28,19 +28,6 @@ The efficiencies of highly manageable docs libraries will be popular among the e
 Which is all to say, this book is for people who want to think about the future of documentation as it evolves.
 That's thinking big, in ways I'll follow up on throughout <<chapter-evolving-beyond>>.
 For now, my focus is on several roles typically found within formal software engineering teams.
-
-.What's in a Label?
-****
-Perhaps dangerously, I use some software-industry terms in ways that might get me in trouble if I'm not careful, and I need to review this manuscript for stylistic consistency.
-For the most part, here is the breakdown of who's who among coders in this book.
-
-I generally use the terms _coders_, _engineers_, _developers_, and _programmers_ all to mean people who write software source code for fun or profit.
-
-When I'm speaking in relation to a project, I use _engineer_ to mean someone on the core product team and _developer_ to mean someone who may extend the product.
-
-When I say _hacker_, I typically mean someone of pretty much any skill level whose main purpose is pulling together just enough code to get something done.
-I include myself in this category, and I wear the label humbly as I scavenge the corners of the web for tools shared by my betters.
-****
 
 Technical Writers::
 Obviously, I hope lots of current or aspiring technical writers will make use of this book.
@@ -75,42 +62,53 @@ I think a lot of us are even more socially awkward than coders -- don't think fo
 If you're already doing DocOps, I hope you'll find some sense of community and camaraderie in these pages.
 If you are not yet doing DocOps but have an interest in hacking platforms _and_ writing great docs, maybe this book will provide a coherent framework for approaching this new field.
 
-In this book, just for the fun of it, I sometimes call DocOps specialists _codewriters_, as we use code to build docs platforms, and we also write _in_ code _about_ code.
+.What's in a Label?
+****
+Perhaps dangerously, I use some software-industry terms in ways that might get me in trouble if I'm not careful, and I need to review this manuscript for stylistic consistency.
+For the most part, here is the breakdown of who's who among coders in this book.
 
-Most importantly, this book is for anybody who wants to contribute to it and add to our collective wisdom.
+I generally use the terms _coders_, _engineers_, _developers_, and _programmers_ all to mean people who write software source code for fun or profit.
+
+When I'm speaking in relation to a project, I use _engineer_ to mean someone on the core product team and _developer_ to mean someone who may extend the product.
+
+When I say _hacker_, I typically mean someone of pretty much any skill level whose main purpose is pulling together just enough code to get something done.
+I include myself in this category, and I wear the label humbly as I scavenge the corners of the web for tools shared by my betters.
+
+In this book, just for the fun of it, I frequently call DocOps specialists _codewriters_, as we use code to build docs platforms, and we also write _in_ code _about_ code.
+****
 
 == Objectives of Codewriting
 
 After reading this book and engaging its exercises, you should be better able to
 
-* _describe software_ to users and _instruct_ them in its use;
+* *describe software* to users and *instruct* them in its use;
 
-* _support engineers_ in more directly communicating their product to its users;
+* *support engineers* in more directly communicating their product to its users;
 
-* _establish systems_ for collaborative documentation using the latest open source tools and platforms;
+* *establish systems* for collaborative documentation using the latest open source tools and platforms;
 
-* _integrate documentation_ into product development and testing… and into the product itself;
+* *integrate documentation* into product development and testing… and into the product itself;
 
-* _coordinate contributions_ from devs and other SMEs in ways that complement rather than interfere with their preferred workflows;
+* *coordinate contributions* from devs and other SMEs in ways that complement rather than interfere with their preferred workflows;
 
-* _resolve complicated documentation challenges_ with an open (if often hackey) approach;
+* *resolve complicated documentation challenges* with an open (if often hackey) approach;
 
-* _convert legacy material_ to a future-compatible system; and
+* *convert legacy material* to a future-compatible system; and
 
-* _‘codify’ your technical writing_ by thinking like a developer while sharing the product codebase.
+* *‘codify’ your technical writing* by thinking like a developer while sharing the product codebase.
 
 Even if some of these lessons do not apply in your current setting, perhaps they will inspire some creative thinking on your part.
 There is a lot more to this approach than I will be able to capture in this book, which is part of why you're invited to capture it here with me.
 
-== Docs: Neglected and Maligned
+== Docs: Neglected and Maligned No More?
 
 Plenty of organizations have shelled out for big-money subscription products that a whole lot of writers love, and I do not intend to knock these tools, even as I will critique what I see as their limitations.
 I'm more focused on portability, extensibility, and open standards.
-I'll touch in this more in a moment (<<open-source-centricity>>), but I find most of the advanced technical documentation tools are lacking in some or all these areas.
+I'll touch on this more in a moment (<<open-source-centricity>>), but I find most of the advanced technical documentation tools are lacking in some or all of these areas.
 
-My preferred tools are lacking in several areas as well, and that's another theme of this book, because we really do have power over this.
+My preferred tools are lacking in several areas as well, and that's another theme of this book, because we really do have power over this tooling.
 We don't need to wait for companies that hide their source code to grant us sparse updates.
-We have so many other options.
+We have so many alternatives, and they're maturing quickly right now.
 
 In conventional software operations, it's usually the same scenario; the product gets all the technical focus, and documentation is too often considered separate from the product.
 If you're a technical writer, you may not even be considered a contributor to the product; your work is merely passed along _with_ the product.
@@ -135,12 +133,15 @@ we can expect the tooling and attention we believe our contributions and field d
 == Tech Workers of the World, Unite!
 
 The good news is documentation _can_ be performed using the latest/greatest methods and technologies for collaborative writing, content management, version control, product delivery, and much more.
-What differentiates _Codewriting_ from other technical writing and communications books is that it is solidly rooted in building cohesion and collaboration among product development (Engineering), testing and delivery (DevOps), and product documentation (Docs).
+What differentiates _Codewriting_ from other technical writing and communications books is that it is solidly rooted in building cohesion and collaboration among product development (Engineering), testing and delivery (DevOps, QA), and product documentation (Docs).
 
-This advice intends to build mutual respect among the different roles for each other's work among the various members of the product development team, all while drawing lessons from our colleagues who write more code than words.
-(As repayment for letting us draft in their wake, we promise to provide them with consistently improving documentation experiences.)
+This advice intends to build mutual respect among the different roles for each other's work, across the members of the product development team.
+For tech writers, it's all about drawing lessons from our colleagues who write more code than words.
+As repayment for letting us draft in their wake, we promise to provide them with consistently improving documentation experiences.
 
-The wisdom of developers and project managers from lean/agile backgrounds is infused into this new approach, along with the experiences of technical writers and documentation managers in forward-thinking environments like the one I work in.
+I see the wisdom of developers and project managers from lean/agile backgrounds infused into this new approach.
+Tech writers and docs managers in forward-thinking environments have been building this trend for a while.
+It's an exciting time to be gleaning insights and strategies from leaders in a nascent field -- I intend to include many of their voices in this work.
 
 My point is not that conventional tech writing techniques yield poor results.
 Lots of talented technical writers and documentation managers do excellent work with what I consider inferior strategies and tooling.
@@ -152,17 +153,17 @@ I wish to note that while I talk up the DocOps/docs-as-code approach, I am by no
 So I'm not bragging when I argue strenuously that this strategy is “superior”.
 This whole book is an attempt at documenting a set of ideas I stumbled into.
 
-My argument is simply that this approach and these tools are better for collaborative software development (especially for agile dev teams) than the conventional industry standards and stalwarts.
-All else being equal, a well-established DocOps system should produce “better” content -- more accurate, more current, more appropriate, etc -- than the conventional methods.
-I can't make you a better writer, or even claim to be a great technical writer.
-This book does include observations on approaches to writing for modern software users, including developers and enterprise users, but on that front I'm hoping others will perhaps add an entire chapter in Part One on innovative tech-writing styles.
+My argument is simply that this approach and these tools are better for collaborative software documentation (especially for agile or agile-oriented dev teams) than the conventional industry standards and stalwarts.
+All else being equal, a well-established docs-as-code/DocOps system should produce “better” content -- more accurate, more current, more appropriate, etc -- than the conventional methods.
+
+This is just a hypothesis, far from proven.
 
 == The DocOps Approach
 
 Less controversial than my view on the industry's leading tools is my claim that a DocOps mentality will make you a better _technologist_.
 If you see yourself as “just a tech writer”, maybe it is time to think again.
 
-* Maybe you are a _documentation operator_--someone who arranges optimal docs environments for herself and the PMs and engineers she works with, all using a so-called “lean startup” approach to providing that product.
+* Maybe you are a *documentation operator* -- someone who arranges optimal docs environments for herself and the PMs and engineers she works with, all using a so-called “lean startup” approach to providing that product.
 
 * Maybe immersing yourself in the tools engineers use to accomplish their work will reorient you around the development process, making you better able to communicate with devs about the product and procedures. These tools include:
 
@@ -220,24 +221,8 @@ But there is a big difference between the proprietary, corporatized packaged CCM
 You might think the biggest obstacle is budget.
 One of the common groans about commercial CCMSes is that they are pricey, so it would stand to reason that more low-budget or early-stage organizations would be turning to a DocOps approach.
 But some of the pioneers of this new wave of software documentation are at places like CA, Cisco, PayPal, Amazon, Rackspace, and Microsoft.
-Surely they could afford the highest priced consultants and enterprise solutions, yet prominent teams at these companies opted to hack their own solutions using open source components.
+Surely they could afford the highest priced consultants and enterprise solutions, yet prominent teams at these companies opted to hack their own toolchains using open-source components.
 ****
-
-== Frustrations
-
-Just before sitting down to write this book, I attended one of the few technical communications conferences that takes place in the US each year.
-I'm not a huge fan of conferences, but this was the most disappointing such event of my life.
-I learned that many technical writers are using obsolete technologies and frustrating workflows, and at no point did I hear sophisticated conversation about documentation strategies, let alone 2016-fresh buzzwords like “docs-as-code” or “DocOps”.
-Some technical writers are working in Git, but I spoke to no one making extensive use of lightweight markup -- various flavors of XML remain all the rage among mainstream tech writers.
-
-Understandably, lots of technical writers feel like documentation methods are so far behind the techniques employed by the engineers they work with, the disconnect might as well be a chasm.
-Developers often feel the same about tech writers, especially when they get a gander at tag-based markup such as XML, HTML, or SGML being used as the documentation source.
-Or when they're struggling to figure out the version-control framework used in the docs wiki.
-Engineers tend to know more about what's new with markup languages before most tech writers do.
-Engineers also don't want to use obsolete methods for passing notes and other information to documentation, any more than they want to review what you've written about their new feature in Word, Google Docs, or some obscure XML format they need a special tool to review.
-
-Meanwhile, good documentation requires proximity to and a degree of intimacy with the elusive subject matter expert.
-You may be surprised how much easier this is when you provide everything they need to collaborate through the same workflow and tooling environment they're already using every day.
 
 [[open-source-centricity]]
 == Open Source Centricity
@@ -252,10 +237,10 @@ The author makes up a lot of words.
 He rarely explains them, instead expecting his audience to infer their meaning from context and root words.
 Apologies are offered in advance.
 
-Allow me to briefly overwhelm you with reasons we should all use as much open source software as possible.
+Allow me to briefly overwhelm you with reasons we should all use as much open-source software as possible.
 
 Open source means access.::
-  When we use and support open source tools, we increase access to them for people with less means.
+  When we use and support open-source tools, we increase access to them for people with less means.
 
 Open source means power.::
   Inequitable distribution of power and inflexible hierarchies and workflows are hugely restricting factors.
@@ -284,13 +269,15 @@ These words aren't just my two favorite buzzwords, over which I'll spend much of
 Distributed platforms mean _delegated contributing power_, which is key to comprehensive documentation, especially in growing, agile environments.
 If you want to be successful producing documentation for ever-changing, ever-expanding software products, the only thing I know for sure is you will need a platform solution.
 
-Not only do platforms empower contributors with diverse expertise and roles -- possibly across much of the enterprise -- they are also extensible.
+Additionally, platforms are extensible.
 Any dynamic engineering team is constantly extending its tools.
 All those Slack, GitHub, and Jira extensions, all that work in Docker, Chef, Jenkins, Gradle, and on down the list.
-That is platform configuration and extension.
+That is platform configuration, integration, and extension.
 
 The more complex your team and product, the more extensibility you are going to need.
-This means your platform may not come in a box, though there are promising SaaS solutions on the market already that meet many of the conditions I advocate in this book.
+This means your platform will not come complete in a box, though there are promising SaaS (software as a service) solutions on the market already that meet many of the conditions I advocate in this book.
+
+The problem with SaaS
 
 This book will help you work through the various options, including hybrid platforms that will scratch various itches coherently with a bit of iterative hacking performed along the way.
 In fact, we'll explore numerous tooling options as we plan and begin to build a platform solution as exercises in this book.
