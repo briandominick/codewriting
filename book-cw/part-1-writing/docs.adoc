@@ -116,7 +116,6 @@ Even if it's above your skill level and you fail, the process will yield benefit
 You will have a better understanding of what developers are talking and complaining about, and you'll have a functional analysis of what is frustrating about docs your coworkers use every day.
 
 If you can repeat this process with users, whether they be third-party developers or end consumers, you'll glean even more insights.
-We'll look into each of these topics later on in <<developer-experience>> and <<user-experience>>.
 
 == Talking Docs
 

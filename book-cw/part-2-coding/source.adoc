@@ -255,7 +255,7 @@ At its core, software technical writing is creating the ideal abstraction layer 
 Like a good UI, good documentation foresees the user's needs and has the right information one click or one page turn away.
 Even better than a well-written function, good documentation provides context inline, even as it references and links to heavy-duty references or further background.
 
-Also like a good function or method, docs are not meant to be read, but rather _executed_, which we considered in <<use-docs>>.
+Also like a good function or method, docs are not meant to be read, but rather _executed_, which we considered in <<chapter-writing-docs>>.
 
 == Writers as Contributors
 

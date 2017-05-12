@@ -168,6 +168,14 @@ How about the efficacy of a “quickstart” version of your installation instru
 Unlike in software development, almost every bit of a technical writer's work is UX oriented.
 Many users will never see our docs, but almost every word and image in our docs is part of the product's user experience.
 
+[[ux-dx]]
+
+user experience::
+// TODO section-fleshout
+
+developer experience::
+// TODO section-fleshout
+
 === Everything is UX
 
 While not as common as overlooking the fact that docs are pure UX, many product managers and developers do not recognize how many interfaces a complex enterprise product may have.

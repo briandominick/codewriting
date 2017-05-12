@@ -23,7 +23,7 @@ terms:
   - term: complex content object
     definition: |
       Abbreviated CCO, this is an item that may be more metadata than content, stored many to a file, as opposed to more typical text content units like chapters or topics, which may have some metadata but are mainly text and images.
-      See <<complex-content-objects>>.
+      See <<chapter-managing-complexity>>.
 
   - term: DITA
     definition: |
@@ -77,7 +77,7 @@ terms:
   - term: topic
     definition: |
       A discrete content item intended to be included (embedded or referenced) in parent document.
-      See <<understanding-topics>>.
+      See <<topic-based-authoring>>.
 
   - term: UI
     definition: |

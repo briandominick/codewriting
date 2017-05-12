@@ -133,7 +133,7 @@ In the end, I do not argue that the nascent docs-as-code movement should reject 
 I can certainly think of legitimate documentation cases where variables, includes, and conditionals are simply not called for.
 I also know there are teams that love DITA and make widespread use of it and its tools.
 
-Source code is source code, as we'll explore much further in <<source-coding>>.
+Source code is source code, as we'll explore much further in <<chapter-coding-source>>.
 And we have more than enough orthodoxy and invalidation in this world -- there's no need to draw us/them boundaries among people trying to achieve a common goal of collaborative documentation inside the product codebase.
 
 == Semantic Structure

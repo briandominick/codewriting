@@ -33,6 +33,7 @@ Explain the difference between a canonical source and the way we express it.
 This is exemplified in the next section, so it might be nice to have a reference, or maybe this should just be moved down there.
 ////
 
+[[topic-based-authoring]]
 == Topic-based Authoring
 
 One of the key contributions of the DITA community is the strategic modularization of content in reusable chunks, which aids single sourcing but also helps us think about how we organize and deliver content.

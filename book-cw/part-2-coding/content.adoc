@@ -55,7 +55,7 @@ But in a properly configured environment, the programmer has a lot of advantages
 This parallel is a good illustration of the opportunities ahead for thinking in a DocOps mindset.
 When will tech writers have what we need to predict how our work will be used and received?
 
-We'll explore this frontier topic in great depth in Part Five's <<docs-ide>>.
+We'll explore this frontier topic in great depth in Part Five's <<chapter-evolving-ide>>.
 ****
 
 An unforgiving but immediately responsive silicone audience is far and away more desirable than any meat-based audience; the latter are sure to be fickle, distant, even ornery.

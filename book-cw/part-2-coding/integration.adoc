@@ -164,6 +164,7 @@ The site is password protected, so it includes
 Once they saw the value of the system for their own needs, many of the developers started asking if they could provide their SME product content by directly contributing to the source.
 I haven't dragged anybody to docs-as-code, but they come along one by one, not least because I try to make it look fun.
 
+[[internal-docs-lifecycle]]
 == Docs Maturation Process
 
 Ideally, nearly every internal doc should eventually give way to a user-facing doc.

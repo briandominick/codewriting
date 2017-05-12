@@ -42,7 +42,6 @@ The embedded documentation generators associated with various programming langua
 Systems like JavaDoc, PyDoc, YARD (Ruby), Perldoc, JSDoc, phpDocumentor, and several others essentially transform developers' structured code comments into automated documentation output.
 This form of docs-as-code has been around for many years, but it is notoriously limited, as it is more like code-as-docs or docs-__of__-code.
 
-In Part Four, we talked about <<swagger>>.
 Both Swagger and Doxygen are excellent black boxes that take complicated inputs and produce well-structured, predictable output.
 They can meet developers on their turf, deep inside the codebase.
 Working with such tools requires up-front planning, configuration, and testing, but it can be worth it for the developer proximity they enable.

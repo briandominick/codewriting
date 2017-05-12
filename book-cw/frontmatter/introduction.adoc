@@ -26,7 +26,7 @@ While only the “geeks” among Millennials and GenXers readily grasp concepts 
 Likewise, young people are showing greater interest in collaboration.
 The efficiencies of highly manageable docs libraries will be popular among the entrepreneurs and community organizers of the world alike.
 Which is all to say, this book is for people who want to think about the future of documentation as it evolves.
-That's thinking big, in ways I'll follow up on throughout <<beyond-techcomm>>.
+That's thinking big, in ways I'll follow up on throughout <<chapter-evolving-beyond>>.
 For now, my focus is on several roles typically found within formal software engineering teams.
 
 .What's in a Label?
@@ -193,7 +193,7 @@ The case for this is developed in the second chapter, <<chapter-writing-code>>.
 *Second, “everything in code” means put the docs in the product codebase*--not in a database, not in a separate repo.
 This excludes most conventional wiki and web-based CMS platforms, as they depend on relational databases that hide the source behind a tool that is wholly inadequate for source and version control.
 We'll discuss integrating your documentation source and platform into the repo and the product itself.
-This is addressed in <<coding-integration>>.
+This is addressed in <<chapter-coding-integration>>.
 
 .DocOps -- General Concept
 image::diagram-docops-general.png[]
