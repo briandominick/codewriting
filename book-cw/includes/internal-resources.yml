@@ -1,0 +1,44 @@
+product:
+  definition:
+    - user stories
+    - interface contracts
+    - diagrams:
+      - architecture
+      - schema
+      - data flow
+quality assurance:
+  testing:
+    - plans
+    - results/status portals
+engineering:
+  assets:
+    - scripts
+    - snippets
+    - recipes
+    - graphics
+  references:
+# tag::references[]
+    registries:
+      - settings
+      - reserved terms
+      - ports
+      - protocols
+      - endpoints
+    taxonomies:
+      - glossary
+    environments:
+      - development
+      - testing
+      - staging
+    infrastructure:
+      networking:
+      machines:
+      services:
+    guides:
+      - coding styles
+      - conventions
+      - IDE configuration
+      - project management:
+        - agile boards
+        - task tickets
+# end::references[]
