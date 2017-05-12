@@ -13,7 +13,7 @@ This is definitely what I and some others have found so far.
 
 // section-fleshout
 
-== Getting Engineers to Contribute
+=== Getting Engineers to Contribute
 
 Your subject-matter experts probably do a fair bit of writing as part of their docs-related tasks.
 That is, while you might get lots of information during real-time meetings, I bet for the most part you and the engineers whose work you document have found yourselves sharing quite a lot -- especially the details -- through digital, textual means.
@@ -28,7 +28,7 @@ Engineers spend the bulk of their time between these two applications, and many 
 
 Meet the engineers in their preferred habitat: the development ecosystem.
 
-== Engineers and Lightweight Markup
+=== Engineers and Lightweight Markup
 
 When I talk to technical writers and engineers about lightweight markup languages, I typically get a version of one of following three responses:
 
@@ -125,7 +125,10 @@ This is a mistake.
 Tech writers and docs managers should play an active role in facilitating internal documentation.
 I argue this for two critical reasons below, but first let's explore what we mean by internal documentation.
 
-include::../includes/resource-types-list.adoc[tags=references]
+[source,yaml]
+----
+include::../includes/internal-resources.yml[tags=references]
+----
 
 The codebase may be the sexiest part of the Engineering playground, but product quality requires a collaborative, resource-rich work environment.
 Tools and resources should be at developers' fingertips.
