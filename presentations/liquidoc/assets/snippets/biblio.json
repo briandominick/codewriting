@@ -1,0 +1,36 @@
+{
+	"items": [
+		{
+			"id": "modern",
+			"title": "Modern Technical Writing: An Introduction to Software Documentation",
+			"edition": "Kindle Edition",
+			"type": "book",
+			"author": {
+				"given": "Andrew",
+				"family": "Etter"
+			},
+			"publisher": "Self",
+			"issued": {
+				"date-parts": {
+					"year": 2016
+				}
+			}
+		},
+		{
+			"id": "docslikecode",
+			"title": "Docs Like Code: Write, Review, Merge, Deploy, Repeat",
+			"author": {
+				"given": "Anne",
+				"family": "Gentle"
+			},
+			"type": "book",
+			"publisher": "Just Write Click",
+			"issued": {
+				"date-parts": {
+					"year": 2017
+				}
+			},
+			"url": "http://docslikecode.com"
+		}
+	]
+}

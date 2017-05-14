@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<root>
+	<items>
+		<id>modern</id>
+		<title>Modern Technical Writing: An Introduction to Software Documentation</title>
+		<edition>Kindle Edition</edition>
+		<type>book</type>
+		<author>
+			<given>Andrew</given>
+			<family>Etter</family>
+		</author>
+		<publisher>Self</publisher>
+		<issued>
+			<date-parts>
+				<year>2016</year>
+			</date-parts>
+		</issued>
+	</items>
+	<items>
+		<id>docslikecode</id>
+		<title>Docs Like Code: Write, Review, Merge, Deploy, Repeat</title>
+		<author>
+			<given>Anne</given>
+			<family>Gentle</family>
+		</author>
+		<type>book</type>
+		<publisher>Just Write Click</publisher>
+		<issued>
+			<date-parts>
+				<year>2017</year>
+			</date-parts>
+		</issued>
+		<url>http://docslikecode.com</url>
+	</items>
+</root>
