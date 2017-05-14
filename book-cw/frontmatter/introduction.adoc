@@ -4,7 +4,7 @@ This project is my attempt to bridge a gap I straddle between two worlds of writ
 I have spent my career (over two decades) in and out of media and software, almost always mixing the two in some way, even when mixing them has not been my primary role.
 Whether organizing and coding a 4-year experiment in online journalism or developing websites for writers and media operations, I have been dealing with text and code nearly my entire adult life.
 
-Today, as Technical Documentation Manager at a little “Big Data” startup called link:https://rocana.com[Rocana], gracefully combining technology work with media production remains my biggest challenge.
+Today, as Technical Documentation Manager at a little “Big Data” IT ops tooling startup called Rocana, gracefully combining technology work with media production remains my biggest challenge.
 
 In technical writing, we have to learn complicated products with a level of intimacy even some engineers find perverse.
 We also have to maintain more and more matter from an ever-increasing array of sources, operating as both scribe and librarian in service of highly demanding engineering, product, and support teams.

@@ -61,8 +61,7 @@ No matter how I get it done, I basically have to make sure the docs are always:
 * **E**ditable
 +
 (Yes, I saw a pneumonic and I went for it.
-All I had to do was rearrange them, because yes, _canonical_ was in the original list (meaning a single source of truth).
-And _accurate_ stayed in when _unimpeachable_ would have made _SOURCE_, because _editable_ implies impeachability.)
+_Accurate_ stayed in when _unimpeachable_ would have made _SOURCE_, because _editable_ implies impeachability.)
 
 Let me introduce you to my immediate constituents.
 

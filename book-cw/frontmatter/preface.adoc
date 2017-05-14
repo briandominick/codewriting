@@ -58,7 +58,7 @@ I get enjoyment out of many of the non-writing parts of this job, including work
 Still, we all know tech writing can be the opposite of pleasure writing.
 Fussing over every word in an instruction step, trying to shorten code listing line lengths to fit the page, or just re-conveying the same banal concepts over and over; tech writing has its downsides.
 
-Consider this: customers pay _seven figures_ for our product license, and the closest they'll ever come to a physical artifact of our product would be if they hit print on the PDF I maintain day in and day out.
+Consider this: customers pay a lot for our product license, and the closest they'll ever come to a physical artifact of our product would be if they hit print on the PDF I maintain day in and day out.
 It has been conveyed to me by people of good repute that joking and cursing in technical documentation for a “serious” enterprise product is a bad move.
 
 I think that's bullshit, but I propose a compromise.
