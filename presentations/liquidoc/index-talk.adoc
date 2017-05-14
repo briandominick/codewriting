@@ -1,0 +1,196 @@
+= LiquiDoc for Complex Content
+:backend: deckjs
+:deckjs_theme: web-2.0
+:deckjs_transition: fade
+:imagesdir: assets/images
+
+== Welcome
+
+* Brian Dominick, Technical Documentation Manager, Rocana
+
+=== My Situation
+
+* I work on a small engineering team with limited resources.
+
+* Our devs are pretty hardcore when it comes to tools and techniques.
+
+* I need SMEs to directly maintain reference matter about the product.
+
+* We think like engineers about _everything_.
+
+== What is Complex Content?
+
+* Discrete, arrayed reference objects made up of key-value pairs, or collections of such pairs.
+
+* What DITA handles as “reference” topics.
+
+*Example: Glossary*
+
+[.examplebox]
+--
+AsciiDoc::
+  An extensible lightweight markup language with numerous powerful features such as conditional processing, file includes, and variable text substitutions.
+
+Markdown::
+  One of the lightest weight and most popular textual markup languages, popularized on GitHub, StackOverflow, various forums and comments systems, and numerous other places.
+  Markdown, however, is not a dynamic language.
+--
+
+== Keys Begone
+
+Stored as key-value pairs, but not necessarily displayed that way.
+
+*Example: Bibliography*
+
+image::biblio_html.png[]
+
+== Keys Begone
+
+Stored as key-value pairs, but not necessarily displayed that way.
+
+*Example: Bibliography*
+
+image::biblio_html-tagged.png[]
+
+== Real Complexity
+
+*Example: Config Setting*
+
+[.examplebox]
+--
+*save.path.default* +
+Establishes the default path to which the product saves files.
+
+[cols=">1s,5",width="80%"]
+|===
+| default
+m| /opt/product/_output
+
+| type
+| string
+
+| required
+m| false
+|===
+
+.Example
+----
+save.path.default = /tmp/product-output
+----
+--
+
+== Solution Requirements
+
+* Provides a single source of truth, internally (engineers and stakeholders) and externally (user-facing).
+
+* Output to _anything_: source content should parse to any other format: HTML, XML, PDF, JSON.
+
+* Kept in distributed source control.
+
+* Aligned with product versions.
+
+* Content (data) must be structured enough for manipulation and “querying”.
+
+== Why Not a Relational Database?
+
+* RDBs lack source control features.
+
+* RDBs require schemas, and we need more flexibility.
+
+* RDBs require complicated common interfaces & admin.
+
+== Why Not DITA?
+
+* Proprietary tooling is a non-starter for many engineers.
+
+* DITA tools are expensive and closed.
+
+* XML is for machines. We're people.
+
+== Why Flat Files, FOSS, & Markup
+
+* Whole team can collaborate on a central data source, inside the main product repo.
+
+* Data uses the same source and version control as product it documents.
+
+* Flexible as all get-out.
+
+* Contributors can work using their favorite coding tools, which they're in anyway.
+
+== Solution: LiquiDoc
+
+A simple Ruby script that precompiles data into content source for further compiling into docs or interfaces.
+
+----
+$ liquidoc -d biblio.yml -t biblio.asciidoc -o biblio.adoc
+----
+
+* Give LiquiDoc a data file (YAML, JSON, XML, CSV) and a template file (Liquid) for mapping data to variables.
+
+* LiquiDoc outputs flat files in any format, so your build tooling can use it as compiled source.
+
+== Source File (YAML)
+
+.biblio.yml
+image::biblio_yml.png[]
+
+== Parser Template (Liquid)
+
+.biblio.asciidoc
+image::biblio_liquid.png[]
+
+== Output (AsciiDoc)
+
+.biblio.adoc
+image::biblio_adoc.png[]
+
+== Built to HTML
+
+====
+* _Modern Technical Writing: An Introduction to Software Documentation_, by Andrew Etter. Self. 2016.
+
+* _link:http://docslikecode.com[Docs Like Code: Write, Review, Merge, Deploy, Repeat]_, by Anne Gentle. Just Write Click. 2017.
+====
+
+=== Inline Tooltip
+
+image::tooltip-snip.png[]
+
+== Output (JSON)
+
+.biblio.json
+image::biblio_json.png[]
+
+== Output (XML)
+
+.biblio.json
+image::biblio_xml.png[]
+
+== Where To?
+
+* Application UI elements drawn from single source:
+** inline help
+** form labels
+
+* In the docs:
+** inline tooltips
+** elegant, structured content reuse
+*** grouped by type here, alphabetical there
+*** reshape to page or purpose
+
+== Thank You!
+
+*Brian Dominick* +
+Technical Documentation Manager, *Rocana*
+
+*GitHub:* github.com/briandominick
+
+*Twitter:* @_codewriter
+
+*_Codewriting_ Repo:*
+[subs=quotes]
+----
+$ git clone git@**github.com:briandominick/codewriting**.git
+----
+
+_Presentation written in AsciiDoc and built with Asciidoctor and Deck.js_.
