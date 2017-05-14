@@ -7,7 +7,7 @@ terms:
 
   - term: AsciiDoc
     definition: |
-      An extensible lightweight markup language with numerous powerful features such as conditional processing, includes, and variable text substitutions.
+      An extensible lightweight markup language with numerous powerful features such as conditional processing, file includes, and variable text substitutions.
       Pronounced _ASK-ee-doc_.
 
   - term: CCO
@@ -28,8 +28,8 @@ terms:
   - term: DITA
     definition: |
       Acronym for _Darwin Information Typing System_.
-      An technical writing-oriented XML standard introduced by IBM in 2005.
-      Pronounced _DII-tuh_, not _DEE-tuh_ or _DIE-tuh_.
+      An XML standard designed for technical writing, introduced by IBM in 2005.
+      In addition to a markup standard, DITA incorporates dynamic functionality and mature framework elements.
       https://en.wikipedia.org/wiki/Darwin_Information_Typing_Architecture[Wikipedia].
 
   - term: DRY
@@ -44,6 +44,7 @@ terms:
   - term: Markdown
     definition: |
       One of the lightest weight and most popular textual markup languages, popularized on GitHub, StackOverflow, various forums and comments systems, and numerous other places.
+      Markdown, however, is not a dynamic language.
 
   - term: GUI
     definition: |
