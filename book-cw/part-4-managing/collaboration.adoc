@@ -106,12 +106,12 @@ I want them to find what they need, where and when they need it, and of course I
 These men and women are also often the first to discover bugs in my docs, which is of course invaluable for me.
 The field teams need a responsive system for submitting documentation bugs, and I need them to feel empowered to contribute heavily and directly to resolving docs bugs.
 
-That may sound like a lot of pressure and a lot of varying interests to satisfy, and I admit that's often how it feels.
-Whenever this task feels like I'm exploring some uncharted territory of technical documentation, I just remember I work on a team that includes ReactJS coders, a machine-learning engineer, a whole bunch of Big Data platform engineers, and DevOps engineers (don't tell them I called them that -- it's complicated).
 --
 
-Note consistency of these three interests just amo
-ng my collaborators.
+That may sound like a lot of pressure and a lot of varying interests to satisfy, and I admit that's often how it feels.
+Whenever this task feels like I'm exploring some uncharted territory of technical documentation, I just remember I work on a team that includes ReactJS coders, a machine-learning engineer, a whole bunch of Big Data platform engineers, and DevOps engineers (don't tell them I called them that -- it's complicated).
+
+Note consistency of these three interests just among my collaborators.
 _SOARCE_ truly covers the whole array.
 If I maintain and facilitate good docs, everybody wins, even if almost nobody notices.
 
