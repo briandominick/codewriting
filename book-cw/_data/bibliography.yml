@@ -47,40 +47,63 @@
   # review-book
   # speech
   # webpage
-
-
 items:
-  - id: modern
-    title: "Modern Technical Writing: An Introduction to Software Documentation"
-    edition: Kindle Edition
-    type: book
-    author:
-      given: Andrew
-      family: Etter
-    publisher: Self
-    issued:
-      date-parts:
-        year: 2016
-  - id: leanpub
-    title: Lean Publishing
+  - id: content-everywhere
+    title: "Content Everywhere: Strategy and Structure for Future-Ready Content"
     edition:
     type: book
     author:
-      given: Peter
-      family: Armstrong
-    publisher: Leanpub
+      - given: Sarah
+        family: Wachter-Boettcher
+    publisher: Rosenfeld Media
     issued:
       date-parts:
-        year: 2016
-    url: http://leanpub.com/lean
-  - id: docslikecode
+        year: 2012
+    url: http://www.rosenfeldmedia.com
+  - id: docs-like-code
     title: "Docs Like Code: Write, Review, Merge, Deploy, Repeat"
     author:
-      given: Anne
-      family: Gentle
+      - given: Anne
+        family: Gentle
     type: book
     publisher: Just Write Click
     issued:
       date-parts:
         year: 2017
     url: http://docslikecode.com
+  - id: lean-publishing
+    title: Lean Publishing
+    edition:
+    type: book
+    author:
+      - given: Peter
+        family: Armstrong
+    publisher: Leanpub
+    issued:
+      date-parts:
+        year: 2016
+    url: http://leanpub.com/lean
+  - id: managing-enterprise-content
+    title: "Managing Enterprise Content: A Unified Content Strategy"
+    edition: Second Edition
+    type: book
+    author:
+      - given: Anne
+        family: Rockley
+      - given: Charles
+        family: Cooper
+    publisher: New Riders
+    issued:
+      date-parts:
+        year: 2012
+  - id: modern-technical-writing
+    title: "Modern Technical Writing: An Introduction to Software Documentation"
+    edition: Kindle Edition
+    type: book
+    author:
+      - given: Andrew
+        family: Etter
+    publisher: Self
+    issued:
+      date-parts:
+        year: 2016
