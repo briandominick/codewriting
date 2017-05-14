@@ -87,7 +87,7 @@ def build_liquidoc config_file
   else
     vrb = ""
   end
-  command = "bundle exec #{@base_path}/scripts/liquidoxify.rb -c #{config_file} #{vrb}"
+  command = "bundle exec #{@base_path}/scripts/liquidoc.rb -c #{config_file} #{vrb}"
   system command
   if @verbose
     puts command

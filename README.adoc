@@ -87,7 +87,7 @@ bundle install
 .MacOS/Linux Example
 ----
 chmod 755 scripts/publish.rb
-chmod 755 scripts/liquidoxify.rb
+chmod 755 scripts/liquidoc.rb
 ----
 +
 [TIP]
@@ -109,7 +109,7 @@ To learn more about the build tool:
 
 ++++
 bundle exec scripts/publish.rb --help
-bundle exec scripts/liquidoxify.rb --help
+bundle exec scripts/liquidoc.rb --help
 ++++
 
 Or explore the files in the repo!
@@ -258,7 +258,7 @@ book-cw: # <4>
   includes: # <7>
   part-directories:
 scripts: # <8>
-  liquidoxify.rb
+  liquidoc.rb
   publish.rb
 theme: # <9>
   fonts:
@@ -274,7 +274,7 @@ index-book.adoc # <11>
 <5> Build configurations for the book's precompiled source files
 <6> Data source files for the book, for building complex content
 <7> Discrete content files (topics, source samples, etc)
-<8> The build scripts (`publish.rb` and `liquidoxify.rb`)
+<8> The build scripts (`publish.rb` and `liquidoc.rb`)
 <9> Files used to style output; hopefully these will evolve to consolidate across media
 <10> The project's Ruby dependency collection
 <11> The book index (document map)

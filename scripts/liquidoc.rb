@@ -115,7 +115,7 @@ end
 # From the root directory of your project:
 # $ ./parse.rb --help
 parser = OptionParser.new do|opts|
-  opts.banner = "Usage: ./liquidoxify.rb [options]"
+  opts.banner = "Usage: ./liquidoc.rb [options]"
 
   opts.on("-b PATH", "--base=PATH", "The base directory, relative to this script. Defaults to /../ ." ) do |n|
     @data_file = @base_path + '/' + n
