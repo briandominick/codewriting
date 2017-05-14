@@ -99,7 +99,7 @@ For Windows environments, perhaps try the most appropriate solution from this li
 bundle exec scripts/publish.rb -i index-book.adoc -o codewriting-book-draft -l
 ----
 
-Now you can open `_output/codewriting-book.html` in your preferred browser or open `_output/codewriting-book.pdf` in your favorite PDF viewer.
+Now you can open `_output/codewriting-book-draft.html` in your preferred browser or open `_output/codewriting-book-draft.pdf` in your favorite PDF viewer.
 Please give this latest draft a read and let me know what you think!
 
 [TIP]
