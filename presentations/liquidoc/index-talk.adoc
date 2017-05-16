@@ -33,7 +33,6 @@ AsciiDoc::
 
 Markdown::
   One of the lightest weight and most popular textual markup languages, popularized on GitHub, StackOverflow, various forums and comments systems, and numerous other places.
-  Markdown, however, is not a dynamic language.
 --
 
 == Keys Begone
@@ -127,7 +126,7 @@ $ liquidoc -d biblio.yml -t biblio.asciidoc -o biblio.adoc
 
 * Give LiquiDoc a data file (YAML, JSON, XML, CSV) and a template file (Liquid) for mapping data to variables.
 
-* LiquiDoc outputs flat files in any format, so your build tooling can use it as compiled source.
+* LiquiDoc outputs any flat-file format (Markdown, AsciiDoc, XML, HTML, etc), so your build tooling can use it as source for building websites, PDFs, etc.
 
 == Source File (YAML)
 

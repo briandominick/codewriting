@@ -257,14 +257,15 @@ book-cw: # <4>
     glossary.yml
   includes: # <7>
   part-directories:
-scripts: # <8>
-  liquidoc.rb
+presentations: # <8>
+scripts: # <9>
+  liquidoxify.rb
   publish.rb
-theme: # <9>
+theme: # <10>
   fonts:
   pdf-theme.yml
-Gemfile # <10>
-index-book.adoc # <11>
+Gemfile # <11>
+index-book.adoc # <12>
 ----
 
 <1> Global data source files, not specific to Codewriting book
@@ -274,10 +275,11 @@ index-book.adoc # <11>
 <5> Build configurations for the book's precompiled source files
 <6> Data source files for the book, for building complex content
 <7> Discrete content files (topics, source samples, etc)
-<8> The build scripts (`publish.rb` and `liquidoc.rb`)
-<9> Files used to style output; hopefully these will evolve to consolidate across media
-<10> The project's Ruby dependency collection
-<11> The book index (document map)
+<8> Source for slide decks.
+<9> The build scripts (`publish.rb` and `liquidoxify.rb`)
+<10> Files used to style output; hopefully these will evolve to consolidate across media
+<11> The project's Ruby dependency collection
+<12> The book index (document map)
 
 == Legal Stuff
 

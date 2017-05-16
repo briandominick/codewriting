@@ -15,7 +15,10 @@ From the Codewriting project root directory:
 
 ----
 cd presentations/liquidoc
-asciidoctor -T templates/haml -o liquidoc-slides.html index-talk.adoc
+
+bundle install
+
+bundle exec asciidoctor -T templates/haml -o liquidoc-slides.html index-talk.adoc
 ----
 
 Open `liquidoc-slides.html` in your favorite browser.
