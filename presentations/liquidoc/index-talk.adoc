@@ -53,7 +53,7 @@ image::biblio_html-tagged.png[]
 
 == Real Complexity
 
-*Example: Config Setting*
+*Example: Configuration or API Setting*
 
 [.examplebox]
 --
