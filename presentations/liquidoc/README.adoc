@@ -1,0 +1,33 @@
+= Presentation: LiquiDoc for Complex Content
+
+This directory contains tooling and content for building a Deck.js powered slide show out of AsciiDoc and image source files.
+
+The content, a presentation of the free and open-source (FOSS) LiquiDoc tool for building rich docs out of semi-structured data, was written as a lightning talk to present at http://www.writethedocs.org/conf/na/2017/[Write the Docs Portland 2017].
+
+LiquiDoc is a rudimentary (early alpha) Ruby command-line tool that builds documentation artifacts from sources formatted with lightweight or tagged markup.
+
+== Build
+
+The source files for this presentation must be compiled into an HTML/JavaScript presentation.
+This is done by running the Asciidoctor Ruby gem and passing it a custom set of templates for parsing AsciiDoc source to Deck.js output.
+
+From the Codewriting project root directory:
+
+----
+cd presentations/liquidoc
+
+bundle install
+
+bundle exec asciidoctor -T templates/haml -o liquidoc-slides.html index-talk.adoc
+----
+
+Open `liquidoc-slides.html` in your favorite browser.
+
+== Notice
+
+This repo contains the link:http://imakewebthings.com/deck.js/[Deck.js framework] under the link:https://github.com/imakewebthings/deck.js[MIT License].
+
+== License
+
+Contents of `index-talk.adoc` file and `assets/` directory covered by Creative Commons ShareAlike 3.0 Unported.
+You are welcome to repurpose as you see fit, please just credit and link back to Codewriting.
