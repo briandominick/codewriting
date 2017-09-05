@@ -103,6 +103,35 @@ They've come because they're trying to get something done.
 Either they're habitual docs users or they're looking for a specific solution.
 In any case, your users' objectives are critical.
 
+To understand what your users want, talk to Sales or Customer Service to get a clear picture of your typical user.
+If your product is new and this information does not yet exist, work with your product team to define what a typical user might look like. 
+Some camps would say you should document your users via personas, giving each typical user a name. 
+If this helps, by all means talk about Sally the HR Manager or Betty the Salesperson. 
+The next step, after defining the users, is to understand why they're using your product. 
+
+If your product is a massive HRIS designed to centralize your CRM, benefits, payroll, and more, it's safe to assume that Sally the HR Manager is going to spend more time in the payroll module than Betty the Salesperson.
+Or is it? 
+What if Betty's commission reports are captured in the payroll module, and Betty checks them twice a day because of how often she closes deals? 
+What if Sally the HR Manager only checks the payroll module once a year to update salaries after the raise cycle ends? 
+Assumptions are a killer when it comes to clear documentation for specific users. 
+Take the time required to talk to your users or get their impressions from a reliable source like your product team, or through tools like focus groups, user testing, or A/B testing.
+To be clear, it's not necessarily the job of the tech writer to set these things up, but it is your job to understand the outcomes of these conversations.
+Being a fly on the wall during user-centric product meetings is a boon to writing clear docs, as is a conversation with your product team or sales team - whoever is closest to the user. 
+
+Another note to keep in mind is that your job is to figure out the user's motivations, not necessarily what they think they want. 
+A user may think they need documentation of a step-by-step overview on how to create a new account for a recent hire, when functionality already exists that allows them to simply email an invite link instead. 
+Your job is to make sure they get to the path of least resistance quickly whether they're searching your document or they're skimming your Table of Contents.
+Making it easy for the user to find shortcuts and hotkeys is a great way to turn a typical user into an absolute superfan, who is devoted to evangelizing the ease of use or the low barrier to entry your product embodies. 
+Of course, great UX starts with your development team, but you create the tool to help make these features known.
+
+To best help users, consider creating a Frequently Asked Questions section somewhere easy to find in the beginning of your tech docs or visibly highlighted somewhere on your site.
+Another way to help your users is to clearly label your Table of Content with concise headings for each section. 
+You might also think about creating something like a "Quick Start Guide" for new users, or a one-page troubleshooting guide that addresses common problems users face.
+Ideally, common problems should be passed off to product so the business can rank and prioritize these issues and get them resolved by the development team. 
+However, if the issues do exist, don't leave your users scratching their heads or cursing your product.
+We give them the tools they need for the product they currently have, while slowly phasing out the troubleshooting doc over time as issues get resolved in future versions.
+
+
 // TODO section-fleshout
 
 == Use Competitors’ Products
