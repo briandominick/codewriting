@@ -1,0 +1,245 @@
+posts:
+  paid:
+    - org: Rocana, Inc (formerly ScalingData)
+      titles:
+        - Technical Documentation Manager
+        - Engineering Technical Lead
+      dates:
+        start: 2015-03-01
+        end: 2017-10-01
+      description: responsible for writing, editing, and managing all customer-facing technical docs, as well as overseeing all common internal documentation; create & maintain tooling to facilitate docs
+      url: http://rocana.com
+
+    - org: Activore (Actively Social Networks, Inc)
+      titles:
+        - Co-founder
+        - President
+        - CEO
+      dates:
+        start: 2012-06-01
+        end:   2014-05-01
+      description: lead tech & business development teams, product design, fundraising, incorporation, financial management
+      url: https://angel.co/activore
+
+    - org: Agaric
+      titles:
+        - Project Manager
+        - Sales Manager
+        - Collectivist
+      dates:
+        start: 2012-01-01
+        end:   2012-10-01
+      description: reorganize firm into small worker cooperative; acquire new clients; manage ongoing website development projects
+      url: http://agaric.com/
+
+    - org: Pete's Big Mouth, Inc.
+      titles:
+        - Consulting Producer
+      dates:
+        start: 2008-08-01
+        end: 2011-07-01
+      description: national radio talk show production for SiriusXM, comedy copywriting, research, listener relations
+      url: http://standupwithpetedominick.com/
+
+    - org: WebRoot Solutions
+      titles:
+        - Partner
+        - Consultant
+      dates:
+        start: 2007-07-01
+        end: 2011-08-01
+      description: sales, client/project management, website/application development, database architecture, graphic design
+
+    - org: Taschen Publishing
+      titles:
+        - Copy Editor
+        - Proofreader
+      dates:
+        start: 2007-10-01
+        end:   2008-02-01
+      description: copy edited and proofread book manuscripts on a contract basis
+      url: https://www.taschen.com/
+
+    - org: People's Networks d/b/a NewStandard News
+      titles:
+        - Collective Member
+        - Managing Editor
+        - Co-founder
+      dates:
+        start: 2003-07-01
+        end:   2007-06-01
+      description: nonprofit management, business administration, financial development, website development, news copy and assignment editing, news reporting
+      url: http://newstandardnews.net/
+
+    - org: Z Media Institute
+      titles:
+        - Instructor
+      dates:
+        start: 2000-06-01
+        end:   2007-06-01
+      description: media activism skills instruction, journalism instruction, social/liberation theory instruction
+
+    - org: ZNet
+      titles:
+        - Editor
+        - Website Administrator
+        - Community Manager
+      dates:
+        start: 1998-00-00
+        end: 2003-00-00
+      description: content production, copy editing, writer relations, website development, fundraising campaign direction
+
+  volunteer:
+    - org: Action Medical
+      titles:
+        - Street Medic Instructor
+        - Street Medic
+      dates:
+        start: 2000-04-01
+        end:
+      description: Train activists to perform first responder duties where EMS will not tread, including disaster & social unrest scnearios
+
+    - org: Kerhonkson Accord First Aid Squad
+      titles:
+        - First aid volunteer
+      dates:
+        start: 2017-09-01
+        end:
+      description: Volunteer first responder, emergency medical services
+
+    - org: Constitutional Communications
+      titles:
+        - Technologist in Residence
+      dates:
+        start: 2015-01-01
+        end: 2016-09-01
+      description: Set strategic and educational goals, developed programming, advised founder
+
+    - org: Cooperative Federal Credit Union
+      titles:
+         - Director
+      dates:
+        start: 2010-03-01
+        end: 2011-03-01
+      description: Oversaw management of a community development financial institution
+
+    - org: Neighbors Supporting Neighbors
+      titles:
+        - Co-founder
+        - Organizer
+      dates:
+        start: 2002-03-01
+        end: 2004-02-01
+      description: Community organizer & meeting facilitator working with Muslim/Interfaith communities on civil liberties
+
+    - org: NorthEast Action Medics Association
+      titles:
+        - Co-founder
+        - Certified instructor
+      dates:
+        start: 2001-02-01
+        end: 2003-04-01
+      description: Provided educational and “professional” services for volunteer protest first aid providers
+
+    - org: Palestine Red Crescent Society
+      titles:
+        - Emergency Medical Technician
+        - IT Consultant
+      dates:
+        start: 2002-05-01
+        end: 2002-07-01
+      description: Provided ambulance emergency services to civilians throughout the West Bank, consulted IT & website devs
+
+    - org: Eastside Neighborhood Arts, Cultural, and Technology Center (ENACT)
+      titles:
+        - Board Member
+      dates:
+        start: 1997-00-00
+        end: 2000-00-00
+      description: Represented member organization (CMAG) on board, developed programming, outreach, fundraising
+
+    - org: Westcott Community Center
+      titles:
+        - Board Member
+      dates:
+        start: 1999-00-00
+        end: 2000-00-00
+      description: Oversaw and assisted executive director in developing community programming and policy
+
+    - org: TAO Communications
+      titles:
+        - Collective Member
+      dates:
+        start: 1997-00-00
+        end: 1999-00-00
+      description: Provided online resources to activist organizations worldwide
+
+    - org: Active Resistance
+      titles:
+        - Collective Member
+      dates:
+        start: 1996-00-00
+        end: 1998-00-00
+      description: Organized major, international conferences for social change activists; handled logistics and education tasks
+
+    - org: Community Media Action Group
+      titles:
+        - Co-founder
+        - Collective Member
+      dates:
+        start: 1996-00-00
+        end: 2001-00-00
+      description: Assisted local activists and organizations in developing media campaigns and products, including multimedia
+
+    - org: ZNet (then ZBBS/Left OnLine)
+      titles:
+        - Community Manager
+      dates:
+        start: 1994-00-00-00-00
+        end: 1998-00-00
+      description: Volunteered with popular leftist online community to provide user support & member engagement; later hired
+
+    - org: Syracuse Peace Council
+      titles:
+        - Volunteer
+        - Newsletter Editor
+      dates:
+        start: 1993-00-00
+        end: 1997-00-00
+      description: Assistant volunteer coordinator, assistant editor of monthly Peace Newsletter
+
+skills:
+  - Platform development
+  - Project/product management
+  - Git, Ruby, Python, PHP, HTML5/CSS, JavaScript, Liquid, AsciiDoc, DocBook
+  - Linux & Windows server administration
+  - website & application development
+  - database design & administration
+  - software purchase consulting
+
+experience:
+  - 13 years in Internet administration and application development
+  - 2 years running a startup using lean-startup methodology
+  - Record of dedication to the nonprofit and cooperative sectors
+  - 21 years in publishing and media, including print, radio, and Web
+  - Solutions-oriented technical, structural, and PR problem solving on a client-by-client basis
+  - 17 years experience in nonprofit organizing, management, and consulting
+
+achievements:
+  - Wrote & maintained nearly 300-page Reference Guide for Big Data product (Rocana)
+  - Raised > $300,000 investment capital for lean tech startup focusing on health & fitness (Activore)
+  - Created and managed online operations and listener relations for national SiriusXM show (Stand Up!)
+  - Developed complex social-services public database for New Orleans area (La. Resource Guide)
+  - Designed and built custom integrated content-management system and subscriber-management system for major nonprofit news publication (NewStandard News)
+  - Managed outreach and fundraising campaigns, secured federal 501(c)(3) status (Peoples Networks)
+  - Hundreds of articles/commentaries published in over 50 print & countless online outlets worldwide
+  - Spearheaded client relations and developed more than 40 unique websites and online campaigns
+  - Provided Internet hosting (web/email services) for 30+ organizations' dynamic online operations
+  - Consulted with more than 20 cooperatives and nonprofits on workplace structure and process
+
+contact:
+  email: badominick@gmail.com
+  phone: 315-254-0342
+  twitter: _codewriter
+  web: https://codewriting.org
+  github: https://github.com/briandominick

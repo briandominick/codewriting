@@ -1,0 +1,81 @@
+= Brian Dominick, Codewriter
+// Jekyll settings
+:page-layout: resume
+:page-permalink: /brian-dominick-resume
+:includes_path: assets/includes
+:edition: html
+:otheredition: PDF
+:otheredition_uri: http://codewriting.org/assets/files/brian-dominick-resume.pdf
+:separator:
+:header_cols: 1
+:doctitle: Brian Dominick, Codewriter
+:contact: link:http://codewriting.org/contact[contact Brian]
+:contact_table_width: 100%
+:codewriting_source_uri: https://github.com/briandominick/codewriting
+:codewriting_website_uri: https://codewriting.org
+:liquidoc_source_uri: https://github.com/briandominick/liquidoc-gem
+// PDF overrides
+ifdef::backend-pdf[]
+:includes_path: ../assets/includes
+:notitle:
+:contact: {{ contact.phone }} / {{ contact.email }}
+:contact_table_width: 80%
+:edition: PDF
+:otheredition: HTML
+:otheredition_uri: http://codewriting.org/brian-dominick-resume
+:separator: |
+:header_cols: 1,3
+endif::[]
+
+ifdef::backend-pdf[]
+== {doctitle}
+:leveloffset: +1
+include::{includes_path}/contact-table.adoc[]
+endif::[]
+
+== Objective
+
+I'm looking for opportunities to build integrated documentation systems at forward-thinking engineering shops.
+Read my link:{codewriting_website_uri}/codewriter-brian-dominick[objective statement] for more.
+
+// tag::employment[]
+== Employment History{% for p in posts.paid %}
+
+{{ p.org }} {separator} [dateline]#{{ p.dates['start'] | date: "%b %Y" | remove: "-00-00" }} - {% if p.dates['end'] %}{{ p.dates['end'] | date: "%b %Y" | remove: "-00-00" }}{% else %}present{% endif %}#::{% for title in p.titles %}
+_{{ title }}_{% unless forloop.last %}, {% endunless %}{% endfor %} +
+{{ p.description }}{% endfor %}
+// end::employment[]
+
+<<<
+
+=== Experience Overview{% for x in experience %}
+* {{ x }}{% endfor %}
+
+// tag::source-statement[]
+[NOTE]
+This document is written in AsciiDoc, YAML, and Liquid markup, from which I dynamically render this version as well as an link:{otheredition_uri}[edition in {otheredition} format] using my open source documentation build tool, link:{liquidoc_source_uri}[LiquiDoc].
+You're welcome to peruse link:{codewriting_source_uri}[the source].
+
+// end::source-statement[]
+
+=== Achievements Overview{% for a in achievements %}
+* {{ a }}{% endfor %}
+
+=== Select Skills{% for s in skills %}
+* {{ s }}{% endfor %}
+
+include::{includes_path}/contact-table.adoc[]
+
+<<<
+
+// tag::volunteer[]
+== Volunteer/Activist Background{% for p in posts.volunteer %}
+
+{{ p.org }} {separator} [dateline]#{{ p.dates['start'] | date: "%b %Y" | remove: "-00-00" }} - {% if p.dates['end'] %}{{ p.dates['end'] | date: "%b %Y" | remove: "-00-00" }}{% else %}present{% endif %}#::{% for title in p.titles %}
+_{{ title }}_{% unless forloop.last %}, {% endunless %}{% endfor %} +
+{{ p.description }}{% endfor %}
+// end::volunteer[]
+
+ifndef::backend-pdf[]
+include::{includes_path}/contact-table.adoc[]
+endif::[]
