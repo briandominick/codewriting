@@ -1,0 +1,168 @@
+# This is the Jekyll configuration file
+title: Codewriting
+output: web
+source: _build
+destination: _build/publish/web
+host: 127.0.0.1
+port: 4004
+
+data_dir:     _data
+plugins_dir:  _plugins
+layouts_dir:  _build/theme/hyde/_layouts
+images_dir:   assets/images
+includes_dir: theme/hyde/_includes
+css_dir:      theme/hyde/css
+
+asciidoc: {}
+asciidoctor:
+  attributes:
+    includesdir: _build/assets/includes
+    icons: font
+    safe: :unsafe
+    figure-caption:
+
+
+# Reading Files
+include:
+  - .htaccess
+  - README.adoc
+exclude:
+  - index-book-cw.adoc
+  - book-cw/*
+  - book-cw/part-1-writing/writing.adoc
+  - book-cw/part-2-coding/coding.adoc
+  - book-cw/part-3-delivering/delivering.adoc
+  - book-cw/part-4-managing/managing.adoc
+  - book-cw/part-5-evolving/evolving.adoc
+  - "*.sublime-project"
+  - "*.sublime-workspace"
+  - vendor
+  - .asset-cache
+  - .bundle
+  - .jekyll-assets-cache
+  - .sass-cache
+  - assets/js/plugins
+  - assets/js/_main.js
+  - assets/js/vendor
+  - Capfile
+  - CHANGELOG
+  - config
+  - Gemfile
+  - Gruntfile.js
+  - gulpfile.js
+  - LICENSE
+  - NOTICE
+  - log
+  - node_modules
+  - package.json
+  - Rakefile
+  - tmp
+  - presentations
+keep_files:
+  - .git
+  - .svn
+encoding: "utf-8"
+markdown_ext: "markdown,mkdown,mkdn,mkd,md"
+
+
+# Conversion
+markdown: kramdown
+highlighter: rouge
+lsi: false
+excerpt_separator: "\n\n"
+incremental: false
+
+# Markdown Processing
+kramdown:
+  input: GFM
+  hard_wrap: false
+  auto_ids: true
+  footnote_nr: 1
+  entity_output: as_char
+  toc_levels: 1..6
+  smart_quotes: lsquo,rsquo,ldquo,rdquo
+  enable_coderay: false
+
+
+# Sass/SCSS
+sass:
+  sass_dir: _sass
+  style: compressed # http://sass-lang.com/documentation/file.SASS_REFERENCE.html#output_style
+
+
+# Outputting
+permalink: /:categories/:title/
+# paginate: 5 # amount of posts to show
+paginate_path: /page:num/
+timezone: # http://en.wikipedia.org/wiki/List_of_tz_database_time_zones
+
+
+# Plugins
+plugins:
+  - jekyll-asciidoc
+  # - jekyll-paginate
+  - jekyll-sitemap
+  - jekyll-gist
+  - jekyll-feed
+  # - jemoji
+
+# mimic GitHub Pages with --safe
+whitelist:
+  - jekyll-asciidoc
+  # - jekyll-paginate
+  - jekyll-sitemap
+  - jekyll-gist
+  - jekyll-feed
+  # - jemoji
+
+
+# Archives
+#  Type
+#  - GitHub Pages compatible archive pages built with Liquid ~> type: liquid (default)
+#  - Jekyll Archives plugin archive pages ~> type: jekyll-archives
+#  Path (examples)
+#  - Archive page should exist at path when using Liquid method or you can
+#    expect broken links (especially with breadcrumbs enabled)
+#  - <base_path>/tags/my-awesome-tag/index.html ~> path: /tags/
+#  - <base_path/categories/my-awesome-category/index.html ~> path: /categories/
+#  - <base_path/my-awesome-category/index.html ~> path: /
+category_archive:
+  type: liquid
+  path: /categories/
+tag_archive:
+  type: liquid
+  path: /tags/
+# https://github.com/jekyll/jekyll-archives
+# jekyll-archives:
+#   enabled:
+#     - categories
+#     - tags
+#   layouts:
+#     category: archive-taxonomy
+#     tag: archive-taxonomy
+#   permalinks:
+#     category: /categories/:name/
+#     tag: /tags/:name/
+
+
+# HTML Compression
+# - http://jch.penibelst.de/
+compress_html:
+  clippings: all
+  ignore:
+    envs: development
+
+
+# Defaults
+defaults:
+  # _posts
+  - scope:
+      path: ""
+      type: posts
+    values:
+      layout: page
+      author_profile: true
+      read_time: true
+      comments: # true
+      share: true
+      related: true
