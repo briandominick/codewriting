@@ -1,0 +1,21 @@
+docops_essentials:
+- point: Dynamic, lightweight markup
+  def: Writing docs directly in source using a simple coding language specially designed for tech writing
+- point: Semi-structured “small data” in flat files
+  def: Basic data about a product and its use stored in elegant, human-readable, Git-manageable text files
+- point: Distributed source control
+  def: The power of Git and all the platforms arising in its ecosystem
+- point: Version control
+  def: Docs and product code all tagged consistently, paired in perpetuity
+- point: Single sourcing
+  def: Obeying the dev's DRY directive (Don't Repeat Yourself), a lone, accessible source of truth for every piece of data or content
+- point: Iterative, “lean” product development
+  def: Working docs into feature development at earlier stages in agile environments
+- point: Review-driven workflows
+  def: Docs contributions as Git commits, submitted, approved, and merged under processes similar to product source.
+- point: Mature development tools & environments
+  def: Integrated code editors, Regex engines, testing suites, and open source platforms
+- point: Continuous build/delivery integration
+  def: Compile and package docs along with code, deploy immediately to remote platforms
+- point: Modularity
+  def: Mix and match content items and topics to generate customized aggregate documents

@@ -1,0 +1,10 @@
+// tag::docops_essentials_light[]
+{% for p in docops_essentials %}
+. {{ p.point }}{% endfor %}
+// end::docops_essentials_light[]
+
+// tag::docops_essentials_full[]
+{% for p in docops_essentials %}
+{{ p.point }}::
+{{ p.def }}{% endfor %}
+// end::docops_essentials_full[]
