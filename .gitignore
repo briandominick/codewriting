@@ -1,6 +1,7 @@
+_build/
 _output/
 Gemfile.lock
 .sass-cache
 book-cw/_scraps/
-book-cw/backmatter/bibliography.adoc
-book-cw/backmatter/glossary.adoc
+.travis.yml
+scripts/cibuild
