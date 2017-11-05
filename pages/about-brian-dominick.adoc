@@ -1,0 +1,25 @@
+= About the Codewriter
+:page-permalink: /codewriter-brian-dominick
+:page-layout: landing
+
+My name is *Brian Dominick*.
+I make, teach, and use powerful documentation development environments in support of forward-thinking product teams.
+
+.Brian Dominick presents Codewriting and LiquiDoc to the Write the Docs conference in Portland, May 2017
+image::assets/images/brian-dominick-write-the-docs-2017.jpeg[nolabel]
+
+After two and a half years of reinventing docs at Big Data startup Rocana (just acquired by Splunk), I am eager to *work docs magic at new organizations*.
+If you have an exciting project with challenging internal and user-facing documentation needs, let's talk.
+
+Like *DevOps for docs*, I specialize in documentation *tooling and workflows* for maximum accuracy and currency of complicated documentation projects, tying engineers, third-party developers, and technical writers together with *collaborative solutions*.
+
+My forthcoming book *_Codewriting_* lays out the new fundamentals of this practice, sometimes called *DocOps*.
+Across 18 chapters of fresh concepts as well as concrete examples and exercises, _Codewriting_ explores a new approach to developing and maintaining docs -- one that draws extensively from practices and tooling proven by software engineering teams.
+Early *drafts are available now* in the same open source repository from which the site you're now reading was built (details below).
+
+My free and open source tool *LiquiDoc* enables true *single sourcing of docs and product* content, building and optimizing semi-structured data into content for rendering in docs and other user interfaces.
+In combination with several technologies like Git, Asciidoctor, and Jekyll, LiquiDoc builds the site you're reading now, as well as my book -- all from the same source repo.
+
+* I maintain a link:brian-dominick-resume[conventional resumé], also drawn from source code in this repo. .
+
+* Build link:{codewriting_source_uri}[_Codewriting_] from source, or just download the PDF.

@@ -1,0 +1,87 @@
+:page-permalink: /
+:page-layout: landing
+
+[.banner]
+--
+What if documentation could be fully integrated with the product, from source repository to end-user delivery?
+--
+
+image::assets/images/diagram-docops-general.png[]
+
+[.summary]
+--
+This site is both an experiment in, as well as living instruction of, an emerging system for *collaborative documentation developed in environments where docs are effectively code*.
+--
+
+[.pitch]
+--
+* docs sourced under the same *version control* regime as product code
+
+* *canonical product info*, with a single source of truth informing the backend, user interfaces, and all docs (internal & user-facing)
+
+* *developer tooling and infrastructure* available to documentarians -- Git, IDEs, testing, automation
+
+* *dynamic content* processing such as conditional flows & variable substitution in the docs
+
+* *modularity* -- mix and match docs source to meet the specific needs of product version, audience, and so forth
+
+* docs *packaged and delivered* in the same flow as code, output in all the right places at exactly the right time
+
+* *lean docs* drafted/generated throughout the dev process, from API to GUI
+--
+
+[.banner.small]
+--
+In other words, a holistic approach to writing, managing, and deploying fully integrated, highly accurate documentation.
+
+You know, for shops that truly value good docs.
+--
+
+[.body]
+--
+*Codewriting* is a website and a book, each drawn from the same open source codebase and sharing some of the same content.
+The content source is written in a _lightweight markup language_ called *AsciiDoc*, supported by *small data* files in *YAML* format.
+The codebase is managed and processed by several awesome Ruby utilities, including *Git*, *Asciidoctor*, *Jekyll*, and my own tool, *LiquiDoc*.
+
+And it is all available to anyone who finds it helpful.
+No strings attached, though I'd love to hear from you.
+
+*Codewriting's mission* is to expose what I've learned and help others acquire the skills to establish, maintain, and use great docs-as-code environments.
+It is time for tech writers to become _codewriters_.
+At its essence, codewriting is _docs hacking_.
+
+You do not have to be a developer to take advantage of this system, which you can derive lessons from _a la carte_.
+That said, if you are not yet a developer, this might be a great first step toward becoming one.
+--
+
+[.c2a]
+****
+There are two ways to *get the latest draft of _Codewriting_*, the book:
+
+* Clone the source repo in Git and build the PDF and HTML.
+If you have the common prerequisites (Ruby and Bundler), it's as easy as:
++
+----
+git clone git@github.com:briandominick/codewriting.git
+cd codewriting
+bundle install
+bundle exec liquidoc -c config/build-global.yml
+----
++
+Detailed instructions in the link:readme#build[README].
+
+* If you are just feeling lazy, link:https://github.com/briandominick/codewriting/releases/latest[download the latest compiled PDF].
+
+****
+
+[.c2a]
+****
+Here are some more links of interest:
+
+* link:codewriter-brian-dominick[About Codewriter Brian Dominick]
+
+* link:https://github.com/briandominick/liquidoc-gem[The LiquiDoc utility source]
+
+* link:https://codewriting.org/about-this-site[Under the hood of codewriting.org]
+
+****
