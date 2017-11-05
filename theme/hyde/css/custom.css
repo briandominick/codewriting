@@ -1,0 +1,104 @@
+pre, h1, h2, h3 {
+  font-family: 'PT Mono', monospace;
+}
+
+
+.content {
+  padding-bottom: 0;
+}
+
+td.content {
+  padding: 1rem;
+}
+
+.title {
+  font-weight: bold;
+}
+
+.listingblock .title {
+  font-size: .85em;
+  font-style: italic;
+}
+
+.container {
+  width: auto;
+}
+
+.openblock.banner {
+  font-size: 32px;
+  font-family: 'PT Mono', monospace;
+}
+
+.openblock.banner.small {
+  font-size: 24px;
+}
+
+.openblock.pitch {
+  /*font-size: 22px;
+  font-family: 'PT Mono', monospace;*/
+}
+
+.landing .openblock .paragraph {
+  margin: 0;
+  max-width: 35rem;
+}
+
+.imageblock .content {
+  padding: 0;
+}
+
+.imageblock .title {
+    font-size: .8em;
+    font-style: italic;
+    margin-bottom: 1em;
+}
+
+.listingblock .content {
+  padding-top: 0;
+}
+
+.sidebar-about h1 {
+  font-size: 30px;
+  font-family: 'PT Mono', monospace;
+}
+
+.sidebar {
+  font-family: 'PT Mono', monospace;
+}
+
+.sidebar .copyright, .sidebar .copyright a {
+  color: #999;
+  font-size: 15px;
+  text-align: right;
+}
+
+span.dateline {
+  font-size: .8em;
+  color: #888;
+  background: #e5e5e5;
+  padding: 2px;
+}
+
+span.titleline {
+  font-size: .8em;
+  font-weight: bold;
+}
+
+table.contact, table.contact td {
+  border: 0;
+  text-align: center;
+  background-color: #fff !important;
+}
+
+.resume dt, .resume dd {
+  font-size: 0.9em;
+}
+
+.resume dd p {
+    margin-left: 15px;
+    text-indent: -15px;
+}
+
+.resume dd p em {
+
+}
