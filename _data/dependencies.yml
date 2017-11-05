@@ -1,0 +1,41 @@
+dependencies:
+  - name: Hyde theme
+    slug: hyde
+    description: |
+      “A brazen two-column Jekyll theme that pairs a prominent sidebar with uncomplicated content. It's based on Poole, the Jekyll butler.”
+    license: The MIT License
+    copyright:
+      holder: Mark Otto
+      year: 2013
+    repo-url: https://github.com/poole/hyde
+    site-url: http://hyde.getpoole.com/
+    notes: |
+      This is the default theme I go with. You can read about my choice in link:http://codewriting/blog/asciidoctor-jekyll-hyde/[my blog entry about combining Asciidoctor, Jekyll, and Hyde].
+  - name: FontAwesome
+    slug: fontawesome
+    description: |
+      “The iconic font and CSS toolkit.”
+    license: Open Font License
+    copyright:
+      holder: Dave Gandy
+    repo-url: https://github.com/FortAwesome/Font-Awesome
+    site-url: http://fontawesome.io/
+  - name: M+ OUTLINE FONTS (M+ TESTFLIGHT 058)
+    slug: m1font
+    license: Unlimited
+    copyright:
+      holder: Coji Morishita
+    site-url: http://mplus-fonts.osdn.jp/about-en.html#license
+  - name: Noto Serif Font (v2014-01-30)
+    slug: notoserif
+    license: Apache2.0
+    copyright:
+      holder: Google
+    site-url: https://www.google.com/get/noto/
+    repo-url: https://github.com/googlei18n/noto-fonts
+  - name: Open Sans
+    slug: opensans
+    license: Apache2.0
+    copyright:
+      holder: Google
+    site-url: https://fonts.google.com/specimen/Open+Sans
