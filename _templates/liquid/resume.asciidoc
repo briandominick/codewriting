@@ -12,7 +12,7 @@
 :contact: link:http://codewriting.org/contact[contact Brian]
 :contact_table_width: 100%
 :codewriting_source_uri: https://github.com/briandominick/codewriting
-:codewriting_website_uri: https://codewriting.org
+:codewriting_website_uri: http://codewriting.org
 :liquidoc_source_uri: https://github.com/briandominick/liquidoc-gem
 // PDF overrides
 ifdef::backend-pdf[]
