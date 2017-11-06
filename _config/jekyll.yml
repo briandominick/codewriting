@@ -30,6 +30,7 @@ asciidoctor:
 include:
   - .htaccess
   - README.adoc
+  - blog-feed.xml
 exclude:
   - index-book-cw.adoc
   - book-cw/*
@@ -66,9 +67,10 @@ exclude:
 keep_files:
   - .git
   - .svn
+  - README.adoc
+  - CNAME
 encoding: "utf-8"
 markdown_ext: "markdown,mkdown,mkdn,mkd,md"
-
 
 # Conversion
 markdown: kramdown
