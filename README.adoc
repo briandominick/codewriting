@@ -275,7 +275,6 @@ theme: # <10>
   fonts:
   pdf-theme.yml
 Gemfile # <11>
-index-book-cw.adoc # <12>
 ----
 
 <1> Global data source files, not specific to Codewriting book
