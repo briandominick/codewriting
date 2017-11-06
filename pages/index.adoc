@@ -82,6 +82,6 @@ Here are some more links of interest:
 
 * link:https://github.com/briandominick/liquidoc-gem[The LiquiDoc utility source]
 
-* link:https://codewriting.org/about-this-site[Under the hood of codewriting.org]
+* link:https://codewriting.org/blog-asciidoctor-jekyll-hyde-docs-out-of-the-box[Under the hood of codewriting.org]
 
 ****

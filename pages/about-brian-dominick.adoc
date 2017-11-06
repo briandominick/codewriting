@@ -22,4 +22,4 @@ In combination with several technologies like Git, Asciidoctor, and Jekyll, Liqu
 
 * I maintain a link:brian-dominick-resume[conventional resumé], also drawn from source code in this repo.
 
-* Build link:{codewriting_source_uri}[_Codewriting_] from source, or just download the PDF.
+* Build link:{codewriting_source_uri}[_Codewriting_] from source, or just link:https://github.com/briandominick/codewriting/releases/latest[download the PDF].
