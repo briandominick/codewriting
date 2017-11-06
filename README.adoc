@@ -2,7 +2,7 @@
 :page-permalink: /readme
 :page-layout: page
 // tag::global-settings[]
-:github-repo-uri: https://github.com/briandominick/codewriting
+:codewriting_source_uri: https://github.com/briandominick/codewriting
 // This README file serves as canonical source for some text and other code.
 // Denoted by specially formatted comments like the tag:: and end:: references
 // above and below this comment. These are hidden macros that enable me to mark
@@ -214,7 +214,7 @@ If you clone your newly forked repo to your local machine (similarly to the proc
 . Build locally to make sure your contribution builds as both PDF and HTML.
 
 . Issue a pull request to my repo. +
-{github-repo-uri}
+{codewriting_source_uri}
 
 . I'll review your contribution and respond to it as soon as I can.
 
@@ -260,13 +260,11 @@ assets: # <3>
   images:
   includes:
 book-cw: # <4>
-  index-book-cw.adoc
-  _configs: # <5>
-    backmatter.yml
+  index-book-cw.adoc # <5>
   _data: # <6>
     bibliography.yml
   includes: # <7>
-  part-directories:
+  content-directories:
 presentations: # <8>
 scripts: # <9>
   liquidoxify.rb
@@ -275,6 +273,7 @@ theme: # <10>
   fonts:
   pdf-theme.yml
 Gemfile # <11>
+README.adoc # <12>
 ----
 
 <1> Global data source files, not specific to Codewriting book
@@ -284,14 +283,14 @@ Gemfile # <11>
 <5> Build configurations for the book's precompiled source files
 <6> Data source files for the book, for building complex content
 <7> Discrete content files (topics, source samples, etc)
-<8> Source for slide decks.
+<8> Source for slide decks (bit of a mess at the moment)
 <9> The build scripts (`publish.rb` and `liquidoxify.rb`)
 <10> Files used to style output; hopefully these will evolve to consolidate across media
 <11> The project's Ruby dependency collection
-<12> The book index (document map)
+<12> Whoa, that's like, this file...
 
 == Legal Stuff
 
 The Codewriting codebase is covered by the "Creative Commons ShareAlike 3.0 Unported" license, except as noted in the link:NOTICE of third-party software dependencies.
 You are encouraged to copy and modify this content for your own purposes; just please link back to link:http://codewriting.org/[codewriting.org].
-For details, see link:https://github.com/briandominick/codewriting/blob/prime/LICENSE.md[`LICENSE.md`] for full details and complete license text.
+For details, see link:https://github.com/briandominick/codewriting/blob/master/LICENSE.md[`LICENSE.md`] for full details and complete license text.
