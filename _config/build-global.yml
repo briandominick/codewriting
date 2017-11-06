@@ -68,6 +68,12 @@
   source: README.adoc
   target: _build
 
+- stage: copy-license
+  action: migrate
+  message: Copying LICENSE.md.
+  source: LICENSE.md
+  target: _build
+
 - stage: copy-book-files
   action: migrate
   message: Copying book files.

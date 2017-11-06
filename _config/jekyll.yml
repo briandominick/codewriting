@@ -1,6 +1,7 @@
 # This is the Jekyll configuration file
 title: Codewriting
 description: The website and blog of the Codewriting documentation project.
+tagline: Collaborative Documentation Ops for the Agile Age
 output: web
 source: _build
 destination: _site
@@ -31,6 +32,7 @@ include:
   - .htaccess
   - README.adoc
   - blog-feed.xml
+  - LICENSE.md
 exclude:
   - index-book-cw.adoc
   - book-cw/*
@@ -56,7 +58,6 @@ exclude:
   - Gemfile
   - Gruntfile.js
   - gulpfile.js
-  - LICENSE
   - NOTICE
   - log
   - node_modules

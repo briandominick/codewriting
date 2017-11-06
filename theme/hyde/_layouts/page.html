@@ -3,7 +3,7 @@ layout: default
 ---
 
 <div class="page">
-  {% unless page.title == blank %}
+  {% unless page.title == blank or page.title == "Home" %}
   <h1 class="page-title">{{ page.title }}</h1>
   {% endunless %}
   {{ content }}

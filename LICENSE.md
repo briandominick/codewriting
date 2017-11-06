@@ -1,3 +1,7 @@
+---
+permalink: /license
+layout: page
+---
 # LICENSE
 
 Copyright &copy; 2017 Brian Dominick

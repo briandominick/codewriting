@@ -1,5 +1,6 @@
 :page-permalink: /
 :page-layout: landing
+= Home
 
 [.banner]
 --

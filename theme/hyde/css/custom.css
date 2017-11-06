@@ -76,8 +76,13 @@ td.content {
 
 .sidebar .copyright, .sidebar .copyright a {
   color: #999;
-  font-size: 15px;
+  font-size: .8em;
   text-align: right;
+}
+
+.sidebar .copyright i.fa {
+  font-size: 20px;
+  padding-right: 3px;
 }
 
 span.dateline {
