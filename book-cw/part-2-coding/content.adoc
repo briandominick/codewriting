@@ -3,15 +3,15 @@
 I forgive you if you gathered from the previous chapter that I somehow diminish the relevance of the _developer_ to their eventual human audience: the user.
 This is, after all, the very same user that is the tech writer's primary audience.
 
-The truth is, coders are always adopting new ways of ensuring their output meets users needs and expectations.
+The truth is, coders are always adopting new ways of ensuring their output meets users’ needs and expectations.
 Good developers know they are _not_ just finessing code for a digital audience that perfectly interprets it on behalf of the end user.
 Those end-user meat computers we all serve are still going to interact with some kind of UI the developer's source code ultimately generates, and interactive systems are hard to get right.
 
 == Content Development
 
-Product developers have spawned robust systems for user testing and feedback during all phases, from prototyping to post-shipping, all in order to ensure users get the most out of those developers' work.
+Product developers have spawned robust systems for user testing and feedback during all phases, from prototyping to post-shipping, all in order to ensure users get the most out of those developers’ work.
 This may not be something we can precisely reproduce with early docs drafts or iterations, given the nature of our output and the potential for confusing real users.
-But clever observers of product owners' latest UX learning techniques have begun applying such “lean/agile” lessons to docs.
+But clever observers of product managers’ latest UX learning techniques have begun applying such “lean/agile” lessons to docs.
 
 This way the DocOps discipline can eventually establish processes and tooling to significantly reduce documentation bugs -- places where we get it wrong, or where our output falls short of expectations.
 
@@ -25,7 +25,7 @@ Pre-release::
 * clear, organized *writing*/*diagramming*
 * thorough, interested *review* (for accuracy)
 * frank *editing* (for clarity)
-* systematic *testing* (pre-release)
+* systematic *testing*
 
 Post-release::
 
@@ -34,6 +34,7 @@ Post-release::
 * pruning, editing, and rewriting as needed
 
 Code bugs suck, but well-tooled development environments may discover dozens of errors for every bug uncovered later by QA testers and end users.
+This has become a generally accepted responsibility of programmers.
 
 Reducing bugs in documentation is at least as important but poorly assisted.
 Text editors and word processors have no idea about your context.
@@ -70,8 +71,8 @@ You can help with this.
 *Development environment setup* should be fully and effectively documented for new hires, as well as to establish a standard for existing developers to reference and work toward.
 Help your team document these standardizations collaboratively, and they'll each thank you for it next time they have to set up a new MacBook.
 
-We will also discuss communicating with users in other sections of this book.
-What we need to appreciate about users for now is the similarity between _writing code without any docs_ and _writing documentation without understanding users’ expectations_ on the other hand.
+We will further discuss communicating with users in other sections of this book.
+What we need to appreciate about users for now is the similarity between _writing code without any docs to reference_ on one hand, and _writing documentation without understanding users’ expectations_ on the other hand.
 Most unfortunately, human audiences don’t come with APIs -- documented or otherwise.
 
 You’re not thinking like a developer until you look at technical writing as _content development_.
@@ -94,12 +95,11 @@ In all honestly, I am pretty confident that I am helping to build a technical do
 
 The good news is, what makes a tech writer human is actually valuable to users, and thus valuable to our organizations.
 Computers are probably a ways off from writing _interesting_ docs that provide user-appropriate insights.
+(Then again, so are most human tech writers.)
 We'll look at the hair-raising powers of existing AI later on, but the upshot will be the ironic ways such sophisticated and thorough routines do not appreciate abstraction the way we have come to.
 
-Then again, so are most human tech writers.
-
 When the bots come for those who excel at compiling reference guides, you will have long since climbed to the higher ground of scenario-based documentation.
-When the bots lay off everyone who writes use-cases, you’ll be safely making diagrams and constructing relatable example screenshots.
+When the bots lay off everyone who writes use cases, you’ll be safely making diagrams and constructing relatable example screenshots.
 And when they come for the illustrators, you will still be the one who gets why the user wants the software in the first place, and somewhere, someone who appreciates that difference may be hiring.
 
 == Every Page a UI
