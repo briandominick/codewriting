@@ -1,13 +1,13 @@
-= Codewriting: Collaborative Technical Documentation for the Agile Age
+= Codewriting: Collaborative Documentation Ops for the Agile Age
+:page-permalink: /readme
+:page-layout: page
 // tag::global-settings[]
 :github-repo-uri: https://github.com/briandominick/codewriting
-:site-blog-uri: https://codewriting.org/blog
-:site-book-uri: https://codewriting.org/codewriting-book
 // This README file serves as canonical source for some text and other code.
 // Denoted by specially formatted comments like the tag:: and end:: references
 // above and below this comment. These are hidden macros that enable me to mark
 // sections of a file for selective inclusion (think of it as embedding) into a
-// parent file elsewhere in my source repo.
+// parent file elsewhere in my source repo during parsing.
 // end::global-settings[]
 
 // tag::preamble[]
@@ -16,19 +16,42 @@ _Codewriting_ is an open, hopefully collaborative writing project to document cu
 A manual for establishing optimal documentation environments, _Codewriting_ explores the “docs-as-code” or “DocOps” approach to documenting and instructing software.
 This iteratively written, open-source volume explores the unconventional strategies in use by many of today's hottest startups and teams at several tech-industry stalwarts.
 
-As a living, collaborative document, _Codewriting_ employs many of the techniques it teaches -- written in lightweight markup code, this book's codebase (its text) can be forked and modified by anyone for any reason (<<creative-commons,see the Creative Commons ShareAlike license>>).
+As a living, collaborative document, _Codewriting_ employs many of the techniques it teaches -- written in lightweight markup, this book's codebase (its text) can be forked and modified by anyone for any reason other than direct profit (<<creative-commons,see the Creative Commons ShareAlike license>>).
 
-_Codewriting_ is for the tech writer and engineer alike, and it covers systems that involve everyone in the development circle, such as DevOps, project management, and product ownership.
+_Codewriting_ is for the tech writer and engineer alike, and it covers systems that involve everyone in the development circle, such as DevOps, project management, quality assurance, and product ownership.
 Coders and writers will find advice for integrating the others' skills and tools for building better docs, as well as improved collaboration around docs and interfaces, user- and developer-facing alike.
 From writing and docs-planning techniques to blending the product's build and content source, _Codewriting_ is about upgrading how we communicate the products we make.
 // end::preamble[]
 
+== Repo
+
+The `briandominick/codewriting` repo contains much more than just the _Codewriting_ book source.
+This is also the home of link:http://codewriting.org/[codewriting.org], which includes a blog and informational pages about DocOps tools and techniques.
+All of this is built from a fairly robust codebase mixing mostly YAML and AsciiDoc files, configured to be processed by powerful build/publish tools.
+This repo can serve as a framework on which to base your own site with a self-contained build operation for turning complex source and data into a professional web presence, all using free, open source tools.
+Please, be my guest, and modify to your heart's content.
+
+These tools include:
+
+* link:http://https://jekyllrb.com/[Jekyll], a popular static site generator
+* link:http://asciidoctor.org/[Asciidoctor] parsing engine for AsciiDoc files
+* link:http://github.com/briandominick/liquidoc-gem/[LiquiDoc], my own tool, which I use for preprocessing YAML data and configuring complicated build procedures
+* link:https://git-scm.com/[Git] -- if you don't know it yet, the time has come
+
+[NOTE]
+.Do Not Be Intimidated
+All of these tools happen to be written in Ruby and run in a Ruby environment using each tool's built-in command-line interface.
+You do not have to know Ruby to use these tools.
+They will help you become comfortable using your system's terminal command line interface.
+If you want to learn more about how these tools work, we'll be exploring LiquiDoc, Jekyll, and several tools from the Asciidoctor ecosystem, as well as many others, all in these pages.
+
 == Build
 // tag::build-cw[]
-This book is being written in a lightweight markup language.
-That means it starts as source code, and it must be compiled to a cohesive document in a friendlier format for reading.
+The book and website are written in lightweight markup languages.
+That means content starts as source code, which must be _compiled_ to a cohesive document in a friendlier format for reading.
+*If you try merely reading it as file pages on GitHub, you'll be missing a lot*, even though GitHub plays somewhat nice with AsciiDoc.
 
-_Codewriting_ is totally free, and the latest public draft will always be made available here -- all you have to do is pull the source repository and run a simple command to build a 1-page HTML page or PDF document.
+_Codewriting_ is totally free, and the latest public draft will always be made available here -- all you have to do is “pull” the source repository and run a simple command to build a 1-page HTML page or PDF document.
 Here is how.
 
 In order to operate the publishing tool included in this repo, you'll need Ruby.
@@ -36,21 +59,22 @@ If you're on a *Mac OSX or Linux* system, you likely have an appropriate version
 
 For *Windows*, download and run link:http://rubyinstaller.org/[RubyInstaller].
 
-[WARNING]
-The packaged scripts have not yet been tested on Windows.
-Instructions below assume Mac OS or Linux.
-
+[TIP]
+.Git FTW
+--
 To really engage with this book, you will want to use Git.
 To set up Git, go to the link:https://git-scm.com/downloads[Git downloads page] and select your operating system.
 
 If you are brand new to Git, check out link:https://try.github.io/levels/1/challenges/1[GitHub's Try Git tutorial].
+--
 
-The last tool you need is your preferred *terminal/command prompt*.
+The last tool you need is your preferred *terminal/command prompt* (link:https://www.lifewire.com/how-to-open-command-prompt-2618089[Windows instructions], link:http://www.wikihow.com/Get-to-the-Command-Line-on-a-Mac[Mac instructions]).
 
 . In the terminal, navigate to a workspace directory.
 +
+.Example (any directory will do)
 ----
-cd ~/Documents/workspace
+cd Documents/workspace
 ----
 
 . Clone this repo.
@@ -60,7 +84,7 @@ git clone git@github.com:briandominick/codewriting.git
 ----
 +
 [TIP]
-If you don't wish to run Git and clone the repo, you can always download and unzip link:https://github.com/briandominick/codewriting/archive/prime.zip[the archive of this repo] anywhere on your hard drive.
+If you don't wish to run Git and clone the repo, you can always download and unzip link:https://github.com/briandominick/codewriting/archive/master.zip[the archive of this repo] anywhere on your hard drive, then continue these instructions.
 
 . Change directory to the repo.
 +
@@ -68,55 +92,33 @@ If you don't wish to run Git and clone the repo, you can always download and unz
 cd codewriting
 ----
 
-. Install the Bundler gem.
-+
-----
-gem install bundler
-----
-+
-This is a special package manager for Ruby gems; it will ensure you always have the right dependencies installed.
-
 . Run Bundler's install command to establish local Ruby gem dependencies.
 +
 ----
 bundle install
 ----
-
-. Make the build and parse scripts executable.
 +
-.MacOS/Linux Example
-----
-chmod 755 scripts/publish.rb
-chmod 755 scripts/liquidoc.rb
-----
-+
-[TIP]
-For Windows environments, perhaps try the most appropriate solution from this link:https://stackoverflow.com/questions/1422380/how-to-i-launch-a-ruby-script-from-the-command-line-by-just-its-name[Stack Overflow Q/A].
+If Bundler is not installed, run `gem install bundler`, then repeat this step.
+Bundler is a package manager for Ruby gems; it will ensure you always have the right dependencies installed.
 
-. Build the book in PDF and HTML.
+. Build the book in PDF and HTML, as well as the site and my resumé.
 +
 ----
-bundle exec scripts/publish.rb -i index-book.adoc -o codewriting-book-draft -l
+bundle exec liquidoc -c _configs/build-global.yml
 ----
 
-Now you can open `_output/codewriting-book-draft.html` in your preferred browser or open `_output/codewriting-book-draft.pdf` in your favorite PDF viewer.
+Now you can open `_build/publish/codewriting-book-draft.html` in your preferred browser or open `_build/publish/codewriting-book-draft.pdf` in your favorite PDF viewer.
 Please give this latest draft a read and let me know what you think!
+The other contents of `_build/` are yours to peruse.
+Also check out the files in `_config/`, `_data/`, and `_templates/`, as well as all the AsciiDoc files in `book-cw/`.
 
 [TIP]
-
 --
-To learn more about the build tool:
-
-++++
-bundle exec scripts/publish.rb --help
-bundle exec scripts/liquidoc.rb --help
-++++
-
-Or explore the files in the repo!
-
+To learn more about the build tool, explore the files in the link:https://github.com/briandominick/liquidoc-gem[LiquiDoc] repo!
+This is my first ever Ruby scripting project; it's not terribly complex, and there's lots more to come.
 --
 
-To keep updated, link:{github-repo-uri}/subscription[follow this repo on GitHub].
+To keep updated, link:https://github.com/briandominick/codewriting/subscription[follow this repo on GitHub].
 // end::build-cw[]
 
 [NOTE]
@@ -195,14 +197,19 @@ Otherwise, it's fine to leave it for me to suggest a placement.
 === How to Contribute
 
 Here are the technical steps to contributing.
-If you don't know how to use Git or AsciiDoc yet, you may wish to read the book before trying to contribute.
-In fact, that's a good general recommendation, so you don't duplicate something that's already included, and maybe you should be enhancing existing content.
+If you don't know how to use Git or AsciiDoc yet, you may wish to *read the book before trying to contribute*.
+In fact, that's a good general recommendation, so you don't duplicate something that's already included, and so you can enhance existing content -- even by contradicting it sensibly.
 
 . Fork the GitHub repo.
++
+image::screenshot_fork-this-repo.png[width=260]
 
 . Create a branch.
 
-. Edit the appropriate AsciiDoc file, or create and appropriately include a new one.
++
+If you clone your newly forked repo to your local machine (similarly to the procedure for cloning _this_ repo, above), use `git checkout -b new-branch`, where `new-branch` is a descriptive name for your contribution (e.g., `sidebar-hacking`).
+
+. Edit the appropriate AsciiDoc file, or create and properly include a new one.
 
 . Build locally to make sure your contribution builds as both PDF and HTML.
 
@@ -232,11 +239,12 @@ Words!::
 Lots more content coming, across several chapters
 
 Slides!::
-I want to make a bulleted summary of each chapter/section as a "slide", which can be included in each section as well as compiled into a slide deck for presentations.
+I want to make a bulleted summary of each chapter/section as a “slide”, which can be included in each section as well as compiled into a slide deck for presentations.
 I hope others will modify them to their liking and make use of them spreading the word about DocOps!
 
-Site!::
-I've purchased `codewriting.org` and will eventually build a static site there, including a landing page, a blog, and lots of side resources.
+Exercises::
+I am working on a narrative about a docs-focused startup that hires the reader as Employee #3.
+Hijinks ensue.
 
 [[framework-and-build]]
 == Framework and Build
@@ -246,15 +254,17 @@ Here are some notes on what goes where and how it's all built.
 [source,yaml]
 ----
 _data: # <1>
+  glossary.yml
 _layouts: # <2>
 assets: # <3>
   images:
+  includes:
 book-cw: # <4>
+  index-book-cw.adoc
   _configs: # <5>
     backmatter.yml
   _data: # <6>
     bibliography.yml
-    glossary.yml
   includes: # <7>
   part-directories:
 presentations: # <8>
@@ -265,12 +275,12 @@ theme: # <10>
   fonts:
   pdf-theme.yml
 Gemfile # <11>
-index-book.adoc # <12>
+index-book-cw.adoc # <12>
 ----
 
 <1> Global data source files, not specific to Codewriting book
 <2> Liquid templates for mapping data to variables in precompiled files
-<3> Images and other content used directly in output
+<3> Images, AsciiDoc includes, and other content used directly in output, possibly for multiple documents
 <4> Book content files; everything that goes _in_ the book
 <5> Build configurations for the book's precompiled source files
 <6> Data source files for the book, for building complex content
@@ -283,5 +293,6 @@ index-book.adoc # <12>
 
 == Legal Stuff
 
-The Codewriting codebase is covered by two licenses: MIT for functional code; "Creative Commons ShareAlike 3.0 Unported" for content.
-For details, see link:{github-repo-uri}/blob/prime/LICENSE.md[`LICENSE.md`] for full details and complete license text.
+The Codewriting codebase is covered by the "Creative Commons ShareAlike 3.0 Unported" license, except as noted in the link:NOTICE of third-party software dependencies.
+You are encouraged to copy and modify this content for your own purposes; just please link back to link:http://codewriting.org/[codewriting.org].
+For details, see link:https://github.com/briandominick/codewriting/blob/prime/LICENSE.md[`LICENSE.md`] for full details and complete license text.
