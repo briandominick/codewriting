@@ -1,0 +1,60 @@
+= User Interface Types: A Documentarian's Take
+
+By my count and distinction, there are seven major types of user interfaces (UI) that developers make and tech writers document.
+I have not found a complete list like this anywhere, which makes me think perhaps nobody else finds this interesting.
+
+Nevertheless, at risk of stirring up controversy, let me take a stab:
+
+. command-line interfaces (CLI) +
+includes multi-line editors in non-GUI systems
+
+. form-fill interfaces (FFI) +
+includes wizards and dialogs
+
+. graphical user interfaces (GUI) +
+operating systems, video games, and most other mixed-interface systems; FFIs are often misrepresetned as GUIs
+
+. application programming interfaces (API) +
+protocols and tooling for developers to interact with and extend a product or programming language, including integrated development environments (IDE)
+
+. augmented reality (AR) interfaces +
+screens that overlay real-world visualization with text, symbols, and interactive elements
+
+. natural language user interfaces (LUI) +
+UIs that accept language commands, includes conversational interfaces like Siri and Alexa, as well as chatbots
+
+. virtual reality (VR) interfaces +
+immersive experiences intended to maximize and naturalize the interface while minimizing interference from conventional UI elements
+
+You may be tempted to add to these top-level categories, but I challenge you to help me merge and reduce.
+
+* Some might say FFIs are a sub-category of GUIs, but I think they're different enough to instruct, and both so terribly common, the distinction is significant.
+
+* Are augmented reality and virtual reality in the same category -- reality-based interfaces?
+
+I don't know why I find this taxonomy comforting, but it helps me to approach each type of interface with its particular attributes front of mind.
+
+.HELP WANTED
+[NOTE]
+_Codewriting_ explores the first four types of UI, each at some length. Having no experience with AR, VR, or LUIs, I eagerly welcome insights in appropriate places from documentarians with relevant expertise.
+
+Interface types are often associated with audience types.
+If I'm documenting a CLI, I know it's not for my father, who recently told me he's getting an iPad because physical keyboards intimidate him.
+In fact, if my father is the product's audience, we know a CLI is not the right choice.
+Aside from unforgiving syntax, the command line lacks visualization and only minimally abstracts underlying logic and routines.
+This makes the CLI a non-starter for huge swaths of less technically inclined users, as well as less frustration-inclined geeks.
+
+While command-line interfaces are considered the most intimidating, they are by no means the most complex.
+In fact, the list of UI types above reflects my sense of the ascending order of _potential_ complexity.
+The less burdensome the interface seems, the more open-ended it is, and thus the more complicated it would be to fully capture the range of its utilization.
+
+Imagine the potential complexity of a natural language interface.
+The limitations of Siri and Alexa are not in the interface, but in the intelligence.
+The range of commands such systems can already distinguish make them spectacularly open ended.
+They just don't yet know what to do with the vast majority of potential commands, however sensible they may be.
+
+Drastically more complex than any mere language-based interface is VR, which can incorporate natural language commands, kinetic interface techniques, and eventually advanced brain and neural interfaces.
+One can almost imagine VR so immersive the user cannot distinguish the digital world from the natural world.
+Such an interface would be so intuitive, in the truest sense of that term, it would be essentially impossible to document.
+
+Or maybe the instructions could be captured in one simple command: “Act naturally.”

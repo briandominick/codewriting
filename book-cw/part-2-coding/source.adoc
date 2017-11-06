@@ -5,13 +5,13 @@ Codewriting refers to the different “codes” we use to communicate technical 
 Codewriting is writing _about_ software in a way that involves coding alongside the product, even if most of your source code is strings and prose.
 
 There's no getting around it: codewriting requires deep knowledge of the specific product, and a functional knowledge of software more broadly.
-Codewriters fully understand just about everything their product _does_, but they also have a firm grasp of how it is developed, by whom, using what tools.
-Great codewriters understand the product build process, agile project management concepts, developer interfaces (such as APIs and IDEs).
+Codewriters fully understand just about everything their product _does_, but they also have a firm grasp of how it is developed, by whom, using what assets and tools, in what environment.
+Great codewriters understand the product build process, agile project management concepts, and developer interfaces (such as APIs and IDEs).
 Even quality assurance, testing, and automation are on the codewriter's radar.
 
 Thinking like a coder means looking at the product from the inside out.
 I don't recommend this as a constant mindset; the end user's perspective is far too critical to give way to the developer's vantage.
-But understanding the way devs look at code can be empowering, so let's take a minute to brush up on (against?) basic computer science.
+But understanding the way devs look at code can be empowering, so let's take a minute to brush up on (or brush against) basic computer science.
 Don't worry, I have no ability to go beyond the very surface, but there is plenty of insight in the basics of programming.
 
 == Code Abstraction
@@ -19,7 +19,7 @@ Don't worry, I have no ability to go beyond the very surface, but there is plent
 Unless you can read machine code (you cannot), it does not matter how great of a software engineer you may be: humans require code abstraction in order to interface with computers.
 This goes for programming as well as for using programs.
 Even if you make a product for software developers, they want to work through an effective interface, be it a command-line interface (CLI), a graphical user interface (GUI), or an application programming interface (API).
-All those __I__s are effectively sets of “fields”, “endpoints”, “commands”, or “hooksf not a full-blown scripting language.
+All those __I__s are effectively sets of “fields”, “endpoints”, “commands”, “arguments”, or “hooks”, if not a full-blown scripting language.
 With such interfaces, their human brains can train other pieces of software to interact with your product.
 
 Let's take a look at an example of code abstraction in rich text.
@@ -41,10 +41,10 @@ As HTML under the hood, that should look something like this:
 <p>What do we mean by <em>code abstraction</em>?</p>
 ----
 
-And because all those extra tags are not easy to type and only serve to limit our output options, we sourced this in lightweight markup.
+And because all those extra tags are not easy to type and only serve to limit our output options, we sourced this in lightweight markup, which converted to the HTML you see above.
 
 [source,markdown]
-.Code Abstraction -- Markdown
+.Code Abstraction -- Markdown lightweight markup source
 ----
 # Code Abstraction
 
@@ -60,35 +60,44 @@ And I must say, even after twenty years of hitting `<` hundreds of times a day, 
 In the same way a WYSIWYG editor is an abstraction of HTML (or other rich-text XML behind it), lightweight markup languages are an abstraction of that same complexity.
 AsciiDoc was made to generate DocBook XML output.
 Tech writing guru Tom Johnson has written about link:http://idratherbewriting.com/md2html2ditav2/[writing in Markdown to generate DITA or HTML].
+It may seem like an arbitrary line to draw -- _I want to see lightweight markup, but I don't want to see XML or bytecode_ -- but that's my Goldilocks zone.
+
+=== Abstraction as Transformation
 
 Most products and development environments involve much more complex forms of abstraction.
 Even a website typically adds more layers, such as the cascading style sheets that provide layout form, fonts, colors -- pretty much everything but the content itself, down to all those boring HTML elements.
 A large enterprise application can have numerous interfaces opening up countless avenues of source code giving way to machine code, which in turn forms numerous portals for developer, administrator, and end-user engagement with the product.
 
 All that is too big and frankly too abstract to grapple with, so let's get back to a simpler example.
-But what if our product interface is bare bones?
+What if our product interface is bare bones?
 Let's say we're a new startup, and we're hoping early adopters will validate our innovative tool at an early stage.
-Maybe all we provide these early users is a Linux command-line tool.
-A CLI provides a layer of abstraction, too -- it keeps the user from having to write and run scripts every time they want to interact with our product.
+Maybe all we provide these early users is a command-line tool.
 
-This may be difficult to appreciate, but engineers understand the advantage, as will anyone who learns to explore the Codewriting repo.
-When I was writing this book, I knew I'd want to make it extremely easy to publish your preferred version of this document, as well as show off some of the powers of DocOps tools.
-I also wanted to reduce the number of steps it might take someone to get the book built.
+It may not feel like it when you're struggling at a command prompt, but a CLI is a layer of user-friendly abstraction, too.
+You think commands and options are hard to keep track of, but they're saving you from having to write and run scripts every time you want to interact with a product.
+This may be difficult to appreciate, but engineers understand the advantage, as will anyone who learns to explore the link:https://github.com/briandominick/codewriting[Codewriting GitHub repo].
 
-For these reasons, I wrote a script called `publish.rb`, which provides a command-line interface, which you've probably already used.
-This CLI abstracts a bunch of awkward logic you can learn about later, and that's the whole story of why I wrote it.
+When I started writing this book, I knew I'd want to make it extremely easy to publish your preferred version of this document, as well as show off some of the powers of DocOps tools.
+I also wanted to reduce the number of steps it might take someone to build the book, which was kind of a pain in the butt at first.
+
+For these reasons, I developed a tool called LiquiDoc, which provides a command-line interface.
+(If you built this book from source, you've already used it.)
+This LiquiDoc CLI abstracts a bunch of awkward logic you can learn about later, and that's the whole story of why I coded it.
+The script was so handy, I made a more robust version of it for work, and we released it as a Ruby gem, as well as opening up the source code.
 
 “Code abstraction” is a way of saying _a simplified interface to underlying complication and functionality_.
 The _source code_ developers write in is always an abstraction of underlying code.
 Executable code is compiled or interpreted into another form, closer to being able to instruct the microprocessor to perform specific operations.
-When the developer is done with it, code at once becomes more complicated for machine interaction and less complicated, for human interfacing.
 
+When the developer is “done” with it (ready to test or package), source code becomes more complicated in order to interact with underlying layers -- perhaps a some libraries and precompiled dependencies, a runtime environment, the operating system, and then the microprocessor.
+From all of this, your effort on that last layer yields a product that obfuscates all of the above, so the end user only sees what they need to -- data and functionality are abstracted.
 Just like our Markdown above gets uglier (HTML) in order that it may become more elegant (the browser display).
-
 Sometimes specificity, performance, or functionality are sacrificed during abstraction, but a successful abstraction process creates at least a nominally new interface into a human-unfriendlier layer.
 
+=== Docs as Merciful Abstraction
+
 In this sense, user instructions and other documentation are an abstraction as well.
-Unless you’re writing docs for hardcore engineers (and not always even then, I imagine), there will be things you leave out in order not to increase obscurity or complexity of your product interface.
+Unless you’re writing docs for hardcore engineers (and not always even then, I imagine), there will be things you leave out in order not to increase the obscurity or complexity of your product.
 
 It can be tempting, especially on an open source product, to be fully transparent, even with internal notes, specifications, and other “work product” that often takes place in private spaces.
 Unfiltered data gives creative and motivated users the potential to solve their own problems.
@@ -96,18 +105,19 @@ But consider all that potentially confusing if not contradictory or even hazardo
 Ranging from user frustration to misinformation to potential liability, there is definitely such a thing as TMI in product documentation, even when your product is open source and highly extensible by design.
 
 At a certain point, the sheer volume of docs achieves sharply diminishing returns, especially considering all released docs must be maintained.
+A project can easily have more “documentation” files than it has originally contributed programmatic files, when you count all the meeting notes, task-management issues, support tickets, and whiteboard wars.
 While adding only the most marginal value for edge-case users, too much detail can produce incalculable opportunities for typical users to get lost or discover bad information.
-If your whole team operates in a public repo and task-management solutions, maybe it's okay that interested users can find what they need.
+If your whole team operates in a public repo and task-management solution, maybe it's okay that interested users can find what they need.
 But there's a difference between _exposing_ and actually _releasing_ documentation.
 
 We'll return to the discussion of curating content and managing internal docs.
-For now, I wanted to demonstrate how *docs are both user interface and abstraction*--just like the product.
+For now, I wanted to demonstrate how *docs are at once user interface and abstraction* -- just like the product is.
 
 == Like a Bot, But Way Better (For Now)
 
-Consider how all of your duties at work make you an abstraction of sorts.
+Consider how all of your duties at work make _you_ an abstraction of sorts.
 If you're a technical writer, _you are a self-aware, actively learning black box_ -- one that can be given commands such as “Document this new feature".
-Once you're oriented at your job, you no longer require detailed instructions of how that gets done.
+Once you're oriented at your job, you no longer require detailed instructions of how that gets done, if you ever even got them (fat chance).
 You accept input; magic happens; docs come out.
 
 Let's take a closer look:
@@ -120,7 +130,7 @@ You are provided::
 
 . an interface to explore (the product); and
 
-. resources for self-directed research (source code).
+. resources for self-directed research (source code, specs, Google).
 
 From which you are expected to produce::
 
@@ -128,23 +138,26 @@ From which you are expected to produce::
 
 . a central store of metadata about the product, including version tracking, changelog, dependency and licensing requirements, installation prerequisites, etc. (information architecture);
 
-. iterative improvement of the product (docs) with each cycle (learning);
+. iterative improvement of your output with each cycle (learning);
 
 . iterative improvement of the documentation platform and the development-documentation _framework/workflow_ (recursive tooling);
 
-. iterative improvement of yourself, meaning _iterative advancement of you as a tool_, in ways that translate to other products and even contribute across departments (recursive self-improvement, general intelligence).
+. iterative improvement of yourself, meaning _iterative advancement of you as a tool_, in ways that translate to other products and even contribute across departments (recursive self-improvement).
 
 These are the very attributes of the artificial intelligence program that will eventually replace you.
 Put more optimistically: _You will be in demand by forward-thinking companies at least until a machine can do all of the above_.
 
-Well, if you are a conventional technical writer, machines only have to achieve competency in the first two or three procedures before they become extremely attractive.
+Well, if you are a typical technical writer, machines only have to achieve competency in the first two or three procedures before they become extremely attractive.
+DocOps is about how not to be a typical technical writer.
 
 === DocOps.do()
 
-So what is the set of functions a solid code writer carries out that make us (think we’re) so special?
+So what is the set of functions a solid codewriter carries out that make us (think we’re) so special?
 We fancy ourselves able to wear all the necessary hats to keep the docs in ship shape, no matter the pressures and obstacles we encounter.
-This is a partly because we're skilled, but it's mainly because we're resourceful.
-Either way, we exhibit more general intelligence, and at least marginally greater passion for our profession than any computer program yet developed.
+This is partly because we're skilled, but it's mainly because we're resourceful.
+Either way, we exhibit more general intelligence, and at least marginally greater passion for our profession, than any computer program yet developed.
+
+But let's pretend for a moment that we're just a fancy piece of AI software that can do a whole lot based on minimal commands.
 
 .Calling carryOut() as an abstract function
 [source,javascript]
@@ -153,10 +166,12 @@ Either way, we exhibit more general intelligence, and at least marginally greate
 carryOut(user, act, target)
 ----
 
-Let’s say this code _calls_ a function named `carryOut()`, to which we are supplying arguments: the _values_ of variables represented by the strings `act`, `user`, `target`, answering questions the `carryOut()` function is just dying to know.
-We can’t see those values in this snippet, because they have been abstracted into _variables_ (_substitutions_) so the code we see above can be reused in different environments with different results.
+Let’s say this code _calls_ a function named `carryOut()`, to which we are supplying arguments: the _values_ of variables represented by `act`, `user`, and `target`.
+Those arguments answer three questions the `carryOut()` function is just dying to know; we're assured `carryOut()` can take it from there.
 
-To keep it simple, let's say we were going to set the values of those three variables like so:
+We can’t see those values in this snippet, because they have been abstracted into _variables_ (`user`, `act`, `target`) so the code we see above can be reused in different environments with different results.
+
+To keep it simple, let's say we had previously set the values of those three variables like so:
 
 .Setting inputs for carryOut()
 [source,javascript]
@@ -171,7 +186,7 @@ carryOut(user, act, target)
 
 The `carryOut()` function sees the _evaluations_ of these arguments (user, act, and target); it interprets their values.
 As we’ll see, this function expects some of these values to come in the form more complex abstractions called objects.
-The `getObject()` function likely performs a database query or some other means of gathering contextual data.
+The `getObject()` function likely performs a database query or some other means of gathering contextual data and formatting such that other functions may manipulate it as needed.
 
 Maybe you've figured out that this function instructs Wendy to integrate the documentation into the product repo.
 
@@ -183,8 +198,8 @@ The order to _diagram_ a relationship between elements of a product suggests all
 What you do not require is for some manager to point at your screen to tell you which programs to use, which menu items to click or shortcut keys to press, where to save the file in what format, and so on.
 A framework for this might have been established at some point, but you execute all day long within those parameters, without anyone having to reinstruct you.
 
-Let’s peel back one more layer to see just what `carryOut()` actually does.
-As in most software “reading”, the result is mildly enlightening but largely disappointing.
+Let’s peel back one more layer to see just what the `carryOut()` function's definition actually looks like.
+As in most software “eyeballing”, the result is mildly enlightening but largely disappointing.
 That's abstraction for you.
 
 .Defining carryOut() as a function
@@ -203,13 +218,13 @@ define function carryOut(subject, action, target) { //<1>
     } elseif willLearn == true { //<6>
       learning = goLearn(subject, action)
       result.status = "pending"
-      result.message = learning.status_message
+      result.message = "I was already just learning that. ${learning.status_message}"
       result.target = target
     }
-  } elseif find(action, subject.skillset) == true { //<7>
+  } else if find(action, subject.skillset) == true { //<7>
     action = doAction(action, subject, target) //<8>
     result.status = action.status
-    result.message = action.message
+    result.message = "I can already do that. Here's my status: ${action.status_message}"
     result.target = getProfile.target
   }
   return result //<9>
@@ -228,16 +243,18 @@ This example is not actual JavaScript, but rather a phony language intended to m
 <4> The function `canLearn()` is an abstraction that figures out whether the Wendy object can learn the action skill.
 Who knows what it’s doing under the hood, but we're naming its result `willLearn` because that's what its value will indicate: our subject _will learn_ this skill if possible.
 
-<5> If the subject is deemed unteachable, the function fails and we prepare to return the same object for target that we got from our original `getObject(target)` call. (The function “breaks” here, and we skip to *10*.)
+<5> If the subject is deemed unteachable, the function fails and we prepare to return the same object for target that we got from our original `getObject(target)` call. (The function “breaks” here, and we skip to *9*.)
 
 <6> Finally some good news!
-We can report that the work is “pending”, the `goLearn()` function is getting us knowledge, and our specific message (set by `goLearn()` as `learning.status_message`) is something like “I was just learning that already! I can’t wait to put it to use!”
+We can report that the work is “pending”, the `goLearn()` function is getting us knowledge, and our specific message. Here this partly includes information derived from the `goLearn()` call itself, the `learning.status_message` variable tokenized with `${}` notation.
 
-<7> Harkening back a couple steps to the question of our existing skillset, if this action was found in our skillset, we’re off to the races.
+<7> Harkening back a couple steps to the question of our existing skillset, if this action _was_ found in our skillset, we’d have skipped right to this step and be off to the races.
 
 <8> Unfortunately, `doAction()` is one hell of an abstraction.
 It's a good bet that all of the practical, fun work associated with the `carryOut()` function call is taking place under the hood of `doAction()`.
 Or maybe, like `carryOut()` itself, `doAction()` does some overhead work but passes on the heavy lifting to some machine-learning API halfway around the world.
+We simply cannot tell from here.
+Abstraction can be a cruel warlock.
 
 <9> Finally, we _return_ the result of our function back to the calling code.
 
@@ -249,7 +266,7 @@ But Wendy is resourceful, so Wendy's got this.
 == Docs as Abstraction
 
 Good documentation is another layer of abstraction added to the product it covers.
-It gives users (and potential customers) a view of the product that uses text and images to abstract all of that complicated software into a page or list that meets users where they're able to interface.
+It gives users (and potential customers) a view of the product that uses text and images to abstract all of that complicated software into a page or a table or a bulleted list that meets users where they're able to interface.
 
 At its core, software technical writing is creating the ideal abstraction layer between users and the product.
 Like a good UI, good documentation foresees the user's needs and has the right information one click or one page turn away.
@@ -310,19 +327,19 @@ And she sure as hell shouldn’t have to restate anything in her source code in 
 
 == Yes, Text Can Be Harder Than Code
 
-Let me clarify that section title a little:
+Let me walk back that section title a little:
 It’s rarely harder to _describe in text_ the most complex software concept as it is to _program_ anything complicated in code.
 Also rare is the case that someone skilled at writing software is somehow unable to string words together coherently in their native alphabet (though I have seen this).
 Conversely, most people who are adept at their mother tongue assume themselves unable to code their way out of a “Hello World” exercise.
 Clearly, most of us think code is harder than text.
 
-Nevertheless, making a user manual _work_ just as well as the software it accompanies can be at least as challenging as making the software itself, especially given the limited array of tools and dependencies at the technical writer's disposal.
-Product owners are less likely to give the kind of strict requirements and resources to docs that they convey to developers, which can feel rudderless.
+Nevertheless, making a user manual _work_ just as well as the software it accompanies can be at least as challenging as making the software itself, especially given the limited array of tools and dependencies at the documentarian's disposal.
+Product managers are less likely to give the kind of strict requirements and resources to docs that they convey to developers.
+This can leave documentarians feeling rudderless.
 
-The difference is, people tend to overlook bad documentation if the product is good; in fact, as we all know, a well-designed and executed product can reduce or eliminate the need for exceptional docs.
+The difference is, people tend to overlook bad documentation if the product is good; in fact, a well-designed and executed product can reduce or eliminate the need for exceptional docs.
 Great documentation makes using a product better -- less frustrating, more rewarding.
-
-But seemingly at least as often we find docs simply fall short all on their own.
+If the product itself is great, the docs have to be that much better in order to provide a added value to the end user.
 
 .A Docs Paradox
 ****
@@ -335,7 +352,7 @@ I look forward to a time when our product is so mature, the interfaces so intuit
 I want to get into users' heads and have answers ready as questions reach their conscious minds.
 ****
 
-And technical writers who produce poor docs often get away with it, even in this classic _You had one job…_ scenario.
+Documentarians who produce poor docs often get away with it, even in this classic _You had one job…_ scenario.
 If you know a tech writer who says her job is easy, you probably know someone who is simply unchallenged at work.
 Failing without anybody noticing is not the same as succeeding, even if it pays just as well.
 
@@ -344,8 +361,9 @@ Whoever finds such a thing “easy” should have written this book in their spa
 
 Throughout this book, we highlight some of the reasons for the quality divergence between a given product’s source code and its documentation, but one of the key factors is this difference in audience.
 If you’re a developer trying to correct the way you’re instructing _software_ to behave, you get immediate feedback on critical errors when you run tests, if not as you write.
-Your audience is specially crafted to cry out, hopefully in clear, informative ways, when you screw up -- long before users get their hands on the product your code becomes.
+The coder's audience is specially crafted to cry out, hopefully in clear, informative ways, when the coder screws up -- long before users get their hands on the product that source code eventually becomes.
 In fact, a good developer takes great care to maintain an environment tailored to surfacing bugs before anyone from Quality Assurance sees them, let alone a customer or client.
 
 If you've been wondering all this time why I yearn to do software documentation the way coders do software development, let the previous paragraph serve as illustration.
-We can't change our audience, but we can make our relationship to users better align with developers' relationship to users.
+We can't change our audience, those meat-based subjects who keep our lights on, but we can make our relationship to users better align with developers' relationship to users.
+That is, like coders, documentarians can enjoy environments that enhance and provide feedback on our output.

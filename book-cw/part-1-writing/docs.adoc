@@ -16,16 +16,16 @@ And it means I want the engineers I work with to know I care about all that stuf
 
 I work regularly with developers and project managers in Engineering, as well as everybody in Customer Success.
 Having _their_ docs in order makes my life better in numerous ways which we'll explore throughout this book.
-For now, I want to introduce the theme that bad documentation is everybody's problem, not just users'.
+For now, I want to introduce the theme that bad documentation is everybody's problem, not just users’.
 And documentation itself is way more than just the docs you prepare for end users or third-party developers, or even anything you might need to produce for Marketing.
 It's all of the meeting notes, specs, task-management issues, Git commit messages, help desk tickets, and on and on.
 Well kept, these are also your assets.
 
-This book is going to dwell a lot on what tech docs _are_, but first let's clear up what docs _aren't_.
+This book is going to dwell plenty on what tech docs _are_, but first let's clear up what docs _aren't_.
 
 == Docs Are Not for Reading
 
-I try not to refer to “reading” docs, but rather _using_ them.
+I try not to refer to _reading_ docs, but rather _using_ them.
 That is because I believe, quite simply, that _good technical writing is not even meant to be read_.
 
 Okay, if you consider books like this one to be _technical writing_, then _some_ technical writing is meant to be read like prose -- although I do not expect it to be read cover-to-cover or even in order.
@@ -53,10 +53,12 @@ It absolutely matters who is on the horse, but everybody knows the best horse wi
 
 But this analogy falls apart when you consider the variety of modern software products, and just how easy it is for today's software to depart from convention and require unorthodox documentation.
 If you are fortunate enough to document a product that is trying to reinvent its space, there may be no blueprint for how to convey that product to users.
-They may be more dependent on your contextualization and conceptualization of the product than they typically need to be when they encounter a "new" solution, since most product interfaces are essentially ripoffs of the most successful player in the space.
+They may be more dependent on your contextualization and conceptualization of the product than they typically need to be when they encounter a “new” solution, since most product interfaces are essentially ripoffs of the most successful player in the space.
 
 Just because we do not always get to spout off freely as I am right now does not mean decisions made by technical writers are not critical to the success of a product.
 Docs may not close deals very often, but bad docs can frustrate, costing degrees of a potential customer's confidence.
+
+// TODO pic of Erin in "Dom Wins Deals" t-shirt. Or else me in mine.
 
 == Reading Docs
 
@@ -77,7 +79,7 @@ For each, answer *Not at all*, *Somewhat applies*, or *Oh, yeah, that's my jam*.
 |===
 | Scenario | Nope | Mabes | My Jam
 | You encounter an elegant quickstart landing page starting with a prominent `brew install <delightfulness>` or `apt-get install <something-dangerous>` command. |||
-| Google led to the wrong product version, but once on the vendor's website, you were only one click away from the corresponding page for the needed version. |||
+| Google led to the wrong product version, but once on the vendor's website, you were only one click away from the corresponding material for the needed version. |||
 | Just what the doctor ordered: a particularly well-formatted table with a perfect theme and cadence to column headers, plus just the right data in a just-right arrangement. |||
 | No matter where you look in a product's docs, a frequently used reference is available wherever it may come in handy -- each version identical and accurate, no hyperlink required. |||
 | A list of examples ends at the ideal length. |||
@@ -105,7 +107,7 @@ We'll get to that story in a second.
 
 One of the first things you'll hear when you take over technical documentation for an organization is which of their competitors or upstream vendors they do _not_ want their product's docs to turn out like.
 Take heed of this; while it's possible some bias against the third-party product is tainting their attitude toward the docs, the opposite is far more likely.
-Your new coworkers are probably referring to poor documentation of a product they actually admire, if not a product they regularly use and may even adore.
+Your new coworkers are probably referring to poor documentation of a product they actually admire, if not a product they regularly use and may even adore on some level.
 Learn what frustrates your coworkers about those docs, then try actually using the docs with that third-party product.
 
 We'll talk a lot about getting to know how developers operate.
@@ -132,7 +134,7 @@ Use lots of documentation, and keep track of how you use it.
 
 == Skim the Docs
 
-Also in the "let's not kid ourselves" category: let's not pretend people _read_ the section of the docs they're using, even when they must use the docs.
+Also in the “let's not kid ourselves” category: let's not pretend people _read_ the section of the docs they're using, even when they must use the docs.
 Probably the smarter they (think they) are, the less attention they actually pay to documentation.
 
 This is certainly true for me.
@@ -144,15 +146,78 @@ Good docs bold (or otherwise highlight) critical information in large text block
 
 Admonition (a.k.a. "callout") blocks are even more unmistakable.
 They should be used judiciously; crying wolf with lots of bright, scary boxes of `WARNING` and `NOTE` content can desensitize users.
-Admonitions are incredibly valuable, so earn users' trust by keeping them concise and critical.
+
+[WARNING]
+Admonitions are incredibly valuable, so earn users’ trust by keeping them concise and critical.
 
 == README, the Root Doc
 
 The README file is the heart of any software project.
-A good README contains all the basics needed by core engineers, third-party developers, and daring end users alike.
+It is not traditionally the domain of an end-user documentarian, but DocOps specialists will at least want to begin appreciating the value of a good README, even for proprietary (non-open-source) products.
+
+[TIP]
+Even if it's not your job to write the official README for your project, if you already write docs for a software product, consider creating a “shadow README” on your own time as you work through this book.
+Maybe by the time we're done, you can offer concrete contributions to your real-world product's README.
+
+A good README contains all the basics needed by core engineers, third-party developers, and daring end users/beta testers alike.
 Even for a polished product that can be delivered through an app store or a package manager, the README holds it all together.
 
-At risk of exaggerating its importance, I really do believe the README is the most important file in any software project -- it's the starting point for code and docs alike.
+At risk of exaggerating its importance, I really do believe the README is the most important _file_ in any software project -- it's the starting point for code and docs alike.
 And this is where our first exercise comes in, intended to keep us thinking about that lean, iterative approach to building out a product's docs.
 
-// TODO section-wrapup
+The best README files are accurate; everything else is gravy.
+
+This cannot be overstated, and I'm as guilty as anyone of letting READMEs languish.
+If your codebase is ahead of your README, you're failing everybody on down the line.
+Engineers, documentarians, third-party committers of either type, and early adopters (who enable your repo to become popular) all depend on your flagship file not pissing them off.
+
+In terms of actual content, the README provides exactly the appropriate amount of information to get started with your product, from any role.
+If the repo is just for developers to fork and build, then link end users to the downloads page right at the top.
+Don't waste their time.
+If you have a separate wiki or guide set up for each role, pass everybody along to the right landing page for their docs needs.
+But for an immature project, the README should be fairly rich.
+You'll want the following sections, as soon as you're able to declare _any_ high-level statement about them.
+
+overview::
+What does your product do.
+This may seem obvious, but a shocking proportion of open source projects seem to assume we already know exactly why we've arrived at this product.
++
+A mature overview includes:
+
+* who will find this product useful
+* what dev languages are used
+* any environmental requirements
+* an honest assessment of the project's status and progress
+
+quickstart/demo::
+Surely your product has a bootstrap or quickstart option, or an online demo.
+Or at least some screenshots.
+I need something early on that _does_ cater to the audience that knows (or has just decided) this product _should_ meet their needs, so they're ready to dig in and see it action.
+The more hands-on, the sooner, the better.
+
+installation/setup::
+If all you showed me in the last section was screenies or a demo, it's time to get me up and running.
+Maybe setup isn't so simple; let me know that now, but invite me to struggle along with you.
+Don't decide for me that I don't need your product badly enough to pull my hair out voluntarily to integrate it with my needs.
+
+usage::
+Okay, now that I'm installed and configured, how does it work again?
+Maybe you're not ready to give me the complete lowdown, but I need at least a nudge.
+
+contributing::
+Now that I'm playing with your software, how can I report bugs or share my patch proposals?
++
+A good “Contributing” section includes:
+
+* a warm, authentic message to reassure potential contributors that you actually want their input
+* an explicit list of the kinds of contributions most needed
+* clear instructions for each type of contribution
+* an overview of the review/approval process for code/docs contributions
+
+licensing/redistribution::
+Make it as clear as you can how you intend the product to be reused.
+You don't have to promise to support users in any way, and you needn't provide any kind of warrantee, but you should make it clear the conditions under which your source code may be modified and redistributed.
+
+We will be exploring README file contents throughout the rest of this book.
+Not only is it the first source file your team should ever initiate, it also must be reviewed with every new merge or release.
+And while it's okay to begin with a nascent, skeletal README, eventually it should be a reliable of your project.

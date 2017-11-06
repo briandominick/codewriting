@@ -1,0 +1,146 @@
+- stage: copy-assets-html
+  action: migrate
+  message: Copying global assets for HTML.
+  source: assets
+  target: _build
+
+- stage: parse-resume
+  action: parse
+  message: Building BD resumé.
+  data: _data/resume-data.yml
+  builds:
+  - template: _templates/liquid/resume.asciidoc
+    output: _build/pages/resume.adoc
+
+- stage: render-resume
+  action: render
+  message: Rendering resumé files.
+  source: _build/pages/resume.adoc
+  data: _config/attributes.yml
+  builds:
+  - output: _build/assets/files/brian-dominick-resume.pdf
+    style: theme/pdf/resume-theme.yml
+    doctype: article
+    attributes:
+      edition: pdf
+      icons: font
+      pdf-fontsdir: theme/fonts
+      imagesdir: assets/images
+      safe: unsafe
+
+- stage: build-lists
+  action: parse
+  message: Building content item lists.
+  data: _data/item-lists.yml
+  builds:
+  - template: _templates/liquid/item-lists.asciidoc
+    output: _build/assets/includes/item-lists.adoc
+  - template: _templates/liquid/item-lists.asciidoc
+    output: _build/publish/assets/includes/item-lists.adoc
+
+- stage: build-biblio
+  action: parse
+  message: Building _Codewriting_ bibliography.
+  data: book-cw/_data/bibliography.yml
+  builds:
+  - template: _templates/liquid/bibliography.asciidoc
+    output: _build/book-cw/backmatter/bibliography.adoc
+
+- stage: build-glossaries
+  action: parse
+  message: Building glossaries.
+  data: _data/glossary.yml
+  builds:
+  - template: _templates/liquid/glossary.asciidoc
+    output: _build/book-cw/backmatter/glossary.adoc
+  - template: _templates/liquid/glossary.asciidoc
+    output: _build/pages/docops-glossary.adoc
+
+- stage: copy-glossary-data
+  action: migrate
+  message: Copying data file for special inclusion in book content
+  source: _data/glossary.yml
+  target: _build/book-cw/_data
+
+- stage: copy-readme
+  action: migrate
+  message: Copying README.
+  source: README.adoc
+  target: _build
+
+- stage: copy-book-files
+  action: migrate
+  message: Copying book files.
+  source: book-cw
+  target: _build
+
+- stage: copy-book-index
+  action: migrate
+  message: Copying book index.
+  source: book-cw/index-book-cw.adoc
+  target: _build
+
+- stage: copy-assets-pdf
+  action: migrate
+  message: Copying global assets for PDF build.
+  source: assets
+  target: _build/publish
+
+- stage: copy-pages
+  action: migrate
+  message: Copying pages directory.
+  source: pages
+  target: _build
+
+- stage: copy-posts
+  action: migrate
+  message: Copying blog directory.
+  source: _posts
+  target: _build
+
+- stage: copy-topics
+  action: migrate
+  message: Copying topics directory.
+  source: topics
+  target: _build
+
+- stage: copy-themes
+  action: migrate
+  message: Copying theme files.
+  source: theme
+  target: _build
+
+- stage: build-notice
+  action: parse
+  message: Building notice files.
+  data: _data/dependencies.yml
+  builds:
+  - template: _templates/liquid/notice.asciidoc
+    output: _build/pages/notice.adoc
+  - template: _templates/liquid/notice.asciidoc
+    output: _build/book-cw/backmatter/notice.adoc
+  - template: _templates/liquid/notice.plaintext
+    output: _build/NOTICE
+
+- stage: publish-codewriting
+  action: render
+  message: Publishing _Codewriting_.
+  source: _build/index-book-cw.adoc
+  data: book-cw/_data/attributes.yml
+  builds:
+  - output: _build/publish/codewriting-book-draft.html
+    doctype: book
+  - output: _build/publish/codewriting-book-draft.pdf
+    style: theme/pdf/default.yml
+    doctype: book
+    attributes:
+      pdf-fontsdir: theme/fonts
+      imagesdir: publish/assets/images
+
+# - stage: build-site
+#   action: deploy
+#   message: Building jekyll site.
+#   options:
+#     config: _configs/jekyll.yml
+#     operation: build
+#   target: ../codewriting-site/docs

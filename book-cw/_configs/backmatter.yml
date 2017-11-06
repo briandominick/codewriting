@@ -1,10 +1,9 @@
-sources:
-- source:
+- action: parse
   data: book-cw/_data/glossary.yml
   builds:
   - template: _layouts/glossary.asciidoc
     output: book-cw/backmatter/glossary.adoc
-- source:
+- action: parse
   data: book-cw/_data/bibliography.yml
   builds:
   - template: _layouts/bibliography.asciidoc

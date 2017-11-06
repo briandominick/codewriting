@@ -1,0 +1,54 @@
+= Equality of Docs and Code
+:page-layout: post
+:page-permalink: blog-equlity-docs-code
+:page-date: 2017-09-16 21:17
+:page-author: Brian Dominick
+
+Think about your current product.
+Whether you have a dedicated technical writer/docs team or your developers self-document the product, which domain is considered the canonical source of truth over product features?
+Let me put it another way.
+If I asked you to be absolutely certain that the default setting of a particular configuration property is `true` or `false` -- not the stated value but the actual out-of-the-box value, and not what it's supposed to be but what it actually _is_ -- where would you turn: the codebase or the docs?
+
+If your answer is, “We keep our docs in our codebase, sucker!”, you definitely earn points with me.
+But you still have not addressed the spirit of my question.
+
+Which part of your codebase contains the canonical answer to my question about that default setting?
+
+Here you are probably wondering if I'm crazy, some megalomaniacal tech writer who doesn't even understand programming.
+Surely the answer must be _the product code_.
+No matter which one we _consider_ the primary source, no matter how badly some tech writer might _wish_ that “the docs are always right” or some such fantasy, the product source defines the answer, and therefore it must be the prime source of truth.
+
+What if it doesn't need to be that way?
+There is only one way your product's backend, API, user interfaces, and documentation will all reflect the same information about every detail of your product.
+That way is to single-source all reference matter, drawing on that prime source every time you generate a dependency library, an interface, or a document -- basically, every time you _build_.
+
+For developers, all this really means is self-consciously organizing “small data” related to the product in universally accessible formats such as JSON, YAML, XML, or CSV, rather than native data structures, whenever possible.
+Native structures can then be built from these prime sources at build time or runtime.
+
+This manner of operating is more challenging for the documentation side, as currently even the more sophisticated documentation systems provide very limited support for deriving usable structured data from external sources.
+Unconventional tooling is required to generate and serve tables or pages from those cross-platform data structures, but these tools exist and are becoming accessible.
+And the benefits can be enormous.
+
+The case I am making is that because there is no room for divergence of the product's documented behavior and its actual behavior, every human-dependent step between the product code and the generated docs is a chance for divergence.
+
+We get it right more often with APIs, because we tend to source API docs very much within the product codebase.
+When the codebase and the interface are more directly related and less abstracted, documentation pairs nicely with its underlying code.
+There are still ways to improve overly robotic API docs, but others are tackling this subject more concertedly than I.
+(For instance, techcomm blogger/guru link:http://idratherbewriting.com/category-api-doc/[Tom Johnson is delightfully obsessed] with API docs, as is the network link:http://apithedocs.org/[API the Docs].)
+
+For end-user-facing interfaces and docs, as well as for docs that go beyond strict reference format -- that is, _exceptional_ docs -- smarter tooling is needed to ensure currency and accuracy.
+
+It may seem like I am writing the writer out of the documentation story, but I intend no such thing.
+Managing these details is not necessarily a huge part of our job, though it is among the more perilous and tedious.
+There's a decent chance your bosses and subject matter experts already assume you have some great system or keep docs updated in your sleeps somehow.
+It's where we can be most objectively wrong, and where we are most workflow dependent, hoping that the communications between us and SMEs is bug free.
+
+And this makes sense beyond the engineering and support teams, if you think about it.
+Not only do interfaces and instructions have to correlate to the application's existential truths, so do legal docs that explain users' legal rights and obligations pertaining to your product.
+These rules may vary depending on which version they are using, or from where they're accessing your cloud.
+End user license agreements, enterprise software service contracts, system permissions requests, and privacy policies can be extremely difficult to coordinate across jurisdictions and product versions.
+Yet it is critical that any promises made in them are perfectly consistent with their associated product version.
+
+Is anybody drawing product data and docs content from the same data sources?
+I am eager to learn more about how this is handled at different shops, as I intend to make it a central feature of the strategy I'm developing, unless I learn it is too difficult to implement in too many circumstances.
+So I'd love to hear struggles as well as success stories.

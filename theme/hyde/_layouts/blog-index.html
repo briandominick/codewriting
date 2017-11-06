@@ -1,0 +1,41 @@
+---
+layout: default
+---
+
+<div class="title">
+  <h1 class="page-title">Code the Docs</h1>
+</div>
+
+<div class="page">
+
+  <div class="paragraph">
+  <p>Occasionally scribbling about my adventures in open source technical documentation. Subscribe to the <a href="blog-feed.xml">Atom/RSS feed</a>.</p>
+  </div>
+
+  <h3>Latest Posts</h3>
+  <ul>
+    {% for node in site.posts %}
+      <li><a href="{{ node.permalink | prepend: "#" }}">{{ node.date | date: "%b %e" }}: {{ node.title }}</a></li>
+    {% endfor %}
+  </ul>
+
+  {% for node in site.posts %}
+    {% if node.title != null %}
+      {% if node.layout == "post" %}
+      <div id="{{ node.permalink }}"></div>
+      <article>
+        <h2>
+          <a href="{{ node.url }}">
+            {{ node.title }}
+          </a>
+        </h2>
+        <div class="postmeta">
+          <span class="byline">{{ node.author }}</span><time datetime="{{ node.date | date: "%Y-%m-%d" }}"><span class="dateline">{{ node.date | date_to_long_string }}</span></time>
+        </div>
+        {{ node.content }}
+      </article>
+      {% endif %}
+    {% endif %}
+  {% endfor %}
+
+</div>

@@ -1,0 +1,7 @@
+[.contact,frame=none,grid=none,width="{contact_table_width}",cols="{header_cols}"]
+|===
+ifdef::backend-pdf[]
+| link:codewriting.org[codewriting.org]
+endif::[]
+>|{contact}
+|===
