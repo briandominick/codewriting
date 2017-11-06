@@ -2,19 +2,20 @@
 
 [abstract]
 Technical content isn't only complicated from the macro perspective we took in the previous chapter.
-Discrete content items can themselves be highly complex, especially when those content items need to be delivered in various ways.
-In this chapter we'll take a strategic look at handling complex content.
+Discrete content items can themselves be highly complex, like little clusters of data stored in a routine format, all of it yearning for expression in application code and user docs.
+In this chapter we'll take a strategic look at handling complex content, including DRY single sourcing, validation, and collaborative workflow management.
 
 == The Challenge
 
 Handling what I call complex content objects (CCOs) is one of the biggest challenges faced by a team dealing with lots of distinct, structured content items.
-A content object is semi-structured data you deal with in every page, article, or topic of content you write in any markup language.
-The markup is structuring a complex content object, even adding metadata of at least some kind (minimally dates such as when created and modified).
+I don't mean “chapters” or “topics”, as in the ways we modularize tech docs.
+Instead, consider all the secondary and tertiary types of content you need to maintain and reuse to provide _references_ for users.
 
-What I mean by CCOs are all the secondary and tertiary types of content you need to maintain and reuse.
-Besides pages and their subordinate content objects (such as blocks, links, and so forth), you probably need your documentation solution to handle an array of less-standard items or collections of items, including product metadata and settings.
-Think of reusable content items such as data you're keeping in a spreadsheet right now.
-If it has two or more columns, each row is a CCO, and each spreadsheet is a CCO collection.
+Think of reusable content items such as data your team is keeping in a spreadsheet right now -- the kind of content you wish you could port directly from engineers' internal documentation to your user-facing docs or UI, with just-in-time copy editing performed to boot.
+If that engineers' reference spreadsheet has two or more _columns_, then each _row_ is a CCO.
+Each such spreadsheet is a _collection_ of CCOs.
+
+A glossary is a collection of CCOs, as is an API reference.
 
 === A Simple Example
 
@@ -50,7 +51,7 @@ What are some real-world uses for this?
 
 The most obvious one is to generate the glossary at the back of this book, which it does.
 
-Of course, I could have just written the Glossary in AsciiDoc markup, which is pretty much equally elegant:
+Of course, I could have just written the Glossary in AsciiDoc markup, which is pretty much equally elegant, maybe even a little nicer:
 
 .Example -- The same glossary snippet sourced as AsciiDoc
 [source,asciidoc]
@@ -61,9 +62,9 @@ complex content object::
 
 DITA::
   Acronym for _Darwin Information Typing System_.
-  An technical writing-oriented XML standard introduced by IBM in 2005.
-  Pronounced _DII-tuh_, not _DEE-tuh_ or _DIE-tuh_.
-  https://en.wikipedia.org/wiki/Darwin_Information_Typing_Architecture[Wikipedia].
+  An XML standard designed for technical writing, introduced by IBM in 2005.
+  In addition to a markup standard, DITA incorporates dynamic functionality and mature framework elements.
+  link:https://en.wikipedia.org/wiki/Darwin_Information_Typing_Architecture[Wikipedia].
 
 DRY::
   For "don't repeat yourself", referring to a single-sourcing approach to code or docs.
@@ -73,38 +74,123 @@ That markup is perfectly fine, and in fact it is the form the Glossary started i
 The only real problem with storing content/data in this format is it's not portable; only AsciiDoc tools can do anything with it out of the box, and there aren't many AsciiDoc tools that focus on manipulating complex content objects.
 
 What if I wanted to be able to transform these glossary terms where they actually appear in the body of my book -- everywhere _except_ the glossary itself?
-Perhaps I want to highlight the terms where they appear, so if users hover over or click on them, they'll see the definition in a tooltip above the word.
+Perhaps I want to highlight the terms wherever they appear in the main text, so if users hover over or click on them, they'll see the definition in a tooltip above the word.
 
 // TODO: add illustration
 
 In order to do this, I need a convenient way to handle and reformat just the term I need.
+AsciiDoc is not very helpful here, since it does not provide content to external tools as defined, semi-structured data like data-focused markup such as XML, JSON, and YAML.
 Already, we've discovered a reason we should look at storing _all_ discrete, parameterized content as semi-structured or structured data.
 
-.Data Structure Terms
-****
-I use terms for data structure types that most computer scientists would probably disagree with.
-The primacy of the specific problems faced by content managers renders additional distinction.
+=== Data Structure Terms
 
-unstructured content::
-  This could be prose, or it could be gobblediguk.
-  This could be a plain text file with words or data dumped in it, but I'll more likely refer to unstructured data terms of open form textarea fields that may permit markup but do not enforce any structure.
+I'm going to use several descriptors for the format in which content can be stored “on the backend”.
+That is, the form in which we hold our content so it can be best accessed in all the ways a product team might need it.
+We handle each class of content differently, especially when the content is better described as _data_ than as _text_.
 
-structured content::
-  Text-heavy documents, whether or not governed by a schema, are considered structured content if they respect standardized formatting and an orderly hierarchical document model.
+unstructured text::
+  This could be prose, or it could be gobbledigük.
+  This could be a plain text file with words or data dumped in it, but I'll more likely refer to unstructured data in terms of open form textarea fields that may permit markup but do not enforce any structure.
++
+[source,text]
+.Unstructured Content Example
+----
+This is a box
+  of unstructured content.
+
+  You may have some expectation that this text
+will be rendered in the shape it was
+       entered.
+
+Or
+maybe not.
+----
++
+Just for the record, here is how that content looks after being processed by an AsciiDoc interpreter.
++
+====
+This is a box
+  of unstructured content.
+
+  You may have some expectation that this text
+will be rendered in the shape it was
+       entered.
+
+Or
+maybe not.
+====
+
+structured text::
+  Text-heavy documents, whether or not governed by a schema, are considered structured content if they respect standardized formatting and an orderly, hierarchical document model.
   Depending on the application, users may treat such documents with strict regard to a document model or schema, or they may abuse intended strictures and conventions.
+  In either case, we'll use _structured text_ to describe formats that adhere to some rhyme or reason.
++
+[source,markdown]
+.Structured Content Example
+----
+# Structured Content
+
+In Markdown, the `#` symbol indicates the header level.
+----
 
 semi-structured data::
-  This refers to content in what are JSON, YAML, XML, CSV, and other forms of content, at least some of which needs to be handled very much like data.
-  These items tend to appear many to a page, as they convey looped content of interest more for reference than reading.
+  This refers to content in recognized formats such as JSON, YAML, XML, CSV, at least some of which needs to be handled very much like data.
+  These items tend to appear many to a page; they often convey looped content of interest more for reference than reading.
++
+[source,json]
+.Semi-structured Data Example
+----
+{
+  "key": "some_property-name",
+  "property": "some.property-name",
+  "section": "General",
+  "description": "This is some text in `AsciiDoc`, with *bold*.\n",
+  "default": 15,
+  "hidden": false,
+  "example": "some.property-name = 22",
+  "openblock": ".Example Two\n----\nThis is some text that will convert to a code listing.\n----\n"
+}
+----
++
+Imagine a collection of such property CCIs listed like a directory.
 
 structured data::
   Schematified data, as in databases (including RDB and NoSQL) or XML with schema validation.
   This generally includes datasets that can be managed through queries.
-****
++
+[source,sql]
+.Structured Data Example
+----
+CREATE TABLE IF NOT EXISTS data (
+default INT,
+description VARCHAR(46),
+example VARCHAR(23),
+hidden VARCHAR(),
+key VARCHAR(18),
+openblock VARCHAR(78),
+property VARCHAR(18),
+section VARCHAR(7)
+);
+INSERT INTO data VALUES
+(15,'This is some text in `AsciiDoc`, with *bold*.
+','some.property-name = 22',false,'some_property-name','.Example Two
+----
+This is some text that will convert to a code listing.
+----
+','some.property-name','General');
+----
+
+As you can deduct from the examples above, schemas can be advantageous.
+For starters, they can define the data type and constrain each value.
+With no such safeguards, semi-structured formats are open to invalid entries.
+
+The disadvantage can also be seen: structured databases do not lend themselves well to representation as text/code, let alone to management in flat files.
+We'll look at more of the reasons I think _semi-structured_ data is the technical communicator's Goldilocks data class.
 
 === Digging Deeper
 
-Now that we've seen how even simple key-value paired content can be output in unconventional ways, rather than always dumped as a list in whatever form it arrived, let's take a deeper look at a kind of content that requires even more flexibility.
+We've seen how even simple key-value paired content can be output in unconventional ways, rather than always dumped as a list in whatever form it arrived.
+Now let's take a deeper look at a kind of content that requires even more flexibility.
 
 .Example -- A Complex Content Object or CCO (in YAML)
 [source,yaml]
@@ -159,17 +245,26 @@ s| My Key*:
 <span class="description" id="field-{{ slug }}-description">{{ description }}</span>
 ----
 
-Notice that in this example the properties do not even appear in the same order; it's more than a matter of reskinning the same old data with different markus.
+Notice that in this example the properties do not even appear in the same order; it's more than a matter of reskinning the same old data with different markup.
 
 .Example -- And our product setting in the eyes of a back-end dev
+[source,java]
 ----
-TODO not sure which view to display here. Help wanted.
+public createKey(String type, String slug, String description, Boolean required) {
+  this.type = type;
+  this.slug = slug;
+  this.description = desc;
+  this.required = false;
+}
 ----
 
-As you can see, a simple product setting parameter can live in diverse settings.
-Wrangling these things in all their various incarnations can be a real pain.
+As you can see, a simple product setting parameter can be useful in diverse settings:
 
-Rocana's users need reliable access to accurate documentation of these settings, in the appropriate context of the component they're meant to configure, so they can deploy and fine tune our software.
+. the documentation about that parameter
+. in the interface where users can edit the property and appreciate an inline description
+. in the back-end code that actually uses the setting to determine the product's functionality
+
+Users need reliable access to accurate documentation of these settings, in the appropriate context of the component they're meant to configure.
 
 Let's take a look at a more complete configuration setting's properties as a YAML structure.
 As you examine this figure, try to ignore the format and focus on the qualities of the content object.
@@ -183,12 +278,28 @@ include::../includes/snippets/cco-property.yml[]
 Even at a glance, you should be able to appreciate what makes this content “complex”.
 As we see in the above snippet, a multi-version, multi-environment product could quickly require a relatively complex data structure to track how its configuration parameters relate to the product's various states and forms.
 
+.Cloud Collaboration in Google Sheets
+****
+A lot of people hate Google Docs.
+I am sympathetic, but I am not among them.
+There have been countless frustrations with Google's authentication system and its quirky UI, but the truth is, I've made heavy use of each component in the Google Docs playground.
+Each has its legitimate uses, even if all are overused.
+
+Consider Google Sheets as a collaborative CSV-management system.
+So long as you can export to the commonly-readable CSV format, you can port data managed by developers in Google sheets into just about any documentation output form imaginable.
+
+For some content, this might be the shortest route to keeping fast-changing data as current as humanly as possible.
+This is doubly true when not all of your users are developers adept at working in flat files; most project managers and a huge range of SMEs will be comfortable with spreadsheets.
+
+When content in a cloud-hosted spreadsheet changes, save the .CSV file into your source repo and use it to generate output.
+****
+
 === Considerations
 
-The following factors must be taken into account when strategically addressing a CCO management.
+The following factors must be taken into account when strategically addressing a CCO management problem.
 
 authoring access::
-Is this system going to be someone's sole domain, or is it a crowdsourced effort?
+Is this system going to be someone's sole domain, or is it a crowdsourced effort of two or more?
 
 automation::
 If your docs are integrated with a build system, it will have implications on your choice of toolchain for this functionality.
@@ -201,17 +312,19 @@ advanced data operations::
 Will you need to *sort* CCOs by any of their parameter values?
 How about *filtering* to output only certain instances of a CCO type in certain places?
 Think once more in terms of that spreadsheet; sorting and filtering are key features.
-Consider if you will ever need to re-sort your CCOs for publication (beyond just reformatting each CCO with a template).
+Consider if you will ever need to re-sort your CCOs for publication (beyond just reformatting each CCO entry with a template).
 +
-Similarly, if you'll need to combine data from different sets, this is most conveniently done with SQL.
-Heavy manipulation of semi-structured data is more difficult to program after the data has been ingested into your aps.
+Similarly, consider whether you'll need to combine data from different sets.
+This is most conveniently done with SQL, which has a concept of _unions_ between data tables.
 
 output formats::
-What formats will your CCOs need to get output into?
+What formats will your CCOs need to be output into?
 
-* HTML
 * Markdown
 * AsciiDoc
+* reStructuredText
+* XML
+* HTML
 * DITA
 * Docbook
 * LaTeX
@@ -220,14 +333,33 @@ What formats will your CCOs need to get output into?
 * JSON
 
 Your solution will need to be mappable to all the required formats.
-It will need to be able to export to something they can read, or external resources will need access to your CCO solution.
+It will need to be exportable to something they can read, or external resources will need access to your CCO source directly and parse their needs from it.
 
 output languages::
-Internationalization support will either require another layer of development skill and effort or a budget for localization CCMS capabilities.
+Internationalization support will either require another layer of development skill and effort or a budget for a CCMS with these capabilities built in (and of course suiting all your other CCO needs).
 
 quantity of objects::
-I don't know what the ceiling is, but there is certainly a limit to how many such object can be sensibly managed in anything but a relational database.
-Juggling lots of long text files is unweidly.
+I don't know what the ceiling is, but there is certainly a limit to how many such objects can be sensibly managed in anything but an indexed database table.
+A spreadsheet application is such a tool for small data like we're talking about.
+It likely does not make sense to use flat files for datasources with several hundred or more entries.
+
+relationality::
+No matter how many records you're keeping track of, once they need to correlate to differently structured records, your options get pretty limited.
+Flatter solutions work for records of self-contained data.
+
+
+data dynamism::
+This is not the first or most-common consideration, but I think it should be among them.
+Since this is a major shortcoming of the RDB model, it is a place where flat-file approaches might shine.
+This is the inclusion of variable data inside a datasource, especially for cumulative inheritance of values set in a linear fashion.
+Give me a moment to explain:
+In source code, parameters are often built cumulatively.
++
+.Example of cumulative parameter setting
+[source,yaml]
+----
+
+----
 
 == Solution Approaches
 
@@ -240,20 +372,25 @@ If your background is in website development or content management systems, the 
 As recently as a couple years ago, I would have solved this with a relational database.
 Structured Query Language is not just a way of inserting, updating, and retrieving data in a relational database;
 it can also express the proper schema of a data object.
-After all, a database table is basically a container for data objects.
+After all, a database table is basically a container for data objects, and the container is eminently configurable.
 
-One major problem is version control.
+One major problem with the RDB solution is version control.
 Source-control systems like Git don't work to track the innards of relational databases, which tend to use binary files.
 Git has no insight into the structure of your conventional RDB file, so it cannot track changes made to the data.
-Therefore, an RDB will also require specific version tagging of version-specific data, a layer of manual complexity that is fairly prohibitive.
+Therefore, an RDB will also require specific version tagging of any version-sensitive data, a layer of manual complexity that is fairly prohibitive.
+One of the reasons we're doing docs-as-code in the first place is so that we can associate our single-sourced product info with the version of the product to which it applies
 
 The other major limitation of using RDBs for a constantly changing array of datasets is the interface.
-RDBs require query transactions to access data.
-This can be abstracted into forms, as with a traditional CMS, but then that CMS has to be administered and maintained.
-A good, open CMS platform such as Drupal provides your product build system with REST API access to your human-maintained data.
+RDBs require query transactions to access data, including for reading and writing.
+This can be abstracted into form interfaces, as with a traditional CMS, but then that CMS has to be administered and maintained.
 
-If the demands of your product will be relatively static -- meaning, no new forms of complex data popping up all the time, maybe an RDB plus a web-based interface and straight JDBC/SQL on the back end can solve your needs, go for it.
+A good, open CMS platform such as Drupal provides your product build system with REST API access to your human-maintained data.
+So if you are willing and able to maintain such system, an external CMS can work with a docs-as-code solution.
+If the demands of your product will be relatively static -- meaning, no new forms of complex data popping up all the time, maybe an RDB plus a web-based interface and straight JDBC/SQL on the back end can solve your needs.
 As an old hand with Drupal and WordPress, I always consider a dynamic, server-side solution when I encounter a new challenge.
+
+However, the factors mitigating the RDB-backend and web-UI solution are very strong compared to the relative freedom and ease of a flat file.
+Sure, you'd never open a flat-file datasource to just any user, but in a professional environment with a proper workflow in place for vetting new content, flat files are superior low-volume datasources.
 
 === DITA CCMS
 
@@ -269,7 +406,7 @@ Whether content is stored in an RDB or in flat files, the platform is enhanced b
 The advantages of this are significant, including powers for reorganizing content that are tedious and clumsy to do with conventional file-management tools.
 
 Unfortunately, those special tools really do add expense and weight.
-License fees range from $50 to over a hundred dollars a month _per seat_, making it prohibitive to involve all SMEs as docs contributors.
+License fees range from $50 to hundreds of dollars a month _per seat_, making it prohibitive to involve all SMEs as docs contributors.
 Despite my idealistic description above, these tools also tend to be somewhat clunky, and they are very much Windows-oriented.
 Engineers tend to dislike clunkiness and Windows, not coincidentally.
 
@@ -277,14 +414,17 @@ Engineers tend to dislike clunkiness and Windows, not coincidentally.
 // Investigate if DITA CCMSes integrate with build systems.
 
 Localization and translation management are another major advantage of DITA-based systems.
-Thanksfully, this is not a requirement for my current product docs.
+If you need to generate documentation in multiple languages and do not wish to reinvent this (very complicated) wheel, proprietary CCMSes or major open source CMSes are probably your best options.
 
 === Flat Files
 
-At Rocana, we strongly desire to keep our complex content in flat files.
-AsciiDoc has proved fairly robust for this situation, but it falls down in a couple of places, namely the ability to rearrange complex content elements, as illustrated in the earlier Glossary example.
+At Rocana, we strongly desired to keep our complex content in flat files.
+AsciiDoc has not proved robust for this situation.
+It falls down in several places.
+Complex content written in AsciiDoc is not even proper data; there is really no way to interact with discrete items outside AsciiDoc tooling.
+This was illustrated with the glossary example above.
 
-We also need to be able to output complex content in several distinct formats, including:
+We also needed to be able to output complex content in several distinct formats, including:
 
 . sample configuration files in what's called “INI format”, a dreadfully plain blob conventional to Java platforms;
 
@@ -296,27 +436,28 @@ We also need to be able to output complex content in several distinct formats, i
 
 . similarly to the Glossary example, our online Reference Guide and other materials could generate a tooltip for whenever text is hovered, exposing more information about specific settings wherever those settings are referenced in the text.
 
-As you can see, I have big plans and high hopes for all that complex content.
+As you can see, I had big plans and high hopes for all that complex content.
 
 The challenge is to:
 
 . allow engineers to maintain YAML files as they manage the rest of their code
 
-. without sacrificing any of the ways this material is already delivered (AsciiDoc and INI files), and meanwhile
+. without sacrificing any of the ways this material was already being delivered (AsciiDoc and INI files), and meanwhile
 
-. add the ability to integrate data directly into the application and docs.
+. add the ability to integrate data directly into the application and from a single source external to both.
 
 After months of hemming and hawing over the best way, which included talking with consultants about how to handle the matter, I finally sat down and took a shot at coding a solution.
 
 == Introducing “LiquiDoc”
 
-My system is simple. It's a script that can ingest data, pass that data to templates for substitution, and then saves the populated templates as new files in the appropriate format.
+My system is simple.
+It's a little command-line tool that ingests data, passes that data to templates for variable substitution, and then saves copies of the populated templates as new files in the appropriate format.
 A simple configuration system lets me coordinate source files (YAML) with templates (Liquid) to save the results as.
 
 .Example -- LiquiDoc Coordination File
 [source,yaml]
 ----
-- source:
+- action: parse
   data: data/data-sample.yml
   builds:
   - template: templates/tpl-sample.asciidoc
@@ -331,14 +472,14 @@ It contains metadata about the topic (this collection of settings) as well as a 
 .Example -- LiquiDoc Source Data File
 [source,yaml]
 ----
-  meta:
-    title: Platform # Template will append "Settings"
-    description: |
-      This is some awesome text that describes the platform settings displayed on this page and anything particularly special about it. Feel free to use AsciiDoc formatting here, as it will be parsed.
-    sections: # List all of the categories of properties in this file
-      - name: Basic
-      - name: Security
-        instructions: Be careful with these!
+meta:
+  title: Platform # Template will append "Settings"
+  description: |
+    This is some awesome text that describes the platform settings displayed on this page and anything particularly special about it. Feel free to use AsciiDoc formatting here, as it will be parsed.
+  sections: # List all of the categories of properties in this file
+    - name: Basic
+    - name: Security
+      instructions: Be careful with these!
 
 settings:
   - key: some_setting-name
@@ -360,13 +501,31 @@ settings:
       another.setting-name = whatever
 ----
 
-// TODO Add genericized example files from LiquiDoc
+// TODO Add genericized example files from LiquiDoc boilerplate
+
+=== Flat-file shortcomings
+
+Remember that concept of _relationality_ in small data that I brought up earlier?
+Where
+There are ways to sensibly “join” two semi-structured data files the way an RDB joins tables, but it's clunkier than a system with a true database backing it.
+If you have files named `people.yaml` and `jobs.yaml`, you're going to have an uphill battle keeping people associated with their jobs, and jobs associated with the people performing them.
+It's not an impossible problem to address down to this layer of complexity, but only a real product-development process will nail the architecture, interface, and query language for handling such relationships for highly complex small data in flat files.
 
 === Where This is Going
 
-For now, I run this system manually whenever an engineer makes changes to a setting's definition, and that output gets added to the trunk.
-This could be done along with the edits to the YAML source file, or it could be done in a separate merge request.
-Various workflows are possible, but any deliberate protocol and procedure should do trick.
+Imagine the value of having canonical product data in semi-structured format, sitting side-by-side with product source code.
+This solution allows version control to keep information _about_ the code up to date with the code itself.
 
-Eventually, continuous integration may remove this additional step, and our configuration properties will not exist as AsciiDoc files in the source codebase at all.
-In that case, the build will just call a script, and those files will be generated during the build, then compiled along with the rest of the docs as if they'd been sitting there all along.
+Hardcore engineers will balk at the idea of storing generated source alongside its own source.
+This would be the case were you to store data in a format such as YAML, then generate Markdown or AsciiDoc files from that code and commit it to the same repo as the YAML source.
+The source-control purists are actually right: this is poor form and an accident waiting to happen.
+It may also be the best option for keeping your docs in great shape, so argue for it if you need to.
+
+The better argument, however, would be for continuous integration.
+With CI, the product build will just call a script, and those files will be generated during the build, then compiled along with the rest of the docs as if they'd been sitting there all along.
+If you are not authorized or confident enough to hack the build, maybe you can recruit a DevOps/automation engineer to champion this level of real-time integration.
+
+Finally, the real coup is when engineers start using your semi-structured data files as source libraries for their product code.
+If an engineer is hacking your YAML file to document a configuration property, including its metadata (data type, constraints, required status, etc), why wouldn't that engineer just use your YAML file as the _source_ of that metadata to help define their code?
+Any YAML file can be a library or data source for other aspects of the product.
+This is how we establish canonical data in DRY, single-sourced complex content systems.
