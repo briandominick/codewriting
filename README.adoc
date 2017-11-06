@@ -202,7 +202,7 @@ In fact, that's a good general recommendation, so you don't duplicate something 
 
 . Fork the GitHub repo.
 +
-image::screenshot_fork-this-repo.png[width=260]
+image::assets/images/screenshot_fork-this-repo.png[width=260]
 
 . Create a branch.
 
