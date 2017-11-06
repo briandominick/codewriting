@@ -1,15 +1,41 @@
 ---
-layout: blog-index
+layout: default
 ---
 
+<div class="title">
+  <h1 class="page-title">Code the Docs</h1>
+</div>
+
 <div class="page">
-  <h1 class="page-title">{{ site.title }} Blog</h1>
-  {% assign posts_list = site.pages %}
-  {% for node in posts_list %}
+
+  <div class="paragraph">
+  <p>Occasionally scribbling about my adventures in open source technical documentation. Subscribe to the <a href="blog-feed.xml">Atom/RSS feed</a>.</p>
+  </div>
+
+  <h3>Latest Posts</h3>
+  <ul>
+    {% for node in site.posts %}
+      <li><a href="{{ node.permalink | prepend: "#" }}">{{ node.date | date: "%b %e" }}: {{ node.title }}</a></li>
+    {% endfor %}
+  </ul>
+
+  {% for node in site.posts %}
     {% if node.title != null %}
       {% if node.layout == "post" %}
-        <a class="sidebar-nav-item{% if page.url == node.url %} active{% endif %}" href="{{ node.url }}">{{ node.title }}</a>
+      <div id="{{ node.permalink }}"></div>
+      <article>
+        <h2>
+          <a href="{{ node.url }}">
+            {{ node.title }}
+          </a>
+        </h2>
+        <div class="postmeta">
+          <span class="byline">{{ node.author }}</span><time datetime="{{ node.date | date: "%Y-%m-%d" }}"><span class="dateline">{{ node.date | date_to_long_string }}</span></time>
+        </div>
+        {{ node.content }}
+      </article>
       {% endif %}
     {% endif %}
   {% endfor %}
+
 </div>

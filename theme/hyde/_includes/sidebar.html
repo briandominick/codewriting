@@ -2,16 +2,13 @@
   <div class="container sidebar-sticky">
     <div class="sidebar-about">
       <h1>
-        <a href="{{ site.baseurl }}">
-          {{ site.title }}
-        </a>
+        <a class="sidebar-nav-item{% if page.url == site.baseurl %} active{% endif %}" href="/">{{ site.title }}
       </h1>
-      <p class="lead">{{ site.description }}</p>
     </div>
 
     <nav class="sidebar-nav">
-      <a class="sidebar-nav-item{% if page.url == site.baseurl %} active{% endif %}" href="/">Home</a>
       <a class="sidebar-nav-item" href="codewriter-brian-dominick">About the Codewriter</a>
+      <a class="sidebar-nav-item" href="blog.html">Code the Docs (Blog)</a>
       <a class="sidebar-nav-item" href="https://github.com/briandominick/codewriting">Source</a>
       <a class="sidebar-nav-item" href="readme">README</a>
       <a class="sidebar-nav-item" href="docops-glossary">Terminology</a>

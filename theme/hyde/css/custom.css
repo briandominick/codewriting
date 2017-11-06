@@ -2,6 +2,14 @@ pre, h1, h2, h3 {
   font-family: 'PT Mono', monospace;
 }
 
+h1.page-title {
+  font-size: 2rem;
+  margin-left: -2rem;
+  padding: 0 1rem 0 2rem;
+  background-color: #202020;
+  color: #efefef;
+  width: fit-content;
+}
 
 .content {
   padding-bottom: 0;
@@ -79,6 +87,14 @@ span.dateline {
   padding: 2px;
 }
 
+span.byline {
+  font-size: .8em;
+  font-weight: bold;
+  color: #888;
+  border: 1px solid #e5e5e5;
+  padding: 1px 3px;
+}
+
 span.titleline {
   font-size: .8em;
   font-weight: bold;
@@ -101,4 +117,22 @@ table.contact, table.contact td {
 
 .resume dd p em {
 
+}
+
+article {
+  margin-bottom: 65px;
+}
+
+.postmeta {
+  margin-bottom: 1rem;
+}
+
+.blog-banner {
+  font-size: 1.3em;
+  background-color: #202020;
+  color: #e5e5e5;
+  margin-bottom: 1rem;
+  margin-left: -1rem;
+  width: fit-content;
+  padding: 0 1rem 0 0.75rem;
 }

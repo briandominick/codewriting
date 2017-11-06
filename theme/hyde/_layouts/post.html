@@ -2,9 +2,15 @@
 layout: default
 ---
 
+<div class="blog-banner">
+Code the Docs Blog
+</div>
+
 <div class="post">
   <h1 class="post-title">{{ page.title }}</h1>
-  <span class="post-date">{{ page.date | date_to_string }}</span>
+  <div class="postmeta">
+    <span class="byline">{{ page.author }}</span><time datetime="{{ node.date | date: "%Y-%m-%d" }}"><span class="dateline">{{ page.date | date_to_long_string }}</span></time>
+  </div>
   {{ content }}
 </div>
 
@@ -12,14 +18,12 @@ layout: default
   <h2>Related Posts</h2>
   <ul class="related-posts">
     {% for post in site.related_posts limit:3 %}
-      <li>
-        <h3>
-          <a href="{{ post.url }}">
-            {{ post.title }}
-            <small>{{ post.date | date_to_string }}</small>
-          </a>
-        </h3>
-      </li>
+    <li>
+      <a href="{{ post.url }}">
+        {{ post.title }}
+        <small>{{ post.date | date_to_string }}</small>
+      </a>
+    </li>
     {% endfor %}
   </ul>
 </div>
