@@ -56,6 +56,12 @@
   - template: _templates/liquid/glossary.asciidoc
     output: _build/pages/docops-glossary.adoc
 
+- stage: copy-glossary-data
+  action: migrate
+  message: Copying data file for special inclusion in book content
+  source: _data/glossary.yml
+  target: _build/book-cw/_data
+
 - stage: copy-readme
   action: migrate
   message: Copying README.
