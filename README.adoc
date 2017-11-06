@@ -201,8 +201,6 @@ If you don't know how to use Git or AsciiDoc yet, you may wish to *read the book
 In fact, that's a good general recommendation, so you don't duplicate something that's already included, and so you can enhance existing content -- even by contradicting it sensibly.
 
 . Fork the GitHub repo.
-+
-image::assets/images/screenshot_fork-this-repo.png[width=260]
 
 . Create a branch.
 
