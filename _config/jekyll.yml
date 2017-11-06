@@ -34,6 +34,7 @@ exclude:
   - book-cw/part-3-delivering/delivering.adoc
   - book-cw/part-4-managing/managing.adoc
   - book-cw/part-5-evolving/evolving.adoc
+  - blog/*
   - "*.sublime-project"
   - "*.sublime-workspace"
   - vendor
