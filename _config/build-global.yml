@@ -49,7 +49,7 @@
 - stage: build-glossaries
   action: parse
   message: Building glossaries.
-  data: book-cw/_data/glossary.yml
+  data: _data/glossary.yml
   builds:
   - template: _templates/liquid/glossary.asciidoc
     output: _build/book-cw/backmatter/glossary.adoc
@@ -86,10 +86,16 @@
   source: pages
   target: _build
 
-- stage: copy-blog
+- stage: copy-posts
   action: migrate
   message: Copying blog directory.
-  source: blog
+  source: _posts
+  target: _build
+
+- stage: copy-topics
+  action: migrate
+  message: Copying topics directory.
+  source: topics
   target: _build
 
 - stage: copy-themes

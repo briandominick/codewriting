@@ -1,9 +1,12 @@
 # This is the Jekyll configuration file
 title: Codewriting
+description: The website and blog of the Codewriting documentation project.
 output: web
 source: _build
-destination: _build/publish/web
+destination: _site
 host: 127.0.0.1
+url: http://codewriting.org
+name: $title
 port: 4004
 
 data_dir:     _data
@@ -20,6 +23,7 @@ asciidoctor:
     icons: font
     safe: :unsafe
     figure-caption:
+    codewriting_source_uri: https://github.com/briandominick/codewriting
 
 
 # Reading Files
@@ -34,7 +38,7 @@ exclude:
   - book-cw/part-3-delivering/delivering.adoc
   - book-cw/part-4-managing/managing.adoc
   - book-cw/part-5-evolving/evolving.adoc
-  - blog/*
+  #- blog/*
   - "*.sublime-project"
   - "*.sublime-workspace"
   - vendor
@@ -153,7 +157,6 @@ compress_html:
   ignore:
     envs: development
 
-
 # Defaults
 defaults:
   # _posts
@@ -161,7 +164,7 @@ defaults:
       path: ""
       type: posts
     values:
-      layout: page
+      layout: post
       author_profile: true
       read_time: true
       comments: # true
