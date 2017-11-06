@@ -1,0 +1,29 @@
+= Codewriting launched at Write the Docs Portland
+:page-layout: post
+:page-permalink: blog-codewriting-release
+:page-date: 2017-04-16 13:27
+:page-categories: [codewriting-book]
+:page-author: Brian Dominick
+
+After six months of writing in private, I released a draft of my book-in-progress about collaborative software documentation practices and tools during the “Writing Day” pre-conference that kicked off “Write the Docs Portland 2017”.
+I will however be finishing the book in public, hopefully with contributions from others in the field.
+
+_Codewriting_ is my attempt at learning in public, documenting my observations of the field and my approach to problem solving as a self-certified DocOps hacker.
+
+After a recent career shift, I found myself as a former developer employing a cutting-edge methodology in technical documentation, and eventually writing software to build better docs.
+Now I'm excited to start sharing with the broader software development and documentation community the lessons I've learned along the way.
+
+One of those lessons is to operate collaboratively and let subject-matter experts (SMEs) contribute directly to the common wisdom _in a shared source repository_.
+In the case of _Codewriting_, SMEs are my fellow docs hackers and tech writers solving remarkably difficult tooling, workflow, and content problems in forward-thinking ways.
+In keeping with this observation, such people are strongly encouraged to fork and contribute to the book draft I've set forth, writing in public alongside me.
+
+And everyone is invited to begin taking advantage of the book's content (in draft form, for now) as well as the rudimentary (alpha pre-release) build tooling used to compile the document source into PDF and HTML.
+_Codewriting_ is its own self-contained source codebase and build platform; anyone can clone or download the repo and use contained Ruby scripts to build the book from source.
+These same AsciiDoc-centric tools are featured in many of the book's lessons.
+
+As a former mediocre developer and modestly successful professional writer, in 2015 I found writing about a sophisticated, cutting-edge Big Data IT ops enterprise platform to be my domain.
+I was overjoyed to find myself writing link:http://rocana.com[Rocana's] product documentation using the same principles and processes employed by the engineers writing code.
+I sit on the Engineering team as a valued contributor, and my Reference Guide source code sits in the product codebase, as valued content.
+
+I believe this system lets me do better work with less frustration and perhaps even fewer errors.
+What's more, I think I can help teach it to programmers who want to write and maintain better docs, as well as tech writers who want to work more programmatically, perhaps in closer proximity to engineers.
