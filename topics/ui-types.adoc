@@ -1,32 +1,34 @@
 = Types of User Interface: A Documentarian's Take
 
-There are seven major types of user interfaces (UI) that developers make and tech writers document.
-I have not found a complete list like this anywhere, which makes me think perhaps nobody else finds this interesting.
+By my count, there are seven major types of user interfaces (UI) that developers make and tech writers document.
+I have found a few lists of computer interface types, most of them paltry.
+None speaks from a documentarian's point of view, but lack of coverage has never meant something is not actually important to do technical writers.
+We're often just too busy writing about our products to stop and explore just how we do that.
 
 Nevertheless, at risk of stirring up controversy, let me take a stab:
 
-. command-line interfaces (CLI) +
+command-line interfaces (CLI)::
 includes multi-line editors in non-GUI systems
 
-. form-fill interfaces (FFI) +
+form-fill interfaces (FFI)::
 includes wizards and dialogs
 
-. graphical user interfaces (GUI) +
+graphical user interfaces (GUI)::
 operating systems, video games, and most other mixed-interface systems
 
-. augmented reality interfaces (ARI) +
+augmented reality interfaces (AR)::
 screens that overlay real-world visualization with text, symbols, and interactive elements
 
-. application programming interfaces (API) +
-protocols and tooling for developers to interact with and extend a product or programming language, including integrated development environments (IDE)
+application programming interfaces (API)::
+protocols and tooling for developers to interact with and extend a product or programming language, including integrated development environments (IDE) and software developer kits (SDK)
 
-. natural language user interfaces (LUI) +
+natural language user interfaces (LUI)::
 UIs that accept language commands, includes conversational interfaces like Siri and Alexa, as well as chatbots
 
-. virtual reality (VR) +
+virtual reality (VR)::
 immersive experiences intended to maximize and naturalize the interface while minimizing interference from conventional UI elements
 
-You may be tempted to add to these top-level categories, but I challenge you to help me merge and reduce.
+You may be tempted to add to these top-level categories -- and the link:https://en.wikipedia.org/wiki/User_interface[Wikipedia article] would encourage this -- but I challenge you to help me _merge and reduce_, if possible.
 
 * Some might say FFIs are a sub-category of GUIs, but I think they're different enough to instruct, and both so terribly common, the distinction is significant.
 
@@ -41,7 +43,7 @@ I have no experience documenting the , but I would welcome insights in appropria
 
 Interface types are often associated with audience types.
 If I'm documenting a CLI, I know it's not for my father.
-In fact, if my father is the product's audience, we know a CLI is not the right choice.
+In fact, if my father is the product's audience, we know a CLI is not the right interface choice.
 Aside from unforgiving syntax, the command line lacks visualization and only minimally abstracts underlying logic and routines.
 This makes the CLI a non-starter for huge swaths of less technically inclined users, as well as less frustration-inclined geeks.
 
@@ -50,7 +52,7 @@ In fact, the list of UI types above reflects my sense of the ascending order of 
 The less burdensome the interface seems, the more open-ended it is, and thus the more complicated it would be to fully capture the range of its utilization.
 
 Imagine the potential complexity of a natural language interface.
-The limitations of Siri and Alexa are not in the interface, but in the intelligence.
+Most limitations of Siri and Alexa are not in the interface, but in the intelligence.
 The range of commands such systems can already distinguish make them spectacularly open ended.
 
 Drastically more complex than any mere language-based interface is VR, which can incorporate natural language commands, kinetic interface techniques, and eventually advanced brain and neural interfaces.

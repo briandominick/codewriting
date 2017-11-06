@@ -1,0 +1,124 @@
+= Dynamism
+
+You don't need to have been a student of content management over the last two decades to know that the whole thing boils down to a few issues:
+
+
+
+
+
+== Static Dynamism: A Web Dev's Memoir
+
+=== The Static Page
+
+After a serious stint with print media, which I still love but have long since abandoned, around 1997 I decided HTML was finally "good enough" for the content I was trying to deliver at the time.
+At first, I made web pages by saving HTML-formatted text to flat files with the `.htm` extension.
+I would push these files to a remote host's filesystem.
+The next time a web browser requested that page, the host's web server would pass a copy of that HTML file directly to the browser.
+This was a _static_ web page, and the transaction really was that simple.
+
+The limitations of this approach were legion.
+While “site management” tools began to emerge for static file management, all were limited and frustrating.
+And if you wanted to collaborate on a site with somebody else, they had to have the same local tools configured the same way.
+Not to mention conflicts caused by multiple simultaneous edits of key files.
+
+I quickly discovered a few tools for adding “dynamic” element into static pages, but not as quickly as I wished.
+The main way was JavaScript, which tried very hard to work in the browser, but for various reasons this was not a viable solution to most problems.
+JavaScript was inconsistently supported by the browser makers.
+It also did not readily enable real interactivity -- the user is interacting with a local representation of our website, and we don't even know what the user is doing with our UI.
+
+=== Enter the Web Application
+
+By 1999, I had started learning what was generically thought of as DHTML, for _dynamic HTML_.
+This was any sort of server-side scripting that would enable an application server to mix static templates with “live” data in real time, as well as execute functions on the data prior to serving it to the browser.
+So a “template” file offers a shell to provide general formatting and structure, but the content has to come from another source.
+That source was usually a relational database.
+This allowed users -- be they site administrators or site visitors -- to input data into the database using custom web interfaces we would also code specially for each and every transaction with the server/database.
+
+This model is still the dominant delivery system on the web, in terms of pages served, probably by a couple orders of magnitude.
+Almost everything you see on the Internet is handled this way, and it's really quite a glorious technological protocol -- one of the more elegant systems one can come to understand in technology, I imagine.
+All the major news websites; Facebook, Twitter, Tumblr, Medium, OkCupid, and every other social network; Amazon.com and every other retailer -- practically everything runs this way, and for good reason.
+Their data is changing rapidly, and they have highly controlled structures to which their data must conform.
+
+There are some downsides to dynamic delivery.
+For starters, every page request includes more server overhead.
+The operating system and webserver are not just grabbing a file and passing it to the browser.
+They are running computations in real time and then passing the generated result to the browser.
+This overhead is costly in high-traffic systems, where milliseconds truly count.
+
+Additionally, dynamic systems complicate the entry model.
+Flexible delivery comes at the cost of freedom in display.
+At first, dynamic systems took on a rigidity that felt almost like a violation of the medium.
+The web started with those sloppy, free-form flat files saved to a local hard drive and pushed online for direct consumption.
+Say what you will about about those early HTML aesthetics, they gave the visiting eye the distinct impression that a person had interacted with every part of that page design.
+Suddenly, there were just boxes and lists being “populated” by server-side dynamic tooling.
+
+=== The Rise of REST & Return of the Client
+
+The next major wave in the continuing trend toward dynamic, server-side web applications brought a lot more power back to the client side.
+Because the same server-side back ends need to serve multiple front ends (at least the website and various mobile apps), developers got serious about the front-end/back-end interface.
+Using the standard HTTP/S (Web) protocol, REST APIs accept requests from clients irrespective of the client type, serving back data and content in formats any client can repurpose into its own settings and display matter.
+In fact, that “client” is now often another server, exchanging data over a REST API in order to re-serve it to a client the API itself may know nothing about.
+
+REST APIs enable the Facebook mobile app on your smartphone or tablet to access much of the same data and functionality that is available to the Facebook that works in your browser.
+Indeed, it enables third-party applications, such as HootSuite or the Facebook Connect plugin on your WordPress site, to interface with Facebook's server-side resources pretty much exactly the same way Facebook's own apps and website do.
+
+The new centrality of REST APIs accompanied the segregation of design, delivery, and content.
+Rather than fusing all of these together in source code that generated web server instructions, HTML page structure, and significant portions of content in one spaghettified blob of code, layered frameworks emerged to provide logic and grace to networked content delivery.
+
+Content and data are kept in sensible places.
+We thought we had achieved this when we started using template engines to establish the page structure for content, be it an article or a user profile.
+Then with the emergence of cascading stylesheets (CSS), we realized we could separate design from structure just as we separated functionality from presentation.
+Then we further modularized those HTML, CSS, and JavaScript interface elements, letting them interface more liberally and independently through REST APIs.
+
+With this turn, our application interfaces started feeling more like the object-oriented code behind them.
+Each element in our web and client interfaces -- think of them as “widgets” -- bore specific properties.
+Each transacted with various other entities, internal and external.
+More and more, all such elements derived from distinct source code and used resources catering to generalized, open access.
+
+The power of the REST API depended on several component concepts.
+The first was the principle of openness.
+Open protocols like HTTP and asynchronous transactional technologies such as AJAX made it possible for remote applications to exhibit breakthrough dynamism.
+But openness in the sense of being willing to let third party developers make end-user interfaces to engage with your product was a pretty big leap.
+In retrospect, it was a stroke of collective genius that few appreciate today.
+
+Along with openness came emerging standards, official and otherwise.
+From URL formatting for REST requests to data type conventions, from the primacy of JSON for data exchange to the to the sharing of authentication protocols, web developers who rallied around REST put third-party accessibility first for once.
+When your success depends on how well others can integrate with your platform, there is real incentive to make it usable.
+Technically accessible but obtuse is not really an option.
+
+It was difficult at first to recognize the influence this part of my story had on my new fascination with docs-as-code methodology, though now it seems obvious.
+The trend from static pages to dynamic web applications to REST API-dependent development echoes a lot of what we have been discussing in terms of our need for output in various formats.
+It has a similar arch for similar purposes, when compared to the evolution in technical documentation from server-side tools back down to local static site generators drawing from flat flies in a shared repo.
+
+The place where our content needs dynamism is in the build, not on the server.
+Our content is not a social network or even a news site; it changes in place far more often than it grows.
+Our content matures and gets “fleshed out” rather than serialized and stacked up.
+
+Most any content that needs constant updating in realtime is not canonical.
+Even if your knowledge base gets updated several times a day, it's only if you have enabled comments on KB articles that you would need a server-side solution to organize and manage the KB site.
+We'll look at <<rest,REST APIs>> again when we discuss integrated documentation environments and other advanced tooling.
+
+=== The Blog Paradox
+
+Not quite every use case has decided server-side dynamism is the be all/end all of content delivery.
+Blogs are an outlier.
+While they certainly serve changing content in a routinized format, a blog that only gets a few posts a day and has no realtime dynamic features (like a comments system) really derives no advantage from dynamic server-side technology.
+It would be more efficient to save your HTML, push it to the server (all in one step, if you wish), and get on with your day.
+
+Here I want to note the greatest remaining advantage in an era of web servers that have more processor chips than my first laptop had megabytes of RAM: static systems can be served from pretty much any web server.
+They are incredibly portable -- you don't first have to install and configure an application server or have access to the proper database.
+You keep all the necessary files in one repository, so when you change hosts or hardware, you're ready to go.
+
+In recognition of this, an inglorious struggle persisted for several years as companies like Macromedia/Adobe, and Microsoft maintained products aimed at the static HTML file.
+Indeed, Macromedia even tried to double down on static systems, rolling out link:https://en.wikipedia.org/wiki/Adobe_Contribute[Contribute] on top of its product link:https://en.wikipedia.org/wiki/Adobe_Contribute[Dreamweaver].
+Along with MS's link:https://en.wikipedia.org/wiki/Microsoft_FrontPage[FrontPage], these tools made heroic efforts to empower administrative and editorial users with immense power, pixel-specific power and templating capabilities over what would then get saved and served as static files from a remote server.
+
+=== Return of the Static Site Generator
+
+A lot of us who laughed at these holdout systems have come nearly full circle with the rise of Git.
+The advantages of distributed source control are simply legion, and suddenly everyone is a flat-file aficionado again.
+Static files saved locally and pushed to the web when edited sound pretty damn good right about now.
+
+But we kind of got used to all that dynamism.
+And we're really sick of using constricting interfaces.
+And we're really sick of configuring data interfaces that barely get used, especially when all the users are engineers who could engage with flat files responsibly.
