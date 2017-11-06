@@ -129,7 +129,7 @@ This way multiple members of the same team, or even multiple teams across the or
 
 But engineers notoriously hate most of these tools.
 The only thing I find they nearly all agree on is Git.
-Help them treat all canonical content they way they treat their code, and your value will not be in doubt.
+Help them treat all canonical content the way they treat their code, and your value will not be in doubt.
 
 === Improve Docs Delivery
 

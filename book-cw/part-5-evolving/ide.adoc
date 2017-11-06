@@ -16,11 +16,15 @@ Imagine the following: You are typing along in your favorite lightweight markup 
 The default value of *login.allowed-attempts* is `3`.
 ----
 
-What happens when this default changes in the product codebase?
-Typically a tech writer has to be notified, or they must discover the change during a review of some database where settings and their defaults are stored.
-Then the tech writer must manually change the value and republish the docs.
+As a reminder, those asterisk and backtick markers are just for formatting bold and literal, respectively.
+That whole line is static code, but it is _about_ something dynamic.
+It's _subject_ is _dynamic_.
 
-It would obviously be better to use a variable here, especially if this default is going to be expressed anywhere else.
+So what happens when this default changes in the product codebase?
+Typically a tech writer has to be notified, or they must discover the change during a review of some external database/spreadsheet where settings and their defaults are tracked.
+In any case, the tech writer has to manually make the change republish the docs or wait for the docs to publish.
+
+It would obviously be better to use a variable here, especially if this default is going to be expressed in any second place anywhere in the documentation.
 
 [source,asciidoc]
 .Example value expression in AsciiDoc
@@ -28,27 +32,27 @@ It would obviously be better to use a variable here, especially if this default 
 The default value of *allowed.login.attempts* is `{login_allowed-attempts__default}`.
 ----
 
-Okay, that looks a little bit better, but it doesn't solve the problem of requiring someone to change the value of the AsciiDoc variable login_allowed-attempts__default wherever it is defined.
+Okay, that looks a little bit better, but it doesn't solve the problem of requiring someone to change the value of the AsciiDoc variable *login_allowed-attempts__default*, wherever it is defined.
 
-Now imagine that variable is sourced from a common registry which is edited by the developer when the default for the core setting login.allowed-attempts was changed.
+Now imagine that variable is sourced from a common registry which is edited by the developer when the default for the core setting *login.allowed-attempts* was changed.
 Suddenly your intervention is no longer needed on the trivial matter of a changed setting value, because the value of your AsciiDoc variable (login_allowed-attempts_default) is drawn from that registry.
 
 This is a mature integrated docs environment, possessing potentially robust awareness of the product once integrated.
-Such a system could incorporate unit tests and regression tests to ensure the docs always reflect the proper value of an existing parameter.
+Such a system could incorporate unit tests and regression tests to ensure the docs always reflect the proper value of an existing parameter compared to the version of the software each docs edition describes.
 
 == Docs Generators
 
 The embedded documentation generators associated with various programming languages are an important cousin to my idea of an integrated docs environment, and they've been around for quite a while.
 Systems like JavaDoc, PyDoc, YARD (Ruby), Perldoc, JSDoc, phpDocumentor, and several others essentially transform developers' structured code comments into automated documentation output.
-This form of docs-as-code has been around for many years, but it is notoriously limited, as it is more like code-as-docs or docs-__of__-code.
+This form of docs-as-code has been around for many years, and it is extremely useful.
+But it is also notoriously limited, as it is more like a code-as-docs or a docs-__of__-code solution.
 
 Both Swagger and Doxygen are excellent black boxes that take complicated inputs and produce well-structured, predictable output.
 They can meet developers on their turf, deep inside the codebase.
 Working with such tools requires up-front planning, configuration, and testing, but it can be worth it for the developer proximity they enable.
 
 But embedded and integrated docs generators are just not good enough to produce great user-facing product docs.
-They might be good enough
-These tools are more oriented toward developers who need to know how to interface with or directly hack a product's inner components.
+These tools are more oriented toward users who need to know how to interface with or directly hack a product's inner components.
 So while these embedded generators may suffice for producing API docs or developer references, they don't necessarily correspond in any direct way to the end-user interface.
 For most products with GUIs, source code and interface do not line up 1:1.
 
