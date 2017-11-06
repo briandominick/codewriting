@@ -17,7 +17,7 @@ In maintaining good docs, no concept is more importance than the ability to esta
 
 == Keeping Docs DRY
 
-Putting all the information a user needs right at their fingertips without creating half a dozen sources of truth for every fact.
+Put all the information a user needs right at their fingertips without creating half a dozen sources of truth for every fact.
 The developer's mantra of "Don't Repeat Yourself" (DRY) applies every bit as much to technical content source as to product source code.
 You may display the same table two different ways in four or fourteen different places, just to be sure it is always at your user's fingertips, but keep only one copy of that table or its source data.
 
@@ -51,7 +51,7 @@ As a side effect, topic-based authoring prompts us to think of content in logica
 I'm sure every team/style/project will define topic parameters and properties differently, but I must admit I've found this enormously helpful in my own work
 Even as it suggests I should make Herculean efforts to overhaul the structure of so much of my work, I know the benefits will be huge.
 Formally achieving what I'll call topic-based DRYness will give me all the building blocks of a truly modular docs system at Rocana.
-Publishing all those various guides and knowledge bases for various user audiences will then be a matter of just listing topics to appear in each final document.
+Publishing all those various guides and knowledge bases for various user audiences, all from the same canonical source, will then be a matter of just listing topics to appear in each final document.
 
 === Topical Thinking
 
@@ -60,8 +60,9 @@ Right out of the gate, that's a subjective judgment, but since I have spent 20 y
 
 For example, a complete series of simple installation instructions deserves a web page; each step in that simple process most likely does not.
 A bibliography or glossary deserves its own page on a website; a single citation or term definition does not.
+A person's complete dating profile deserves its own web page; the summary of their image thumbnail, age, and match rating belong in an index listing, not each to their own page.
 
-Another way of looking at it: if a discrete content item might serve well in a “popover”-style element on a web page, it probably lacks the makings of a topic.
+Another way of looking at it: if a discrete content item might serve well in a “tooltip” or “popover”-style element on a web page, it probably lacks the makings of a topic.
 The page it is on is likely made up of one or more topics.
 
 The supersets of topics tend to be “documents”, to invoke a dangerously broad class term.
@@ -80,9 +81,9 @@ In any case, a document is suited for topic-based authoring when it:
 * sidebars
 * citations
 
-. includes content that is best reused elsewhere in order to constrain divergence
+. includes content that is best single-sourced in order to constrain divergence during reuse and redistribution
 
-Point 3 here is crucial: we're only going to use this method for content that should not be expressed in substantially different ways such that just writing it differently each time makes more sense.
+Point *3* here is crucial: we're only going to use this method for content that should not be expressed in substantially different ways such that just writing it differently each time makes more sense.
 This excludes concepts that should be re-expressed with nuance or fundamental differences in various places, if only to help different users learn something a different way or from a different perspective.
 
 .Single-sourcing vs inline expression
@@ -101,7 +102,7 @@ Ideally, we want to make sure the example event schema shown in the the Referenc
 Engineers can thus make edits to this canonical file that will automatically be reflected in all our docs talking about the event schema.
 
 If the changes are significant, they'll probably need to be reflected elsewhere in the docs, perhaps even in some of those various descriptive paragraphs about _events_.
-But at least our literal expression of the event schema will stay consistent.
+But at least our literal expression of the event schema will stay consistent, even if I fail to note the changes, I won't have to actively copy them from the developers.
 
 ****
 
@@ -141,9 +142,8 @@ No, you won't find files containing such simplistic, limited content, but you wi
 I find it too burdensome to give each such element its own file, but I want the advantages of single-sourcing.
 
 Consider the elegance of being able to simply edit a single source for this discrete chunk of text.
-It has been brought to our attention that our users think backing their data up to their own account on the server suffices for this step, but we really want them to download a backup.
+In this example, it has been brought to our attention that our users think backing their data up to their own account on the server suffices for this step, but we really want them to _download_ a backup.
 We'll explain this elsewhere, but when we drop the warning in various places in our docs, we want them to be reminded that we mean saving the backup to their local machine.
-We'll do this by adding the simple instruction to every admonition.
 
 .Example File -- topics/admonitions.adoc
 [source,asciidoc,subs="none"]
