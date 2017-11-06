@@ -20,6 +20,6 @@ Early *drafts are available now* in the same open source repository from which t
 My free and open source tool *LiquiDoc* enables true *single sourcing of docs and product* content, building and optimizing semi-structured data into content for rendering in docs and other user interfaces.
 In combination with several technologies like Git, Asciidoctor, and Jekyll, LiquiDoc builds the site you're reading now, as well as my book -- all from the same source repo.
 
-* I maintain a link:brian-dominick-resume[conventional resumé], also drawn from source code in this repo. .
+* I maintain a link:brian-dominick-resume[conventional resumé], also drawn from source code in this repo.
 
 * Build link:{codewriting_source_uri}[_Codewriting_] from source, or just download the PDF.
