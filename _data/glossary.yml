@@ -36,6 +36,11 @@ terms:
     definition: |
       For "don't repeat yourself", referring to a single-sourcing approach to code or docs.
 # end::cco-example[]
+  - term: FOSS
+    definition: |
+      Acronym for _free, open source software_.
+      “Free” here implies both free as in do what you want with it, and free as in no money need be exchanged.
+
   - term: JSON
     definition: |
       A very common format for semi-structured data, popular for data transfer, especially with JavaScript/Node.js, though quickly becoming the industry standard.
