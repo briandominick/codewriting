@@ -5,3 +5,6 @@ Gemfile.lock
 book-cw/_scraps/
 .travis.yml
 scripts/cibuild
+presentations/
+_notes/
+blog/
