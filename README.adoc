@@ -118,7 +118,16 @@ To learn more about the build tool, explore the files in the link:https://github
 This is my first ever Ruby scripting project; it's not terribly complex, and there's lots more to come.
 --
 
-To keep updated, link:https://github.com/briandominick/codewriting/subscription[follow this repo on GitHub].
+You can also perform a Jekyll build/serve operation against the `_build/` directory.
+To do so using the included Jekyll config, still from the root directory:
+
+----
+bundle exec jekyll serve --config _config/jekyll.yml
+----
+
+Now browse to `http://127.0.0.1:4004` -- you should see the `codewriting.org` website.
+
+*To keep updated*, link:https://github.com/briandominick/codewriting/subscription[follow this repo on GitHub].
 // end::build-cw[]
 
 [NOTE]
