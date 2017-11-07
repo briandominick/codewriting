@@ -15,6 +15,9 @@ I wish I had read this series when I was first learning Git.
 
 === Git
 
+* https://www.cuttlesoft.com/using-git-software-documentation/[Using Git to Manage Software Documentation]
+This overview of Git from a documentarian's perspective might be a good palce to start.
+
 * http://www.codeschool.com/courses/try-git[CodeSchool's Try Git tutorial]
 
 * http://gitimmersion.com/lab_01.html[Git Immersion] +
