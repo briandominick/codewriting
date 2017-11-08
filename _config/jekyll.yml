@@ -16,6 +16,7 @@ layouts_dir:  _build/theme/hyde/_layouts
 images_dir:   assets/images
 includes_dir: theme/hyde/_includes
 css_dir:      theme/hyde/css
+theme_common_dir: theme/common
 
 asciidoc: {}
 asciidoctor:
