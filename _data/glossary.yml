@@ -10,6 +10,10 @@ terms:
       An extensible lightweight markup language with numerous powerful features such as conditional processing, file includes, and variable text substitutions.
       Pronounced _ASK-ee-doc_.
 
+  - term: binary files
+    definition: |
+      Complex files consisting of bytecode, often representing archives of flat files and opaque to most source-control systems.
+
   - term: CCO
     definition: |
       See *complex content object*.
@@ -19,11 +23,26 @@ terms:
       Command-line interface.
       Any place where a command prompt expects textual input.
       Pronounced _C-L-I_.
-# tag::cco-example[]
+
+  - term: commit
+    definition: |
+      A defined set of changes made to the source code of a project managed by source control.
+      In Git, you organize source changes into commits as a way of organizing contributions to the codebase.
+      Anyone who makes commits to the project is a _committer_.
+
   - term: complex content object
     definition: |
       Abbreviated CCO, this is an item that may be more metadata than content, stored many to a file, as opposed to more typical text content units like chapters or topics, which may have some metadata but are mainly text and images.
       See <<chapter-managing-complexity>>.
+
+  - term: dependency, software
+    definition: |
+      A separate software product that is required for the development or operation of another application.
+      These are either prerequisites that need to be set up or packages that are integrated automatically, but the main software relies on them to perform some crtical task.
+# tag::cco-example[]
+  - term: DevOps
+    definition: |
+      An approach to software development that seeks to optimize complementarity between product coding and build/test procedures, mainly through automation and continuous integration.
 
   - term: DITA
     definition: |
@@ -32,19 +51,42 @@ terms:
       In addition to a markup standard, DITA incorporates dynamic functionality and mature framework elements.
       https://en.wikipedia.org/wiki/Darwin_Information_Typing_Architecture[Wikipedia].
 
+  - term: DocBook
+    definition: |
+      An XML-based structured semantic markup language designed to convey technical information.
+      Founded on Usenet in 1991, DocBook was originally popularized as the basis for O'Reilly technical books.
+      AsciiDoc was designed as a lightweight writing format to be preprocessed into DocBook XML.
+
   - term: DRY
     definition: |
       For "don't repeat yourself", referring to a single-sourcing approach to code or docs.
 # end::cco-example[]
+  - term: extensibility
+    definition: |
+      Software that offers users the prerogative to heavily alter or add to its performance or abilities is considered “extensible”.
+
+  - term: flat files
+    definition: |
+      Simple files consisting only of textual characters and easily readable by source-control systems.
+
+  - term: framework
+    definition: |
+      A set of digital assets as well as structural and methodological conventions designed to enable rapid programming that is accessible to anyone familiar with the framework.
+      Frameworks use standardized files, namespaces, architectures, and coding principles to enforce conventionality in style while enabling developers to jumpstart (“bootstrap”) their own projects as well as parachute into others' with minimal orientation to the codebase.
+
   - term: FOSS
     definition: |
       Acronym for _free, open source software_.
-      “Free” here implies both free as in do what you want with it, and free as in no money need be exchanged.
+      “Free” here implies both free as in do pretty much whatever you want with it, and free as in no money need be exchanged.
 
   - term: JSON
     definition: |
       A very common format for semi-structured data, popular for data transfer, especially with JavaScript/Node.js, though quickly becoming the industry standard.
       Pronounced _JAY-sahn_.
+
+  - term: linter
+    definition: |
+      A utility that scans text or code for syntactically, grammatically, or vocabularily incorrect content to flag or reject.
 
   - term: Markdown
     definition: |
@@ -58,8 +100,41 @@ terms:
 
   - term: IDE
     definition: |
-      For _integrated development environment_, a toolchain/platform that facilitates software programming in a customized context that incorporates the particularities of the source language(s) and the product build.
+      For _integrated development environment_, a toolchain/platform that facilitates software programming in a customized context that incorporates the particularities of the source language(s), any specific configuration for a given project, and elements of the product build procedure.
       Pronounced _I-D-E_.
+
+  - term: open source
+    definition: |
+      Software source code that is specifically licensed for sharing, usually with some restrictions.
+      See also, FOSS.
+
+  - term: platform
+    definition: |
+      Any configurable software product that enables one or more users to contribute customized data or content for routine processing using a controlled, predictable environment.
+
+  - term: RDB
+    definition: |
+      Abbreviation for _relational database_.
+
+  - term: regression testing
+    definition: |
+      QA to ensure that changes in a new version of a software product work as intended with previous configurations, integrations, and applications.
+      Thorough integration testing ensures all still-supported features and functionality remain backward compatible.
+
+  - term: relational database
+    definition: |
+      A complex, multi-table data source that is structured according to a defined schema and primarily accessed using queries.
+      As opposed to flat files, RDBs are almost always stored as binary files and therefore opaque to most source control systems.
+
+  - term: release cycle
+    definition: |
+      The full set of procedures involved in planning and distributing a version of a software product.
+      The release cycle includes planning, coding, testing, packaging, distributing, and any other tasks involved in turning software from a set of ideas to a new edition for production use.
+
+  - term: repository, code
+    definition: |
+      A file-storage system for _source code_, which tracks metadata about the code files and tracks changes across user-established _versions_.
+      Commonly referred to as a “repo”.
 
   - term: REST API
     definition: |
@@ -72,7 +147,7 @@ terms:
 
   - term: RST
     definition: |
-      Abbreviation for reStructuredText.
+      Abbreviation for _reStructuredText_.
 
   - term: SaaS
     definition: |
@@ -85,6 +160,23 @@ terms:
       Subject matter expert.
       Someone close to or highly familiar with the source/product who contributes this expertise to the documentation process.
       Please don't pronounce this _sme_ or for god's sake _shme_.
+
+  - term: source code
+    definition: |
+      Human readable programming instructions intended to be compiled into machine code.
+
+  - term: stack
+    definition: |
+      The particular set of software utilities or languages used in developing and/or running a software product.
+      My technical documentation stack includes Ruby, AsciiDoc, YAML, Asciidoctor, and Jekyll.
+      See also _tooling_.
+
+  - term: tooling
+    definition: |
+      Software utilities configured to provide routine services.
+      For documentarians, tooling includes text editors and any utilities that generate and package documentation files.
+      A _toolchain_ is a specific set of technologies used to perform a given complex procedure, such as writing and building documentation.
+      See also _stack_.
 
   - term: topic
     definition: |
@@ -99,6 +191,21 @@ terms:
     definition: |
       Initialism for _user interface_.
       Pronounced _U-I_.
+
+  - term: Unicode
+    definition: |
+      A collection of universally standardized character sets that incorporate massively extended non-Western alphabets and extended symbolic characters.
+      The most common is UTF-8, which incorporates characters consisting of between one and four 8-bit bytes.
+
+  - term: UX
+    definition: |
+      Initialism for _user experience, the study of overall interactions between users and a product.
+      Pronounced _U-X_.
+
+  - term: workflow
+    definition: |
+      The procedures involved in fulfilling a task or project.
+      Workflows may be formal, as in a prescribed set of protocols, or they informal, as in a description of what actually happens within a team or workspace.
 
   - term: XML
     definition: |
