@@ -124,7 +124,7 @@ Let's take a closer look:
 
 You are provided::
 
-. an environment (some kind if system for documenting a product);
+. an environment (some kind of system for documenting a product);
 
 . intelligent input data (knowledge from SMEs);
 
