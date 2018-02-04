@@ -4,6 +4,12 @@
   source: assets
   target: _build
 
+- stage: copy-themes
+  action: migrate
+  message: Copying theme files.
+  source: theme
+  target: _build
+
 - stage: parse-resume
   action: parse
   message: Building BD resumé.
@@ -19,14 +25,25 @@
   data: _config/attributes.yml
   builds:
   - output: _build/assets/files/brian-dominick-resume.pdf
-    style: theme/pdf/resume-theme.yml
     doctype: article
+    properties:
+      files:
+        - _data/asciidoctor.yml
+      arguments:
+        - safe=unsafe
     attributes:
       edition: pdf
       icons: font
       pdf-fontsdir: theme/fonts
       imagesdir: assets/images
-      safe: unsafe
+      pdf-stylesdir: _build/theme/pdf
+      pdf-style: resume
+
+- stage: copy-book-files
+  action: migrate
+  message: Copying book files.
+  source: book-cw
+  target: _build
 
 - stage: build-lists
   action: parse
@@ -56,12 +73,6 @@
   - template: _templates/liquid/glossary.asciidoc
     output: _build/pages/docops-glossary.adoc
 
-- stage: copy-glossary-data
-  action: migrate
-  message: Copying data file for special inclusion in book content
-  source: _data/glossary.yml
-  target: _build/book-cw/_data
-
 - stage: copy-readme
   action: migrate
   message: Copying README.
@@ -74,11 +85,11 @@
   source: LICENSE.md
   target: _build
 
-- stage: copy-book-files
+- stage: copy-glossary-data
   action: migrate
-  message: Copying book files.
-  source: book-cw
-  target: _build
+  message: Copying data file for special inclusion in book content
+  source: _data/glossary.yml
+  target: _build/book-cw/_data
 
 - stage: copy-book-index
   action: migrate
@@ -110,12 +121,6 @@
   source: topics
   target: _build
 
-- stage: copy-themes
-  action: migrate
-  message: Copying theme files.
-  source: theme
-  target: _build
-
 - stage: build-notice
   action: parse
   message: Building notice files.
@@ -140,8 +145,21 @@
     style: theme/pdf/default.yml
     doctype: book
     attributes:
-      pdf-fontsdir: theme/fonts
+      pdf-fontsdir: /Users/briandominick/Documents/workspace/codewriting/theme/fonts
       imagesdir: publish/assets/images
+      icons: font
+      pdf-stylesdir: /Users/briandominick/Documents/workspace/codewriting/_build/theme/pdf
+      pdf-style: default
+
+- stage: build-codewriting_org
+  action: render
+  data: _config/attributes.yml
+  builds:
+    - backend: jekyll
+      properties:
+        files: _config/jekyll.yml
+        arguments:
+          destination: _build/publish
 
 # - stage: build-site
 #   action: deploy

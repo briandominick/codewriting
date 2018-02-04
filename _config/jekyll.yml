@@ -4,7 +4,6 @@ description: The website and blog of the Codewriting documentation project.
 tagline: Collaborative Documentation Ops for the Agile Age
 output: web
 source: _build
-destination: _site
 host: 127.0.0.1
 url: http://codewriting.org
 name: $title
