@@ -78,9 +78,6 @@ include::./book-cw/part-2-coding/content.adoc[]
 [[chapter-coding-integration]]
 include::./book-cw/part-2-coding/integration.adoc[]
 
-[[chapter-coding-regex]]
-include::./book-cw/part-2-coding/regex.adoc[]
-
 //PART THREE: DELIVERING
 [[part-delivering]]
 include::./book-cw/part-3-delivering/delivering.adoc[leveloffset=-1]
