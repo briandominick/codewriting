@@ -3,10 +3,10 @@ font:
   catalog:
     # Noto Serif supports Latin, Latin-1 Supplement, Latin Extended-A, Greek, Cyrillic, Vietnamese & an assortment of symbols
     Open Sans:
-      normal: OpenSans-Regular.ttf
-      bold: OpenSans-Bold.ttf
-      italic: OpenSans-Italic.ttf
-      bold_italic: OpenSans-BoldItalic.ttf
+      normal: opensans-regular.ttf
+      bold: opensans-bold.ttf
+      italic: opensans-italic.ttf
+      bold_italic: opensans-bolditalic.ttf
     Noto Serif:
       normal: notoserif-regular-subset.ttf
       bold: notoserif-bold-subset.ttf
