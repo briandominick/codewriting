@@ -2,7 +2,7 @@
 = Resources
 
 This is a curated page of resources helpful to exploring and implementing a docs-as-code approach to technical documentation.
-You are strongly encouraged to submit a pull request including your own favorites!
+You are strongly encouraged to submit a merge request including your own favorites!
 
 == Source Control
 
@@ -14,6 +14,9 @@ That said, you should understand _why_ source control and version control are im
 I wish I had read this series when I was first learning Git.
 
 === Git
+
+* https://www.cuttlesoft.com/using-git-software-documentation/[Using Git to Manage Software Documentation]
+This overview of Git from a documentarian's perspective might be a good palce to start.
 
 * http://www.codeschool.com/courses/try-git[CodeSchool's Try Git tutorial]
 
@@ -51,6 +54,25 @@ A compilation of excellent blog posts examining intermediate and advanced topics
 
 === MarkDown
 
+== DITA
+
+* http://www.dita-ot.org/1.8/dev_ref/extending-the-ot.html[DITA Open Toolkit] +
+I list this extensible, open-source DITA toolkit up front because it is most valuable here as an option for DevOps engineers trying to integrate DITA into their product source control or build infrastructure.
+This is the place for hackers to start.
+
+
+
+== Regular Expressions (RegEx)
+
+Following up on <<chapter-coding-regex>>, let's explore some RegEx tools and tutorials.
+
+* link:https://regexone.com/[RegexOne] is a great tutorial
+
+* The site link:http://www.rexegg.com/[RexEgg.com] offers some very cool instructionals and in-depth explorations.
+
+* link:https://regexr.com/[Regxr] is a great “fiddle”-style tool for running experiments against test patterns with lots of resources a click away.
+
+
 == SSG: Static Site Generators
 
 === Jekyll
@@ -70,6 +92,16 @@ With my limited programming acumen, I find Ruby difficult to learn, though even 
 That said, these tools are all truly excellent, and there are a great many resources on Ruby, especially on https://stackoverflow.com/tags/ruby/info[StackOverflow], which is a pretty good place to start learning Ruby, and _the_ place to go when you get stuck.
 ****
 
+=== Minuteman
+
+=== Hugo
+
+=== Awestruct
+
+* http://awestruct.org/[Awestruct site]
+
+* https://github.com/awestruct/awestruct/[source code]
+
 == Conversion and Migration Tools
 
 === Pandoc
@@ -82,9 +114,7 @@ Short of such programmatic applications, you can explore Pandoc simply by conver
 * http://pandoc.org/[pandoc.org]
 *  https://publishing.sfu.ca/2013/11/building-publishing-workflows-with-pandoc-and-git/[Building Publishing Workflows with Pandoc and Git] (blog entry)
 
-=== Swagger
-
-=== Doxygen
+=== Tilt
 
 === Other Conversion/Migration Tools
 
@@ -99,6 +129,12 @@ gdocs2md-html Google Docs script::
 This hacky-to-install but well-documented tool will convert your Google Docs handily to Markdown.
 
 * https://github.com/lmmx/gdocs2md-html[GitHub repo]
+
+== API Docs Generators
+
+=== About OpenAPI
+
+=== Doxygen
 
 == CCMS: Component Content Management Systems
 
@@ -150,7 +186,7 @@ LeanPub is a great way for authors to self-publish; it includes an e-commerce sy
 * link:https://leanpub.com[Leanpub site]
 
 [TIP]
-Don't see your favorite platform here? Suggest it in the Issues for this GitHub project or in the
+Don't see your favorite platform here? Suggest it in the link:https://github.com/briandominick/codewriting/issues[Issues] for this GitHub project, or add it directly and issue a merge request.
 
 == Blogs
 
@@ -180,6 +216,16 @@ The Content Wrangler::
 Though not particularly docs-as-code oriented, this site occasionally features decent articles about tech writing strategy and tactics.
 
 * link:http://thecontentwrangler.com/[The Content Wrangler]
+
+== Forums
+
+Write the Docs::
++
+While not docs-as-code exclusive, the Write the Docs community is where you'll find the most forward-thinking documentarians.
+Their conferences, meetups, and Slack channels are the place to mine peers and experts for their experience and advice.
++
+* link:http://www.writethedocs.org[Website]
+* link:http://www.writethedocs.org/slack/[Write the Docs Slack workspace]
 
 [[resources-git-tooling]]
 == Git Tooling

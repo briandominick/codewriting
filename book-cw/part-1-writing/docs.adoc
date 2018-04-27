@@ -14,12 +14,16 @@ This does not mean I want to be in charge of it all; I certainly don't want to r
 I just like to know what is where, or at least how to find everything.
 And it means I want the engineers I work with to know I care about all that stuff.
 
-I work regularly with developers and project managers in Engineering, as well as everybody in Customer Success.
+At Rocana, I worked regularly with developers and project managers in Engineering, as well as everybody in Customer Success.
 Having _their_ docs in order makes my life better in numerous ways which we'll explore throughout this book.
 For now, I want to introduce the theme that bad documentation is everybody's problem, not just users’.
 And documentation itself is way more than just the docs you prepare for end users or third-party developers, or even anything you might need to produce for Marketing.
-It's all of the meeting notes, specs, task-management issues, Git commit messages, help desk tickets, and on and on.
-Well kept, these are also your assets.
+It's all of the meeting notes, specifications, task-management issues, use cases, support cases, Git commit messages, help desk tickets, and on and on.
+
+Well kept, these are also your assets -- they include all the answers SMEs have forgotten or misremembered.
+They won't contain everything you need, and they'll surely contain plenty of contradictions and stuff you would never want to release, yet it's all critical.
+Some of this content is automatically organized, such as task/help tickets and code commits.
+The rest must be actively curated, even if never examined closely.
 
 This book is going to dwell plenty on what tech docs _are_, but first let's clear up what docs _aren't_.
 
@@ -37,16 +41,16 @@ If you're anything like me, you're working on a novel or three, and maybe you'll
 But the only thing that's getting _published_ at the moment is that damn user manual, so you'd better believe we're going to _write_ that thing as if someone is _reading_ it.
 
 Usually there is even a spot here or there, in the introduction or a sidebar, where we can open up that throttle and write a few contiguous paragraphs of prose, really let the wind of the open page have its way with our free-flowing hair.
-We cherish the relative latitude and runway of these interludes.
+We cherish the relative latitude and runway these interludes provide, even if we never quite achiev; flight.
 
-But mostly we don't write; instead:
+Because mostly we don't write; instead:
 
 * We _keep track of_ content that fits better in tables, charts, and lists than in paragraphs;
-* We _follow our own instructions_, hoping to catch docs bugs before customers or developers do.
-* We _chase down developers_, explaining that cave etchings are preferred to nothing, but secretly wondering why people who can code in seven programming languages can't be bothered to write a formatted list in English.
-* We _pester our users and coworkers_ about the docs, whether they use them, "Why not?", "Could you maybe just give them a try?", and of course the old, "Yes, they were included with the installation and are on our website".
-* We _prune, reformat, and edit_ scribbles, notes, and sometimes well-written content from SMEs.
-* And we _create visualizations_ we hope make sense to people who actually use this stuff (be that an end user or a designer who will upgrade our graphics).
+* We _follow our own instructions_, hoping to catch docs bugs before customers or developers do;
+* We _chase down developers_, explaining that cave etchings are preferred to nothing, but secretly wondering why people who can code in seven programming languages can't be bothered to write a formatted list in English;
+* We _pester our users and coworkers_ about the docs, whether they use them, "Why not?", "Could you maybe just give them a try?", and of course the old, "Yes, they were included with the installation and are on our website";
+* We _prune, reformat, and edit_ scribbles, notes, and sometimes well-written content from SMEs;
+* And we _create visualizations_ that we hope make sense to people who actually use this stuff (be that an end user or a designer who will upgrade our graphics).
 
 When you look at a given page of a user manual or a section of a README, there might seem to be about as much of the _writer_ in _product documentation_ as there is the _jockey_ in a _horse race_.
 It absolutely matters who is on the horse, but everybody knows the best horse will win as long as the jockey is competent.
@@ -55,7 +59,7 @@ But this analogy falls apart when you consider the variety of modern software pr
 If you are fortunate enough to document a product that is trying to reinvent its space, there may be no blueprint for how to convey that product to users.
 They may be more dependent on your contextualization and conceptualization of the product than they typically need to be when they encounter a “new” solution, since most product interfaces are essentially ripoffs of the most successful player in the space.
 
-Just because we do not always get to spout off freely as I am right now does not mean decisions made by technical writers are not critical to the success of a product.
+Just because we do not always get to spout off freely as I am currently spouting does not mean decisions made by technical writers are not critical to the success of a product.
 Docs may not close deals very often, but bad docs can frustrate, costing degrees of a potential customer's confidence.
 
 // TODO pic of Erin in "Dom Wins Deals" t-shirt. Or else me in mine.
@@ -65,7 +69,7 @@ Docs may not close deals very often, but bad docs can frustrate, costing degrees
 All of that said, I do think one can appreciate good docs at face value.
 Sometimes when I'm looking for a way to solve a problem, I run into some incidental aspect of another product's documentation, which I can appreciate only in the abstract.
 Even at a glance, I recognize excellence in presentation, and the hair stands on the back of my neck.
-We lucky kinksters who appreciate good docs on an aesthetic level have a distinct advantage.
+We lucky kinksters who appreciate good docs on an aesthetic level have a distinct advantage: we notice great docs we can aspire to emulate.
 
 .Techdocuphilia Exam
 ****
@@ -90,19 +94,6 @@ For each, answer *Not at all*, *Somewhat applies*, or *Oh, yeah, that's my jam*.
 There is no shame in loving good docs.
 In fact, there is no shame in loving _bad_ docs.
 
-=== Docs Tell a Story
-
-Product documentation contributes to users' general impression of the product and the company that made it.
-Much as I'll talk about modular docs (see <<topic-based-authoring>>) that can be parachuted into, documentation should paint a complete and accurate picture.
-They should make _mastering_ your product seem plausible.
-
-// TODO citations re about docs as narrative
-
-I originally titled this subsection “Docs _Should_ Tell a Story”, but the truth is, even poor docs tell a story.
-We'll get to that story in a second.
-
-// TODO section-fleshout
-
 == Reading Bad Docs
 
 One of the first things you'll hear when you take over technical documentation for an organization is which of their competitors or upstream vendors they do _not_ want their product's docs to turn out like.
@@ -124,6 +115,19 @@ If you can repeat this process with users, whether they be third-party developer
 Ask your friends and family whether and how they use docs.
 
 // TODO section-fleshout Add some parameters for approaching this conversation
+
+== Docs Tell a Story
+
+Product documentation contributes to users' general impression of the product and the company that made it.
+Much as I'll talk about modular docs (see <<topic-based-authoring>>) that can be parachuted into, documentation should paint a complete and accurate picture.
+They should make _mastering_ your product seem plausible.
+
+// TODO citations re about docs as narrative
+
+I originally titled this subsection “Docs _Should_ Tell a Story”, but the truth is, even poor docs tell a story.
+We'll get to that story in a second.
+
+// TODO section-fleshout
 
 == Docs are for Using, So Use Away
 
@@ -152,8 +156,13 @@ Admonitions are incredibly valuable, so earn users’ trust by keeping them conc
 
 == README, the Root Doc
 
-The README file is the heart of any software project.
-It is not traditionally the domain of an end-user documentarian, but DocOps specialists will at least want to begin appreciating the value of a good README, even for proprietary (non-open-source) products.
+The README file that accompanies source code is the heart of any software project.
+It tells the user what the software does, how to get started using it, and any other information developers deem pertinent.
+The audience might be other developers looking to contribute to or fork the source code, or they might be end users.
+Sometimes the README is the only user-facing documentation for a project, especially during early development.
+
+The README is not traditionally the domain of an end-user documentarian, but DocOps specialists will at least want to begin appreciating the value of a good README, even for proprietary (non-open-source) products.
+Truthfully, I think documentarians should “co-own” the README with engineers, if only to oversee that it stays up to date and as clear as possible.
 
 [TIP]
 Even if it's not your job to write the official README for your project, if you already write docs for a software product, consider creating a “shadow README” on your own time as you work through this book.
@@ -162,13 +171,13 @@ Maybe by the time we're done, you can offer concrete contributions to your real-
 A good README contains all the basics needed by core engineers, third-party developers, and daring end users/beta testers alike.
 Even for a polished product that can be delivered through an app store or a package manager, the README holds it all together.
 
-At risk of exaggerating its importance, I really do believe the README is the most important _file_ in any software project -- it's the starting point for code and docs alike.
+At risk of exaggerating its importance, I really do believe the README is the most important _file_ in any software project -- it's the seed file for code and docs alike.
 And this is where our first exercise comes in, intended to keep us thinking about that lean, iterative approach to building out a product's docs.
 
 The best README files are accurate; everything else is gravy.
 
-This cannot be overstated, and I'm as guilty as anyone of letting READMEs languish.
-If your codebase is ahead of your README, you're failing everybody on down the line.
+I am as guilty as anyone of letting READMEs languish.
+But I readily admit, if the codebase is ahead of my README, I'm failing everybody on down the line.
 Engineers, documentarians, third-party committers of either type, and early adopters (who enable your repo to become popular) all depend on your flagship file not pissing them off.
 
 In terms of actual content, the README provides exactly the appropriate amount of information to get started with your product, from any role.
@@ -176,10 +185,10 @@ If the repo is just for developers to fork and build, then link end users to the
 Don't waste their time.
 If you have a separate wiki or guide set up for each role, pass everybody along to the right landing page for their docs needs.
 But for an immature project, the README should be fairly rich.
-You'll want the following sections, as soon as you're able to declare _any_ high-level statement about them.
+A good README includes the following sections; include them as soon as you're able to declare _any_ definitive high-level statement about them.
 
 overview::
-What does your product do.
+What does your product do?
 This may seem obvious, but a shocking proportion of open source projects seem to assume we already know exactly why we've arrived at this product.
 +
 A mature overview includes:
@@ -198,10 +207,10 @@ The more hands-on, the sooner, the better.
 installation/setup::
 If all you showed me in the last section was screenies or a demo, it's time to get me up and running.
 Maybe setup isn't so simple; let me know that now, but invite me to struggle along with you.
-Don't decide for me that I don't need your product badly enough to pull my hair out voluntarily to integrate it with my needs.
+Don't decide for me how badly I need your product; warn me that I might pull my hair out trying to get it to work for me, but give me a fighting chance.
 
 usage::
-Okay, now that I'm installed and configured, how does it work again?
+Okay, now that I'm installed and configured, what does it do and how does it work?
 Maybe you're not ready to give me the complete lowdown, but I need at least a nudge.
 
 contributing::
@@ -216,8 +225,8 @@ A good “Contributing” section includes:
 
 licensing/redistribution::
 Make it as clear as you can how you intend the product to be reused.
-You don't have to promise to support users in any way, and you needn't provide any kind of warrantee, but you should make it clear the conditions under which your source code may be modified and redistributed.
+You don't have to promise to support users in any way, and you needn't provide any kind of warrantee, but you should make it clear the conditions under which your source code (as well as the packaged product) may be modified and redistributed.
 
 We will be exploring README file contents throughout the rest of this book.
 Not only is it the first source file your team should ever initiate, it also must be reviewed with every new merge or release.
-And while it's okay to begin with a nascent, skeletal README, eventually it should be a reliable of your project.
+And while it's okay to begin with a nascent, skeletal README, eventually it should be a reliable core element of your project.

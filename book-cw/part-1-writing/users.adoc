@@ -19,13 +19,13 @@ And this is likely as it should be, at least until you make some room to get dar
 
 .How I Relate
 ****
-My company makes enterprise IT ops software.
-Since I am not an IT ops agent monitoring a massive datacenter, I have little call to use our software the way our end users do.
-Even as we use it to monitor our own company infrastructure, that's not in my job description.
-But that doesn't mean I cannot seek out the perspective and pain points of users.
+My last employer, Rocana, made enterprise IT ops software.
+Since I was not an IT ops agent monitoring a massive datacenter, I had little call to use our software the way our end users did.
+Even as we used it to monitor Rocana's own internal infrastructure, that was not in my job description, so I had no cause to become an expert at server log and metrics monitoring.
 
-A major part of my actual audience is made up of Customer Success engineers and Field Sales engineers -- coworkers of mine who service customers with high-touch assistance.
-I talk to them regularly about how they use the docs, and about how end users engage with the docs.
+But that did not mean I could not seek out the perspective and pain points of users.
+A major part of my actual audience was made up of Customer Success engineers and Field Sales engineers -- coworkers of mine who service customers with high-touch assistance.
+I talked to them regularly about how they used the docs and about how end users engaged with the docs.
 ****
 
 It also just cannot be critical that we be able to “master” the product we document.
@@ -45,7 +45,7 @@ This is mainly because languages develop methodological tribes around frameworks
 In this way a thriving software language tends to grow exponentially, led in different directions by fresh thinkers with varying needs and preferences.
 
 Moreover, the risk of thinking fluently in any language is forgetting what it was like to find that language strange and off-putting.
-The best instructors readily empathize with the uncomfortable, disorienting experience of learning an unfamiliar and possibly unintuitive system can be for the student.
+The best instructors readily empathize with the uncomfortable, disorienting experience of learning an unfamiliar and possibly unintuitive system.
 The people who find your product’s interface intuitive may never look to your docs; they're not your key audience.
 Masters and poseurs have a tendency to kick over the ladder once they’re up, leaving newbies behind.
 Technical writers cannot afford to leave anyone behind.
@@ -91,9 +91,9 @@ Live, breathe, and love the product.
 I do believe many documentation projects would suffer a net loss overall in terms of quality if they were only documented by masters of that product.
 However, I have also followed along with a 500-page unofficial user guide written by a master of a product and been bowled over by the sheer relevance and accuracy of that massive tome.
 
-I am one of the few people at my company who looks under the hood at pretty much every aspect of our product.
-In that regard, I am a “master” of the product.
-That said, I don't know any part of the product as well as _any_ of the engineers who works regularly on that component.
+I was one of the few people at my last employer who looked under the hood at pretty much every aspect of our product.
+In that regard, I was a “master” of the product.
+That said, I did not know any part of the product as well as _any_ of the engineers who worked regularly on that component.
 ****
 
 == Learn Users’ Motivations
@@ -131,32 +131,30 @@ What will it take to get your docs decisively in the Pros column?
 .The Splunk DM's Shield
 ****
 In October 2015, the first time I met Rocana's then-new Director of Product in person, he threw down a gauntlet.
-He wanted me to see what our direct competition was capable of, and I was humbled by the artifact he handed me.
+He wanted me to see what our main competitor -- a company called Splunk -- was capable of in the realm of documentation.
 
-Unfolding in my hands on glossy card-stock, a splendrous 6-panel, 25"x11" reference spread made up of notations and tables, together conveying much of what is most needed by our competitor's users throughout the day.
-That user is also our intended user: an ITOps engineer or analyst.
+I was humbled by the artifact he handed me.
+Unfolding in my hands on glossy card-stock, a splendrous 6-panel, 25"x11" reference spread made up of notations and tables, together conveying much of what is most readily needed by our main competitor's users throughout the day.
+That user was also our intended user: an ITOps engineer or analyst.
 
-Having been a hardcore nerd in my youth, I immediately notice this documentation concept is reminiscent of a Dungeon Master's shield, a global quick-reference for the referee of a Advanced Dungeons and Dragons adventure.
+Having been a hardcore nerd in my youth, I immediately notice this documentation concept is reminiscent of a Dungeon Master's shield, a global quick-reference for the referee of an Advanced Dungeons and Dragons adventure.
 
 I know some of you are judging me right now.
-Laugh it up -- my hunch proved right!
-Splunk senior technical writer Matt Ness gave a talk in which he explained the AD&D-derived origins of this ingenious document.
+Laugh it up, but my hunch proved right.
+Splunk senior technical writer Matt Ness link:http://idratherbewriting.com/2016/09/02/scenario-based-documentation-matt-ness-recording/[gave an excellent talk] in which he explained the AD&D-derived origins of this ingenious document.
 But more pertinent to our purpose here, I beheld a form of documentation I will forever kick myself for not having done first.
 Since I couldn't deny the genius of the DM shield (including its marketing angle), it put me on notice that docs can make a real difference in our product's specific space.
 
-I think I'm good at my job, and I hope Rocana edges Splunk out of our corner of the market someday, but I'm glad to know I'm up against a formidable counterpart.
-The temptation to copy Ness's innovation is great, especially when I consider the challenge of single-sourcing the whole thing right out of the product code repo.
-For now, the Rocana shield waits; I'm headed in other directions.
 ****
 
 == Lean Documentation
 
 It's hard to believe, but there are still startups today that do not emphasize a lean UX approach.
-There can be virtually no doubt that early product testing and rapid iteration in response to validated and invalidated learning are critical; the days of inflicting a product blindly on a market are coming to a much-deserved end.
+There can be virtually no doubt that early product testing and rapid iteration in response to validated learning are critical; the days of inflicting a product blindly on a market are coming to a much-deserved end.
 
 // TODO section-fleshout
 
-=== Docs are UX
+=== Docs _are_ UX
 
 Technical writers have to get on this train, even if that means hopping it without a ticket.
 Docs should get tested alongside the product, including the evaluation of multiple approaches.
@@ -176,7 +174,7 @@ user experience::
 developer experience::
 // TODO section-fleshout
 
-=== Everything is UX
+=== _Everything_ is UX
 
 While not as common as overlooking the fact that docs are pure UX, many product managers and developers do not recognize how many interfaces a complex enterprise product may have.
 Anywhere users interact with the product is an interface.
@@ -207,7 +205,7 @@ You've been told that this should generally be done by heading off support reque
 
 However, the truth is you should be providing a margin of value directly to customers.
 For the end user, the technical writer alone -- more than the marketer or the UI devs -- can provide layers of appreciation for the product that cannot be articulated during a transaction.
-Away from clicking and purchasing, the end user is most open to appreciate the application either (1) right before they begin using it or (2) when they realize a new level of the product's complexity.
+After they're all done clicking and purchasing, the end user is most open to appreciate the application either (1) right before they begin using it or (2) when they realize a new level of the product's complexity.
 That is where solid technical writing comes in.
 
 Good docs are ready with a sweeping overview for the intimidated new user.

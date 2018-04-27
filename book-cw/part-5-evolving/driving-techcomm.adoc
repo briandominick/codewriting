@@ -17,7 +17,7 @@ Please contribute your favorites to <<appendix-resources>>.
 
 == Experiment with Me
 
-If DocOps is to emerge (perhaps under some better name) as a concrete methodology we can more clearly instruct, it must undergo rigorous field testing and collaborative iteration.
+If DocOps is to emerge (perhaps under some other, even-better name) as a concrete methodology we can more clearly instruct, it must undergo rigorous field testing and collaborative iteration.
 _Codewriting_ is one step in the development of a mature framework for wrestling complicated software products into comprehensible clusters of coherent descriptions, illustrations, instructions, and inspirations -- then delivering them to users.
 
 Writing a book in a pubic repo is my attempt to nudge the field forward in its mindset.
@@ -37,7 +37,7 @@ If you think I am exaggerating, look at what powerful AI instances such as DeepM
 Google's DeepMind is able to learn to play and defeat video games just by using the pixels on the screen and employing advanced trial and error to figure out the rules and “physics” of the game.
 With no docs to read and no insight into the product not available to an actual end user, a machine can perfectly learn a complicated program.
 
-DeepMind meanwhile likely has no ability to explain what it sees, let alone to determine what to share with a user vs what to leave for them to figure out.
+DeepMind cannot, however, explain what it sees, let alone determine what to share with a user versus what to leave for them to figure out.
 
 IBM's Watson _can_ read docs, and it can establish what looks like contextualized understandings of complicated matters of fact and even concept.
 It can also generate seemingly original summary output based on relatively complicated and highly diverse inputs.
@@ -45,16 +45,17 @@ It can also generate seemingly original summary output based on relatively compl
 The kind of feedback a screen-viewing, trying-and-erring bot like DeepMind will provide, converted to some reporting format, would be of incalculable value to GUI developers.
 QA engineers will be all over tools that can _use_ software via the front-end interface.
 The minute some smart-ass QA engineer decides to hit btn:[print] while using DeepWatson to debug an app, stock in my trade goes way down.
-Once the machine's observations are expressed as descriptions of on-screen occurrences, tech writers get an amazing tool, and also possibly lose some coworkers.
+Once the machine's observations are expressed as descriptions of on-screen occurrences, tech writers get an amazing tool and probably lose some coworkers.
 
 This will likely reach way beyond the world of software docs, since nearly all products are digitally engineered today.
 Any product whose source and specs can be read is subject to at least partially automated documentation.
 In a just world, that would be exciting -- it sounds like we get tools to alleviate the more routine aspects of our gig so we can focus on the more interesting stuff anyway.
 
-Except the world isn't just; bosses will always hog the profits afforded by innovations.
+The world is not just.
+Bosses will always hog the profits afforded by innovations.
 They aren't going to keep funding tech writers and docs managers out of the goodness of their hearts.
-Some might reallocate writer resources to get way better docs on top of such new tools, but I expect most will want cheaper adequate docs.
-That means big layoffs with better tooling, even if someone will always need to be around to run them.
+Some might reallocate writer resources to get way better docs on top of such new tools, but I expect most will want cheaper, merely adequate docs.
+That means big layoffs with better tooling, even if someone will always need to be around to run the tools.
 
 My inclination is to call for overthrowing capitalism, but I can't explain that strategy in these pages.
 We're stuck with becoming invaluable to our teams, or maybe to professionals in some less-technical field who need DocOps hackers to establish and instruct collaborative docs environments.
@@ -66,7 +67,7 @@ The good news is, if you are reading this particular document, you are almost ce
 As of yet, no machine can be programmed to desire to improve a user's life (or their day or minute) by helping them connect with a product they believe they need to use.
 
 [.cyncicscorner]
-.Are we asking for it?
+.Is this a Setup?
 ****
 Maybe it has already crossed your mind that if we programmatize the technical writing environment too much, and involve engineers too directly, might we as well just be signing our own pink slips?
 Dig it: the more we integrate developers into the documentation process, the less we're needed.
@@ -87,7 +88,7 @@ So how do you shore up your position without resisting progress?
 == Add Value
 
 In a profession that has sort of prided itself on the ability to standardize and blend in, the way forward is finding ways to stand out.
-Become able to identify those aspects of our work that would be hardest to automate -- those that do not feel like routine, with new challenges from job to job.
+Become able to identify those aspects of our work that would be hardest to automate: that which is not routine and poses new challenges from job to job.
 But also be aware of the areas we might get boxed in as the need for documentation dries up.
 
 Then innovate on the hot spots; find your way closer to the cutting edge of the field, make a difference to users _and_ the rest of the product team.

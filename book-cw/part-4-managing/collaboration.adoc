@@ -9,8 +9,8 @@ Engineers typically expect technical writers to work around them.
 Tech writers tend not to have much power in the situation.
 I cannot stress enough how important it is to minimize disruption to developers' flow, even though sometimes disruption is precisely what is called for.
 
-If you track developers' work in a project management system (including a Kanban board or other dashboard-style objective instrument), you have probably found a systematic way to communicate with developers through it.
-I won't go into the boring details of our solution, but we use JIRA, configured with a field for *Release Notes*, which will be exported to source prior to compiling the docs.
+If you track developers' work in a project-management system (including a Kanban board or other dashboard-style instrumentation), you have probably found a systematic way to communicate with developers through it.
+I won't go into the boring details of our solution, but we used JIRA, configured with a field for *Release Notes*, which will be exported to source prior to compiling the docs.
 
 Our JIRA also has an issue type called "Docs Sub-Task", which is a way for engineers to create stubs, assigned to themselves, for documenting work that is scheduled or underway.
 This way, I can see these tickets in the pipeline as flags for work that should be hitting my desk soon.
@@ -29,29 +29,32 @@ Some professional writers have horror stories about subject-matter experts treat
 Yet I have heard tech writers remark that they have no choice but to let engineers do most of the writing, since it's their code, their concept, and so forth.
 
 Tech writers all know that sometimes, in explaining new or complicated aspects of a product to us, SMEs practically write the whole segment.
-I find myself copy editing installation instructions as often as writing them from experience first.
-
-// TODO section-fleshout
-
-== Working with Engineers
+I find myself copy editing instructions as often as writing them from experience first.
+Nevertheless, good documentarians distinguish themselves by facilitating the production of content.
+When we can write fresh copy, we do.
+When we need to draw it out of developers, we make the process as painless as possible.
 
 I imagine some professional tech writers have been muttering at half these pages, “As if, you lucky sonofa -- ”
 I get it that not all are lucky enough to find themselves working with teams that highly value or elevate documentation.
-There are different ways to approach this problem that may work better in various organizations; I would not purport such problem-solving among my skills.
+There are different ways to approach this problem that may work better in various organizations; I would not purport to number such problem-solving among my skills.
 However, I do know something about helping engineers see documentation differently than they've come to expect.
 
-Every time a new engineer joins the team, I ping him or her on Slack and schedule a sync up.
+Every time a new engineer joins the team, I ping them on Slack and schedule a sync up.
 I present a bit about how I approach documentation, as well as what is expected from them.
 I want them to appreciate early on that my job is to help them do two of the parts of their job they wish could be automated: _accessing local knowledge_ and _documenting their own code_.
-I also make it clear that I get purchase for the requisite initiatives from their support for and engagement with my procedures and technologies.
+I also make it clear that I get traction for my initiatives from their support for and engagement with my procedures and technologies.
+
+Put another way: without being immodest or blowing my own job out of proportion, I make sure everybody I work directly with understands that I take my job every bit as seriously as they take theirs.
+I get to develop innovative systems for handling documentation that fit better and better into their current workflow, but only if they work with me.
+To be fair, my experience at Rocana was that engineers strived to produce good docs just to please me, the way you might choose a decent standard of quality to strive for when carrying out a task in an adjacent field.
+Engineers don't love writing docs, but when they have to generate a paragraph or a bunch of descriptions, they tend to appreciate having somebody around who will take that work seriously and mold it into shape.
 
 === The Promise of Good Docs
 
-Various constituencies at Rocana depend on the docs that fall under my purview.
-What each constituency needs out of my docs is quite different, and it might seem like I'm pulled in different directions.
+Various constituencies at Rocana depended on the docs that fell under my purview.
+What each constituency needed the docs for was quite different, and it might seem like I was pulled in different directions trying to unite more and more sources.
 
-But the truth is everybody wants the same thing.
-No matter how I get it done, I basically have to make sure the docs are always:
+No matter how we get it done, we basically have to make sure the docs are always:
 
 * **S**earchable
 * **O**rganized
@@ -60,7 +63,7 @@ No matter how I get it done, I basically have to make sure the docs are always:
 * **C**anonical
 * **E**ditable
 +
-(Yes, I saw a pneumonic and I went for it.
+(Yes, I saw a mneumonic and I went for it.
 _Accurate_ stayed in when _unimpeachable_ would have made _SOURCE_, because _editable_ implies impeachability.)
 
 Let me introduce you to my immediate constituents.
@@ -68,8 +71,8 @@ Let me introduce you to my immediate constituents.
 Engineering::
 +
 --
-I need the engineering managers to see the devs are working more accurately and more efficiently under my systems.
-I also need them to see that, in collaboration with project managers, our documentation systems are catching the more passive documentation tasks, such as
+I needed the engineering managers to see the devs were working more accurately and more efficiently under my systems.
+I also needed them to see that, in collaboration with project managers, our documentation systems were catching the more passive documentation tasks, such as
 
 * maintaining bill-of-materials requirements (a NOTICE file);
 * announcing and following up on product feature deprecations;
@@ -80,38 +83,35 @@ I also need them to see that, in collaboration with project managers, our docume
 Product/CTO::
 +
 --
-The Director of Product and the CTO together determine priorities for engineering resources.
-I need them to see the devs are doing more of the work in Java, JavaScript, and Golang that make up the digital assets we're selling.
-All of that research, coding, and testing has truly exponential value, and the docs are just there to make sure that value can be realized.
-That's humility I have, and it's perspective I don't mind Product having, as long as they appreciate that the docs form a critical layer, if not a profit-magnifying one.
+The Director of Product and the CTO together determined priorities for engineering resources.
+I needed them to see the devs were doing more of the work in Java, JavaScript, and Golang that made up the digital assets we were selling.
+All of that research, coding, and testing had truly exponential value, and the docs were just there to make sure that value could be realized.
+That's humility I have, and it's perspective I don't mind Product having, as long as they appreciate that the docs form a critical layer, even if not a profit-magnifying one.
 
-Mind you, I have to deduct from my systems' ROI for any engineering time I depend on to establish tooling, as well as time spent reorienting the team to some new workflow routine.
-I have to be judicious with the engineering resources I'm afforded.
-
-At some organizations, Product aren't focused on docs except to see content is accompanying what's released.
-and to learn I'm freeing up _more_ engineers' time, not hogging their resources.
+Mind you, I had to deduct from my systems' return on investment for any engineering time I depended on to establish and maintain tooling, as well as time spent reorienting the team to some new workflow routine.
+I had to be judicious with the engineering resources I was afforded.
 --
 
 Support and Field Engineers::
 +
 --
-The other constituency I deal with directly is made up of engineers in our Customer Success department, as well as the Sales Engineers who have first contact with our end users.
-These are my primary audience, in fact; they are often literally on site with our customers while our end users engage with the product, and that means my docs need to minimize if not eliminate embarrassing frustrations.
-It's not unusual for a support engineer to check in with me just before a release to ask if there are any surprises, or to make sure some aspect of the product was updated.
+The other constituency I dealt with directly at Rocana was made up of engineers in our Customer Success department, as well as the Sales Engineers who had first contact with our end users.
+In fact, these were my primary audience; they were often literally on site with our customers while our end users engaged with the product, and that means my docs needed to minimize if not eliminate embarrassing frustrations.
+It was not unusual for a support engineer to check in with me just before a release to ask if there were any surprises, or to make sure some aspect of the product was updated.
 
-My docs are truly for this situation, if they're for anything at all.
-When a highly paid product mentor from my own company is shoulder-to-shoulder with a user in a customer's IT department, both following along with my Reference Guide.
-I want them to find what they need, where and when they need it, and of course I want them to find only accurate information, consistent wherever and however it is presented.
+My docs were truly for such situations, if they were for anything at all.
+When a product mentor from my own company was shoulder-to-shoulder with a user in a customer's IT department, both following along with my Reference Guide, I wanted them to find what they needed, where and when they needed it.
+And of course I wanted them to find only accurate information, consistent wherever and however it was presented.
 
-These men and women are also often the first to discover bugs in my docs, which is of course invaluable for me.
-The field teams need a responsive system for submitting documentation bugs, and I need them to feel empowered to contribute heavily and directly to resolving docs bugs.
+These frontline users were also often the first to discover bugs in my docs, which was of course invaluable for me.
+The field teams needed a responsive system for submitting documentation bugs, and I needed them to feel empowered to contribute heavily and directly to resolving docs bugs.
 
 --
 
-That may sound like a lot of pressure and a lot of varying interests to satisfy, and I admit that's often how it feels.
-Whenever this task feels like I'm exploring some uncharted territory of technical documentation, I just remember I work on a team that includes ReactJS coders, a machine-learning engineer, a whole bunch of Big Data platform engineers, and DevOps engineers (don't tell them I called them that -- it's complicated).
+That may sound like a lot of pressure and a lot of varying interests to satisfy, and I admit that's often how it felt.
+Whenever this task seemed like exploring some uncharted territory of technical documentation, I just remembered I worked on a team that includes ReactJS coders, a machine-learning engineer, a whole bunch of Big Data platform engineers, and DevOps engineers (don't tell them I called them that -- it's complicated).
 
-Note consistency of these three interests just among my collaborators.
+Note the consistency of these interests just among my collaborators.
 _SOARCE_ truly covers the whole array.
 If I maintain and facilitate good docs, everybody wins, even if almost nobody notices.
 
@@ -120,9 +120,17 @@ So there's that.
 
 === Constituents' Single Source of Truth
 
-// section-start
-// This is just a wrap-up section exploring a few ways/places various constituents can collaborate in a single repo to maintain all internal-external docs across the organization
-// Allude to extending to other elements, referencing beyond-techcomm chapter
+There are two major motivations for single-sourcing our product documentation.
+One is to enable us to express the same fact in multiple places without worrying about having to maintain that fact in more than one spot.
+The other is to enable collaboration, with multiple collaborators able to edit the same source at the same time and reconcile any conflicts that ensue.
+
+In later chapters, we will explore specific technical methods for single sourcing, but the most basic element is not a clever utility like Asciidoctor, Sphinx, or Jekyll.
+The most basic element of collaborative DRY documentation development is Git itself.
+Learning to work collaboratively on docs with other sophisticated technical professionals means learning to use Git.
+
+== Git
+
+// TODO section start
 
 == Collaborating with Users
 
@@ -133,15 +141,17 @@ Most open source projects and an increasing number of contributor-driven commerc
 === The Old Ways
 
 Wikis::
-The most recent wave of collaborative documentation may just be the second wind of the last collaborative craze. stems from very mixed, and probably mostly negative, experiences with opening wikis up to user contrubutions.
+The most recent wave of collaborative documentation may just be the second wind of the last collaborative craze. It stems from very mixed, and probably mostly negative, experiences with opening wikis up to user contrubutions.
 
 Discussion Boards::
-Once upon a time, and still more often than I can bear, bulletin boards and discussion forums were used in the service of documentation.
-When used to solicit participation and feedback which in turn informs and improves official documentation, such as managed knowledge bases, use cases, and tutorials.
+Once upon a time (still more often than I can bear), bulletin boards and discussion forums have been used in the service of documentation.
+Forums could be used to solicit participation and feedback which in turn informs and improves official documentation, such as managed knowledge bases, use cases, and tutorials.
+But the technology must be applied with great care.
 +
 Sometimes, however -- and let's face it, drearier times -- discussion forums are used as the docs themselves.
 Maybe a developer initiates threads in some of the channels, but each becomes a free-for-all of guesses and what-ifs, sometimes spiraling into flame wars.
-These arrangements become ne'er-pruned unofficial knowledge bases, mixing support requests with complaints, bad user advice with tardy official advice.
+These arrangements become never-pruned unofficial knowledge bases, mixing support requests with complaints and bad user advice with tardy official responses.
+Better to leave these platforms to the likes of StackOverflow, keeping them off-site and third party.
 
 IRC::
 IRC channels are ephemeral, flowing, and conversational formats, where one might expect to find an edge-case request mentioned, but no one would think to consider a sacred source of truth, something more valuable can be built.
@@ -151,11 +161,11 @@ A lot of times you get direct, realtime and symmetrical dialog with somene centr
 There's something to be said for that.
 +
 The limitations of IRC are obvious.
-The more recent wave, with chat platforms like Gitter and Slack, product teams are interacting with extension developers and users in real time, with some sense of organization, flow, and a reliable archive.
+With the more recent wave, given chat platforms like Gitter and Slack, product teams are interacting with extension developers and users in real time, with some sense of organization, flow, and a reliable archive.
 It seems to me these contemporary tools haven't necessarily attracted the trolls or the Google-overloading wastelands that stale Discussion Board pages become.
 +
-In the end, I'm not sure I would include this category as documentation.
-Even if technical writers participate from time to time or derive content from such sources, I maybe it's lack of permanence or adherence to SOARCE disqualifies it.
+But in the end, I'm not sure I would include this category as documentation.
+Even if technical writers participate from time to time or derive content from such sources, I think its lack of permanence or adherence to SOARCE disqualifies it.
 
 // TODO section-wrapup
 

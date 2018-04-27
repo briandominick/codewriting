@@ -1,4 +1,3 @@
-[[contributing]]
 = Collaborative Authorship & Lean Publishing
 
 This book is an experiment, and you are invited to partake.

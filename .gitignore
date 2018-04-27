@@ -9,3 +9,4 @@ scripts/cibuild
 presentations/
 _notes/
 blog/
+*.docx#

@@ -1,0 +1,54 @@
+[cols="1m,5,7"]
+|===
+| .
+| Wildcard character, matches any character
+| `do.*` matches `dog`, `door`, `dot`, etc.
+
+
+| *
+| Match zero, one or more of the previous
+| `Ah*` matches `Ahhhhh` or `A`
+
+
+| ?
+| Match zero or one of the previous
+| `Ah?` matches `Al` or `Ah`
+
+
+| +
+| Match one or more of the previous
+| `Ah+` matches `Ah` or `Ahhh` but not `A`
+
+
+| \
+| Used to escape a special character
+| `Hungry\?` matches `Hungry?`
+
+
+| [ ]
+| Matches a range of characters
+| `[cbf]ar` matches `car`, `bar`, or `far`;
+`[0-9]+` matches any positive integer;
+`[a-zA-Z]` matches ASCII letters a through z (uppercase and lowercase)
+
+
+| ( )
+| Group and capture
+| `\icon:([a-z]+)\[\]` matches `\icon:flag[]` and `\icon:edit[]`, capturing the strings `flag` and `edit` as variables; `(https?\:\/\/)?codewriting\.org` matches `codewriting.org`, `\http://codewriting.org`, and `\https://codewriting.org`
+
+| \|
+| Matches previous OR next character/group
+| `(Mon)\|(Tues)day` matches `Monday` or `Tuesday`, capturing the unique portion as a variable
+
+| { }
+| Matches a specified number of occurrences of the previous
+| `[0-9]{3}` matches `315` but not `31`; `[0-9]{2,4}` matches `12`, `123`, and `1234`; `[0-9]{2,}` matches `1234567` and `002`, but not `2`; `^0{0,4}[1-9][0-9]{3}$` matches potentially padded numbers like `3203` and `00003203`, but not `000003203` or `003203B`.
+
+| ^
+| Beginning of a string, _or_ within a character range `[]`, `^` indicates negation.
+| `^http` matches strings that begin with `http`, such as a URL; `[^0-9]` matches any character _other than_ 0-9.
+
+| $
+| End of a string.
+| `ing$` matches `exciting` but not `ingenious`
+|===

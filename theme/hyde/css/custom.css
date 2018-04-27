@@ -74,13 +74,18 @@ td.content {
   font-family: 'PT Mono', monospace;
 }
 
-.sidebar .copyright, .sidebar .copyright a {
+.sidebar-footer, .sidebar-footer a {
   color: #999;
   font-size: .8em;
   text-align: right;
+  padding-right: 5px;
 }
 
-.sidebar .copyright i.fa {
+.sidebar-footer .copyright {
+  margin-bottom: 5px;
+}
+
+.sidebar-footer .copyright i.fa {
   font-size: 20px;
   padding-right: 3px;
 }

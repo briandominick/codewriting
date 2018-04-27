@@ -17,10 +17,9 @@ At some point, pretty much everybody has had hands on certain kinds of reference
 
 Documentation of this nature is a good candidate for evaluating different systems to see what works now (and will be most likely scale) with your team.
 This is strictly objective material -- product metadata, if you will -- about which there is a discernible truth: currently supported versions, current third-party integrations, licensed dependencies, known limitations.
-In other words, product metadata is pretty much anything that is falsifiable about how the product fits into its market or ecosystem.
+In other words, product metadata is pretty much anything that is falsifiable or measurable about the product.
 
-One collaborative platform will be more effective than the others in enabling your team to establish canonical documentation which aligns with existential truth.
-That is, documentation that is definitive and accurately reflects reality.
+Some collaborative platform will prove most effective at enabling your team to establish canonical documentation which aligns with existential trut -- documentation that is definitive and accurately reflects reality.
 If you have to allow Markdown, Excel, or WYSIWYG tools to ensure participation, just find a way to respect the "everything in code" mantra, and set up whatever tools will suit the task.
 
 === Diagrams

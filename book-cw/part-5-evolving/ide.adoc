@@ -13,12 +13,17 @@ Imagine the following: You are typing along in your favorite lightweight markup 
 [source,asciidoc]
 .Example value expression in AsciiDoc
 ----
-The default value of *login.allowed-attempts* is `3`.
+The default value of *login_allowed-attempts* is `3`.
 ----
 
 As a reminder, those asterisk and backtick markers are just for formatting bold and literal, respectively.
-That whole line is static code, but it is _about_ something dynamic.
-It's _subject_ is _dynamic_.
+The rendered line looks as follows:
+
+====
+The default value of *login_allowed-attempts* is `3`.
+====
+
+That whole line is sourced as static code, but it contains something dynamic: the actual default value being portrayed.
 
 So what happens when this default changes in the product codebase?
 Typically a tech writer has to be notified, or they must discover the change during a review of some external database/spreadsheet where settings and their defaults are tracked.
@@ -29,13 +34,13 @@ It would obviously be better to use a variable here, especially if this default 
 [source,asciidoc]
 .Example value expression in AsciiDoc
 ----
-The default value of *allowed.login.attempts* is `{login_allowed-attempts__default}`.
+The default value of *login.allowed-attempts* is `{login_allowed-attempts__default}`.
 ----
 
 Okay, that looks a little bit better, but it doesn't solve the problem of requiring someone to change the value of the AsciiDoc variable *login_allowed-attempts__default*, wherever it is defined.
 
 Now imagine that variable is sourced from a common registry which is edited by the developer when the default for the core setting *login.allowed-attempts* was changed.
-Suddenly your intervention is no longer needed on the trivial matter of a changed setting value, because the value of your AsciiDoc variable (login_allowed-attempts_default) is drawn from that registry.
+Suddenly your intervention is no longer needed on the trivial matter of a changed setting value, because the value of your AsciiDoc variable (login_allowed-attempts_default) is _drawn from that registry_.
 
 This is a mature integrated docs environment, possessing potentially robust awareness of the product once integrated.
 Such a system could incorporate unit tests and regression tests to ensure the docs always reflect the proper value of an existing parameter compared to the version of the software each docs edition describes.
@@ -73,15 +78,15 @@ This way, content/data in such files can be pulled into your docs environment fo
 I love REST APIs.
 A very talented engineer I worked with once assigned me Roy Thomas Fielding's epic dissertation on https://www.ics.uci.edu/~fielding/pubs/dissertation/top.htm[_Architectural Styles and
 the Design of Network-based Software Architectures_].
-I cannot claim to have read every word, but I found in it a new level of appreciation for REST interfaces _and_ for technical writing.
+I found in it a new level of appreciation for REST interfaces _and_ for technical writing.
 I also found a metaphor in the REST API; the elegance of API abstraction correlates to problem solving in DocOps.
 
-A REST API is a set of URLs that can be connected to remotely via HTTP/S protocol, either by another server or a client such as a mobile app or Javascript in your laptop browser.
+A REST API is a set of URLs that can be connected to remotely via HTTP/S protocol, either by another server or a client such as a mobile app or Javascript in your browser.
 Every interaction between a client and a REST API is a request (precisely like every web page call or form posting by a browser -- a distinct, “stateless” interaction).
 The server running a REST API is prepared to respond to the specifics of each interaction with a client:
 
 * the URL (“endpoint”) the client is requesting
-* the request's “verb” (`POST`, `GET`, `PUT`, `DELETE`, etc.)
+* the request's method or “verb” (`POST`, `GET`, `PUT`, `DELETE`, etc.)
 * any parameters contained in the request
 
 A REST API request can be a terrifically powerful and highly complex command.
@@ -98,12 +103,12 @@ A REST API is client agnostic; it accepts properly addressed and formatted reque
 == Output to Product
 
 The trend in software product interfaces is toward structuring any strings and other data associated with UIs in JSON format.
-Everything from labels to inline instructions is passed to the UI as semi-structured text.
+Everything from labels to inline instructions is passed to the UI as semi-structured data.
 
-Yet very few CCMSes or general documentation processors generate JSON, whether that data starts as HTML, XML, or lightweight markup languages.
-There are converters that produce JSON, but DITA CCMSes, reStructuredText, Markdown, and AsciiDoc are not tooled to spit out their own content in a format UIs need.
+Yet very few CCMSes or general documentation processors generate JSON, whether that data starts as structured content such as HTML, XML, lightweight markup, or data in another format.
+There are converters that can turn pretty much anything into JSON, but DITA CCMSes, reStructuredText, Markdown, and AsciiDoc are not tooled to spit out their own content in a format UIs need.
 
-This limitation means that in order to obey the _write-once_ rule, content intended for the UI may need to start and stay in the engineers' domain, closer to where it will be output.
+This limitation means that in order to obey the _write-once_ (DRY) rule, content intended for the UI may need to start and stay in the engineers' domain, closer to where it will be output.
 This is very likely fine for most interfaces.
 The front-end team doesn't need you tinkering directly with the strings used in their UI.
 
@@ -116,28 +121,111 @@ However, in cases where dynamic data is used in the UI _and_ in your docs, the D
 == Platform Integration
 
 Of course, it isn't just the product codebase with which I want to integrate.
-I get excited every time I see one of my Atom plugins has been updated, hoping it will be even a small step toward greater convenience in my daily operations.
+I get excited every time I see one of my favorite Atom editor plugins has been updated, hoping it will be even a small step toward greater convenience in my daily operations.
 Whenever Atom gets a little more aware -- such as when it learned to display locally relative includes in the AsciiDoc Preview pane -- I feel that much closer to having a better window into my final product.
 
 There are lots of complicating factors that make it non-trivial to show you perfectly how your docs will look by generating a reasonable proximity in realtime.
 If you write in LML, you're used to this preprocessed rich-text display version alongside your markup.
 
 I'm not asking for pure WYSIWYG power with the ability to write _inside_ my data.
-Our point in writing in LML is not that we wish to stare the code in the eye.
-Rather, we appreciate the irreducible complexity of the content models we're trying to convey.
-We don't wish to hide semantic elements, such as indicators that a dynamically generated object will appear in the place of this object.
-And in most cases, we may not even wish to see our copy mixed in with the dynamic data that will eventually populate our variables and other placeholders.
-
-What we do need is the ability to quickly preview our content and design with the data it documents, preferably without having to rebuild every time and check it in another application altogether (such as a browser).
+Our point in writing in LML is not so much that we wish to stare the code in the eye.
+Rather, we appreciate the irreducible complexity of the content models we are trying to convey.
+While we are writing, we do not wish to hide semantic elements, such as indicators that a dynamically generated content object will appear in the place of some token.
+We want to see the code that handles this in one pane, and we want a formatted estimation of the content in another pane, or maybe one click away.
+We need to quickly preview our content and design with the data it documents, preferably without having to rebuild the whole project every time and check it in another application altogether (such as a browser).
 
 == Admin Powers
 
-// TODO section-research
-// TODO section-start
-////
-* File management
-* Custom fuzzy search replace (markup obscures text search)
-* Consolidated document metadata (uber-YAML?)
-* Document/page orphan control
-* Testing frameworks?
-////
+A good code-integrated content editor would offer important administration powers, such as centralized file and data management, markup-aware fuzzy search/replace, orphan control, and a testing API.
+
+=== File Management
+
+One of the most frustrating limitations of the docs-as-code stacks I am aware of is the inability to objectively arrange files in the order they are included in a document.
+Modularized or topic-based writing encourages us to store our content across lots of files, and we maintain “map” or “index” files to instruct their intended order.
+But we have no overview of this order, as standard filesystems do not have a column called “Usage Intention” on which to sort.
+
+Take for instance the directory structure of the _Codewriting_ codebase.
+
+.Codewriting book source codebase directory structure
+image::screenshot_atom-codewriting-subdirs.png[width=250]
+
+The only reason I created these subdirectories is to help me keep track of the files.
+Even under this arrangement, I still cannot see chapter files here in the order they're arranged in my index or map file.
+I had to include numerals in the names of the parts directories just to keep them in order, or else Atom would list them as
+
+* `part-coding`
+* `part-delivering`
+* `part-evolving`
+* `part-managing`
+* `part-writing`
+
+I envision a drag-and-drop interface that allows us to visualize and control the arrangement of modularized content without fussing over filenames and subdirectories.
+A meta-manager can orchestrate file mappings in a flat-file database, which we or our collaborators could also edit directly if we wish.
+There's no rule against tools that are superior to copy-and-paste at rearranging file contents.
+
+=== Data Management
+
+Branching off the idea of a drag-and-drop interface to alter semi-structured data in the background, why not extend this power to all small data?
+Much as I encourage storing small data in flat files, using semi-structured data formats like YAML, XML, JSON, and CSV, it would be nice to have more administrative power over our datasources.
+
+A light, smart schematification power is one feature I'd like to see.
+Many of my YAML files follow internally consistent patterns, but adherence to any convention or pattern I introduce is enforced by me alone.
+
+.Example -- YAML listing
+[source,yaml]
+----
+- name: First node
+  description: This is the first node in my array.
+- name: Second node
+  description: You expected me to say this was the second node.
+- key: Third node
+  desc: See how this got shifted up a bit?
+- name: Fourth node
+  description: And back to what seems to be a bit more of our convention.
+----
+
+Imagine if our IDE could warn us that we might have an inconsistent entry in our array.
+The YAML is valid, but a schema could restrict us to using `name` and `description` in our array items.
+With code like this, a schema could be inferred, and we could opt to approve the constraint or reject it.
+
+It would also be nice to be able to filter and sort data inside the editor.
+Most semi-structured data utilities can read and write but not manipulate or reorganize the source data.
+Proper tooling would allow us to rearrange the source inside our flat files, as well as easily configure reorganized data output on a case-by-case basis in the published docs.
+
+I want to be able to store my data by some specific field (including by the last-modified-date of each record) yet output it in alphabetical order or grouped by a particular field.
+
+=== Markup-aware Fuzzy Search/Replace
+
+Find-and-replace is a pretty important aspect of writing and managing technical documentation.
+One annoyance I run into is the obfuscation of the target text by incidental markup.
+
+For example, if I search for `a string like this`, I will miss `a _string_ like this` and `a string like <a href="#">this</a>`.
+The markup characters exist for semantic value, so we should be able to ignore them and focus con content.
+
+This will be a challenge for RegEx, and every markup language should have a fuzzy expression for our dream text editors to accommodate when trying to match our keywords to our content.
+
+=== Central Document Configuration
+
+My ideal domain-specific language for configuring a technical document would be a lot more elegant than the configuration pattern I established for LiquiDoc.
+It should be far more dependency independent.
+What I mean by that is that LiquiDoc configuration carries too much burden to understand how the underlying tools (such as AsciiDoctor and Jekyll) handle files.
+
+I should be providing a fully abstracted generic API such that a user could establish settings like `images_directory` that will always make sure image files are exactly where each underlying system needs them foreach procedure.
+Instead, LiquiDoc demands users manually configure the arrangement of all essential files, and there is no UI to provide suggestions or insights into this process.
+
+There should be one file, or one UI, via which administrators can control all of a document's metadata.
+A great IDE would provide a one-stop, project-wide interface for controlling all the documents produced from a given codebase.
+
+=== File Relationship & Orphan Control
+
+When we manage technical content under a modular, topic-based architecture, we run the risk of losing track of files.
+We talked early on about the importance of providing multiple useful routes to and through our docs.
+Orphaning a topic or web page entirely is anathema to this mission, but without some form of monitoring, it is bound to happen sooner or later.
+
+How I wish I could get an overview of all files in relation to one another via cross reference or file inclusion.
+Our dream IDE should surely be context-aware enough to warn us when a content file is neither embedded in or linked from any other document.
+This would also give us a view of which documents are central, which are neglected, and also highlight any insular or circular clusters of documents.
+
+=== Testing API and Linters
+
+// TODO section fleshout
