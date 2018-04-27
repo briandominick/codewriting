@@ -22,9 +22,9 @@ If you're getting everything you need via e-mail, you may be beyond help.
 More likely, notes come in through a project-management system or a file-management system -- often both.
 There may instead or also be a wiki involved, or perhaps a knowledge-base CMS for internal documentation integrated with Customer Support.
 
-Whatever the system is, if it isn't the product codebase, in or adjacent to the product repository using Git, then it's probably a solid step outside their focus.
+Whatever the system is, if it isn't the product codebase, in or adjacent to the product repository using Git, then it's probably a solid step outside the engineers' peripheral vision.
 The IDE and the terminal are the coder's main tools.
-Engineers spend the bulk of their time between these two applications, and many wish they could spend more time there.
+Engineers spend the bulk of their time between these two applications, and many wish they could spend _more_ time there.
 
 Meet the engineers in their preferred habitat: the development ecosystem.
 
@@ -59,7 +59,7 @@ Right?
 The truth is, Markdown is not challenging enough for engineers who care about good docs; it is too limited, covering only elements all engineers know and could hand-code in HTML.
 
 Most of the actual elegance of Markdown translates directly or almost directly to AsciiDoc.
-While there are more use-cases for Markdown, AsciiDoc is growing fast, and I believe it will effectively close the integrations gap, if not gain equivalent popularity among serious developers.
+While there are more Markdown projects, AsciiDoc is growing fast, and I believe it will effectively close the integrations gap, if not gain equivalent popularity among serious developers.
 
 A lot of technical writers think our job is to cater to the most reticent subject-matter experts -- the ones we have to drag scribbled notes out of.
 And I do cater to such developers; I treat them as kind of a separate case, at least until they come around.
@@ -74,7 +74,7 @@ They write and I enhance, or maybe I just review and copy edit.
 These coders who are reluctant writers know I have their backs.
 They know I'm not going to publish bad writing; I'll punch it up or edit for grammar and clarity.
 They also know direct contributions are optional.
-But enough of them are willing to venture into the docs‘ corner of the codebase and poke around that they can see the value in my methods, and maybe the value in helping me improve my tooling.
+But enough of them are willing to venture into the docs’ corner of the codebase and poke around that they can see the value in my methods, and maybe the value in helping me improve my tooling.
 
 Some devs are never going to love contributing directly to user-facing docs, whatever their opinion of your markup choice.
 Even engineers who hate directly writing docs are typically eager to get you what you need to do it.
@@ -122,9 +122,10 @@ They may do it, but they'll never call it “fun”.
 But if it looks like you're having a great time putting together a documentation platform using some new open source technology they've heard of but never had an excuse to try out, they may grow interested in helping out when they can spare some time.
 (I know, I know, but just give them a chance to miraculously discover some bandwidth if you've got something interesting going on.)
 
-This has turned out to be the case at Rocana.
-Not that I would say any of my engineers is uninterested in docs, but for most, documentation is not the highlight of the product cycle.
-That said, most of their ears perk up when I talk about building platforms, and several have followed through on offers to help.
+This turned out to be the case at Rocana.
+Not that I would say any of my engineers was totally uninterested in docs, but for most, documentation was not the highlight of the product cycle.
+That said, most of their ears perked up when I talked about building platforms, and several followed through on offers to help.
+
 ****
 
 [[internal-docs]]
@@ -152,7 +153,7 @@ It makes life easier.
 Creating and curating an attractive, tidy space where developers can contribute to common resources is a huge value add; making it possible for them to do this without leaving their favorite tools is showing them you care.
 Make the tooling inclusive enough to encourage product and project managers, QA and DevOps engineers, the CTO, and the whole team to use it and use it properly.
 
-This is also your chance to tutor Git and markup newbies.
+This is also your chance to tutor Git and markup newbies, the way we needed help when we were first learning Git.
 Help them get comfortable with distributed source control and writing in flat files.
 These are terrific professional skills; nobody has ever been harmed by having learned Git or a lightweight markup language.
 
@@ -168,19 +169,25 @@ The point is to consider every doc to have potential direct value to outside use
 
 Reason 2: Internal docs are an inroad.::
 
-I got my team interested in collaborative docs-as-code when I built a Jekyll-based website sourced in AsciiDoc flat files for our internal Engineering documentation.
-The site is password protected, so it includes
+I got my Rocana team interested in collaborative docs-as-code when I built a Jekyll-based website sourced in AsciiDoc flat files for our internal Engineering documentation.
+The site was password protected, so it included:
 
-* official workplace policies to feature specs,
-* testing plans,
-* test results,
-* language style guides,
-* specifications and internal contracts,
-* Git and JIRA usage guides, and
-* seemingly some new category every month.
-
+* official workplace policies to feature specs
+* testing plans
+* test results
+* language style guides
+* specifications and internal contracts
+* operational instructions for such things as product builds
+* build, dev, and staging infrastructure diagrams and discussions
+* platform usage guides (e.g., Git, JIRA)
+* seemingly some new category every month
++
 Once they saw the value of the system for their own needs, many of the developers started asking if they could provide their SME product content by directly contributing to the source.
-I haven't dragged anybody to docs-as-code, but they come along one by one, not least because I try to make it look fun.
+They got a taste of how I worked and intuited that they and I can have less overhead around docs tasks if they edit my docs source directly.
+I never dragged anybody to docs-as-code, but they came along one by one, not least because I made it look fun.
+
+For these reasons, I will return to the importance of internal docs as a potentially grounding element of any engineering team's product documentation efforts.
+An investment in building a docs-as-code content system for core developers and those in their sphere should might pay off in terms of more releasable content down the road, as well as getting coders used to writing code in flat files using their favorite editor and source-control -- which doesn't sound all that hard, does it?
 
 [[internal-docs-lifecycle]]
 == Docs Maturation Process
@@ -216,7 +223,11 @@ Facebook's website and numerous mobile apps use the same API as Tinder programme
 
 There may be just as much or more of Facebook's code that is kept entirely internal, but you can bet it's developed using the same techniques.
 Think about that: engineers are writing proprietary code as if they were building an external API, often fully documented and using highly logical user-facing endpoint paths and parameters.
+
 Good development technique means interacting with your product the way you would want to see third-party developers and to some extent end users engage with it.
+This can be looked at in terms of abstraction, as we explored it in <<chapter-coding>>.
+RESTful web applications in particular can take advantage of architectural consistency with user interfaces themselves.
+That is, each function and option the user is presented will correspond to consistently mapped components on the server side (the backend), reducing the distinctions between user experience and the source code that defines it.
 
 This can and should lead to the slow release of hidden parts of the product, as their utility to outside users begins to catch up with that appreciated by core developers.
 Private tools get open sourced or otherwise released: developer recipes and hacks can be exposed to third-party developers, metrics and test results can make their way to Marketing and others who can make use of them.
@@ -228,6 +239,10 @@ Of course, “all else” in this case includes good organization, indexing, and
 
 Most importantly, product code and docs code should be handled with care throughout their lifecycle, and as much of it eventually revealed as possible.
 The best way to identify a piece of code or documentation that has reached the end of its lifecycle is to plan its management from birth onward.
+This is likely best done by establishing a taxonomy of content types with different lifecycles.
+Protocols such as acceptance criteria, review frequency, and so forth can then be mapped to your content categories.
+
+// TODO examples needed
 
 Graceful deprecation is a gift to developers and users alike.
 We'll discuss it more in <<part-managing>>.
@@ -236,13 +251,13 @@ This level of lifecycle anticipation means imbuing internal docs with an extra r
 Imagine all those benchmark notes taken during hours of rigorous performance testing, workarounds and patches that never quite qualified for official release, sample files used in development, responses to one-off inquiries from Support, Sales, or Marketing.
 This is the stuff no bot is going to come up with any time soon.
 
-You don't even have to directly monitor all the noise in Engineering, let alone actively curate and archive the signal; the trick is to set up systems so that all knowledge has a home and a trivial route to it.
+You don't even have to directly monitor all the noise in Engineering, let alone actively curate and archive the signal; the trick is to set up systems so that all knowledge has a home and a simple, intuitive route.
 Optimally, this is a system so consistent with your whole team's existing routine that complaints over any effort needed to maintain it are outweighed by the benefits of maintaining it.
 It cannot be frustrating or burdensome, and it has to pay off down the line.
 
 .Releasing work product can be rewarding
 ****
-If it doesn't require much extra effort, selectively releasing "work product" can be a rewarding experience for many developers and support staff.
+If it doesn't require much extra effort, selectively releasing “work product” can be a rewarding experience for many developers and support staff.
 Even when just as uncredited as their source code contributions, developers like to see the fruit of their work get exposed and potentially make a difference to someone.
 
 This goes for nearly everyone at any company, all the way to the remote contractor -- everybody wants to impact customers.
@@ -258,15 +273,18 @@ The key is to make it easy for users to find their way to the right docs as soon
 
 .For God's Sake, Don't Release It All!
 ****
-All the above being said, for the love of all that remains unspoilt on this forsaken ball of crusted molten matter, be judicious in what you release.
+All the above being said, for the love of what little remains unspoiled on this forsaken ball of crusted molten matter, be judicious in what you release.
 
 Release only what you can and will maintain.
 Keeping track of all released documentation means _having a system in place_.
-If you do this right, the amount of released material could grow exponentially, with a consistent flow between internal drafts to inclusion in released artifacts.
+If you do this correctly, the amount of released material could grow exponentially, with a consistent flow between internal drafts to inclusion in released artifacts.
 In the process, source material will undergo vetting, deprecation, pruning, distillation, and redaction as needed.
 
 Make no mistake, however; getting this wrong can mean orphaned documents all over the Web and inside search engine indexes and users' browser bookmarks.
-To some extent, this is just what we deal with; often the best we can do is keep every released document updated and readily available to users.
+
+To some extent, this is just the shit we deal with as documentarians.
+It's the gig.
+Often the best we can do is keep every released document updated and readily available to users.
 ****
 
 == What Developers Need

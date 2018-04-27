@@ -74,7 +74,7 @@ That markup is perfectly fine, and in fact it is the form the Glossary started i
 The only real problem with storing content/data in this format is it's not portable; only AsciiDoc tools can do anything with it out of the box, and there aren't many AsciiDoc tools that focus on manipulating complex content objects.
 
 What if I wanted to be able to transform these glossary terms where they actually appear in the body of my book -- everywhere _except_ the glossary itself?
-Perhaps I want to highlight the terms wherever they appear in the main text, so if users hover over or click on them, they'll see the definition in a tooltip above the word.
+Perhaps in the HTML edition, I want to highlight the terms wherever they appear in the main text, so if users hover over or click on them, they'll see the definition in a tooltip above the word.
 
 // TODO: add illustration
 
@@ -138,7 +138,7 @@ semi-structured data::
   These items tend to appear many to a page; they often convey looped content of interest more for reference than reading.
 +
 [source,json]
-.Semi-structured Data Example
+.Semi-structured Data Example (JSON)
 ----
 {
   "key": "some_property-name",
@@ -152,7 +152,7 @@ semi-structured data::
 }
 ----
 +
-Imagine a collection of such property CCIs listed like a directory.
+Imagine a collection of such property CCOs listed like a directory.
 
 structured data::
   Schematified data, as in databases (including RDB and NoSQL) or XML with schema validation.
@@ -173,11 +173,8 @@ section VARCHAR(7)
 );
 INSERT INTO data VALUES
 (15,'This is some text in `AsciiDoc`, with *bold*.
-','some.property-name = 22',false,'some_property-name','.Example Two
-----
-This is some text that will convert to a code listing.
-----
-','some.property-name','General');
+','some.property-name = 22',false,'some_property-name','.Example Two\\n----
+This is some text that will convert to a code listing.\\n----\\n','some.property-name','General');
 ----
 
 As you can deduct from the examples above, schemas can be advantageous.
@@ -203,9 +200,9 @@ my-key:
   max-length: 20
 ----
 
-The best example of a CCO type that I know of is my personal Moby Dick: a means of cataloguing hundreds of configuration properties in a multi-component enterprise IT Ops product.
-Our product is server software -- about a dozen distinct daemons that may run across scores of nodes at a massive, multi-datacenter operation.
-Our users can configure all of these services in myriad ways by setting key-value pairs through various configuration interfaces.
+The best example of a CCO type that I know of was my personal white whale: a means of cataloguing hundreds of configuration properties in a multi-component enterprise IT Ops product.
+Our product was server software -- about a dozen distinct daemons that ran across scores of nodes at massive, multi-datacenter operations.
+Our users could configure all of these services in myriad ways by setting key-value pairs through various configuration interfaces.
 
 Let's get some more views of a configuration setting and all of its properties, so we can appreciate how flexible our source needs to be.
 
@@ -232,6 +229,8 @@ s| My Key*:
   }
 }
 ----
+
+JSON is the format in which JavaScript organizes data, and it's the most-common format for transmitting data to or from REST APIs.
 
 .Example -- Again, our setting as also seen by a front-end dev (2)
 [source,xml]
@@ -266,7 +265,7 @@ As you can see, a simple product setting parameter can be useful in diverse sett
 
 Users need reliable access to accurate documentation of these settings, in the appropriate context of the component they're meant to configure.
 
-Let's take a look at a more complete configuration setting's properties as a YAML structure.
+Let's take a look at a the attributes of a more-complete configuration property as a YAML structure.
 As you examine this figure, try to ignore the format and focus on the qualities of the content object.
 
 .A complex content object (CCO) represented in YAML
@@ -288,10 +287,10 @@ Each has its legitimate uses, even if all are overused.
 Consider Google Sheets as a collaborative CSV-management system.
 So long as you can export to the commonly-readable CSV format, you can port data managed by developers in Google sheets into just about any documentation output form imaginable.
 
-For some content, this might be the shortest route to keeping fast-changing data as current as humanly as possible.
+For some content, this or some other live spreadsheet might be the shortest route to keeping fast-changing data as current as humanly possible.
 This is doubly true when not all of your users are developers adept at working in flat files; most project managers and a huge range of SMEs will be comfortable with spreadsheets.
 
-When content in a cloud-hosted spreadsheet changes, save the .CSV file into your source repo and use it to generate output.
+When content in a cloud-hosted spreadsheet changes, export the .CSV file into your source repo and use it to generate new output.
 ****
 
 === Considerations
@@ -306,7 +305,7 @@ If your docs are integrated with a build system, it will have implications on yo
 
 product versioning::
 If by some stroke of genius or simplicity your product does not require release version control, you may be able to get away with a conventional CMS backed by a relational database (RDB).
-The need to tie complex content with product version argues for a flat-file approach, with settings kept in direct alignment with product code.
+The need to tie complex content with its corresponding product version argues for a flat-file approach, with settings kept in direct alignment with product code.
 
 advanced data operations::
 Will you need to *sort* CCOs by any of their parameter values?
@@ -333,7 +332,7 @@ What formats will your CCOs need to be output into?
 * JSON
 
 Your solution will need to be mappable to all the required formats.
-It will need to be exportable to something they can read, or external resources will need access to your CCO source directly and parse their needs from it.
+It will need to be exportable to something their tools can read, or external resources will need access to your CCO source directly and parse their needs from it.
 
 output languages::
 Internationalization support will either require another layer of development skill and effort or a budget for a CCMS with these capabilities built in (and of course suiting all your other CCO needs).
@@ -347,19 +346,72 @@ relationality::
 No matter how many records you're keeping track of, once they need to correlate to differently structured records, your options get pretty limited.
 Flatter solutions work for records of self-contained data.
 
+==== Data Dynamism
 
-data dynamism::
-This is not the first or most-common consideration, but I think it should be among them.
+This is the inclusion of *variable data* and *tokenized data expression* inside a datasource, especially for cumulative inheritance of values set in a linear fashion.
+Not the first or most-common consideration, data dynamism should be among your criteria.
 Since this is a major shortcoming of the RDB model, it is a place where flat-file approaches might shine.
-This is the inclusion of variable data inside a datasource, especially for cumulative inheritance of values set in a linear fashion.
 Give me a moment to explain:
 In source code, parameters are often built cumulatively.
-+
-.Example of cumulative parameter setting
-[source,yaml]
+We are even able to do this in AsciiDoc.
+
+.Example of cumulative parameter setting in AsciiDoc
+[source,asciidoc]
+----
+:domain: codewriting.org
+:domain_url: http://{domain}
+:domain_url_ssl: https://{domain}
+:blog_url: {domain_url_ssl}/blog
 ----
 
+This way, we don't have to repeat `codewriting.org` in a bunch of places, risking that we might introduce a typo and making it harder to change when we get sued over trademark intrusion and forced to pick a new domain.
+
+The problem, as noted earlier, is data defined in AsciiDoc is useless to other toolchains.
+Besides this, we would much prefer to define variables with hierarchy and nesting.
+
+If we want our product data to be available throughout our development environment, we're stuck with a semi-structured language like YAML.
+
+.Example of static parameter setting in YAML
+[source,ruby]
 ----
+domain: codewriting.org
+  url: http://codewriting.org
+    ssl: https://codewriting.org
+blog:
+  url: https://codewriting.org/blog
+----
+
+This is useful, but even in such a small sample, the cause of my frustration is laid bare: the string `codewriting.org` is listed four times.
+
+We can express a hierarchy and nesting, which is useful to most programming languages.
+Unfortunately, it is not useful for AsciiDoc, which requires flat variables.
+
+What if we could flatten our data structures and add variables based the key-value pairs we've already defined?
+
+.Example of _cumulative_ parameter setting in YAML
+[source,ruby]
+----
+domain: codewriting.org
+  url: http://$domain
+    ssl: https://$domain
+blog:
+  url: $domain_url_ssl/blog
+----
+
+Here our tokens are defined using the format `$some_key-1` (alphanumeric chars, underscores, or hyphens).
+Flattened and parsed, this structure would read like so:
+
+.Example of flattened and parsed parameters in YAML
+[source,ruby]
+----
+domain: codewriting.org
+domain_url: http://codewriting.org
+domain_url_ssl: https://codewriting.org
+blog_url: https://codewriting.org/blog
+----
+
+This elegant conversion can be ingested into Asciidoctor as variables.
+In AsciiDoc, the expression `{blog_url}` would resolve to `https://codewriting.org/blog`.
 
 == Solution Approaches
 
@@ -419,10 +471,9 @@ If you need to generate documentation in multiple languages and do not wish to r
 === Flat Files
 
 At Rocana, we strongly desired to keep our complex content in flat files.
-AsciiDoc has not proved robust for this situation.
+AsciiDoc has not proved suitable for this situation.
 It falls down in several places.
 Complex content written in AsciiDoc is not even proper data; there is really no way to interact with discrete items outside AsciiDoc tooling.
-This was illustrated with the glossary example above.
 
 We also needed to be able to output complex content in several distinct formats, including:
 
@@ -438,13 +489,15 @@ We also needed to be able to output complex content in several distinct formats,
 
 As you can see, I had big plans and high hopes for all that complex content.
 
-The challenge is to:
+The challenge was to
 
 . allow engineers to maintain YAML files as they manage the rest of their code
 
 . without sacrificing any of the ways this material was already being delivered (AsciiDoc and INI files), and meanwhile
 
-. add the ability to integrate data directly into the application and from a single source external to both.
+. add the ability to integrate data directly into the application
+
+. from a single source, possibly external to both docs and product code.
 
 After months of hemming and hawing over the best way, which included talking with consultants about how to handle the matter, I finally sat down and took a shot at coding a solution.
 
@@ -469,6 +522,7 @@ A simple configuration system lets me coordinate source files (YAML) with templa
 What follows is an example data source file.
 It contains metadata about the topic (this collection of settings) as well as a couple of dummy settings.
 
+[[liquidoc-source]]
 .Example -- LiquiDoc Source Data File
 [source,yaml]
 ----
@@ -517,15 +571,21 @@ Imagine the value of having canonical product data in semi-structured format, si
 This solution allows version control to keep information _about_ the code up to date with the code itself.
 
 Hardcore engineers will balk at the idea of storing generated source alongside its own source.
-This would be the case were you to store data in a format such as YAML, then generate Markdown or AsciiDoc files from that code and commit it to the same repo as the YAML source.
+Since everything has a source, radical programming requires stripping everything to its roots.
+Ideally, nobody should be able to mistake generated source for the code it was drawn from.
+
+This would be the case were you to store data in a format such as YAML, then generate Markdown or AsciiDoc files from that code and commit them to the same repo as the YAML source.
+Now you have the same content committed to the same repo in two different places, one of which is entirely depending on its actual source.
 The source-control purists are actually right: this is poor form and an accident waiting to happen.
 It may also be the best option for keeping your docs in great shape, so argue for it if you need to.
 
 The better argument, however, would be for continuous integration.
-With CI, the product build will just call a script, and those files will be generated during the build, then compiled along with the rest of the docs as if they'd been sitting there all along.
-If you are not authorized or confident enough to hack the build, maybe you can recruit a DevOps/automation engineer to champion this level of real-time integration.
+With CI, the product build will just call a script, and the AsciiDoc/Markdown source files will be generated during the build, then rendered along with the rest of the docs as if they'd been sitting there all along.
+If you are not authorized or skilled enough to hack the build, maybe you can recruit a DevOps/automation engineer to champion this level of real-time integration.
 
 Finally, the real coup is when engineers start using your semi-structured data files as source libraries for their product code.
 If an engineer is hacking your YAML file to document a configuration property, including its metadata (data type, constraints, required status, etc), why wouldn't that engineer just use your YAML file as the _source_ of that metadata to help define their code?
 Any YAML file can be a library or data source for other aspects of the product.
 This is how we establish canonical data in DRY, single-sourced complex content systems.
+
+// TODO more on LiquiDoc, including examples

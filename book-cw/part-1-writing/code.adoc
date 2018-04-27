@@ -84,16 +84,16 @@ My real interest is to start showing off the dynamism made possible by DLMLs.
 Tag-based languages like DITA may provide a degree of dynamism, but for reasons we'll explore more later, they tend to limit collaboration.
 
 Non-dynamic lightweight markup languages are the other contrast.
-Markdown is the most popular lightweight markup language, and it is highly conducive to collaboration, but it does not provide for dynamism or semantic contextualization.
+Markdown is the most popular lightweight markup language, and it is highly conducive to collaboration, but it does not provide for dynamism.
 
 For tech writers, my promise is that there are amazing tools that will give you not just more technical power, but more buy-in from Product and Engineering.
 With tooling integration and SME collaboration, stakeholders will see that small investments in documentation can pay off in big ways.
-We're out to make the case that smart investments in DocOps can yield a bigger return than shiny solutions with big price tags.
+We're out to make the case that smart investments in DocOps can yield a bigger return than shiny solutions with big price tags, all while weening organizations off expensive proprietary tools their engineers disapprove of.
 
-For engineers, I'm promising you there are better ways to write great docs that center around users' needs, and you don't have to learn obscure, proprietary tools to take advantage.
+For engineers, I'm promising you there are better ways to write great docs that center around users' needs, and you don't have to learn commercial tools that only run on Windows or MacOS to take advantage.
 The truth is, engineering teams have been documenting products in code since long before this trend hit the technical communications world.
 Now, whether you have dedicated technical writers or you're expected to write and maintain the docs yourselves, engineering teams can document the product as well as they can document the code base or an API.
-And they can use tools that combine the best of the engineer's world (flat files, distributed source control, and build tooling with continuous integration) with the style, semanticism, and output flexibility of advanced tech-writing solutions.
+And they can use tools that combine the best of the engineer's world (flat files, distributed source control, and build-tooling for continuous integration) with the style, semanticism, and output flexibility of advanced tech-writing solutions.
 
 === Lightweight Markup
 
@@ -109,60 +109,65 @@ That said, I highly respect reStructuredText (RST) and believe it is likely just
 I have not had the opportunity to use RST in production, and I'm just writing what I know.
 
 We'll also look at DITA, the leading dynamic markup language for technical documentation.
-While not a lightweight language, DITA-based platforms offer some advantages we will explore.
+While not a lightweight language, DITA-based platforms offer some advantages we will explore, including extensibility, since it derives from an open source XML document definition.
 I will admittedly spend most of that effort deriving lessons from the highly capable and experienced DITA community in order to apply them to DLML-oriented solutions accessible to the rest of us.
 
 Markdown will make several appearances as well, since innovators have found ways to give Markdown some quasi-dynamic superpowers.
 
-.Dynamic Lightweight Markup Language
-****
+=== What Makes a Markup Language ‘Dynamic’?
+
 AsciiDoc and reStructuredText differ from Markdown in several key ways.
 At a minimum, what makes them “dynamic” are the following characteristics:
 
 variables::
 A DLML lets you set a key/value pair that can be represented by tokens throughout the document, which will be substituted with their value when processed.
+Variable tokens are expressed in markup like `{varname}` (AsciiDoc) or `|varname|` (reStructuredText).
 
 conditionals::
 A DLML includes syntax for if/else/then logic for creating “switches” that generate different output based on their context.
 
 includes::
-A DLML lets codewriters pull source and other content in from separate files in the codebase, extending content reuse potential.
+A DLML lets codewriters pull source and other content in from separate files in the codebase.
+This enables content reuse, since any canonical reference or topic can be included in any number of parent documents.
+Thus, by editing the single source file, we ensure every output edition is as accurate as the source.
 
 extensibility::
 There must be at least one actively supported standard or platform for extending the DLML by adding dynamic and semantic capabilities.
+Whatever the language does “out of the box”, it must also offer an API so third-party developers can freely modify it to work for their applications.
 
 A great DLML has many more features, as we will discuss later, and there are attempts underway to extend Markdown to incorporate at least some of these capabilities.
 A little extra tooling can enhance a Markdown-sourced docs system to accommodate dynamic features.
-For now, AsciiDoc and RST are a ways ahead.
-****
+For now, AsciiDoc and RST ahead of the game.
+
+Fans of DITA will note that their language of choice actually fits all of the above criteria -- it's only disqualified because it's _not lightweight_.
+The truth is, if you are taking full advantage of DITA's dynamic and distributed potential and can afford the tools required to do so, switching to Markdown would likely mean a significant net loss of functionality.
+The loss:gain ratio would be less clear concernin a switch to a true DLML.
 
 In the end, I do not argue that the nascent docs-as-code movement should reject tag-based markup or non-dynamic lightweight markup in the documentation source.
 I can certainly think of legitimate documentation cases where variables, includes, and conditionals are simply not called for.
 I also know there are teams that love DITA and make widespread use of it and its tools, collaboratively and in close connection to the product, even using Git-based solutions.
 
-Source code is source code, as we'll explore much further in <<chapter-coding-source>>.
+Source code is source code, as we'll explore much further in Part Two.
 And we have more than enough orthodoxy and invalidation in this world -- there's no need to draw us/them boundaries among people trying to achieve a common goal of collaborative documentation inside the product codebase.
+I would love to conspire and even collaborate with a team that is using DITA flat files in the same Git repository as the product those files document.
 
 == Semantic Structure
 
 // TODO section-fix
 // This whole section bugs me -- I don't know what I'm talking about yet
 
-When I first learned to “write” HTML in 1996, I did not actually write very much HTML.
 The WYSIWYG (what you see is what you get) editor had already emerged, and it got all those `<i>italic</i>` and `<a href="some-long-url">link</a>` tags out of the way.
 
 This meant I rarely had to see the code I was writing in.
 I only looked under the hood to fix an editor-generated bug or to write some HTML the editor could not yet do for me with a few menu commands.
-When it came to writing, I worked in a tool that was essentially as elegant and practical for _writing_ in HTML as the best WYSIWYG editors of today.
-The editor abstracted the HTML, showing me something more akin to what the world would see upon publication.
+When it came to writing prose, I worked in a tool that was essentially as elegant and practical for _writing_ in HTML as the best WYSIWYG editors of today.
+The editor abstracted the HTML, showing me something more akin to what the world would see upon publication, though not necessarily attempting to portray the exact output, which could vary based on factors the WYSIWYG was not aware of.
 
 When I learned to write functional software (not just static web pages), I started to appreciate seeing all that markup, as well as all the scripts and database calls that were making my page content powerfully dynamic.
-
-Dynamism is no small thing in digital content, but nothing is more fundamental to tech docs than _semantic structure_.
-Your content has to have structure that conveys _purpose and utility, not just placement and style_.
+The insights this provide translate directly to power; the better you understand how your output is generated, the more you will be able to take advantage of everything your docs platform offers.
 
 Every chunk of quotation, every admonition, every diagram, every code listing, and every instruction step -- all your content has potential relevance to its digital context.
-More than mere clusters of characters or bytes, the assortment of files that make up your docs can have various relationships with a range of documents and media, from a print manual to the product interface to video to a presentation slide deck about the product.
+The assortment of files that make up your docs can have many relationships with a range of external or embedded documents and media, from a print manual to the product interface to video to a presentation slide deck about the product, to a video inside a slide deck and that also appears in a web page.
 So it matters what you put behind your words and pictures in order to indicate _if_ and _how_ they should be conveyed to the audience.
 
 A vendor referred to this as “What You See Is What You Mean” in describing how their DITA editor GUI handles semantic text.
@@ -174,9 +179,6 @@ Look how one popular DITA publishing tool handles semantic markup in its visual 
 image::screenshot_oxygen-xml-semantic-tags.png[]
 
 This may or may not be pleasing to look at in this form, but you might be able to imagine the potential to display this as highly visual instructions.
-
-[NOTE]
-I intend to explore this in greater detail; contributions and suggestions are very welcome!
 
 When you are looking at unobscured code, you are seeing not just the semantic purpose behind your content;
 you're seeing what exactly determines those semantics.
@@ -208,13 +210,13 @@ It's true that traditional content management systems (CMSes) offer remarkable p
 But they also sell you short on control over your docs at the source level.
 
 Only languages and toolchains that offer you inline dynamism -- and here I mean DITA as much as AsciiDoc or RST -- actually enhance the power of your writing.
-The ability to visualize and use programming logic as well as semantic tagging should sufficiently entice anyone inclined to integrate docs and code, as it were -- a topic we'll explore soon.
+The ability to visualize and use programming logic as well as semantic tagging should sufficiently entice anyone inclined to integrate docs and code -- a topic we'll explore soon.
 
 == De-abstracting Content
 
 You'll pretty much never see a serious software engineer writing source code using tools that hide the code of the programming language they're coding in.
 There are exceptions to this for complex code, such as formulas and algorithms, which are perhaps better generated automatically than having typed every character written by hand.
-And some coders like to collapse portions of their code from view when they're not touching or referencing it, which feature modern code editors typically offer out of the box.
+And some coders like to collapse portions of their code from view when they're not touching or referencing it, a feature contemporary code editors typically offer out of the box.
 
 But for the most part, developers strive to achieve a sort of Pareto efficiency with relation to their source code, to use an economistic notion.
 That is, good coders get as close to the source code as they can without adding undue burden.
@@ -225,9 +227,10 @@ These exemplary coders use dependency libraries carefully, but not because they'
 They recognize the trade off each time they choose to fork a project or set out anew.
 Going with the current of the open source crowd has significant benefits; nobody is saying you need to be a pioneer to take advantage of the open source universe.
 
-Technical writing and editing workflows, as well as their tooling, can follow the same principles.
+Technical writing and editing workflows, as well as their tooling, can follow the same principles used by engineers.
 We can look our source code in the eye, as I am doing while typing these very words.
-I don't see the clusters of `1`|`0` combos behind this text, but I do see the markup notations -- in fact, I type them explicitly.
+Like even the most brilliant engineer, I don't see the clusters of `1`|`0` combos behind this text.
+I do see the markup notations -- in fact, I type them explicitly.
 Our editor can help us cheat a little, with distinctive formatting inline and a WYSIWIGish view in an adjacent panel.
 
 .Since originally writing this section, AsciiDocFX has become more photogenic for AsciiDoc display than my preferred Atom editor.
@@ -242,42 +245,40 @@ Another thing you won't find developers doing is keeping all their source code i
 Typical packaged systems for content management (CMS, e.g., Wordpress, Drupal), contact relationship management (CRM, e.g., Salesforce), project management (PM, e.g., JIRA, Basecamp), and wikis (e.g., WikiMedia) all use RDB backends.
 This is for good reason, as the tools require levels of abstraction that eliminate most user choice.
 
-For most such tools, abstraction and limited capability go hand in hand.
-In fact, all these management systems typically offer popular cloud-based options precisely because customers have realized that conformity is an acceptable price to pay for platform supportability and stability.
-Platforms remove headaches.
-For many choices facing a technical organization, going with a platform can be the best call.
 
 === Flat-file Anarchy
 
 Coders are less likely to see it that way.
-Coding UIs are of course far more anarchic than PMs or CMSes, and not because engineers just want to be cowboys (even the ones who do).
+UIs designed for creating software are of course far more anarchic than desktop publishing tools, content management systems, word processors, or relational databases, and not because engineers just want to be cowboys (even the ones who do).
 They reject systems of constraint that come in the form of form-field validations that reject improperly formatted entries; coders write their own integration tests, thank you very much.
 
 For coders, the flat file is the Wild West.
-It's Ctrl+Shift+N, followed by typing a file extension that reveals the source language (`flat-file.java`, `flat-file.py`, `flat-file.rb`, `flat-file.js`, `flat-file.json` etc.).
-
-You see the commonality.
+It's `Ctrl`+`Shift`+`T` in your favorite code editor, followed by typing a filename with an extension that reveals the source language (`flat_file.java`, `flat_file.py`, `flat_file.rb`, `flat_file.js`, `flat_file.json`, etc.) -- and then you're off!
+Your editor knows how to format and analyze your code, so you're ready to work.
 
 The flat file offers not just a fresh slate, it enables source control.
-Many advanced CMSes offer version control, which can trace drafts and compare differences across iterations.
-
 Source control offers all of this with the added power of _forking_.
-That is, independent copies can live in separate code repositories, changing and potentially reintegrating down the road.
+That is, independent copies can live in separate cloned-and-diverged code repositories, changing and potentially reintegrating down the road.
 The power of this for documentation may not be immediately obvious, but as we go on, we'll see it illustrated in a few key ways.
 
 The point is, coders love the open-ended potential of the flat file.
-But coders aren't berzerkers.
+But coders aren't berzerkers -- they want freedom to create, but the good ones accept reining in when it comes time to push code.
 
 === Reign of the Review
 
 The virtual space of the development environment is often anything but chaotic.
 Great tech leads, project managers, and peers impose on engineers the kind of order you'd expect from strict editors in journalism.
 
-The environment and workflow can have severe constraints in place at points prior to code integration.
+The environment and workflow can have severe constraints in place at various points prior to code integration, when new code is merged into the repo's `master` [sic] branch.
 A sloppy developer like me may spend weeks thwacking freely at the keyboard before submitting the resulting source code to unit tests, regression tests, and however many rounds of peer assessments may be waiting during code review.
 In the end, all code must pass muster.
+We'll talk about workflow and infrastructure integration in later parts.
 
-I'm not going to try to sell you on the complete vision just yet -- I merely wish to make the case that flat files can be as simple and manageable as wiki pages, yet they leave the platform open to more flexible construction of document and data structures on the fly.
+=== Flat Files FTW
+
+This has been a heavy chapter, and there's more complication to come, so I won't keep selling flat files at this stage.
+There will be numerous points where examples make the advantages clear.
+For now, the takeaway is that flat files can be as simple and manageable as wiki pages, yet they leave the platform open to more flexible construction of document and data structures on the fly.
 
 In this case, the “platform” may be more of a “framework” such as those used by developers to provide logic, convention, and usually a great deal of prepared dependency code.
 A development framework is a relatively open playground compared to a CMS, but don't let this notion scare you off if you're not a developer or hacker (yet).
@@ -286,7 +287,7 @@ At the same time, if you're a serious coder, I don't want to oversell the docs f
 I don't even know if this approach will prove popular, let alone get the support it needs.
 It's early days, and we'll discuss this more in <<chapter-delivering-hacking>>.
 
-The point of a CMS platform or a codewriting framework is that something is in place to help you get started producing content.
-It's not just a blinking cursor on a command line.
+The point of a codewriting framework or platform is that something is in place to help you get started producing content.
+It's not just a blinking cursor on a command line, and when it is a blank file, you have a standard document structure to inform your writing.
 
 // TODO chapter-wrapup

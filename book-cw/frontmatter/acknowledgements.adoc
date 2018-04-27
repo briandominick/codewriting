@@ -1,14 +1,16 @@
 = Acknowledgements
 
-My first shout out has to go to Eric Sammer, CTO at Rocana, who had the foresight to set me up with such a great documentation toolchain.
-Eric has given me room to experiment with the docs at Rocana, just as he and the Engineering organization have kept a constant flow of new challenges streaming across my desk.
-I did not take this job with any semblance of a notion that I was stumbling into a nascent (niché) field that so fully fuses writing and development.
+I must first express appreciation for Eric Sammer, CTO at Rocana, who had the foresight to set me up with such a great documentation toolchain.
+Eric gave me room to experiment with the docs at Rocana, just as he and the Engineering organization kept a constant flow of new challenges streaming across my desk.
+I did not take that job with any semblance of a notion that I was stumbling into a nascent (niche) field that so fully fuses writing and development.
 Since those are the only two consistent interests on my resumé, I suspect Eric saw more than I evidently did.
 
-I also want to express appreciation for my manager, Arthur Foelsche.
+I also want to express appreciation for my direct manager at Rocana, Arthur Foelsche.
 When your company is so small you're the only tech writer, it helps a lot to have somebody who's well paid to feign an interest in what you do all day.
-Truthfully: through countless hours of coding and conversation, Arthur has pushed and helped me to solve more than a few of the problems I'm truly excellent at raising.
-He also encouraged me to do this book and pursue the initiatives and projects that inspired it, as did everyone in Rocana's Engineering department.
+Truthfully: through countless hours of coding and conversation, Arthur pushed and even directly helped me to solve more than a few of the problems I'm truly excellent at raising.
+He also encouraged me to do this book and pursue the initiatives and projects that inspired it, as did so many of my colleagues there.
+
+I hope the Codewriting project serves as an unexpected, lasting artifact of all our days solving “impossible” problems together as Rocana.
 
 == Contributors
 

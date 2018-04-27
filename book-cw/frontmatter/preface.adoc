@@ -1,11 +1,11 @@
 = A Note to Readers & Contributors
 
 There is no sense in postponing my confession: I have written a user manual for the role of technical writer.
-The first draft of that sentence originally contained a reference to _irony_, but in truth it is not at all ironic that technical writers ourselves require instruction.
+The first draft of that sentence contained a reference to _irony_, but in truth it is not at all ironic that technical writers ourselves require instruction.
 I’ve strung together a lot of prose in my lifetime, but I’m casting this book project in a format I hope technical writers and software developers will appreciate:
-lots of bulleted section headings, lists, sidebars, examples, code listings, and summaries.
+lots of section headings, bulleted lists, sidebars, examples, code listings, and summaries.
 
-But I'm also bestowing this book with some rants, because I have things to express.
+But I'm also instilling this book with some rants, because I have things to express.
 You are welcome to roll your eyes right past any objectionable passages.
 
 [[tech-writer-journalist]]
@@ -14,9 +14,9 @@ You are welcome to roll your eyes right past any objectionable passages.
 *Tech writers* _document and instruct_ a product on behalf of its _makers_ (usually _as one of its makers_).
 By contrast, *tech journalists* _promote and praise_ products on behalf of the journalists’ _sponsors_, which are often those same products.
 
-I don’t want you to just read this book; _I want you to contribute to it_.
-
 == Collaborative Authoring
+
+I don’t want you to just read this book; _I want you to contribute to it_.
 
 _Codewriting_ is a living document being written on a public GitHub repository.
 You are welcome and encouraged to contribute by forking the repo, contributing edits, and issuing a pull request (PR).
@@ -26,15 +26,14 @@ Be sure to add your name to the contributors list with your PR!
 
 == Writing to Learn
 
-Every subject in which I have achieved true proficiency, I have written about.
+I have never gained proficiency at anything without writing about it in the process, even for an audience of one person I suspected was not even reading.
 But I do not write as an expert, conveying my accumulated wisdom;
 former journalist that I am, I write to motivate and structure research efforts during the intermediate part of a learning project.
-If I knew everything I need to know to master tech writing and DocOps, I would not be writing this book.
 I’m hoping you’ll at least follow along, if not chip in to teach me a thing or two.
 
 [WARNING]
 “Intermediate” may best describe my proficiency at technical writing, and then only because I join the field with nearly 20 years in software development and even longer writing professionally.
-I won’t release editions of this book that contain known falsehoods, but it may always contain a significant amount of vagueries and shortfalls.
+I won’t release editions of this book that contain known falsehoods, but it may always contain a significant amount of idiosyncrasies and shortfalls.
 The field of technical writing is the only subject I handle that's more complicated, uncharted territory than the multi-component enterprise platform technology I document by day.
 
 == Engaged Learning
@@ -49,21 +48,19 @@ Every tool used in these instructions will be free and open source software.
 Examples in this book heavily favor AsciiDoc markup language, though daring participants are welcome to follow along in a markup language of their choosing.
 The particular language should not matter for most examples.
 
-If you succeed with parallel examples, please considering contributing them.
+If you succeed with parallel examples, please consider contributing them.
 
 == Tech Writing Can Be Fun & Funny
 
-I’m enjoying this book, but I have to admit, the Reference Guide I maintain as the primary responsibility of my day job is not always a page-turner (for reading or writing).
-I get enjoyment out of many of the non-writing parts of this job, including working with great developers and getting my hands dirty with their bleeding-edge software.
+I am enjoying writing this book, but I have to admit, not all technical writing is pleasureful.
+For instance, the Reference Guide I maintained as the primary responsibility of my day job while I wrote most of this at night and on weekends was not always a page turner -- for reading or writing.
+I got enjoyment out of many of the non-writing parts of that job, including working with great engineers and getting my hands dirty with their bleeding-edge software.
 Still, we all know tech writing can be the opposite of pleasure writing.
 Fussing over every word in an instruction step, trying to shorten code listing line lengths to fit the page, or just re-conveying the same banal concepts over and over; tech writing has its downsides.
 
-Consider this: customers pay a lot for our product license, and the closest they'll ever come to a physical artifact of our product would be if they hit print on the PDF I maintain day in and day out.
 It has been conveyed to me by people of good repute that joking and cursing in technical documentation for a “serious” enterprise product is a bad move.
-
 I think that's bullshit, but I propose a compromise.
-
-I will bite my tongue on the F-bombs, S-storms, and D-words, but let’s try to inject humor into this most dry of _crafts_.
+I will bite my tongue on the expletives, but let’s try to inject humor into this most dry of _crafts_.
 It may never rise to the level of an _art form_, but I’ll take _craftsperson_ over _clerk_ as a job genus any day.
 
 == Creative Commons License

@@ -7,7 +7,7 @@ terms:
 
   - term: AsciiDoc
     definition: |
-      An extensible lightweight markup language with numerous powerful features such as conditional processing, file includes, and variable text substitutions.
+      An extensible, dynamic lightweight markup language with numerous powerful features such as conditional processing, file includes, and variable text substitutions.
       Pronounced _ASK-ee-doc_.
 
   - term: binary files
@@ -39,6 +39,13 @@ terms:
     definition: |
       A separate software product that is required for the development or operation of another application.
       These are either prerequisites that need to be set up or packages that are integrated automatically, but the main software relies on them to perform some crtical task.
+
+  - term: deprecation
+    definition: |
+      The process of designating product features for cessation of support.
+      Whenever an existing feature is slated to be disabled in a future release, providers notify users the functionality will cease.
+      This flagging is the actual act of deprecation.
+      Actual removal or cessation of support is a separate operation.
 # tag::cco-example[]
   - term: DevOps
     definition: |
@@ -61,6 +68,12 @@ terms:
     definition: |
       For "don't repeat yourself", referring to a single-sourcing approach to code or docs.
 # end::cco-example[]
+  - term: dynamism (in CMSes)
+    definition: |
+      At a minimum, a content management system is _dynamic_ if it enables the setting of variables for tokenized substitution inside parsed content.
+      That is, users can embed references to outside data or content inside preprocessed source, which will be populated by that outside data or content, depending on which external content is established as the _value_ of any given _key_ (token).
+      Other elements of dynamism may include conditional processing, which is often necessary for the proper establishment and processing of variables.
+
   - term: extensibility
     definition: |
       Software that offers users the prerogative to heavily alter or add to its performance or abilities is considered “extensible”.
@@ -87,6 +100,11 @@ terms:
   - term: linter
     definition: |
       A utility that scans text or code for syntactically, grammatically, or vocabularily incorrect content to flag or reject.
+
+  - term: literal (expression)
+    definition: |
+      Text in technical documentation that conveys actual code or values.
+      Literals are usually represented by monospace type to distinguish it as directly expressing practical data or code.
 
   - term: Markdown
     definition: |
@@ -139,11 +157,14 @@ terms:
   - term: REST API
     definition: |
       An API (see <<glossary-api,API>>) that listens for and responds to HTTP requests to established endpoints.
+      A “RESTful” service waits for an HTTP client request, such as a _POST_, _GET_, or _DELETE_ transaction at a specific URI, enabling third-party developers to build applications to interact with that service based on documented functionality and permissable formats for exchanging data.
+      (REST stands for “Representational State Transfer”, which I had long-since forgotten before I just looked it up, because it is never used.)
       Pronounced _REST A-P-I_.
 
   - term: reStructuredText
     definition: |
       A dynamic lightweight markup language associated with Python development.
+      Abbreviated _RST_.
 
   - term: RST
     definition: |
@@ -154,6 +175,13 @@ terms:
       Acronym for _software as a service_. Subscription-licensed tools hosted in “the cloud”, SaaS products require no user maintenance and provide thin-client remote access (e.g., browsers, mobile apps).
       Relevant examples include Wordpress.com, GitHub, Slack, and Office 365.
       Pronounced _sass_.
+
+  - term: small data
+    definition: |
+      Datasets that are limited in count and complexity.
+      Small data can be stored in flat files, with or without schematic constraints.
+      Distinguished more in terms of the subjects of data suitable for such storage systems, namely recordsets of limited volume.
+      Similar to Big Data, small data structures usually support nested attributes represented by flat formats like XML, JSON, and YAML.
 
   - term: SME
     definition: |

@@ -6,7 +6,7 @@ Only a distributed source management system will offer the flexibility needed fo
 
 == Version Entropy
 
-Software and documentation have a natural tendency to diverge.
+Software and documentation have a tendency to diverge.
 Given time, even with consistent attention, more gaps between word and truth appear.
 In fact, if you're a _good_ technical writer, like I think I am, you're too interested in adding new content to fuss over constantly improving the existing stuff.
 Only a _great_ technical writer sets aside that universal urge and always attends to the existing landscape.
