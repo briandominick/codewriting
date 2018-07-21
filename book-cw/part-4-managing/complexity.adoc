@@ -560,7 +560,8 @@ settings:
 === Flat-file shortcomings
 
 Remember that concept of _relationality_ in small data that I brought up earlier?
-Where
+Where sets of structured data need to be related to one another, flat files fall short.
+
 There are ways to sensibly “join” two semi-structured data files the way an RDB joins tables, but it's clunkier than a system with a true database backing it.
 If you have files named `people.yaml` and `jobs.yaml`, you're going to have an uphill battle keeping people associated with their jobs, and jobs associated with the people performing them.
 It's not an impossible problem to address down to this layer of complexity, but only a real product-development process will nail the architecture, interface, and query language for handling such relationships for highly complex small data in flat files.
