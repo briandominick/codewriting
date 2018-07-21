@@ -489,7 +489,7 @@ We also needed to be able to output complex content in several distinct formats,
 
 As you can see, I had big plans and high hopes for all that complex content.
 
-The challenge was to
+The challenge was to:
 
 . allow engineers to maintain YAML files as they manage the rest of their code
 
