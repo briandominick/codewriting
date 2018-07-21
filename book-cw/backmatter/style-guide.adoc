@@ -25,7 +25,7 @@ Here are some highlights/additions:
 
 1-sentence per line::
 To make a space after a sentence-terminating punctuation, use the return key instead of the spacebar.
-This gives you at-a-glance insight into sentence strength and paragraph structure, as well as making for easier diff reviewing.
+This gives you at-a-glance insight into sentence length and paragraph structure, as well as making for easier diff reviewing.
 * See “link:http://codewriting.org/blog/ventilated-prose-hanging-indentation[Ventilated Prose and Hanging Indentation]” for more.
 
 no hard line wrap::
