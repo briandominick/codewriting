@@ -141,7 +141,7 @@ For now, AsciiDoc and RST ahead of the game.
 
 Fans of DITA will note that their language of choice actually fits all of the above criteria -- it's only disqualified because it's _not lightweight_.
 The truth is, if you are taking full advantage of DITA's dynamic and distributed potential and can afford the tools required to do so, switching to Markdown would likely mean a significant net loss of functionality.
-The loss:gain ratio would be less clear concernin a switch to a true DLML.
+The loss:gain ratio would be less clear concerning a switch to a true DLML.
 
 In the end, I do not argue that the nascent docs-as-code movement should reject tag-based markup or non-dynamic lightweight markup in the documentation source.
 I can certainly think of legitimate documentation cases where variables, includes, and conditionals are simply not called for.
