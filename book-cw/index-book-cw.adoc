@@ -2,7 +2,7 @@
 :bookdir: {basedir}/book-cw
 :includedir: {bookdir}/includes
 :imagesdir: book-cw/images
-:datadir: _data
+:datadir: data
 :icons: font
 :icon-set: fa
 :sectnumlevels: 1
@@ -13,10 +13,13 @@
 include::./README.adoc[lines=1]
 Brian Dominick <badominick@gmail.com>
 
-[frame=topbot]
+[frame=topbot,cols=1]
 |===
-^|*_Codewriting_* (C) Brian Dominick 2017 +
-Provided under Creative Commons Attribution-ShareAlike 3.0 Unported -- see `LICENSE.md`.
+^| *_Codewriting_* is copyright (C) Brian Dominick 2017-2019 +
+Provided under Creative Commons Attribution-ShareAlike 3.0 Unported -- see link:/license[`LICENSE`].
+ifdef::draft-version[]
+^| This is a *DRAFT* edition (version {draft-version}) of this book. Feedback is welcome.
+endif::draft-version[]
 |===
 
 :leveloffset: 1

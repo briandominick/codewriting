@@ -41,6 +41,12 @@ You know, for shops that truly value good docs.
 [.body]
 --
 *Codewriting* is a website and a book, each drawn from the same open source codebase and sharing some of the same content.
+The project exemplifies the *AJYL docstack*, a set of integrated technologies perfectly suited for demanding, collaborative technical documentation projects.
+
+[NOTE]
+AJYL stands for AsciiDoc, JAMstack, YAML, and Liquid.
+For more, see the companion website about {ajyl_www_uri}[AJYL dockstack].
+
 The content source is written in a _lightweight markup language_ called *AsciiDoc*, supported by *small data* files in *YAML* format.
 The codebase is managed and processed by several awesome Ruby utilities, including *Git*, *Asciidoctor*, *Jekyll*, and my own tool, *LiquiDoc*.
 
@@ -62,11 +68,12 @@ There are two ways to *get the latest draft of _Codewriting_*, the book:
 * Clone the source repo in Git and build the PDF and HTML.
 If you have the common prerequisites (Ruby and Bundler), it's as easy as:
 +
+[source,shell]
 ----
-git clone git@github.com:briandominick/codewriting.git
-cd codewriting
-bundle install
-bundle exec liquidoc -c config/build-global.yml
+$ git clone git@github.com:briandominick/codewriting.git
+$ cd codewriting
+$ bundle install
+$ bundle exec liquidoc -c config/build-global.yml
 ----
 +
 Detailed instructions in the link:readme#build[README].
@@ -81,7 +88,7 @@ Here are some more links of interest:
 
 * link:codewriter-brian-dominick[About Codewriter Brian Dominick]
 
-* link:https://github.com/briandominick/liquidoc-gem[The LiquiDoc utility source]
+* link:{ajyl_www_uri}[AJYL Doctack and LiquiDoc]
 
 * link:http://codewriting.org/blog-asciidoctor-jekyll-hyde-docs-out-of-the-box[Under the hood of codewriting.org]
 

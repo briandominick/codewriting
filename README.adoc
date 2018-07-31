@@ -3,12 +3,18 @@
 :page-layout: page
 // tag::global-settings[]
 :codewriting_source_uri: https://github.com/briandominick/codewriting
+:codewriting_www_uri: https://www.codewriting.org
+:liquidoc_www_uri: https://www.ajyl.org/liquidoc-cmf
+:ajyl_www_uri: https://www.ajyl.org
 // This README file serves as canonical source for some text and other code.
 // Denoted by specially formatted comments like the tag:: and end:: references
 // above and below this comment. These are hidden macros that enable me to mark
 // sections of a file for selective inclusion (think of it as embedding) into a
 // parent file elsewhere in my source repo during parsing.
 // end::global-settings[]
+
+:toc: macro
+toc::[]
 
 // tag::preamble[]
 _Codewriting_ is an open, hopefully collaborative writing project to document current best practices and forward thinking in the field of technical communications, specifically documentation for software projects.
@@ -35,14 +41,14 @@ These tools include:
 
 * link:http://https://jekyllrb.com/[Jekyll], a popular static site generator
 * link:http://asciidoctor.org/[Asciidoctor] parsing engine for AsciiDoc files
-* link:http://github.com/briandominick/liquidoc-gem/[LiquiDoc], my own tool, which I use for preprocessing YAML data and configuring complicated build procedures
+* link:{liquidoc_www_uri}[LiquiDoc], my own tool, which I use for preprocessing YAML data and configuring complicated build procedures
 * link:https://git-scm.com/[Git] -- if you don't know it yet, the time has come
 
 [NOTE]
 .Do Not Be Intimidated
-All of these tools happen to be written in Ruby and run in a Ruby environment using each tool's built-in command-line interface.
-You do not have to know Ruby to use these tools.
-They will help you become comfortable using your system's terminal command line interface.
+Most of these tools happen to be sourced in Ruby and run primarily in a Ruby environment using each tool's built-in command-line interface.
+First, you do not have to know any Ruby to use these tools.
+Moreover, they will help you become comfortable using Bash shell utilities and command prompts generally.
 If you want to learn more about how these tools work, we'll be exploring LiquiDoc, Jekyll, and several tools from the Asciidoctor ecosystem, as well as many others, all in these pages.
 
 == Build
@@ -73,12 +79,14 @@ The last tool you need is your preferred *terminal/command prompt* (link:https:/
 . In the terminal, navigate to a workspace directory.
 +
 .Example (any directory will do)
+[source,shell]
 ----
 cd Documents/workspace
 ----
 
 . Clone this repo.
 +
+[source,shell]
 ----
 git clone git@github.com:briandominick/codewriting.git
 ----
@@ -88,12 +96,14 @@ If you don't wish to run Git and clone the repo, you can always download and unz
 
 . Change directory to the repo.
 +
+[source,shell]
 ----
 cd codewriting
 ----
 
 . Run Bundler's install command to establish local Ruby gem dependencies.
 +
+[source,shell]
 ----
 bundle install
 ----
@@ -103,14 +113,15 @@ Bundler is a package manager for Ruby gems; it will ensure you always have the r
 
 . Build the book in PDF and HTML, as well as the site and my resumé.
 +
+[source,shell]
 ----
-bundle exec liquidoc -c _configs/build-global.yml
+bundle exec liquidoc -c configss/build-global.yml
 ----
 
 Now you can open `_build/publish/codewriting-book-draft.html` in your preferred browser or open `_build/publish/codewriting-book-draft.pdf` in your favorite PDF viewer.
 Please give this latest draft a read and let me know what you think!
 The other contents of `_build/` are yours to peruse.
-Also check out the files in `_config/`, `_data/`, and `_templates/`, as well as all the AsciiDoc files in `book-cw/`.
+Also check out the files in `_configs/`, `data/`, and `_templates/`, as well as all the AsciiDoc files in `book-cw/`.
 
 [TIP]
 --
@@ -121,8 +132,9 @@ This is my first ever Ruby scripting project; it's not terribly complex, and the
 You can also perform a Jekyll build/serve operation against the `_build/` directory.
 To do so using the included Jekyll config, still from the root directory:
 
+[source,shell]
 ----
-bundle exec jekyll serve --config _config/jekyll.yml
+bundle exec jekyll serve --config _configs/jekyll.yml --no-watch --skip-initial-build
 ----
 
 Now browse to `http://127.0.0.1:4004` -- you should see the `codewriting.org` website.
@@ -131,7 +143,7 @@ Now browse to `http://127.0.0.1:4004` -- you should see the `codewriting.org` we
 // end::build-cw[]
 
 [NOTE]
-For more about the build scripts and the overall framework (what goes where), see <<framework-and-build,Framework and Build>> below.
+For more about the build scripts and the overall framework (what goes where), see <<framework-and-build,Framework and Build>> below or check out link:{ajyl_www_uri}[LiquiDoc CMF directly].
 
 == Contribute
 // tag::contribute-cw[]
@@ -238,7 +250,7 @@ I do reserve the right to include lessons from your contributions even if we can
 As a journalist in my past life, I was fanatical about attribution, accuracy, and integrity in news media.
 As evidence, I submit  link:http://newstandardnews.net/contributors/handbook_v2.0.pdf[this journalism guide]) I helped write.
 I assure you I take proper representation and credit very seriously.
-// tag::contribute-cw[]
+// end::contribute-cw[]
 
 == Plans for Codewriting
 
@@ -258,46 +270,66 @@ Hijinks ensue.
 
 Here are some notes on what goes where and how it's all built.
 
-[source,yaml]
+[source,ascii]
 ----
-_data: # <1>
-  glossary.yml
-_layouts: # <2>
-assets: # <3>
-  images:
-  includes:
-book-cw: # <4>
-  index-book-cw.adoc # <5>
-  _data: # <6>
-    bibliography.yml
-  includes: # <7>
-  content-directories:
-presentations: # <8>
-scripts: # <9>
-  liquidoxify.rb
-  publish.rb
-theme: # <10>
-  fonts:
-  pdf-theme.yml
-Gemfile # <11>
-README.adoc # <12>
+├── _build/ <1>
+│   └── publish/
+├── _configs/ <2>
+│   ├── asciidoctor.yml
+│   ├── build-global.yml
+│   └── jekyll.yml
+├── _posts/ <3>
+├── _templates/ <4>
+│   └── liquid/
+├── assets/ <5>
+├── book-cw/ <6>
+│   ├── _configs/ <7>
+│   ├── _data/ <8>
+│   ├── <content_directories>/ <9>
+│   ├── includes/ <10>
+│   └── index-book-cw.adoc <11>
+├── data/ <12>
+│   ├── attributes.yml
+│   ├── dependencies.yml
+│   ├── glossary.yml
+│   ├── item-lists.yml
+│   └── resume-data.yml
+├── pages/ <13>
+├── theme/ <14>
+├── Gemfile <15>
+├── LICENSE.md <16>
+└── README.adoc <17>
 ----
 
-<1> Global data source files, not specific to Codewriting book
-<2> Liquid templates for mapping data to variables in precompiled files
-<3> Images, AsciiDoc includes, and other content used directly in output, possibly for multiple documents
-<4> Book content files; everything that goes _in_ the book
-<5> Build configurations for the book's precompiled source files
-<6> Data source files for the book, for building complex content
-<7> Discrete content files (topics, source samples, etc)
-<8> Source for slide decks (bit of a mess at the moment)
-<9> The build scripts (`publish.rb` and `liquidoxify.rb`)
-<10> Files used to style output; hopefully these will evolve to consolidate across media
-<11> The project's Ruby dependency collection
-<12> Whoa, that's like, this file...
+<1> The scratch directory in which all preprocessing files are handled and final artifacts located
+<2> Configuration files for build tools, including Asciidoctor, Jekyll, and LiquiDoc (`build-global.yml` instructs the main build routine)
+<3> Blog posts for the site
+<4> Templates used for prebuilding content files (no site theme or page structure)
+<5> Images, AsciiDoc includes, and other content used directly in output, possibly for multiple documents
+<6> Book content files; everything that goes _in_ the book
+<7> Build configurations for the book's precompiled source files
+<8> Data source files for the book, for building complex content
+<9> Discrete content files (topics, source samples, etc)
+<10> Snippets and partials for the book
+<11> The book's content map
+<12> Structured data files for the whole project (not just the book)
+<13> Site content that doesn't go in the book
+<14> Files used to style output for the whole site
+<15> The project's Ruby dependency collection
+<16> The Creative Commons license and description of what is covered
+<17> Whoa, that's like, the source for what you're reading right now...
+
+=== Production Deployment
+
+As of Janyary 2019, link:https://www.codewriing.org[Codewriting.org] is built and served by link:https://www.netlify.com/[Netlify].
+Netlify's free service is simply amazing; I cannot recommend it strongly enough.
+All I do is point it to the repo, enter the build command, and tell it where to get the built files to serve.
+Nelify inegrates automatically with GitHub and analyzes the site output for security and integrity.
+All this pretty much out of the box, with free HTTPS and custom domain-name handling.
+
 
 == Legal Stuff
 
-The Codewriting codebase is covered by the "Creative Commons ShareAlike 3.0 Unported" license, except as noted in the link:NOTICE of third-party software dependencies.
-You are encouraged to copy and modify this content for your own purposes; just please link back to link:http://codewriting.org/[codewriting.org].
-For details, see link:https://github.com/briandominick/codewriting/blob/master/LICENSE.md[`LICENSE.md`] for full details and complete license text.
+The Codewriting codebase is covered by the "Creative Commons ShareAlike 3.0 Unported" license, except as noted in the link:NOTICE.md[NOTICE] of third-party software dependencies.
+You are encouraged to copy and modify this content for your own purposes; just please link back to link:{codewriting_www_uri}/[codewriting.org].
+For details, see link:{codewriting_source_uri}/blob/master/LICENSE.md[`LICENSE.md`] for full details and complete license text.

@@ -7,7 +7,7 @@
 - stage: parse-resume
   action: parse
   message: Building BD resumé.
-  data: _data/resume-data.yml
+  data: data/resume-data.yml
   builds:
   - template: _templates/liquid/resume.asciidoc
     output: _build/pages/resume.adoc
@@ -16,7 +16,7 @@
   action: render
   message: Rendering resumé files.
   source: _build/pages/resume.adoc
-  data: _config/attributes.yml
+  data: _configs/asciidoctor.yml
   builds:
   - output: _build/assets/files/brian-dominick-resume.pdf
     style: theme/pdf/resume-theme.yml
@@ -31,7 +31,7 @@
 - stage: build-lists
   action: parse
   message: Building content item lists.
-  data: _data/item-lists.yml
+  data: data/item-lists.yml
   builds:
   - template: _templates/liquid/item-lists.asciidoc
     output: _build/assets/includes/item-lists.adoc
@@ -49,7 +49,7 @@
 - stage: build-glossaries
   action: parse
   message: Building glossaries.
-  data: _data/glossary.yml
+  data: data/glossary.yml
   builds:
   - template: _templates/liquid/glossary.asciidoc
     output: _build/book-cw/backmatter/glossary.adoc
@@ -59,7 +59,7 @@
 - stage: copy-glossary-data
   action: migrate
   message: Copying data file for special inclusion in book content
-  source: _data/glossary.yml
+  source: data/glossary.yml
   target: _build/book-cw/_data
 
 - stage: copy-readme
@@ -119,7 +119,7 @@
 - stage: build-notice
   action: parse
   message: Building notice files.
-  data: _data/dependencies.yml
+  data: data/dependencies.yml
   builds:
   - template: _templates/liquid/notice.asciidoc
     output: _build/pages/notice.adoc
@@ -128,25 +128,36 @@
   - template: _templates/liquid/notice.plaintext
     output: _build/NOTICE
 
-- stage: publish-codewriting
+- stage: build-site
+  action: render
+  data: _configs/asciidoctor.yml
+  builds:
+    - backend: jekyll
+      properties:
+        files:
+          - _configs/jekyll.yml
+        arguments:
+          destination: _build/publish/site/
+      attributes:
+        portal_term: Portal
+
+- stage: build-codewriting
   action: render
   message: Publishing _Codewriting_.
   source: _build/index-book-cw.adoc
-  data: book-cw/_data/attributes.yml
+  data:
+    - book-cw/_data/attributes.yml
+    - book-cw/_data/version.yml
   builds:
-  - output: _build/publish/codewriting-book-draft.html
+  - output: _build/publish/site/codewriting-book-draft.html
     doctype: book
+    attributes:
+      toc: left
+{% unless vars.nopdf %}
   - output: _build/publish/codewriting-book-draft.pdf
     style: theme/pdf/default.yml
     doctype: book
     attributes:
       pdf-fontsdir: theme/fonts
       imagesdir: publish/assets/images
-
-# - stage: build-site
-#   action: deploy
-#   message: Building jekyll site.
-#   options:
-#     config: _configs/jekyll.yml
-#     operation: build
-#   target: ../codewriting-site/docs
+{% endunless %}

@@ -15,7 +15,7 @@ The example Glossary snippet from <<managing-complexity>> is called into the pag
 ----
 --------
 
-Inside `_data/glossary.yml`, a section of code is marked with tags like so:
+Inside `data/glossary.yml`, a section of code is marked with tags like so:
 
 [[tags-for-inclusion]]
 [source,yaml]

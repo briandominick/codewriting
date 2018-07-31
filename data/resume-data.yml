@@ -1,5 +1,12 @@
 posts:
   paid:
+    - org: Codewriting
+      titles:
+        - Codewriter
+      dates:
+        start: 2017-10-01
+        end:
+      description: maintain open-source docs platform (LiquiDoc CMF); install, instruct, and maintain docs platforms for great engineering organizations
     - org: Rocana, Inc (formerly ScalingData)
       titles:
         - Technical Documentation Manager
@@ -98,14 +105,6 @@ posts:
         start: 2000-04-01
         end:
       description: Train activists to perform first responder duties where EMS will not tread, including disaster & social unrest scnearios
-
-    - org: Kerhonkson Accord First Aid Squad
-      titles:
-        - First aid volunteer
-      dates:
-        start: 2017-09-01
-        end:
-      description: Volunteer first responder, emergency medical services
 
     - org: Constitutional Communications
       titles:

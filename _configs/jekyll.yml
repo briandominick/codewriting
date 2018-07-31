@@ -4,13 +4,13 @@ description: The website and blog of the Codewriting documentation project.
 tagline: Collaborative Documentation Ops for the Agile Age
 output: web
 source: _build
-destination: _site
+destination: _build/publish/site
 host: 127.0.0.1
 url: http://codewriting.org
 name: $title
 port: 4004
 
-data_dir:     _data
+data_dir:     data
 plugins_dir:  _plugins
 layouts_dir:  _build/theme/hyde/_layouts
 images_dir:   assets/images
@@ -103,7 +103,7 @@ sass:
 permalink: /:categories/:title/
 # paginate: 5 # amount of posts to show
 paginate_path: /page:num/
-timezone: # http://en.wikipedia.org/wiki/List_of_tz_database_time_zones
+timezone: # http://en.wikipedia.org/wiki/List_of_tzdatabase_time_zones
 
 
 # Plugins

@@ -4,9 +4,9 @@ layout: page
 ---
 # LICENSE
 
-Copyright &copy; 2017 Brian Dominick
+Copyright &copy; 2017-2019 Brian Dominick
 
-Except as noted in NOTICE.
+Except as noted in [NOTICE](https://codewriting.org/notice).
 
 ## Creative Commons Attribution-ShareAlike 3.0 Unported
 
@@ -15,7 +15,7 @@ Except as noted in NOTICE.
 **Covered "content" includes:**
 
 * text matter in AsciiDoc (`.adoc`) files
-* "complex content" files in YAML (`.yml`) format under `_data/` or `book-cw/_data/`
+* "complex content" files in YAML (`.yml`) format under `data/` or `book-cw/_data/`
 * any original artifacts included under `assets/`
 
 Licensing of content unoriginal to Codewriting is conveyed in text where it appears, all under appropriate license or covered by Fair Use.

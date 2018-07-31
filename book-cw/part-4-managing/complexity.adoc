@@ -41,7 +41,7 @@ How about a more useful example?
 Now we're getting somewhere.
 Let's try a real example by calling a snippet from one of the _Codewriting_ source files.
 
-.Example -- Real data from _data/glossary.yml
+.Example -- Real data from data/glossary.yml
 [source,yaml]
 ----
 include::../_data/glossary.yml[tags=cco-example]
@@ -86,7 +86,7 @@ Already, we've discovered a reason we should look at storing _all_ discrete, par
 
 I'm going to use several descriptors for the format in which content can be stored “on the backend”.
 That is, the form in which we hold our content so it can be best accessed in all the ways a product team might need it.
-We handle each class of content differently, especially when the content is better described as _data_ than as _text_.
+We handle each class of content differently, especially when the content is better described as data_ than as _text_.
 
 unstructured text::
   This could be prose, or it could be gobbledigük.

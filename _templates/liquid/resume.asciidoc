@@ -12,7 +12,7 @@
 :contact: link:http://codewriting.org/contact[contact Brian]
 :contact_table_width: 100%
 :codewriting_source_uri: https://github.com/briandominick/codewriting
-:codewriting_website_uri: http://codewriting.org
+:codewriting_www_uri: http://codewriting.org
 :liquidoc_source_uri: https://github.com/briandominick/liquidoc-gem
 // PDF overrides
 ifdef::backend-pdf[]
@@ -36,7 +36,7 @@ endif::[]
 == Objective
 
 I'm looking for opportunities to build integrated documentation systems at forward-thinking engineering shops.
-Read my link:{codewriting_website_uri}/codewriter-brian-dominick[objective statement] for more.
+Read my link:{codewriting_www_uri}/codewriter-brian-dominick[objective statement] for more.
 
 // tag::employment[]
 == Employment History{% for p in posts.paid %}
@@ -53,7 +53,7 @@ _{{ title }}_{% unless forloop.last %}, {% endunless %}{% endfor %} +
 
 // tag::source-statement[]
 [NOTE]
-This document is written in AsciiDoc, YAML, and Liquid markup, from which I dynamically render this version as well as an link:{otheredition_uri}[edition in {otheredition} format] using my open source documentation build tool, link:{liquidoc_source_uri}[LiquiDoc].
+This document is written in AsciiDoc, YAML, and Liquid markup, from which I dynamically render this version as well as an link:{otheredition_uri}[edition in {otheredition} format] using my open source documentation build tool, link:{liquidoc_www_uri}[LiquiDoc].
 You're welcome to peruse link:{codewriting_source_uri}[the source].
 
 // end::source-statement[]
