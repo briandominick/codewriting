@@ -38,12 +38,6 @@
   - template: _templates/liquid/item-lists.asciidoc
     output: _build/publish/assets/includes/item-lists.adoc
 
-- stage: copy-book-files
-  action: migrate
-  message: Copying book files.
-  source: book-cw
-  target: _build
-
 - stage: build-biblio
   action: parse
   message: Building _Codewriting_ bibliography.
