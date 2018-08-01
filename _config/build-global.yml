@@ -74,6 +74,12 @@
   source: LICENSE.md
   target: _build
 
+- stage: copy-book-files
+  action: migrate
+  message: Copying book files.
+  source: book-cw
+  target: _build
+
 - stage: copy-book-index
   action: migrate
   message: Copying book index.
