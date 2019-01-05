@@ -56,12 +56,6 @@
   - template: _templates/liquid/glossary.asciidoc
     output: _build/pages/docops-glossary.adoc
 
-- stage: copy-glossary-data
-  action: migrate
-  message: Copying data file for special inclusion in book content
-  source: data/glossary.yml
-  target: _build/book-cw/_data
-
 - stage: copy-readme
   action: migrate
   message: Copying README.
@@ -85,6 +79,12 @@
   message: Copying book index.
   source: book-cw/index-book-cw.adoc
   target: _build
+
+- stage: copy-glossary-data
+  action: migrate
+  message: Copying data file for special inclusion in book content
+  source: data/glossary.yml
+  target: _build/book-cw/_data
 
 - stage: copy-assets-pdf
   action: migrate
@@ -140,6 +140,11 @@
           destination: _build/publish/site/
       attributes:
         portal_term: Portal
+
+- stage: migrate-redirects
+  action: migrate
+  source: _configs/deploy/_redirects
+  target: _build/publish/site
 
 - stage: build-codewriting
   action: render
