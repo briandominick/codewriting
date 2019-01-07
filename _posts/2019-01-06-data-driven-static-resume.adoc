@@ -1,0 +1,153 @@
+= Static Content Derived from Small Data
+:page-layout: post
+:page-permalink: blog-data-driven-static-resume
+:page-date: 2019-01-06 18:22
+:page-comments: true
+:page-external-url:
+:page-categories: [small-data]
+:page-tags: [small data,Liquid,AsciiDoc,PDF,single sourcing,DRY]
+:page-author: Brian Dominick
+---
+
+I've done something weird with a very common document most people prefer not to fuss with.
+Really just as a demonstration of the power of an AJYL toolchain--employing AsciiDoc, JAMstack/Jekyll, YAML, and Liquid--my professional resumé is generated along with link:https://www.codewriting.org[my site] and the _Codewriting_ book when performing a complete build of this repo.
+
+If you are not expressly trying to prove you know clever ways to generate disparate output from a common source to earn a crust, this may well be overkill for you.
+Nevertheless, allow me to use it as an example of what can be done with a docs-as-code platform.
+First, take a quick look at my resumé in link:https://www.codewriting.org/brian-dominick-resume[HTML] as well as the link:https://www.codewriting.org/assets/files/brian-dominick-resume.pdf[PDF].
+The content doesn't matter much, just note that it's largely the same matter with some variance between the HTML and PDF versions.
+
+== The Sources
+
+The content is all sourced from the same DRY files, with no repetition of any content in the source.
+I source most of the specific content items as _small data_ objects arranged in a link:[YAML] file, with parameter values containing AsciiDoc markup.
+This is analagous to storing HTML/XML in rows of a relational database, where the field contents would perhaps be plaintext characters _tagged_ with XML-style markup.
+In our case, the datasource is a YAML data file, and the markup is lightweight AsciiDoc instead of tagged HTML/XML.
+
+Here is a snippet drawn directly from the link:https://github.com/briandominick/codewriting/blob/master/data/dominick.yml[single-sourced file] in the popular YAML format.
+
+.From data/dominick.yml -- Resumé small data source file snippet
+[source,yaml]
+----
+include::data/dominick.yml[tags="example-snippet"]
+----
+
+This data gets parsed by a link:https://shopify.github.io/liquid/[Liquid template] written to intermingle the AsciiDoc-formatted data with more AssciiDoc code.
+The link:https://raw.githubusercontent.com/briandominick/codewriting/master/_templates/liquid/resume.asciidoc[source file] has he complete goods.
+
+.From resume.asciidoc -- Template mixes dynamic Liquid with static AsciiDoc to generate AsciiDoc source
+[source,liquid]
+----
+include::assets/includes/resume.asciidoc[tags="employment"]
+----
+
+Because Liquid markup is always a mix of at least two markup languages (Liquid itself and your target format), it gets pretty ugly.
+Such is the nature of content templating.
+Nevertheless, we can generate such elegant code this way.
+
+Don't worry about the details of this code.
+Basically what it does is loop through the `posts.paid` array in the data file, creating an entry for each item it comes across (objects describing my past paid gigs).
+Then it expresses the details of that object, mixing it in with some AsciiDoc markup you'll also recognize in the output.
+
+Since that final, prebuilt source is generated before this blog, I can also access the resuling file _in this blog post_.
+(See the <<sniptip,tip admonition>> at the end of this post.)
+This next snippet is drawn directly from the result of pressing our AsciiDoc-formatted small data with a AsciiDoc-oriented Liquid template to generate new AsciiDoc source.
+
+.From _build/pages/resume.adoc -- AsciiDoc source file built by above procedure
+[source,asciidoc]
+----
+include::pages/resume.adoc[tags="example-snippet"]
+----
+
+The above snippet includes just the AsciiDoc generated for the first two entries, though the `pages/resume.adoc` file is a complete AsciiDoc document source.
+(To see the whole file, you would have to clone and build the Codewriting repo, generating a copy into the `_build/pages/` directory.)
+
+Finally, I render that AsciiDoc file through Asciidoctor and build it into a page with link:https://jekyllrb.com/[Jekyll static-site generator], as well as a PDF document using the killer link:http://prawnpdf.org/api-docs/2.0/[Prawn PDF utility].
+
+== The Output
+
+Here are images from the relevant details from both rendered artifacts.
+
+.HTML version
+====
+image::assets/images/screenshot-detail_resume-employment-html.png[]
+====
+
+.PDF version
+====
+image::assets/images/screenshot-detail_resume-employment-pdf.png[]
+====
+
+== The Build
+
+Now that we see what happened, let's explore how it was _scripted_.
+
+All of this activity is coordinated by link:https://www.ajyl.org/liquidoc[LiquiDoc], my free, open-source utility for combining AsciiDoc, YAML, and Liquid to build rich-text documents in many editions and formats, all from the same source.
+The Codewriting project's LiquiDoc link:https://github.com/briandominick/codewriting/blob/master/_configs/build-global.yml[configuration file (config)] for this site is pretty long, but essentially three stages build both the HTML and PDF versions.
+
+.From _configs/build-global.yml -- LiquiDoc config file resume parsing stage
+[source,yaml]
+----
+include::assets/includes/build-global.yml[tags="parse-resume-example-snippet"]
+----
+
+Here LiquiDoc is instructed to parse the `dominick.yml` data against the `resume.asciidoc` template, generating `resume.adoc`, an AsciiDoc source file containing Jekyll frontmatter.
+
+.From pages/resume.adoc -- Key Jekyll frontmatter params and content variables
+[source,asciidoc]
+----
+include::pages/resume.adoc[tags="key-settings-jekyll"]
+----
+
+This file's header contains still more information for the PDF output.
+When building the PDF version of the resumé, I override some of these variables (called _attributes_ in AsciiDoc parlance).
+
+.From _build/pages/resume.adoc -- Key PDF parameters
+[source,asciidoc]
+----
+include::pages/resume.adoc[tags="key-settings-pdf"]
+----
+
+Next, our config tells LiquiDoc to actually render the PDF version of the output from this prebuilt source file.
+
+.From _configs/build-global.yml -- LiquiDoc config file resume PDF render stage
+[source,yaml]
+----
+include::assets/includes/build-global.yml[tags="render-resume-example-snippet"]
+----
+
+This instructs performing a very simple Asciidoctor conversion using the Prawn-integrating link:https://github.com/asciidoctor/asciidoctor-pdf[PDF backend extension].
+
+The resulting PDF artifact will later be copied into the Jekyll-generated website, but first we have to perform that Jekyll generation.
+The LiquiDoc config has us covred here, as well.
+
+.From _configs/build-global.yml -- Jekyll build execution stage
+[source,yaml]
+----
+include::assets/includes/build-global.yml[tags="build-jekyll-example-snippet"]
+----
+
+This section of the config script instructs Jekyll to generate a site, one page of which will be the HTML edition of the resumé, as dictated by the `_build/pages/resume.adoc` file's frontmatter settings referenced above.
+This conversion does not require a specific instruction, as Jekyll renders all files in `_build/pages/` by default, and this prebuil file is after all just another Jekyll-ready AsciiDoc file like link:https://github.com/briandominick/codewriting/tree/master/pages[all its siblings].
+
+== Conclusion
+
+These are all the main features of an AJYL platform: small data in YAML flat files, content in AsciiDoc, templating and transformation with Liquid, and Jekyll to pull it all together.
+While a resumé is surely a novel implementation, imagine what this kind of flexibility can do for conveying complex product data in numerous permutations of editions and output formats.
+
+[#sniptip]
+[TIP]
+--
+All of the snippets included in this blog entry are derived from the original source.
+This blog is sourced in AsciiDoc, enabling dynamic inclusion of content from the codebase itself.
+For instance, look at the code that renders the final code listing above.
+
+[source,asciidoc]
+--------
+.From _configs/build-global.yml -- Jekyll build execution stage
+[source,yaml]
+----
+\include::assets/includes/build-global.yml[tags="build-jekyll-example-snippet"]
+----
+--------
+--

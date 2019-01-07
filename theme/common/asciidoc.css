@@ -31,3 +31,9 @@ span.icon>.fa {
   content: "\f06a";
   color: #bf0000;
 }
+
+.exampleblock {
+  padding: 5px;
+  background-color: beige;
+  margin-bottom: 20px;
+}
