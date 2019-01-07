@@ -293,7 +293,7 @@ Here are some notes on what goes where and how it's all built.
 │   ├── dependencies.yml
 │   ├── glossary.yml
 │   ├── item-lists.yml
-│   └── resume-data.yml
+│   └── dominick.yml
 ├── pages/ <13>
 ├── theme/ <14>
 ├── Gemfile <15>

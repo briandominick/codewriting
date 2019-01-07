@@ -4,14 +4,17 @@
   source: assets
   target: _build
 
+# tag::parse-resume-example-snippet[]
 - stage: parse-resume
   action: parse
   message: Building BD resumé.
-  data: data/resume-data.yml
+  data: data/dominick.yml
   builds:
   - template: _templates/liquid/resume.asciidoc
     output: _build/pages/resume.adoc
+# end::parse-resume-example-snippet[]
 
+# tag::render-resume-example-snippet[]
 - stage: render-resume
   action: render
   message: Rendering resumé files.
@@ -27,6 +30,7 @@
       pdf-fontsdir: theme/fonts
       imagesdir: assets/images
       safe: unsafe
+# end::render-resume-example-snippet[]
 
 - stage: build-lists
   action: parse
@@ -86,6 +90,23 @@
   source: data/glossary.yml
   target: _build/book-cw/_data
 
+- stage: migrate-data
+  action: migrate
+  source: data
+  target: _build
+
+- stage: copy-resume-template
+  action: migrate
+  source: _templates/liquid/resume.asciidoc
+  target: _build/assets/includes
+  reason: so we can access snippets for embedding in a blog entry explaining resumé parsing
+
+- stage: migrate-global-config
+  action: migrate
+  source: _configs/build-global.yml
+  target: _build/assets/includes
+  reason: so we can access snippes for embedding in docs explaining this build
+
 - stage: copy-assets-pdf
   action: migrate
   message: Copying global assets for PDF build.
@@ -128,18 +149,16 @@
   - template: _templates/liquid/notice.plaintext
     output: _build/NOTICE
 
+# tag::build-jekyll-example-snippet[]
 - stage: build-site
   action: render
-  data: _configs/asciidoctor.yml
   builds:
     - backend: jekyll
       properties:
         files:
           - _configs/jekyll.yml
-        arguments:
-          destination: _build/publish/site/
-      attributes:
-        portal_term: Portal
+          - _configs/asciidoctor.yml
+# end::build-jekyll-example-snippet[]
 
 - stage: migrate-redirects
   action: migrate
