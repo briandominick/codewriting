@@ -1,7 +1,7 @@
 = Static Content Derived from Small Data
 :page-layout: post
 :page-permalink: blog-data-driven-static-resume
-:page-date: 2019-01-06 18:22
+:page-date: 2019-01-08 18:22
 :page-comments: true
 :page-external-url:
 :page-categories: [small-data]
@@ -33,7 +33,7 @@ include::data/dominick.yml[tags="example-snippet"]
 ----
 
 This data gets parsed by a link:https://shopify.github.io/liquid/[Liquid template] written to intermingle the AsciiDoc-formatted data with more AssciiDoc code.
-The link:https://raw.githubusercontent.com/briandominick/codewriting/master/_templates/liquid/resume.asciidoc[source file] has he complete goods.
+The complete Liquid-formatted link:https://raw.githubusercontent.com/briandominick/codewriting/master/_templates/liquid/resume.asciidoc[source file] has the complete goods.
 
 .From resume.asciidoc -- Template mixes dynamic Liquid with static AsciiDoc to generate AsciiDoc source
 [source,liquid]
@@ -84,6 +84,7 @@ Now that we see what happened, let's explore how it was _scripted_.
 
 All of this activity is coordinated by link:https://www.ajyl.org/liquidoc[LiquiDoc], my free, open-source utility for combining AsciiDoc, YAML, and Liquid to build rich-text documents in many editions and formats, all from the same source.
 The Codewriting project's LiquiDoc link:https://github.com/briandominick/codewriting/blob/master/_configs/build-global.yml[configuration file (config)] for this site is pretty long, but essentially three stages build both the HTML and PDF versions.
+Let's look at the first such stage.
 
 .From _configs/build-global.yml -- LiquiDoc config file resume parsing stage
 [source,yaml]
@@ -108,7 +109,7 @@ When building the PDF version of the resumé, I override some of these variables
 include::pages/resume.adoc[tags="key-settings-pdf"]
 ----
 
-Next, our config tells LiquiDoc to actually render the PDF version of the output from this prebuilt source file.
+Back to the config, the next stage instructs LiquiDoc to actually render the PDF version of the output from this prebuilt source file.
 
 .From _configs/build-global.yml -- LiquiDoc config file resume PDF render stage
 [source,yaml]
@@ -116,10 +117,10 @@ Next, our config tells LiquiDoc to actually render the PDF version of the output
 include::assets/includes/build-global.yml[tags="render-resume-example-snippet"]
 ----
 
-This instructs performing a very simple Asciidoctor conversion using the Prawn-integrating link:https://github.com/asciidoctor/asciidoctor-pdf[PDF backend extension].
+This block invokes a very simple Asciidoctor conversion using the Prawn-integrating link:https://github.com/asciidoctor/asciidoctor-pdf[PDF backend extension].
 
 The resulting PDF artifact will later be copied into the Jekyll-generated website, but first we have to perform that Jekyll generation.
-The LiquiDoc config has us covred here, as well.
+The LiquiDoc config has us covered here, as well.
 
 .From _configs/build-global.yml -- Jekyll build execution stage
 [source,yaml]
@@ -127,13 +128,18 @@ The LiquiDoc config has us covred here, as well.
 include::assets/includes/build-global.yml[tags="build-jekyll-example-snippet"]
 ----
 
-This section of the config script instructs Jekyll to generate a site, one page of which will be the HTML edition of the resumé, as dictated by the `_build/pages/resume.adoc` file's frontmatter settings referenced above.
+This section of the config script instructs Jekyll to generate a site, one page of which will be the HTML version of the resumé, as dictated by the `_build/pages/resume.adoc` file's frontmatter settings referenced above.
 This conversion does not require a specific instruction, as Jekyll renders all files in `_build/pages/` by default, and this prebuil file is after all just another Jekyll-ready AsciiDoc file like link:https://github.com/briandominick/codewriting/tree/master/pages[all its siblings].
 
 == Conclusion
 
 These are all the main features of an AJYL platform: small data in YAML flat files, content in AsciiDoc, templating and transformation with Liquid, and Jekyll to pull it all together.
-While a resumé is surely a novel implementation, imagine what this kind of flexibility can do for conveying complex product data in numerous permutations of editions and output formats.
+
+The rest of the Codewriting site uses similar techniques to massage data and content together, either during prebuilding with Liquid or when rendering final artifacts.
+Asciidoctor uses parameters (AsciiDoc attributes) when converting AsciiDoc files to HTML, PDF, and other formats.
+Also during the render build, Jekyll engages Liquid's template engine to construct the site's HTML (or even to link:https://github.com/asciidoctor/jekyll-asciidoc#enabling-liquid-preprocessing[preprocess AsciiDoc content files containing Liquid markup]).
+
+While a resumé is surely a novel implementation of this complex and powerful technology stack, imagine what this kind of flexibility can do for conveying complex product data in numerous permutations of editions and output formats.
 
 [#sniptip]
 [TIP]
