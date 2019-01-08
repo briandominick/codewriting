@@ -36,7 +36,7 @@ This data gets parsed by a link:https://shopify.github.io/liquid/[Liquid templat
 The complete Liquid-formatted link:https://raw.githubusercontent.com/briandominick/codewriting/master/_templates/liquid/resume.asciidoc[source file] has the complete goods.
 
 .From resume.asciidoc -- Template mixes dynamic Liquid with static AsciiDoc to generate AsciiDoc source
-[source,liquid]
+[source]
 ----
 include::assets/includes/resume.asciidoc[tags="employment"]
 ----
