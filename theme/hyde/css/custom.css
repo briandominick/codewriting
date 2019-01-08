@@ -149,4 +149,9 @@ article {
 
 pre.highlight {
   margin-top: 0;
+  overflow: auto;
+  word-break: keep-all;
+  word-wrap: normal;
+  white-space: pre;
+  border: 2px solid #d3d3d3;
 }

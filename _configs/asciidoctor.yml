@@ -3,6 +3,8 @@ asciidoctor:
   base_dir: :source
   includes_dir: _build/assets/includes
   attributes:
+    stylesdir: theme/hyde/css
+    source-highlighter: pygments
     icons: font
     safe: :unsafe
     codewriting_source_uri: https://github.com/briandominick/codewriting
