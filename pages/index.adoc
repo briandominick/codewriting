@@ -78,7 +78,7 @@ $ bundle exec liquidoc -c config/build-global.yml
 +
 Detailed instructions in the link:readme#build[README].
 
-* If you are just feeling lazy, link:https://github.com/briandominick/codewriting/releases/latest[download the latest compiled PDF].
+* If you are just feeling lazy, link:https://github.com/briandominick/codewriting/releases/latest[download the latest compiled PDF] or check out the link:{codewriting_www_uri}/codewriting-book-draft.html[latest HTML draft].
 
 ****
 

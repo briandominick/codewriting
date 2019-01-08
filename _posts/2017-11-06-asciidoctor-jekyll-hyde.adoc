@@ -22,7 +22,7 @@ In this blog, I will journal some of my technical experiments in documentation t
 All of this tooling is FOSS, and it's all written in Ruby, which I started learning some months back in order to hack a complex docs build toolchains.
 Now I'm looking for new projects and challenges, which i hope to trace here.
 
-Not that I'm hacking or extending it, the other major tool all of this depends on is Git -- also sourced in Ruby.
+Not that I'm hacking or extending it, the other major tool all of this depends on is Git.
 
 If you're a technical documentarian of any kind, consider checking out my book _Codewriting_.
 I've set up an link:/blog-feed.xml[RSS feed], and I'll be posting links on my nascent Twitter account (link:https://twitter.com/_codewriter[@_codewriter]) as soon as I get my shit together.

@@ -9,6 +9,7 @@
 :toc: auto
 :chapter-label: Chapter
 :text-alignment: left
+:source-highlighter: highlightjs
 // include title from README, since I keep changing it
 include::./README.adoc[lines=1]
 Brian Dominick <badominick@gmail.com>
