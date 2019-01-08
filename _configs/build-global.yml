@@ -158,6 +158,9 @@
         files:
           - _configs/jekyll.yml
           - _configs/asciidoctor.yml
+      attributes:
+        stylesdir: theme/hyde/css
+        source-highlighter: highlightjs
 # end::build-jekyll-example-snippet[]
 
 - stage: migrate-redirects

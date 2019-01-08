@@ -153,5 +153,5 @@ pre.highlight {
   word-break: keep-all;
   word-wrap: normal;
   white-space: pre;
-  border: 2px solid #d3d3d3;
+  padding: 0;
 }
