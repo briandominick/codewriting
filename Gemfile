@@ -9,6 +9,7 @@ gem 'logger'
 gem 'crack'
 gem 'tilt'
 gem 'haml'
+gem 'pygments.rb'
 
 group :asciidoctor_plugins do
   gem 'asciidoctor-pdf'
