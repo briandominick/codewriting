@@ -7,7 +7,7 @@ posts:
       dates:
         start: 2017-10-01
         end:
-      description: maintain open-source technical documentation platform (LiquiDoc CMF); install, instruct, and maintain docs platforms for excellent engineering organizations
+      description: maintain open-source technical documentation platform (https://www.ajyl.org/liquidoc-cmf[LiquiDoc CMF]); install, instruct, and maintain docs platforms for excellent engineering organizations
       url: https://codewriting.org
     - org: Rocana (formerly ScalingData)
       titles:

@@ -10,3 +10,4 @@ presentations/
 _notes/
 blog/
 *.docx#
+.DS_Store

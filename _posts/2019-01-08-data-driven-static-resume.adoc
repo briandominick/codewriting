@@ -10,19 +10,17 @@
 ---
 
 I've done something weird with a very common document most people prefer not to fuss with.
-Really just as a demonstration of the power of an AJYL toolchain--employing AsciiDoc, JAMstack/Jekyll, YAML, and Liquid--my professional resumé is generated along with link:https://www.codewriting.org[my site] and the _Codewriting_ book when performing a complete build of this repo.
+Really just as a demonstration of the power of an AJYL toolchain--employing AsciiDoc, JAMstack/Jekyll, YAML, and Liquid--my professional resumé is generated along with link:https://www.codewriting.org[codewriting.org] and the _Codewriting_ book when performing a complete build of the repo that generates this very site.
 
-If you are not expressly trying to prove you know clever ways to generate disparate output from a common source to earn a crust, this may well be overkill for you.
+Now, if you are not expressly trying to prove you know clever ways to generate disparate output from a common source to earn a crust, this may well be overkill for you.
 Nevertheless, allow me to use it as an example of what can be done with a docs-as-code platform.
 First, take a quick look at my resumé in link:https://www.codewriting.org/brian-dominick-resume[HTML] as well as the link:https://www.codewriting.org/assets/files/brian-dominick-resume.pdf[PDF].
-The content doesn't matter much, just note that it's largely the same matter with some variance between the HTML and PDF versions.
+The content doesn't matter much, just note that it's largely the same matter with some variance between the HTML and PDF versions, derived from DRY (don't repeat yourself) source.
 
 == The Sources
 
-The content is all sourced from the same DRY files, with no repetition of any content in the source.
-I source most of the specific content items as _small data_ objects arranged in a link:[YAML] file, with parameter values containing AsciiDoc markup.
-This is analagous to storing HTML/XML in rows of a relational database, where the field contents would perhaps be plaintext characters _tagged_ with XML-style markup.
-In our case, the datasource is a YAML data file, and the markup is lightweight AsciiDoc instead of tagged HTML/XML.
+I source most of the specific content items as _small data_ objects arranged in a link:https://idratherbewriting.com/documentation-theme-jekyll/mydoc_yaml_tutorial.html[YAML] file, with parameter values containing AsciiDoc markup.
+That is, what I call small data is stored in text files (“flat files”), similarly to how you have probably seen JSON or XML stored, only the markup is simpler and easier than either.
 
 Here is a snippet drawn directly from the link:https://github.com/briandominick/codewriting/blob/master/data/dominick.yml[single-sourced file] in the popular YAML format.
 
@@ -32,16 +30,20 @@ Here is a snippet drawn directly from the link:https://github.com/briandominick/
 include::data/dominick.yml[tags="example-snippet"]
 ----
 
-This data gets parsed by a link:https://shopify.github.io/liquid/[Liquid template] written to intermingle the AsciiDoc-formatted data with more AssciiDoc code.
-The complete Liquid-formatted link:https://raw.githubusercontent.com/briandominick/codewriting/master/_templates/liquid/resume.asciidoc[source file] has the complete goods.
+This is analogous to storing HTML/XML-formatted content objects as rows in a relational database, where the field contents would perhaps be plaintext characters _tagged_ with XML-style markup.
+In our case, the datasource is a YAML data file, and the markup is lightweight AsciiDoc instead of tagged HTML/XML.
+(Note the formatting of the linked text `pass:[https://www.ajyl.org/liquidoc-cmf[LiquiDoc CMF]]`, which in HTML would be all of `<a href="https://www.ajyl.org/liquidoc-cmf">LiquiDoc CMF</a>`.)
 
-.From resume.asciidoc -- Template mixes dynamic Liquid with static AsciiDoc to generate AsciiDoc source
+This data gets parsed by a link:https://shopify.github.io/liquid/[Liquid template] written to intermingle the AsciiDoc-formatted strings from the data file with more AssciiDoc markup, including some of the AsciiDoc-formatted content featured between the various lists that make up my resumé.
+The complete Liquid-formatted link:https://raw.githubusercontent.com/briandominick/codewriting/master/_templates/liquid/resume.asciidoc[source file] has the rest of the goods.
+
+.From resume.asciidoc -- Template mixes Liquid with AsciiDoc, generates new AsciiDoc source
 [source]
 ----
 include::assets/includes/resume.asciidoc[tags="employment"]
 ----
 
-Because Liquid markup is always a mix of at least two markup languages (Liquid itself and your target format), it gets pretty ugly.
+Because Liquid templates are usually a mix of at least two markup languages (Liquid markup itself plus your target format), they can get pretty ugly.
 Such is the nature of content templating.
 Nevertheless, we can generate such elegant code this way.
 
@@ -49,7 +51,7 @@ Don't worry about the details of this code.
 Basically what it does is loop through the `posts.paid` array in the data file, creating an entry for each item it comes across (objects describing my past paid gigs).
 Then it expresses the details of that object, mixing it in with some AsciiDoc markup you'll also recognize in the output.
 
-Since that final, prebuilt source is generated before this blog, I can also access the resuling file _in this blog post_.
+Since that final, prebuilt source is generated before this blog, I can also access the resulting file _in this blog post_.
 (See the <<sniptip,tip admonition>> at the end of this post.)
 This next snippet is drawn directly from the result of pressing our AsciiDoc-formatted small data with a AsciiDoc-oriented Liquid template to generate new AsciiDoc source.
 
