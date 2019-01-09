@@ -1,34 +1,34 @@
 = Brian Dominick, Codewriter
-// Jekyll settings
 // tag::key-settings-jekyll[]
+// Jekyll-specific settings
 :page-layout: resume
 :page-permalink: /brian-dominick-resume
 :edition: html
 :otheredition: PDF
 :otheredition_uri: http://codewriting.org/assets/files/brian-dominick-resume.pdf
-// end::key-settings-jekyll[]
 :includes_path: assets/includes
 :separator:
 :header_cols: 1
 :doctitle: Brian Dominick, Codewriter
 :contact: link:http://codewriting.org/contact[contact Brian]
 :contact_table_width: 100%
+// end::key-settings-jekyll[]
 :codewriting_source_uri: https://github.com/briandominick/codewriting
 :codewriting_www_uri: http://codewriting.org
 :liquidoc_source_uri: https://github.com/briandominick/liquidoc-gem
-// PDF overrides
 ifdef::backend-pdf[]
 // tag::key-settings-pdf[]
+// PDF override settings
 :notitle:
 :edition: PDF
 :otheredition: HTML
 :otheredition_uri: http://codewriting.org/brian-dominick-resume
-// end::key-settings-pdf[]
 :includes_path: ../assets/includes
 :contact: 315-254-0342 / badominick@gmail.com
 :contact_table_width: 80%
 :separator: |
 :header_cols: 1,3
+// end::key-settings-pdf[]
 endif::[]
 
 ifdef::backend-pdf[]
