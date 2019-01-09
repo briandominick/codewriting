@@ -1,4 +1,4 @@
-= Resumé-as-Code
+= Resumé-as-Code: Small Data Sourcing for Fun and Hire
 :page-layout: post
 :page-permalink: blog-data-driven-static-resume
 :page-date: 2019-01-08 18:22
@@ -7,24 +7,25 @@
 :page-categories: [small-data]
 :page-tags: [small data,Liquid,AsciiDoc,PDF,single sourcing,DRY]
 :page-author: Brian Dominick
----
+:toc: macro
 
 What better way to show off what I do as a software documentation platform developer (“DocOps engineer”) than by generating my own resumé with the technology stack I use professionally?
-Prospective clients have remarked more that this gimmick caught their attention.
-If you also earn a crust from setting up docs systems for engineering teams and the like, consider building your professional documentation from a single source to show off your skills.
+Several prospective clients have remarked on the demonstrative novelty of this approach.
+If you also earn a crust from setting up documentation environments for engineering teams and the like, consider building your professional documentation from a single source to show off your skills.
 
-With its singular source and dual link:https://www.codewriting.org/brian-dominick-resume[HTML] and link:https://www.codewriting.org/assets/files/brian-dominick-resume.pdf[PDF] output, my resumé is a simple model implementation of the AJYL docstack, consisting of AsciiDoc, Jekyll/JAMstack, YAML, and Liquid.
+With its singular source and dual link:https://www.codewriting.org/brian-dominick-resume[HTML] and link:https://www.codewriting.org/assets/files/brian-dominick-resume.pdf[PDF] output, my resumé is a simple model implementation of the AJYL tech stack, consisting of *AsciiDoc*, *Jekyll*/*JAMstack*, *YAML*, and *Liquid*.
 
-Here I will walk you through how I set it up, explaining how each component language and utility come into play.
+In this post, I will walk you through how I set it all up, explaining how each component language and utility come into play.
+
+toc::[]
 
 == The Sources
 
 These two output versions are sourced from the exact same files, so they are always in sync.
 I don't have to remember to update two documents whenever I make a change.
 
-Most of the specific content items are stored as _small data_ objects arranged in a link:https://idratherbewriting.com/documentation-theme-jekyll/mydoc_yaml_tutorial.html[YAML] file, with parameter values containing link:https://asciidoctor.org/docs/what-is-asciidoc/[AsciiDoc] markup.
-That is, the stuff you might store in a database or at least a spreadsheet, I store in “flat” text files, similarly to how you have probably seen JSON or XML used.
-YAML markup is simpler and easier to use than both these, however, since they were designed for machines to read.
+Most of the specific content items are stored as _small data_ objects arranged in a link:https://idratherbewriting.com/documentation-theme-jekyll/mydoc_yaml_tutorial.html[YAML] file, similarly to fields in a database.
+A small-data file is simply a text document containing keys and values structured such that both people and machines can modify and consume the organized information.
 
 Here is a YAML snippet drawn directly from the link:https://github.com/briandominick/codewriting/blob/master/data/dominick.yml[single-sourced file].
 
@@ -34,13 +35,14 @@ Here is a YAML snippet drawn directly from the link:https://github.com/briandomi
 include::data/dominick.yml[tags="example-snippet"]
 ----
 
-This is analogous to storing content objects as rows in a relational database, where the field contents would perhaps be plaintext characters _tagged_ with HTML or another brand of XML markup.
-In our case, the datasource is a YAML data file, and the markup is lightweight AsciiDoc instead of tagged HTML/XML.
-(Note the formatting of the linked text `pass:[https://www.ajyl.org/liquidoc-cmf[LiquiDoc CMF]]`, which in HTML would be all of `<a href="https://www.ajyl.org/liquidoc-cmf">LiquiDoc CMF</a>`.)
+If you inspect the link:https://github.com/briandominick/codewriting/blob/master/data/dominick.yml[whole file], you will see it contains several clusters of data, each analogous to a table in a database.
+One beauty of maintaining small data in flat files is that you can build an entire, perfectly portable database with a text editor in mere minutes.
+
+In this case, parameter values contain link:https://asciidoctor.org/docs/what-is-asciidoc/[AsciiDoc] markup.
+Notice on the first line beginning with a `destination:` key, the value text contains AsciiDoc hyperlink markup.
 
 This data gets parsed with a link:https://github.com/Shopify/liquid/wiki[Liquid] template.
-This template is designed to weave those AsciiDoc-formatted strings from the data file with more AsciiDoc markup.
-The complete Liquid-formatted link:https://raw.githubusercontent.com/briandominick/codewriting/master/_templates/liquid/resume.asciidoc[source file] has the rest of the goods.
+This particular Liquid template (link:https://raw.githubusercontent.com/briandominick/codewriting/master/_templates/liquid/resume.asciidoc[see complete source]) weaves those AsciiDoc-formatted strings from the data file with more AsciiDoc markup.
 
 .From resume.asciidoc -- Template mixes Liquid with AsciiDoc, generates new AsciiDoc source
 [source]
@@ -53,21 +55,21 @@ Such is the nature of content templating.
 Nevertheless, we can generate such elegant code this way.
 
 Don't worry about the details of this code.
-Basically what it does is loop through the `posts.paid` array in the data file, creating an entry for each item it comes across (objects describing my past paid gigs).
-Then it expresses the details of that object, mixing it in with some AsciiDoc markup you'll also recognize in the output.
+Basically what it does is iterate (“loop”) through the `posts.paid` array in the data file, creating an entry for each item it comes across (objects describing my past paid gigs).
+As it churns, Liquid expresses the details of each object, mixing it in with some AsciiDoc markup you'll also recognize in the output just below.
 
-Since that final, prebuilt source is generated before this blog, I can also access the resulting file _in this blog post_.
-(See the <<sniptip,tip admonition>> at the end of this post.)
-This next snippet is drawn directly from the result of pressing our AsciiDoc-formatted small data with a AsciiDoc-oriented Liquid template to generate new AsciiDoc source.
-
-.From _build/pages/resume.adoc -- AsciiDoc source file built by above procedure
+.From _build/pages/resume.adoc -- AsciiDoc source file output after parsing
 [source,asciidoc]
 ----
 include::pages/resume.adoc[tags="example-snippet"]
 ----
 
 The above snippet includes just the AsciiDoc generated for the first two entries, though the `_built/pages/resume.adoc` file is a complete AsciiDoc document source.
-(To see the whole file, you would have to clone and build the Codewriting repo, generating a copy into the `_build/pages/` directory.)
+(Since this file is built and thus not tracked in the Git repository, to see the whole file you would have to clone and build the Codewriting repo, generating a copy into the `_build/pages/` directory.)
+
+[TIP]
+Since that final, prebuilt source is generated before this blog, the above snippet is directly sourced from the resulting file, accessed while this blog post was being rendered and ensuring it always accurately reflects the _current_ state of the underlying data.
+(See the <<sniptip,bonus explainer>> at the end of this post.)
 
 Finally, I render that AsciiDoc file as a PDF document using the killer link:http://prawnpdf.org/api-docs/2.0/[Prawn PDF utility], after which the link:https://jekyllrb.com/[Jekyll static site generator] spits it out as HTML.
 Both of these processes invoke the link:https://github.com/asciidoctor/asciidoctor[Asciidoctor] rendering engine, as detailed below in <<the-build>>.
@@ -103,7 +105,7 @@ Let's look at the first such stage.
 include::assets/includes/build-global.yml[tags="parse-resume-example-snippet"]
 ----
 
-Here LiquiDoc is instructed to parse the `dominick.yml` data against the `resume.asciidoc` template, generating `resume.adoc`, an AsciiDoc source file containing Jekyll frontmatter.
+Here LiquiDoc is instructed to parse the `dominick.yml` data with the `resume.asciidoc` template, generating `resume.adoc`, an AsciiDoc source file containing Jekyll frontmatter.
 
 .From _build/pages/resume.adoc -- Key Jekyll frontmatter params and content variables
 [source,asciidoc]
@@ -134,6 +136,7 @@ A customized link:https://github.com/briandominick/codewriting/blob/master/theme
 The resulting PDF artifact will later be copied into the Jekyll-generated website, but first we have to perform that Jekyll generation.
 The LiquiDoc config has us covered here, as well.
 
+[[example-config-jekyll]]
 .From _configs/build-global.yml -- Jekyll build execution stage
 [source,yaml]
 ----
@@ -153,12 +156,13 @@ Also during the render build, Jekyll engages Liquid's template engine to constru
 
 While a resumé is merely a novel implementation of this varied and powerful technology stack, imagine what this kind of flexibility can do for conveying complex product data in numerous permutations of editions and output formats.
 
-[#sniptip]
-[TIP]
---
+[[sniptip]]
+== Bonus: How this Post was Made
+
 All of the snippets included in this blog entry are derived from the original source.
-This blog is sourced in AsciiDoc, enabling dynamic embedding (_inclusion_) of content from the codebase itself.
-For instance, look at the source that renders the final code listing above.
+The link:https://www.codewriting.org/blog[Code the Docs blog] is sourced in AsciiDoc, enabling dynamic embedding (_inclusion_) of content from the codebase itself.
+
+For instance, look at the source that renders the final code listing above (<<example-config-jekyll>>).
 
 [source,asciidoc]
 --------
@@ -169,5 +173,12 @@ For instance, look at the source that renders the final code listing above.
 ----
 --------
 
-The file `build-global.yml` is tagged with comments indicating what to snip when this line is called.
---
+The link:https://github.com/briandominick/codewriting/blob/master/_configs/build-global.yml[original config file] `_configs/build-global.yml` is tagged with comments indicating what to snip when this line is called.
+This file is then copied into the build directory, precisely in order to be available for snippet inclusion like this.
+
+Note advantage over conventional blogging, which entails copying and pasting source code into a post that gets saved in a database (and forgotten).
+Once you've duplicated the source, it becomes a divergence risk.
+How many bloggers do you know who would update code samples in years-old posts to ensure they stay current?
+(Not me, I must admit.)
+
+Imagine if your user docs always reflected current code examples and other canonical information, drawn straight from the product source?
