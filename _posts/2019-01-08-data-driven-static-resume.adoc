@@ -101,7 +101,7 @@ Now that we see what happened, let's explore how it was _scripted_.
 All of this activity is coordinated by link:https://www.ajyl.org/liquidoc[*LiquiDoc*], my free, open-source utility for combining AsciiDoc, YAML, and Liquid with Jekyll and other link:https://jamstack.org/[JAMstack services and utilities].
 LiquiDoc is a nascent API for the AJYL docstack, designed for building rich-text documents in many editions and formats, all from the same source, by invoking upstream tools (such as Asciidoctor, Liquid, and Jekyll processing engines).
 
-The Codewriting project's LiquiDoc link:https://github.com/briandominick/codewriting/blob/master/_configs/build-global.yml[build configuration file (config)] for this site is pretty long, but essentially three relevant stages are generate both the HTML and PDF versions of the resumé.
+The Codewriting project's LiquiDoc link:https://github.com/briandominick/codewriting/blob/master/_configs/build-global.yml[build configuration file (config)] for this site is pretty long, but essentially three relevant stages generate both the HTML and PDF versions of the resumé.
 Let's look at the first such stage.
 
 .From _configs/build-global.yml -- LiquiDoc config file resume parsing stage
@@ -114,7 +114,7 @@ Here LiquiDoc is instructed to parse the `dominick.yml` data with the `resume.as
 This generates `resume.adoc`, an AsciiDoc source file containing its own output instructions, saved to the ephemeral `_build/pages/` directory.
 
 Whenever the `resume.adoc` file is processed by Asciidoctor, header information (“frontmatter” in Jekyll parlance) designates the output settings and variables.
-First, it establishes Jekyll settings.
+First, it establishes settings and default variables, which will be used in the Jekyll site generation.
 
 .From _build/pages/resume.adoc -- Key Jekyll frontmatter settings and content variables
 [source,asciidoc]
@@ -122,7 +122,7 @@ First, it establishes Jekyll settings.
 include::pages/resume.adoc[tags="key-settings-jekyll"]
 ----
 
-This built file's header contains still more information for the PDF output.
+This built file's header also contains information for the PDF rendering.
 
 .From _build/pages/resume.adoc -- Key PDF settings and content variables
 [source,asciidoc]
@@ -132,11 +132,10 @@ include::pages/resume.adoc[tags="key-settings-pdf"]
 \endif::backend-pdf[]
 ----
 
-These settings are conditional.
-The first and last lines ensure these settings are only applied during rendering procedures during which the `backend-pdf` setting (“attribute” in AsciiDoc parlance) is defined, but they will replace any previously set parameters with the same names.
+The first and last lines are conditionals; they ensure the enveloped settings are only applied during rendering procedures if the `backend-pdf` setting (“attribute” in AsciiDoc parlance) is defined, but they will replace any previously set parameters with the same names.
 
 Which gets us back to the LiquiDoc config.
-The next stage instructs LiquiDoc to actually render the PDF version of the output from our prebuilt source file (`_build/pages/resume.adoc`).
+The next stage instructs LiquiDoc to actually render the PDF version of the output from the source file prebuilt in the last stage (`_build/pages/resume.adoc`).
 
 .From _configs/build-global.yml -- LiquiDoc config file resume PDF render stage
 [source,yaml]
@@ -158,7 +157,7 @@ include::assets/includes/build-global.yml[tags="build-jekyll-example-snippet"]
 ----
 
 This section of the config script instructs Jekyll to generate a site, one page of which will be the HTML version of the resumé, as dictated by the `_build/pages/resume.adoc` file's frontmatter settings referenced above.
-This conversion does not require a specific instruction, as Jekyll renders all files in `_build/pages/` by default, and this prebuil file is after all just another Jekyll-ready AsciiDoc file like link:https://github.com/briandominick/codewriting/tree/master/pages[all its siblings].
+This conversion does not require a specific instruction, as Jekyll renders all files in `_build/pages/` by default, and this prebuilt file is after all just another Jekyll-ready AsciiDoc file like link:https://github.com/briandominick/codewriting/tree/master/pages[all its siblings].
 
 == Conclusion
 
@@ -167,6 +166,7 @@ These are all the main features of an AJYL platform: small data in YAML flat fil
 The rest of the Codewriting site uses similar techniques to massage data and content together, either during prebuilding with Liquid or when rendering final artifacts.
 Asciidoctor uses parameters (AsciiDoc attributes) when converting AsciiDoc files to HTML, PDF, and other formats.
 Also during the render build, Jekyll engages Liquid's template engine to construct the site's HTML (or even to link:https://github.com/asciidoctor/jekyll-asciidoc#enabling-liquid-preprocessing[preprocess AsciiDoc content files containing Liquid markup]).
+All this complementarity is key to the AJYL environment.
 
 While a resumé is merely a novel implementation of this varied and powerful technology stack, imagine what this kind of flexibility can do for conveying complex product data in numerous permutations of editions and output formats.
 
@@ -189,10 +189,11 @@ For instance, look at the source that renders the final code listing above (<<ex
 --------
 
 The link:https://github.com/briandominick/codewriting/blob/master/_configs/build-global.yml[original config file] (`_configs/build-global.yml`) is tagged with comment code indicating what to snip for inclusion into another file.
-The AsciiDoc `include::` macro includes a request for the section of code tagged `build-jekyll-example-snippet`.
+(This file is copied into the ephemeral build directory to make it available in this way, hence we are technically reading from a clone saved to `_build/assets/includes/` early in the build procedure.)
+In the blog post source, the AsciiDoc `include::` macro includes a request for the section of code tagged `build-jekyll-example-snippet`.
 
 Note the advantage over conventional blogging, which entails copying and pasting source code samples into a post that gets saved in a database (and forgotten).
-Once you've duplicated the source, it becomes a divergence risk.
+Once you've duplicated the source, it becomes a divergence risk; unless you update any docs referencing it, they will be inaccurate.
 How many bloggers do you know who update code samples in years-old posts to ensure they stay current?
 (Not me, I must admit.)
 
