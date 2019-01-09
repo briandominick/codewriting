@@ -1,4 +1,4 @@
-= Static Content Derived from Small Data
+= Deriving Static Content Dynamically from Small Data
 :page-layout: post
 :page-permalink: blog-data-driven-static-resume
 :page-date: 2019-01-08 18:22
@@ -10,19 +10,23 @@
 ---
 
 I've done something weird with a very common document most people prefer not to fuss with.
-Really just as a demonstration of the power of an AJYL toolchain--employing AsciiDoc, JAMstack/Jekyll, YAML, and Liquid--my professional resumé is generated along with link:https://www.codewriting.org[codewriting.org] and the _Codewriting_ book when performing a complete build of the repo that generates this very site.
+Really just as a demonstration of the power of an AJYL technology stack--employing AsciiDoc, JAMstack/Jekyll, YAML, and Liquid--my professional resumé is generated along with link:https://www.codewriting.org[codewriting.org] and the _Codewriting_ book when performing a complete build of the repo that generates this very site.
 
 Now, if you are not expressly trying to prove you know clever ways to generate disparate output from a common source to earn a crust, this may well be overkill for you.
 Nevertheless, allow me to use it as an example of what can be done with a docs-as-code platform.
 First, take a quick look at my resumé in link:https://www.codewriting.org/brian-dominick-resume[HTML] as well as the link:https://www.codewriting.org/assets/files/brian-dominick-resume.pdf[PDF].
-The content doesn't matter much, just note that it's largely the same matter with some variance between the HTML and PDF versions, derived from DRY (don't repeat yourself) source.
+The content doesn't matter; just note that it's largely the same, with some variance between the HTML and PDF versions.
 
 == The Sources
 
-I source most of the specific content items as _small data_ objects arranged in a link:https://idratherbewriting.com/documentation-theme-jekyll/mydoc_yaml_tutorial.html[YAML] file, with parameter values containing AsciiDoc markup.
-That is, what I call small data is stored in text files (“flat files”), similarly to how you have probably seen JSON or XML stored, only the markup is simpler and easier than either.
+These two output versions are sourced from the exact same files, so they are always in sync.
+I don't have to remember to update two documents whenever I make a change.
 
-Here is a snippet drawn directly from the link:https://github.com/briandominick/codewriting/blob/master/data/dominick.yml[single-sourced file] in the popular YAML format.
+Most of the specific content items are stored as _small data_ objects arranged in a link:https://idratherbewriting.com/documentation-theme-jekyll/mydoc_yaml_tutorial.html[YAML] file, with parameter values containing AsciiDoc markup.
+That is, the stuff you might store in a database or at least a spreadsheet, I store in “flat” text files, similarly to how you have probably seen JSON or XML used.
+YAML markup is simpler and easier to use than both, however, since they are designed for machines to read.
+
+Here is a YAML snippet drawn directly from the link:https://github.com/briandominick/codewriting/blob/master/data/dominick.yml[single-sourced file].
 
 .From data/dominick.yml -- Resumé small data source file snippet
 [source,yaml]
@@ -30,11 +34,11 @@ Here is a snippet drawn directly from the link:https://github.com/briandominick/
 include::data/dominick.yml[tags="example-snippet"]
 ----
 
-This is analogous to storing HTML/XML-formatted content objects as rows in a relational database, where the field contents would perhaps be plaintext characters _tagged_ with XML-style markup.
+This is analogous to storing content objects as rows in a relational database, where the field contents would perhaps be plaintext characters _tagged_ with HTML or another brand of XML markup.
 In our case, the datasource is a YAML data file, and the markup is lightweight AsciiDoc instead of tagged HTML/XML.
 (Note the formatting of the linked text `pass:[https://www.ajyl.org/liquidoc-cmf[LiquiDoc CMF]]`, which in HTML would be all of `<a href="https://www.ajyl.org/liquidoc-cmf">LiquiDoc CMF</a>`.)
 
-This data gets parsed by a link:https://shopify.github.io/liquid/[Liquid template] written to intermingle the AsciiDoc-formatted strings from the data file with more AssciiDoc markup, including some of the AsciiDoc-formatted content featured between the various lists that make up my resumé.
+This data gets parsed with a link:https://shopify.github.io/liquid/[Liquid template] written to intertwine the AsciiDoc-formatted strings from the data file with more AssciiDoc markup, including some of the AsciiDoc-formatted content featured between the various lists that make up my resumé.
 The complete Liquid-formatted link:https://raw.githubusercontent.com/briandominick/codewriting/master/_templates/liquid/resume.asciidoc[source file] has the rest of the goods.
 
 .From resume.asciidoc -- Template mixes Liquid with AsciiDoc, generates new AsciiDoc source
@@ -64,7 +68,8 @@ include::pages/resume.adoc[tags="example-snippet"]
 The above snippet includes just the AsciiDoc generated for the first two entries, though the `pages/resume.adoc` file is a complete AsciiDoc document source.
 (To see the whole file, you would have to clone and build the Codewriting repo, generating a copy into the `_build/pages/` directory.)
 
-Finally, I render that AsciiDoc file through Asciidoctor and build it into a page with link:https://jekyllrb.com/[Jekyll static-site generator], as well as a PDF document using the killer link:http://prawnpdf.org/api-docs/2.0/[Prawn PDF utility].
+Finally, I render that AsciiDoc file as a PDF document using the killer link:http://prawnpdf.org/api-docs/2.0/[Prawn PDF utility], after which the link:https://jekyllrb.com/[Jekyll static site generator] spits it out as HTML.
+Both of these processes invoke the Asciidoctor rendering engine, as detailed below in <<the-build>>.
 
 == The Output
 
@@ -80,6 +85,7 @@ image::assets/images/screenshot-detail_resume-employment-html.png[]
 image::assets/images/screenshot-detail_resume-employment-pdf.png[]
 ====
 
+[[the-build]]
 == The Build
 
 Now that we see what happened, let's explore how it was _scripted_.
@@ -96,7 +102,7 @@ include::assets/includes/build-global.yml[tags="parse-resume-example-snippet"]
 
 Here LiquiDoc is instructed to parse the `dominick.yml` data against the `resume.asciidoc` template, generating `resume.adoc`, an AsciiDoc source file containing Jekyll frontmatter.
 
-.From pages/resume.adoc -- Key Jekyll frontmatter params and content variables
+.From _build/pages/resume.adoc -- Key Jekyll frontmatter params and content variables
 [source,asciidoc]
 ----
 include::pages/resume.adoc[tags="key-settings-jekyll"]
@@ -141,7 +147,7 @@ The rest of the Codewriting site uses similar techniques to massage data and con
 Asciidoctor uses parameters (AsciiDoc attributes) when converting AsciiDoc files to HTML, PDF, and other formats.
 Also during the render build, Jekyll engages Liquid's template engine to construct the site's HTML (or even to link:https://github.com/asciidoctor/jekyll-asciidoc#enabling-liquid-preprocessing[preprocess AsciiDoc content files containing Liquid markup]).
 
-While a resumé is surely a novel implementation of this complex and powerful technology stack, imagine what this kind of flexibility can do for conveying complex product data in numerous permutations of editions and output formats.
+While a resumé is merely a novel implementation of this complex and powerful technology stack, imagine what this kind of flexibility can do for conveying complex product data in numerous permutations of editions and output formats.
 
 [#sniptip]
 [TIP]
