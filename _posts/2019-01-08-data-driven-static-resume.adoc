@@ -171,7 +171,7 @@ Also during the render build, Jekyll engages Liquid's template engine to constru
 While a resumé is merely a novel implementation of this varied and powerful technology stack, imagine what this kind of flexibility can do for conveying complex product data in numerous permutations of editions and output formats.
 
 [[sniptip]]
-== Bonus: How this Post was Made
+== Meta: How this Post was Made
 
 All of the snippets included in this blog entry are derived from the original source.
 The link:https://www.codewriting.org/blog[Code the Docs blog] is sourced in AsciiDoc, enabling dynamic embedding (“inclusion”) of content from the codebase itself.
