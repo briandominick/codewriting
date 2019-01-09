@@ -1,4 +1,4 @@
-= Resumé-as-Code: Small Data Sourcing for Fun and Hire
+= Resumé-as-Code: Small Data Sourcing for Fun & Profit
 :page-layout: post
 :page-permalink: blog-small-data-driven-resume
 :page-date: 2019-01-09 17:22
@@ -98,8 +98,8 @@ image::assets/images/screenshot-detail_resume-employment-pdf.png[]
 
 Now that we see what happened, let's explore how it was _scripted_.
 
-All of this activity is coordinated by link:https://www.ajyl.org/liquidoc[*LiquiDoc*], my free, open-source utility for combining AsciiDoc, YAML, and Liquid with Jekyll and other JAMstack services and utilities.
-LiquiDoc is a nacent API for the AJYL docstack, designed for building rich-text documents in many editions and formats, all from the same source, by invoking upstream tools (such as Asciidoctor, Liquid, and Jekyll processing engines).
+All of this activity is coordinated by link:https://www.ajyl.org/liquidoc[*LiquiDoc*], my free, open-source utility for combining AsciiDoc, YAML, and Liquid with Jekyll and other link:https://jamstack.org/[JAMstack services and utilities].
+LiquiDoc is a nascent API for the AJYL docstack, designed for building rich-text documents in many editions and formats, all from the same source, by invoking upstream tools (such as Asciidoctor, Liquid, and Jekyll processing engines).
 
 The Codewriting project's LiquiDoc link:https://github.com/briandominick/codewriting/blob/master/_configs/build-global.yml[build configuration file (config)] for this site is pretty long, but essentially three relevant stages are generate both the HTML and PDF versions of the resumé.
 Let's look at the first such stage.
