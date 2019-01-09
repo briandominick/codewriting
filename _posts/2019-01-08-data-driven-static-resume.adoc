@@ -1,4 +1,4 @@
-= Deriving Static Content Dynamically from Small Data
+= Resumé-as-Code
 :page-layout: post
 :page-permalink: blog-data-driven-static-resume
 :page-date: 2019-01-08 18:22
@@ -9,22 +9,22 @@
 :page-author: Brian Dominick
 ---
 
-I've done something weird with a very common document most people prefer not to fuss with.
-Really just as a demonstration of the power of an AJYL technology stack--employing AsciiDoc, JAMstack/Jekyll, YAML, and Liquid--my professional resumé is generated along with link:https://www.codewriting.org[codewriting.org] and the _Codewriting_ book when performing a complete build of the repo that generates this very site.
+What better way to show off what I do as a software documentation platform developer (“DocOps engineer”) than by generating my own resumé with the technology stack I use professionally?
+Prospective clients have remarked more that this gimmick caught their attention.
+If you also earn a crust from setting up docs systems for engineering teams and the like, consider building your professional documentation from a single source to show off your skills.
 
-Now, if you are not expressly trying to prove you know clever ways to generate disparate output from a common source to earn a crust, this may well be overkill for you.
-Nevertheless, allow me to use it as an example of what can be done with a docs-as-code platform.
-First, take a quick look at my resumé in link:https://www.codewriting.org/brian-dominick-resume[HTML] as well as the link:https://www.codewriting.org/assets/files/brian-dominick-resume.pdf[PDF].
-The content doesn't matter; just note that it's largely the same, with some variance between the HTML and PDF versions.
+With its singular source and dual link:https://www.codewriting.org/brian-dominick-resume[HTML] and link:https://www.codewriting.org/assets/files/brian-dominick-resume.pdf[PDF] output, my resumé is a simple model implementation of the AJYL docstack, consisting of AsciiDoc, Jekyll/JAMstack, YAML, and Liquid.
+
+Here I will walk you through how I set it up, explaining how each component language and utility come into play.
 
 == The Sources
 
 These two output versions are sourced from the exact same files, so they are always in sync.
 I don't have to remember to update two documents whenever I make a change.
 
-Most of the specific content items are stored as _small data_ objects arranged in a link:https://idratherbewriting.com/documentation-theme-jekyll/mydoc_yaml_tutorial.html[YAML] file, with parameter values containing AsciiDoc markup.
+Most of the specific content items are stored as _small data_ objects arranged in a link:https://idratherbewriting.com/documentation-theme-jekyll/mydoc_yaml_tutorial.html[YAML] file, with parameter values containing link:https://asciidoctor.org/docs/what-is-asciidoc/[AsciiDoc] markup.
 That is, the stuff you might store in a database or at least a spreadsheet, I store in “flat” text files, similarly to how you have probably seen JSON or XML used.
-YAML markup is simpler and easier to use than both, however, since they are designed for machines to read.
+YAML markup is simpler and easier to use than both these, however, since they were designed for machines to read.
 
 Here is a YAML snippet drawn directly from the link:https://github.com/briandominick/codewriting/blob/master/data/dominick.yml[single-sourced file].
 
@@ -38,7 +38,8 @@ This is analogous to storing content objects as rows in a relational database, w
 In our case, the datasource is a YAML data file, and the markup is lightweight AsciiDoc instead of tagged HTML/XML.
 (Note the formatting of the linked text `pass:[https://www.ajyl.org/liquidoc-cmf[LiquiDoc CMF]]`, which in HTML would be all of `<a href="https://www.ajyl.org/liquidoc-cmf">LiquiDoc CMF</a>`.)
 
-This data gets parsed with a link:https://shopify.github.io/liquid/[Liquid template] written to intertwine the AsciiDoc-formatted strings from the data file with more AssciiDoc markup, including some of the AsciiDoc-formatted content featured between the various lists that make up my resumé.
+This data gets parsed with a link:https://github.com/Shopify/liquid/wiki[Liquid] template.
+This template is designed to weave those AsciiDoc-formatted strings from the data file with more AsciiDoc markup.
 The complete Liquid-formatted link:https://raw.githubusercontent.com/briandominick/codewriting/master/_templates/liquid/resume.asciidoc[source file] has the rest of the goods.
 
 .From resume.asciidoc -- Template mixes Liquid with AsciiDoc, generates new AsciiDoc source
@@ -65,11 +66,11 @@ This next snippet is drawn directly from the result of pressing our AsciiDoc-for
 include::pages/resume.adoc[tags="example-snippet"]
 ----
 
-The above snippet includes just the AsciiDoc generated for the first two entries, though the `pages/resume.adoc` file is a complete AsciiDoc document source.
+The above snippet includes just the AsciiDoc generated for the first two entries, though the `_built/pages/resume.adoc` file is a complete AsciiDoc document source.
 (To see the whole file, you would have to clone and build the Codewriting repo, generating a copy into the `_build/pages/` directory.)
 
 Finally, I render that AsciiDoc file as a PDF document using the killer link:http://prawnpdf.org/api-docs/2.0/[Prawn PDF utility], after which the link:https://jekyllrb.com/[Jekyll static site generator] spits it out as HTML.
-Both of these processes invoke the Asciidoctor rendering engine, as detailed below in <<the-build>>.
+Both of these processes invoke the link:https://github.com/asciidoctor/asciidoctor[Asciidoctor] rendering engine, as detailed below in <<the-build>>.
 
 == The Output
 
@@ -90,8 +91,10 @@ image::assets/images/screenshot-detail_resume-employment-pdf.png[]
 
 Now that we see what happened, let's explore how it was _scripted_.
 
-All of this activity is coordinated by link:https://www.ajyl.org/liquidoc[LiquiDoc], my free, open-source utility for combining AsciiDoc, YAML, and Liquid to build rich-text documents in many editions and formats, all from the same source.
-The Codewriting project's LiquiDoc link:https://github.com/briandominick/codewriting/blob/master/_configs/build-global.yml[configuration file (config)] for this site is pretty long, but essentially three stages build both the HTML and PDF versions.
+All of this activity is coordinated by link:https://www.ajyl.org/liquidoc[LiquiDoc], my free, open-source utility for combining AsciiDoc, YAML, and Liquid with Jekyll and other JAMstack services and utilities.
+LiquiDoc is a nacent API for the AJYL docstack, designed for building rich-text documents in many editions and formats, all from the same source.
+
+The Codewriting project's LiquiDoc link:https://github.com/briandominick/codewriting/blob/master/_configs/build-global.yml[configuration file (config)] for this site is pretty long, but essentially relevant three stages build both the HTML and PDF versions of the resumé.
 Let's look at the first such stage.
 
 .From _configs/build-global.yml -- LiquiDoc config file resume parsing stage
@@ -125,7 +128,8 @@ Back to the config, the next stage instructs LiquiDoc to actually render the PDF
 include::assets/includes/build-global.yml[tags="render-resume-example-snippet"]
 ----
 
-This block invokes a very simple Asciidoctor conversion using the Prawn-integrating link:https://github.com/asciidoctor/asciidoctor-pdf[PDF backend extension].
+This block invokes a very simple Asciidoctor conversion using the link:https://github.com/asciidoctor/asciidoctor-pdf[PDF backend extension], which engages Prawn for the final conversion.
+A customized link:https://github.com/briandominick/codewriting/blob/master/theme/pdf/resume-theme.yml[YAML-formatted theme file] enforces the style of the PDF output.
 
 The resulting PDF artifact will later be copied into the Jekyll-generated website, but first we have to perform that Jekyll generation.
 The LiquiDoc config has us covered here, as well.
@@ -141,20 +145,20 @@ This conversion does not require a specific instruction, as Jekyll renders all f
 
 == Conclusion
 
-These are all the main features of an AJYL platform: small data in YAML flat files, content in AsciiDoc, templating and transformation with Liquid, and Jekyll to pull it all together.
+These are all the main features of an AJYL platform: small data in YAML flat files, content in AsciiDoc, templating and transformation with Liquid, and Jekyll to put it all together as a proper website.
 
 The rest of the Codewriting site uses similar techniques to massage data and content together, either during prebuilding with Liquid or when rendering final artifacts.
 Asciidoctor uses parameters (AsciiDoc attributes) when converting AsciiDoc files to HTML, PDF, and other formats.
 Also during the render build, Jekyll engages Liquid's template engine to construct the site's HTML (or even to link:https://github.com/asciidoctor/jekyll-asciidoc#enabling-liquid-preprocessing[preprocess AsciiDoc content files containing Liquid markup]).
 
-While a resumé is merely a novel implementation of this complex and powerful technology stack, imagine what this kind of flexibility can do for conveying complex product data in numerous permutations of editions and output formats.
+While a resumé is merely a novel implementation of this varied and powerful technology stack, imagine what this kind of flexibility can do for conveying complex product data in numerous permutations of editions and output formats.
 
 [#sniptip]
 [TIP]
 --
 All of the snippets included in this blog entry are derived from the original source.
-This blog is sourced in AsciiDoc, enabling dynamic inclusion of content from the codebase itself.
-For instance, look at the code that renders the final code listing above.
+This blog is sourced in AsciiDoc, enabling dynamic embedding (_inclusion_) of content from the codebase itself.
+For instance, look at the source that renders the final code listing above.
 
 [source,asciidoc]
 --------
@@ -164,4 +168,6 @@ For instance, look at the code that renders the final code listing above.
 \include::assets/includes/build-global.yml[tags="build-jekyll-example-snippet"]
 ----
 --------
+
+The file `build-global.yml` is tagged with comments indicating what to snip when this line is called.
 --
