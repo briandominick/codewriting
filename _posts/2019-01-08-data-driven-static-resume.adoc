@@ -9,11 +9,11 @@
 :page-author: Brian Dominick
 :toc: macro
 
-What better way to show off what I do as a software documentation platform developer (“DocOps engineer”) than by generating my own resumé with the technology stack I use professionally?
+What better way to show off what I do as a documentation platform developer (“DocOps engineer”) than by generating my own resumé with the technology stack I use professionally?
 Several prospective clients have remarked on the demonstrative novelty of this approach.
-If you also earn a crust from setting up documentation environments for engineering teams and the like, consider building your professional documentation from a single source to show off your skills.
+If you also earn a crust from setting up documentation environments for engineering teams and the like, consider building your professional documentation from code to show off your skills.
 
-With its singular source and dual link:https://www.codewriting.org/brian-dominick-resume[HTML] and link:https://www.codewriting.org/assets/files/brian-dominick-resume.pdf[PDF] output, my resumé is a simple model implementation of the AJYL tech stack, consisting of *AsciiDoc*, *Jekyll*/*JAMstack*, *YAML*, and *Liquid*.
+With its singular source and dual link:https://www.codewriting.org/brian-dominick-resume[HTML] and link:https://www.codewriting.org/assets/files/brian-dominick-resume.pdf[PDF] output, my resumé is a microcosmic model implementation of the AJYL tech stack, consisting of *AsciiDoc*, *Jekyll*/*JAMstack*, *YAML*, and *Liquid*.
 
 In this post, I will walk you through how I set it all up, explaining how each component language and utility come into play.
 
@@ -21,11 +21,8 @@ toc::[]
 
 == The Sources
 
-These two output versions (link:https://www.codewriting.org/brian-dominick-resume[HTML] | link:https://www.codewriting.org/assets/files/brian-dominick-resume.pdf[PDF]) are sourced from the exact same files, so they are always in sync;
-I do not have to remember to update two documents whenever I make a change.
-
-Most of the specific content items are stored as _small data_ objects arranged in a link:https://idratherbewriting.com/documentation-theme-jekyll/mydoc_yaml_tutorial.html[YAML] file, similarly to fields in a database.
-A small-data file is simply a text document containing keys and values structured such that both people and machines can modify and consume the organized information.
+Most of the specific content items in my resumé are stored as _small data_ objects arranged in a link:https://idratherbewriting.com/documentation-theme-jekyll/mydoc_yaml_tutorial.html[YAML] file, similar to fields in a database.
+A small-data file is simply a plaintext document made up of keys and values structured such that both people and machines can modify and consume the organized information.
 
 Here is a YAML snippet drawn directly from the link:https://github.com/briandominick/codewriting/blob/master/data/dominick.yml[single-sourced file].
 
@@ -52,7 +49,7 @@ This particular Liquid template (link:https://raw.githubusercontent.com/briandom
 include::assets/includes/resume.asciidoc[tags="employment"]
 ----
 
-Because Liquid templates are usually a mix of at least two markup languages (Liquid markup itself plus your target format), they can get pretty ugly.
+Because Liquid templates are usually a mix of at least two markup languages (Liquid markup itself plus your target format), they can feel pretty busy.
 Such is the nature of content templating.
 Nevertheless, we can generate such elegant code this way.
 
@@ -102,7 +99,7 @@ All of this activity is coordinated by link:https://www.ajyl.org/liquidoc[*Liqui
 LiquiDoc is a nascent API for the AJYL docstack, designed for building rich-text documents in many editions and formats, all from the same source, by invoking upstream tools (such as Asciidoctor, Liquid, and Jekyll processing engines).
 
 The Codewriting project's LiquiDoc link:https://github.com/briandominick/codewriting/blob/master/_configs/build-global.yml[build configuration file (config)] for this site is pretty long, but essentially three relevant stages generate both the HTML and PDF versions of the resumé.
-Let's look at the first such stage.
+Let's look at the first stage.
 
 .From _configs/build-global.yml -- LiquiDoc config file resume parsing stage
 [source,yaml]
@@ -146,8 +143,8 @@ include::assets/includes/build-global.yml[tags="render-resume-example-snippet"]
 This block invokes a very simple Asciidoctor conversion using the link:https://github.com/asciidoctor/asciidoctor-pdf[PDF backend extension], which engages Prawn for the final conversion.
 A customized link:https://github.com/briandominick/codewriting/blob/master/theme/pdf/resume-theme.yml[YAML-formatted theme file] enforces the style of the PDF output.
 
-The resulting PDF artifact will later be copied into the Jekyll-generated website, but first we have to perform that Jekyll generation.
-The LiquiDoc config has us covered here, as well.
+The resulting PDF artifact will later be copied into the Jekyll-generated website so it can be served, but first we have to build the rest of the site, including the HTML version of the resumé.
+LiquiDoc has us covered here, as well.
 
 [[example-config-jekyll]]
 .From _configs/build-global.yml -- Jekyll build execution stage
@@ -158,6 +155,8 @@ include::assets/includes/build-global.yml[tags="build-jekyll-example-snippet"]
 
 This section of the config script instructs Jekyll to generate a site, one page of which will be the HTML version of the resumé, as dictated by the `_build/pages/resume.adoc` file's frontmatter settings referenced above.
 This conversion does not require a specific instruction, as Jekyll renders all files in `_build/pages/` by default, and this prebuilt file is after all just another Jekyll-ready AsciiDoc file like link:https://github.com/briandominick/codewriting/tree/master/pages[all its siblings].
+
+After the static site is built, LiquiDoc copies the PDF file into it, and the whole thing is ready to be served.
 
 == Conclusion
 
