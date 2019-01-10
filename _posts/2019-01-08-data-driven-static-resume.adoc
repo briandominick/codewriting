@@ -156,7 +156,7 @@ include::assets/includes/build-global.yml[tags="build-jekyll-example-snippet"]
 This section of the config script instructs Jekyll to generate a site, one page of which will be the HTML version of the resumé, as dictated by the `_build/pages/resume.adoc` file's frontmatter settings referenced above.
 This conversion does not require a specific instruction, as Jekyll renders all files in `_build/pages/` by default, and this prebuilt file is after all just another Jekyll-ready AsciiDoc file like link:https://github.com/briandominick/codewriting/tree/master/pages[all its siblings].
 
-After the static site is built, LiquiDoc copies the PDF file into it, and the whole thing is ready to be served.
+After the static site is built, LiquiDoc copies the PDF resumé into it, and the whole thing is ready to be served.
 
 == Conclusion
 
