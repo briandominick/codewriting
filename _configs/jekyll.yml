@@ -16,16 +16,7 @@ layouts_dir:  _build/theme/hyde/_layouts
 images_dir:   assets/images
 includes_dir: theme/hyde/_includes
 css_dir:      theme/hyde/css
-theme_common_dir: theme/common
-
-asciidoc: {}
-asciidoctor:
-  attributes:
-    includesdir: _build/assets/includes
-    icons: font
-    safe: :unsafe
-    figure-caption:
-    codewriting_source_uri: https://github.com/briandominick/codewriting
+theme_common_dir: theme
 
 
 # Reading Files
@@ -53,6 +44,7 @@ exclude:
   - assets/js/plugins
   - assets/js/_main.js
   - assets/js/vendor
+  - assets/includes
   - Capfile
   - CHANGELOG
   - config

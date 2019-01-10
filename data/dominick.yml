@@ -1,3 +1,4 @@
+# tag::example-snippet[]
 posts:
   paid:
     - org: Codewriting
@@ -6,8 +7,9 @@ posts:
       dates:
         start: 2017-10-01
         end:
-      description: maintain open-source docs platform (LiquiDoc CMF); install, instruct, and maintain docs platforms for great engineering organizations
-    - org: Rocana, Inc (formerly ScalingData)
+      description: maintain open-source technical documentation platform (https://www.ajyl.org/liquidoc-cmf[LiquiDoc CMF]); install, instruct, and maintain docs platforms for excellent engineering organizations
+      url: https://codewriting.org
+    - org: Rocana (formerly ScalingData)
       titles:
         - Technical Documentation Manager
         - Engineering Technical Lead
@@ -15,7 +17,8 @@ posts:
         start: 2015-03-01
         end: 2017-10-01
       description: responsible for writing, editing, and managing all customer-facing technical docs, as well as overseeing all common internal documentation; create & maintain tooling to facilitate docs
-      url: http://rocana.com
+      url: https://www.crunchbase.com/organization/rocana
+# end::example-snippet[]
 
     - org: Activore (Actively Social Networks, Inc)
       titles:
@@ -36,7 +39,7 @@ posts:
       dates:
         start: 2012-01-01
         end:   2012-10-01
-      description: reorganize firm into small worker cooperative; acquire new clients; manage ongoing website development projects
+      description: reorganize firm into small worker cooperative; acquire new clients; manage ongoing website development projects; found and lead Activore startup
       url: http://agaric.com/
 
     - org: Pete's Big Mouth, Inc.

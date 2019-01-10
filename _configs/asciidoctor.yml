@@ -1,7 +1,14 @@
-chapter-label: Chapter
-experimental: true
-liquidoc_source_uri: https://github.com/DocOps/liquidoc-gem
-codewriting_source_uri: https://github.com/briandominick/codewriting
-codewriting_www_uri: https://www.codewriting.org
-ajyl_www_uri: https://www.ajyl.org
-liquidoc_www_uri: https://www.ajyl.org/liquidoc-cmf
+asciidoc: {}
+asciidoctor:
+  base_dir: :source
+  includes_dir: _build/assets/includes
+  attributes:
+    icons: font
+    safe: :unsafe
+    codewriting_source_uri: https://github.com/briandominick/codewriting
+    experimental: true
+    liquidoc_source_uri: https://github.com/DocOps/liquidoc-gem
+    codewriting_source_uri: https://github.com/briandominick/codewriting
+    codewriting_www_uri: https://www.codewriting.org
+    ajyl_www_uri: https://www.ajyl.org
+    liquidoc_www_uri: https://www.ajyl.org/liquidoc-cmf

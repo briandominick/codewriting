@@ -146,3 +146,12 @@ article {
   display: table;
   padding: 0 1rem 0 0.75rem;
 }
+
+pre.highlight {
+  margin-top: 0;
+  overflow: auto;
+  word-break: keep-all;
+  word-wrap: normal;
+  white-space: pre;
+  padding: 0;
+}
