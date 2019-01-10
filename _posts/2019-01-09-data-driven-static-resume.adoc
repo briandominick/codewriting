@@ -1,7 +1,7 @@
 = Resumé-as-Code: Small Data Sourcing for Fun & Profit
 :page-layout: post
 :page-permalink: blog-small-data-driven-resume
-:page-date: 2019-01-09 17:22
+:page-date: 2019-01-09 19:22
 :page-comments: true
 :page-external-url:
 :page-categories: [small-data]
