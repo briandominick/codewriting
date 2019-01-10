@@ -129,7 +129,8 @@ include::pages/resume.adoc[tags="key-settings-pdf"]
 \endif::backend-pdf[]
 ----
 
-The first and last lines are conditionals; they ensure the enveloped settings are only applied during rendering procedures if the `backend-pdf` setting (“attribute” in AsciiDoc parlance) is defined, but they will replace any previously set parameters with the same names.
+The first and last lines are conditionals; they ensure the enveloped settings are only applied during rendering procedures if the `backend-pdf` setting (“attribute” in AsciiDoc parlance) is defined.
+These will replace any previously set parameters with the same names.
 
 Which gets us back to the LiquiDoc config.
 The next stage instructs LiquiDoc to actually render the PDF version of the output from the source file prebuilt in the last stage (`_build/pages/resume.adoc`).
@@ -196,6 +197,6 @@ Once you've duplicated the source, it becomes a divergence risk; unless you upda
 How many bloggers do you know who update code samples in years-old posts to ensure they stay current?
 (Not me, I must admit.)
 
-I will add that this system came in handy throughout the _writing_ of this post, during which I manipulated each source multiple times in order to arrange good examples snippets.
+I will add that this system came in handy throughout the _writing_ of this post, during which I manipulated each source multiple times in order to arrange good example snippets.
 
 Imagine if your user docs always reflected current code examples and other canonical information, drawn straight from the product source.

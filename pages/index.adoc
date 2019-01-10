@@ -48,7 +48,7 @@ AJYL stands for AsciiDoc, JAMstack, YAML, and Liquid.
 For more, see the companion website about {ajyl_www_uri}[AJYL dockstack].
 
 The content source is written in a _lightweight markup language_ called *AsciiDoc*, supported by *small data* files in *YAML* format.
-The codebase is managed and processed by several awesome Ruby utilities, including *Git*, *Asciidoctor*, *Jekyll*, and my own tool, *LiquiDoc*.
+The codebase is managed and processed by several awesome utilities, including *Git*, *Asciidoctor*, *Jekyll*, and my own tool, *LiquiDoc*.
 
 And it is all available to anyone who finds it helpful.
 No strings attached, though I'd love to hear from you.
