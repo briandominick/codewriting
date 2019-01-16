@@ -338,7 +338,7 @@ This makes it tempting to define all or many variable terms at the beginning of 
 
 [[example-variables-setting]]
 .Example--Setting and expressing parameters as variables
-[source,asciidoc]
+[source,asciidoc,role="codewrap"]
 ----
 :doctitle: Sample Git-controlled Contract
 :consultant_name_full: Brian Dominick
@@ -363,7 +363,7 @@ Ostensibly, we could simply be using something more like this:
 
 [[example-variables-setting-truevars]]
 .Example--Setting and expressing parameters as variables
-[source,asciidoc]
+[source,asciidoc,role="codewrap"]
 ----
 :doctitle: Sample Git-controlled Contract
 :Consultant: Brian Dominick
