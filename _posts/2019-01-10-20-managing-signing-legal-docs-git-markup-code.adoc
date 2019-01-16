@@ -42,6 +42,11 @@ Outside interpretation itself, discrepancy issues apparently arise from disputes
 All of these signer-authentication and content-verification issues can be addressed with existing, open-source technologies.
 What's more, these same technologies can help during the back-and-forth of collaborative drafting, all without making anyone sign up for absurd proprietary services or use expensive software like Microsoft Word.
 
+[WARNING]
+Again, *I am not a lawyer*, and this blog post contains *no legal advice*.
+This is _technical_ advice about how to make your docs _actually_ more collaborative, more secure, and less wishy-washy.
+For all I know, these things may make it less valid in the eyes of lawyers and judges.
+
 Contracts written in lightweight markup (think Markdown) can be easily tracked in distributed version-control systems like Git, which also provides for digitally signing off on every change made to a file, even with blisteringly secure GPG crypto verification.
 Furthermore, anyone can see the exact state of a document to which each signature is added, establishing a verified order of signatures, just as easily as changes can be traced during the drawing up of documents.
 And nobody can tamper with the document/signature combo, at least without a quantum computer (don't hold your breath).
@@ -137,8 +142,8 @@ This is because Git cannot effectively expose changes made to complex binary fil
 Non-AsciiDoc lightweight markup options include link:https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet[Markdown], link:https://github.com/ralsina/rst-cheatsheet/blob/master/rst-cheatsheet.rst[reStructuredText], and link:https://devhints.io/textile[Textile].
 Although technically HTML, DocBook, DITA, or other XML-based formats work well with Git, their source is far more obfuscated by tags, which decrease readability.
 
-[TIP]
-Remember, the signed document is the source document.
+[IMPORTANT]
+Remember, the _source document_ is what actually gets signed.
 
 === Commit the Doc
 
@@ -357,7 +362,7 @@ This makes it tempting to define all or many variable terms at the beginning of 
 :agreement_date: 13 January, 2019
 :reporting_to: Jack Frost
 
-This “{doctitle}” (“Agreement”) is between {consultant_full_name} (“Consultant”) and {company_full_name} (“Company”).
+This “{doctitle}” (“Agreement”) is between {consultant_name_full} (“Consultant”) and {company_name_full} (“Company”).
 ----
 
 It's fairly trivial to interpret this in your head.
@@ -433,10 +438,10 @@ Parties using a combination of a GitHub account and their GPG key can establish 
 GPG keys have both a public key and a fingerprint, either of which can be safely posted to public-facing digital spaces, such as social media and official websites.
 I have posted one or both of these to numerous public spots, as listed here:
 
-* link:https://github.com/briandominick.keys[GitHub] (note this special link!)
+* link:https://github.com/briandominick.gpg[GitHub] (note this special link GH supplies!)
 * link:https://twitter.com/_codewriter/status/1085587867601195009[Twitter]
 * link:https://www.codewriting.org/assets/briandominick.asc[Codewriting.org]
-* link:https://www.linkedin.com/in/briandominick/#ember3330[LinkedIn profile]
+* link:https://www.linkedin.com/in/briandominick[LinkedIn profile] (see “Awards”)
 * My e-mail signature
 
 It is additionally sensible to validate one's GitHub account similarly, with links to it from multiple reliable sources, to increase confidence that the GH account you use to edit and sign documents is indeed your own.
