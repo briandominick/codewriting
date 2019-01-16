@@ -155,3 +155,7 @@ pre.highlight {
   white-space: pre;
   padding: 0;
 }
+
+.listingblock.codewrap pre.highlight {
+  white-space: pre-line;
+}
