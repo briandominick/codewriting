@@ -378,7 +378,7 @@ These placeholders are not resolved (“expressed”) in legal documents--you ar
 Ostensibly, we could simply be using something more like this:
 
 [[example-variables-setting-truevars]]
-.Example--Setting and expressing parameters as variables
+.Example--Alternate method for setting and expressing variables
 [source,asciidoc,role="codewrap"]
 ----
 :doctitle: Sample Git-controlled Contract
