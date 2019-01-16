@@ -72,18 +72,18 @@ Data:: Semi-structured and structured information in datasources, such as binary
 
 .GitHub rendering of previous markup example
 ====
-image::assets/images/screenshot_asciidoc-contract-example-render-github.png[]
+image::assets/images/contract-code_definition-html.png[]
 ====
 
 .PDF rendering of previous markup example
 ====
-image::assets/images/screenshot_asciidoc-contract-example-render-pdf.png[]
+image::assets/images/contract-code_definition-pdf.png[]
 ====
 
 AsciiDoc can format structured text as tables, as well.
 
 [[free-form-table-example]]
-.Example AsciiDoc markup--signature table
+.AsciiDoc markup--Sample schedule
 [source,asciidoc]
 ----
 [cols="1s,3",width="100%"]
@@ -122,7 +122,7 @@ a|
 
 .PDF rendering of previous markup example
 ====
-image::assets/images/contract-as-code-table-pdf.png[]
+image::assets/images/contract-code_table-pdf.png[]
 ====
 
 As you can see, AsciiDoc is more than robust enough to handle any formatting needs posed by typical legal documents.
@@ -167,7 +167,6 @@ However, for purposes of compromise and mediation, it is possible for two partie
 
 This is performed via a “merge request”, known disingenuously on GitHub as a “pull request” (PR)--a suggestion that changes be merged into the document's `master` branch.
 After the prime doc is shared, the first party to make changes will initiate a merge request, and other parties can review.
-
 
 === Sign the Doc
 
@@ -300,7 +299,7 @@ toc::[]
 
 .Result of previous markup
 ====
-image::assets/images/contract-as-code-toc-pdf.png[]
+image::assets/images/contract-code_toc-pdf.png[]
 ====
 
 [NOTE]
