@@ -56,7 +56,7 @@ My only use of this so far is in drawing up of work contracts, but it's an excel
 First, create a legal document in a plaintext file.
 This could be boilerplate language for a doc you intend to use many times, or else content already customized for known parties.
 
-I recommend using a link:link:https://en.wikipedia.org/wiki/Lightweight_markup_language[lightweight markup format], but this is not required.
+I recommend using a link:https://en.wikipedia.org/wiki/Lightweight_markup_language[lightweight markup format], but this is not required.
 I use and strongly recommend link:https://asciidoctor.org/docs/what-is-asciidoc/[AsciiDoc markup], which is similar to the popular language Markdown, with the additional power of creating intricate tables, convenient internal hyperlinking, automatically generating a table of contents, and numerous other features built in.
 The three biggest Git hosting services (link:https://github.com[GitHub], link:https://about.gitlab.com/[GitLab], and link:https://bitbucket.org/product[BitBucket]) support AsciiDoc rendering in their document previews.
 
@@ -155,7 +155,11 @@ Each forked version is a new workspace for collaboratively editing and digitally
 === Share the Doc
 
 When you “push” committed changes to the `origin` repository, everyone else with access to that repo can see your work.
-Using GitHub's private repositories (unlimited repos are link:https://techcrunch.com/2019/01/07/github-free-users-now-get-unlimited-private-repositories/[now free for up to three users], and unlimited repos come with a $7/month link:https://github.com/pricing[premium membership]).
+Using GitHub's private repositories lets you share documents discretely, with the confidence that you're using the same platform to which thousands of companies trust their most valuable intellectual property.
+Why should your legal agreements and other valuable documents be less secure than your source code?
+
+[NOTE]
+Unlimited private repos are link:https://techcrunch.com/2019/01/07/github-free-users-now-get-unlimited-private-repositories/[now free on GitHub] for up to three users, and infinite unlimited-user repos come with a $7/month link:https://github.com/pricing[premium membership].
 
 === Mod the Doc (Optional)
 
@@ -201,10 +205,13 @@ It's time for lawyers to take their legal docs seriously and store them in secur
 [[formatting]]
 === Addendum {counter:addenda}: Legal Formatting in AsciiDoc
 
-There are many kinds of Markup, but AsciiDoc is the only one I recommend.
+There are many brands of markup, but AsciiDoc is the only one I recommend.
 The Python-based reStructuredText has much of the same power as AsciiDoc, but frankly legal docs will only use a subset of either language.
-AsciiDoc is a bit more like Markdown and generally more elegant.
-Markdown's lack of standards make it unworthy of professional application--as documents coded in Markdown cannot be reliably transferred between platforms.
+AsciiDoc is a bit more like commonly used Markdown and generally more elegant than both.
+
+Markdown's lack of standards make it unworthy of professional application--as documents coded in Markdown cannot be reliably transferred between platforms, and you can rest assured people will bring the particularities of their various flavors to your documents.
+However, it is by far the most broadly supported and heavily tooled.
+I just don't think that's a great advantage for our purposes with legal documentation; this isn't blogging, after all.
 
 ==== Basic Formatting
 
@@ -311,8 +318,8 @@ AsciiDoc's handling of TOCs in PDF output that does not have a title page (as we
 
 ===== Internal Links
 
-One powerful aspect of AsciiDoc that may not be advisable is internal hyperlinking, or cross-referencing.
-While it would be extremely convenient to use AsciiDoc's cross-referencing (xref) notation, which automatically generates link text and targets the proper heading, this does not necessarily contribute to more readable-source.
+One powerful aspect of AsciiDoc that may not be advisable for legal docs is internal hyperlinking, or cross-referencing.
+While it would be extremely convenient to use AsciiDoc's cross-referencing (xref) notation, which automatically generates link text and targets the proper heading, this does not necessarily contribute to more-readable source.
 
 Let's look at an example, and you can decide for yourself.
 
@@ -426,12 +433,13 @@ Parties using a combination of a GitHub account and their GPG key can establish 
 GPG keys have both a public key and a fingerprint, either of which can be safely posted to public-facing digital spaces, such as social media and official websites.
 I have posted one or both of these to numerous public spots, as listed here:
 
-* link:https://twitter.com/_codewriter[Twitter]
+* link:https://github.com/briandominick.keys[GitHub] (note this special link!)
+* link:https://twitter.com/_codewriter/status/1085587867601195009[Twitter]
 * link:https://www.codewriting.org/assets/briandominick.asc[Codewriting.org]
+* link:https://www.linkedin.com/in/briandominick/#ember3330[LinkedIn profile]
 * My e-mail signature
 
-
-It is additionally sensible to validate one's GitHub account similarly, to increase confidence that the GH account you use to edit and sign documents is indeed your own.
+It is additionally sensible to validate one's GitHub account similarly, with links to it from multiple reliable sources, to increase confidence that the GH account you use to edit and sign documents is indeed your own.
 Together, this provides considerably greater confidence in the authenticity of each signing party.
 
 ==== Addendum {counter:addenda}: Digitally Signing Rendered Docs
