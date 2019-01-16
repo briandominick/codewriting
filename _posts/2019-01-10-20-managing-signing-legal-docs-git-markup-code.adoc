@@ -191,7 +191,7 @@ We further explore the implications of the different methods in <<verification>>
 
 == What's Left?
 
-It's funny that lawyers seemingly have no way to deal with this crucial aspect of their jobs, whereas programmers have had it for a decade, largely without even realizing it.
+It's funny that lawyers seemingly have no way to deal with this crucial aspect of their jobs, whereas programmers have had it for well over a decade, largely without even realizing it.
 
 It is not that SaaS document-signing providers have added no value at all.
 They do help you track and coordinate documents, provide signing help, and so forth.
@@ -219,7 +219,7 @@ Most legal documents will use the simplest range of AsciiDoc markup.
 
 ===== Inline Markup
 
-.Inline Formatting
+.Basic Text Formatting
 [source,asciidoc]
 ----
 == Section Heading
