@@ -12,7 +12,7 @@
 
 If you create and manage legal contracts regularly, you could probably be doing it all better and cheaper.
 By using highly secure technology already in widespread use among software developers, maintaining and signing legal docs can be performed at enterprise scale, all without paying a single penny for software or even hosting.
-<!--more-->
+
 No more fly-by-night document-signing startups with non-transferrable proprietary tech; you can do it all with open-source tools your developer friends have been raving about for years, using open standards and completely portable datasources.
 
 toc::[]
