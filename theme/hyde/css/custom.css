@@ -1,5 +1,17 @@
-pre, h1, h2, h3 {
+pre, h1, h2, h3, h4, h5 {
   font-family: 'PT Mono', monospace;
+}
+
+h3, h4, h5 {
+  text-decoration: underline;
+}
+
+.sect3 h4 {
+  font-size: 1.1em
+}
+
+.sect4 h5 {
+  font-size: 0.9em
 }
 
 h1.page-title {
@@ -9,6 +21,10 @@ h1.page-title {
   background-color: #202020;
   color: #efefef;
   display: table;
+}
+
+.sect4 h5 {
+
 }
 
 .content {
@@ -158,4 +174,19 @@ pre.highlight {
 
 .listingblock.codewrap pre.highlight {
   white-space: pre-line;
+}
+
+.exampleblock .title {
+  background-color: #bf616acc;
+  display: inline;
+  padding: 5px;
+  font-style: italic;
+  font-size: .7em;
+  color: #f9f9f9;
+  font-weight: normal;
+}
+
+.exampleblock .title a {
+  color: #ffffff;
+  text-decoration: underline;
 }
