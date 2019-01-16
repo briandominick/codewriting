@@ -6,7 +6,8 @@
 :page-external-url:
 :page-categories: [projects]
 :page-tags: [legal documents]
-:page-author: Brian Dominick (with Alicia Duncan)
+:page-author: Brian Dominick
+:example-caption!:
 ---
 
 If you create and manage legal contracts regularly, you could probably be doing it all better and cheaper.
@@ -43,7 +44,7 @@ What's more, these same technologies can help during the back-and-forth of colla
 
 Contracts written in lightweight markup (think Markdown) can be easily tracked in distributed version-control systems like Git, which also provides for digitally signing off on every change made to a file, even with blisteringly secure GPG crypto verification.
 Furthermore, anyone can see the exact state of a document to which each signature is added, establishing a verified order of signatures, just as easily as changes can be traced during the drawing up of documents.
-And nobody can tamper with the documents, at least without a quantum computer.
+And nobody can tamper with the document/signature combo, at least without a quantum computer (don't hold your breath).
 
 Not only is this good for _drafting_ documents, but it also works for anyone who _manages_ lots of divergent legal docs.
 If you handle hundreds of similar contracts or forms with slight variations, version control systems give you tremendous power for maintaining forks and branches of documents, so a canonical copy can be maintained, and divergence always tracked and highlighted.
@@ -52,13 +53,14 @@ My only use of this so far is in drawing up of work contracts, but it's an excel
 
 === Markup the Doc
 
-First, create a legal document in AsciiDoc or Markdown.
+First, create a legal document in a plaintext file.
 This could be boilerplate language for a doc you intend to use many times, or else content already customized for known parties.
 
-I use and strongly recommend AsciiDoc markup, which is similar to Markdown with the additional power of creating intricate tables, convenient internal hyperlinking, automatically generates table of contents, and has numerous other features built in.
-The three biggest Git hosting services (GitHub, GitLab, and BitBucket) support AsciiDoc rendering in their document previews.
+I recommend using a link:link:https://en.wikipedia.org/wiki/Lightweight_markup_language[lightweight markup format], but this is not required.
+I use and strongly recommend link:https://asciidoctor.org/docs/what-is-asciidoc/[AsciiDoc markup], which is similar to the popular language Markdown, with the additional power of creating intricate tables, convenient internal hyperlinking, automatically generating a table of contents, and numerous other features built in.
+The three biggest Git hosting services (link:https://github.com[GitHub], link:https://about.gitlab.com/[GitLab], and link:https://bitbucket.org/product[BitBucket]) support AsciiDoc rendering in their document previews.
 
-Let's review some examples and their rendered output.
+Let's review some AsciiDoc examples and their rendered output.
 
 .Example AsciiDoc markup--header line and term definitions
 [source,asciidoc,role="codewrap"]
@@ -126,15 +128,13 @@ image::assets/images/contract-code_table-pdf.png[]
 ====
 
 As you can see, AsciiDoc is more than robust enough to handle any formatting needs posed by typical legal documents.
+For examples of complex formatting, see <<formatting>>.
 
 [IMPORTANT]
 This procedure will only work with link:https://en.wikipedia.org/wiki/Plain_text[flat, plaintext files] (i.e., no Word or other rich-text files).
-This is because Git cannot properly expose changes made to complex binary files.
+This is because Git cannot effectively expose changes made to complex binary files.
 
-Legal documents are not terribly heavily formatted, so AsciiDoc can probably handle anything you'd need to throw at it, including fairly complex tables, automatic numbering, and so forth.
-For examples of complex formatting, see <<formatting>>.
-
-Non-AsciiDoc link:https://en.wikipedia.org/wiki/Lightweight_markup_language[_lightweight_ markup options] include link:https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet[Markdown], link:https://github.com/ralsina/rst-cheatsheet/blob/master/rst-cheatsheet.rst[reStructuredText], and link:https://devhints.io/textile[Textile].
+Non-AsciiDoc lightweight markup options include link:https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet[Markdown], link:https://github.com/ralsina/rst-cheatsheet/blob/master/rst-cheatsheet.rst[reStructuredText], and link:https://devhints.io/textile[Textile].
 Although technically HTML, DocBook, DITA, or other XML-based formats work well with Git, their source is far more obfuscated by tags, which decrease readability.
 
 [TIP]
@@ -181,6 +181,9 @@ The more social and official sources linking to that GitHub account, and assumin
 Method 2::
 Arguably the most secure method for digitally signing documents would be *GPG signing and coordination via a Git-hosting platform* that supports GPG signing.
 GPG-signed commits strongly suggest they were performed on a device under direct control of the signer, and services like GitHub, GitLab, and BitBucket make it easy to verify these crypto signatures.
+
+[NOTE]
+We further explore the implications of the different methods in <<verification>>.
 
 == What's Left?
 
@@ -290,6 +293,7 @@ There is plenty of clear documentation on link:https://asciidoctor.org/docs/user
 
 What is more, any AsciiDoc document can host an automatically generated table of contents (TOC).
 
+.Table of Contents instantiation
 [source,asciidoc]
 ----
 :toc: macro
@@ -303,7 +307,7 @@ image::assets/images/contract-code_toc-pdf.png[]
 ====
 
 [NOTE]
-AsciiDoc's handling of TOCs in PDF output that does not have a title page (as we tend not to want with contracts) is currently performing excessive pagination, but this limitation will be link:https://github.com/asciidoctor/asciidoctor-pdf/pull/985[resolved in the next release] of AsciiDoc, if it has not already been by the time you read this.
+AsciiDoc's handling of TOCs in PDF output that does not have a title page (as we tend not to want with contracts) is currently performing excessive pagination, but this limitation will be link:https://github.com/asciidoctor/asciidoctor-pdf/pull/985[resolved in the next release] of the Asciidoctor rendering engine, if it has not already been by the time you read this.
 
 ===== Internal Links
 
@@ -397,6 +401,7 @@ Nevertheless, no text substitution or tokens are necessary to use this method.
 
 These features would be a great addition, but if the legal veracity is shaky, keep in mind entire contracts could use explicit references or conventional tokens defined up front with bold, parentheses, and quotes, just the way they all do today.
 
+[[verification]]
 ==== Addendum {counter:addenda}: Identity Verification with GPG and Git
 
 There are numerous ways to digitally sign a document, ranging from downright stupid to virtually perfect authentication.
@@ -418,14 +423,15 @@ In truth, an online identity is only as good as the sources referencing it.
 
 Parties using a combination of a GitHub account and their GPG key can establish remarkably solid authenticity.
 
-GPG keys have both a public key and a signature, either of which can be safely posted to public-facing digital spaces, such as social media and official websites.
+GPG keys have both a public key and a fingerprint, either of which can be safely posted to public-facing digital spaces, such as social media and official websites.
 I have posted one or both of these to numerous public spots, as listed here:
 
-* Twitter
-* Codewriting.org
+* link:https://twitter.com/_codewriter[Twitter]
+* link:https://www.codewriting.org/assets/briandominick.asc[Codewriting.org]
 * My e-mail signature
 
-It is additionally sensible to validate one's GitHub account similarly, to increase confidence that the GH account you use to edit and sign documents is indeed yours.
+
+It is additionally sensible to validate one's GitHub account similarly, to increase confidence that the GH account you use to edit and sign documents is indeed your own.
 Together, this provides considerably greater confidence in the authenticity of each signing party.
 
 ==== Addendum {counter:addenda}: Digitally Signing Rendered Docs
