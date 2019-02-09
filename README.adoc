@@ -6,6 +6,7 @@
 :codewriting_www_uri: https://www.codewriting.org
 :liquidoc_www_uri: https://www.ajyl.org/liquidoc-cmf
 :ajyl_www_uri: https://www.ajyl.org
+:toc: macro
 // This README file serves as canonical source for some text and other code.
 // Denoted by specially formatted comments like the tag:: and end:: references
 // above and below this comment. These are hidden macros that enable me to mark
@@ -13,7 +14,6 @@
 // parent file elsewhere in my source repo during parsing.
 // end::global-settings[]
 
-:toc: macro
 toc::[]
 
 // tag::preamble[]
@@ -115,7 +115,7 @@ Bundler is a package manager for Ruby gems; it will ensure you always have the r
 +
 [source,shell]
 ----
-bundle exec liquidoc -c configss/build-global.yml
+bundle exec liquidoc -c _configs/build-global.yml
 ----
 
 Now you can open `_build/publish/codewriting-book-draft.html` in your preferred browser or open `_build/publish/codewriting-book-draft.pdf` in your favorite PDF viewer.
@@ -212,7 +212,7 @@ Just keep it tidy, witty, and informative.
 ----
 
 To make these items most modular, it is best that you contribute them in their own `filename.adoc` file.
-Your pull request is welcome to also incporporate the `include::filename.adoc[]` macro in the place you think your content best fits.
+Your pull request is welcome to also incorporate the `include::filename.adoc[]` macro in the place you think your content best fits.
 Otherwise, it's fine to leave it for me to suggest a placement.
 
 === How to Contribute
@@ -321,7 +321,7 @@ Here are some notes on what goes where and how it's all built.
 
 === Production Deployment
 
-As of Janyary 2019, link:https://www.codewriing.org[Codewriting.org] is built and served by link:https://www.netlify.com/[Netlify].
+As of January 2019, link:https://www.codewriing.org[Codewriting.org] is built and served by link:https://www.netlify.com/[Netlify].
 Netlify's free service is simply amazing; I cannot recommend it strongly enough.
 All I do is point it to the repo, enter the build command, and tell it where to get the built files to serve.
 Nelify inegrates automatically with GitHub and analyzes the site output for security and integrity.
