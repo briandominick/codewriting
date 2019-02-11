@@ -73,7 +73,7 @@ If you have the common prerequisites (Ruby and Bundler), it's as easy as:
 $ git clone git@github.com:briandominick/codewriting.git
 $ cd codewriting
 $ bundle install
-$ bundle exec liquidoc -c config/build-global.yml
+$ bundle exec liquidoc -c _configs/build-global.yml
 ----
 +
 Detailed instructions in the link:readme#build[README].
