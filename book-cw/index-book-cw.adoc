@@ -1,7 +1,7 @@
 :doctype: book
 :bookdir: {basedir}/book-cw
 :includedir: {bookdir}/includes
-:imagesdir: book-cw/images
+:imagesdir: assets/images
 :datadir: data
 :icons: font
 :icon-set: fa

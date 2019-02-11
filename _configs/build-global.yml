@@ -180,11 +180,11 @@
     doctype: book
     attributes:
       toc: left
+      env: site-html
 {% unless vars.nopdf %}
   - output: _build/publish/codewriting-book-draft.pdf
     style: theme/pdf/default.yml
     doctype: book
     attributes:
       pdf-fontsdir: theme/fonts
-      imagesdir: publish/assets/images
 {% endunless %}
