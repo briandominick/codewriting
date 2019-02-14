@@ -15,10 +15,14 @@ In any case, that's what's under the hood of this site.
 All pages and posts are written in link:http://asciidoctor.org/docs/what-is-asciidoc/[AsciiDoc] dynamic markup, converted to HTML by the link:http://asciidoctor.org/docs/what-is-asciidoctor/[Asciidoctor] rendering engine, built into a proper site by link:https://jekyllrb.com/[Jekyll] static generator with a lightweight theme called link:http://hyde.getpoole.com/[Hyde] giving the pages structure and style.
 Then served on link:https://pages.github.com/[GitHub Pages].
 
+[IMPORTANT]
+.Update!
+Now hosted on the fantastic link:https://www.netlify.com/[Netlify] continuous docs deployment platform!
+
 I've been working with Jekyll and Asciidoctor for well over a year now, and I am confident that they are robust, pliable utilities that can solve a very wide range of technical documentation problems.
 This is especially true when you consider the broad range of Asciidoctor output.
 
-In this blog, I will journal some of my technical experiments in documentation tooling, much of it around Asciidoctor and my own free and open source tool, link:https://github.com/briandominick/liquidoc[LiquiDoc].
+In this blog, I will journal some of my technical experiments in documentation tooling, much of it around Asciidoctor and my own free and open source tool, link:https://www.ajyl.org/liquidoc[LiquiDoc].
 All of this tooling is FOSS, and it's all written in Ruby, which I started learning some months back in order to hack a complex docs build toolchains.
 Now I'm looking for new projects and challenges, which i hope to trace here.
 
