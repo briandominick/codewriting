@@ -1,0 +1,463 @@
+= Contracts as Code: Managing and Signing Legal Documents with Git
+:page-layout: post
+:page-permalink: blog-managing-signing-legal-docs-git-markup-code
+:page-date: 2019-01-10 14:43
+:page-comments: true
+:page-external-url:
+:page-categories: [projects]
+:page-tags: [legal documents]
+:page-author: Brian Dominick
+:example-caption!:
+---
+
+If you create and manage legal contracts regularly, you could probably be doing it all better and cheaper.
+By using highly secure open-source technologies already in widespread use among software developers, maintaining and signing legal docs can be performed without paying a single penny for software or even hosting.
+
+No more fly-by-night document-signing startups with non-transferrable proprietary tech; you can do it all with freely available tools your developer friends have been raving about for years, using open standards and completely portable datasources.
+
+This post is not a sales pitch.
+I am simply open sourcing an idea I had while pursing professional development in the very fields of document management, digital security, and platform strategy.
+
+toc::[]
+
+== The Problems
+
+There is little I like less in the course of doing business than a robotic e-mail message insisting I register for some shady-looking document-hosting service demanding that I “sign” a contract or other legal doc.
+This usually means taking one of two equally preposterous acts that supposedly “verify” my agreement to these documents.
+
+Some of them want me to just type my name in a simple text field, which may or may not be obviously associated with the actual document they claim I am signing.
+A stylized font in the signature field seems embarrassingly intended to make it feel more like I'm actually signing something but of course proves nothing of the sort.
+
+Alternatively, they want me to drag a finger around my trackpad like a monkey--good luck, mouse/trackball users--as if that in any way produces a genuine indication of my assent to the document.
+
+I am no lawyer, so I am not sure it matters very much _how_ you sign most documents, but these processes are clearly just theater.
+I also recognize that when disputes over authenticity arise, there are ways of verifying the signer even with these ridiculous platforms, probably by following the e-mail trail.
+This is an intrusive measure, and it would have to coincide with verification of timestamps and some kind of verification of the state of the actual document that was shown and the precise state it was in at that time.
+The document-hosting software-as-a-service vendors store metadata centralized database; they own the audit trail, and no of course you cannot see it--don't be silly.
+
+For all this trouble, the marginal value provided by the SaaS company for these expensive “services” includes locking you into their platform.
+If you want to leave, at least in some cases you will lose document metadata and the services you've depended on a private company to perform.
+If they go under, what happens to your well-managed contracts that depend on their proprietary database?
+
+From what I am told by actual lawyers, contract disputes are mostly about what the contract says--or what it said when each party signed it.
+Lots of people have ideas about how to make legal language clearer, so that's not my topic today.
+Outside interpretation itself, discrepancy issues apparently arise from disputes over whether and how a contract was originally _signed_, how it has _changed_ and when, and if it was properly amended, _redistributed_, and _recertified_ by all parties.
+
+== A Free, Open-Source Solution
+
+All of these signer-authentication and content-verification issues can be addressed with existing, open-source technologies.
+What's more, these same technologies can help during the back-and-forth of collaborative drafting, all without making anyone sign up for absurd proprietary services or use expensive software like Microsoft Word.
+
+[WARNING]
+Again, *I am not a lawyer*, and this blog post contains *no legal advice*.
+This is _technical_ advice about how to make your docs _actually_ more collaborative, more secure, and less wishy-washy.
+For all I know, these things may make it less valid in the eyes of lawyers and judges.
+
+Contracts written in lightweight markup (think Markdown or wiki markup) can be easily tracked in distributed version-control systems like Git, which also provides for digitally signing off on every change made to a file, even with blisteringly secure GPG cryptographic authentication.
+Furthermore, anyone can see the exact state of a document to which each signature is added, establishing a verified order of signatures, just as easily as changes can be traced during the drawing up of documents.
+And nobody can tamper with the document/signature combo, at least without a quantum computer (don't hold your breath).
+
+Not only is this good for _drafting_ documents, but it also works for anyone who _manages_ lots of divergent legal docs.
+If you handle hundreds of similar contracts or forms with slight variations, version control systems give you tremendous power for maintaining forks and branches of documents, so a canonical copy can be maintained, and divergence always tracked and highlighted.
+
+My solution includes the ability to generate professional-quality PDFs from the verified source, as well as crypto-signing PDFs generated from the digitally “signed” source file.
+The system affirmatively guarantees everyone has all of the same docs, and all the same data about the docs--this is distributed technology at its finest.
+
+My only use of this so far is in drawing up of work contracts, but it's an excellent option in these cases, so I would like to show you how it is done.
+
+=== Markup the Doc
+
+First, create a legal document in a plaintext file.
+This could be boilerplate language for a doc you intend to use many times, or else content already customized for known parties.
+
+I recommend using a link:https://en.wikipedia.org/wiki/Lightweight_markup_language[lightweight markup format], but this is not required.
+I use and strongly recommend link:https://asciidoctor.org/docs/what-is-asciidoc/[AsciiDoc markup], which is similar to the popular language Markdown, with the additional power of creating intricate tables, convenient internal hyperlinking, automatically generating a table of contents, and numerous other features built in.
+The three biggest Git hosting services (link:https://github.com[GitHub], link:https://about.gitlab.com/[GitLab], and link:https://bitbucket.org/product[BitBucket]) support AsciiDoc rendering in their document previews.
+
+Let's review some AsciiDoc examples and their rendered output.
+
+.Example AsciiDoc markup--header line and term definitions
+[source,asciidoc,role="codewrap"]
+----
+=== Intellectual Property Definitions
+
+Content:: Source material in the form of structured and unstructured prose, lists, diagrams, and images.
+
+Data:: Semi-structured and structured information in datasources, such as binary relational databases or flat data files formatted in YAML, JSON, XML, CSV, or similar markup.
+----
+
+.GitHub rendering of previous markup example
+====
+image::assets/images/contract-code_definition-html.png[]
+====
+
+.PDF rendering of previous markup example
+====
+image::assets/images/contract-code_definition-pdf.png[]
+====
+
+AsciiDoc can format structured text as tables, as well.
+
+[[free-form-table-example]]
+.AsciiDoc markup--Sample schedule
+[source,asciidoc]
+----
+[cols="1s,3",width="100%"]
+|===
+| Date of Agreement: | 25 January 2019
+
+| Name of Consultant:
+| Brian A. Dominick
+
+| Services to Be Performed:
+a|
+Tasks will be assigned, managed, and monitored in GitHub repository Issues tracker or readily accessible tracking platform of Company's preference, to be of the following nature:
+
+* coding & configuring (C&C)
+* realtime/production administration of docs environment
+* ...
+* other tasks to be decided and agreed
+
+| Deliverables:
+a|
+* build configuration files (Bash, LiquiDoc, Gradle, Maven, Make, etc)
+* template design files (Liquid)
+* ...
+* end-user instructions in the format of Company's choice
+
+| Service Period:
+| Commencing: 1 February 2019
+
+| Compensation:
+| $1
+
+| Reporting to:
+| Indiana Smith
+|===
+----
+
+.PDF rendering of previous markup example
+====
+image::assets/images/contract-code_table-pdf.png[]
+====
+
+As you can see, AsciiDoc is more than robust enough to handle any formatting needs posed by typical legal documents.
+For examples of complex formatting, see <<formatting>>.
+
+[IMPORTANT]
+This procedure will only work with link:https://en.wikipedia.org/wiki/Plain_text[flat, plaintext files] (i.e., no Word or other rich-text files).
+This is because Git cannot effectively expose changes made to complex binary files.
+
+Non-AsciiDoc lightweight markup options include link:https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet[Markdown], link:https://github.com/ralsina/rst-cheatsheet/blob/master/rst-cheatsheet.rst[reStructuredText], and link:https://devhints.io/textile[Textile].
+Although technically HTML, DocBook, DITA, or other XML-based formats work well with Git, their source is far more obfuscated by tags, which decrease readability.
+
+[IMPORTANT]
+Remember, the _source document_ is what actually gets signed.
+
+=== Commit the Doc
+
+Making a “commit” in Git is like deliberately setting a restore point and a share point, with your custom notes about the changes made.
+
+While the Git command line is notoriously frustrating, lots of new link:https://boostlog.io/@nixus89896/top-10-git-gui-clients-5b3336b244deba0054047685[graphical tools] make simple document management in Git accessible to anyone motivated to learn the very basics.
+As long as one party in the relationship has ready access to get help or the ingenuity to troubleshoot common Git user errors, any two parties should be able to self-manage a Git-based workflow.
+
+=== Fork the Doc (Optional)
+
+If you expect to use this boilerplate document with lots of different contracts, there are various means of splitting documents off from the prime version, generally called “forking”.
+Each forked version is a new workspace for collaboratively editing and digitally signing the documents.
+Changes that occur in any given version can be reincorporated back to a “prime” version of the doc for future cloning, while always maintaining a pristine copy of _Prime_ from every fork point, enabling comparison of docs to the _Prime_ version they forked from.
+
+=== Share the Doc
+
+Whether the doc was freshly written as a one-off or is a forked clone of another, its `origin` repository is the copy you'll share and collaborate over.
+When you “push” committed changes to the `origin` repo, everyone else with access to that repo can see your work.
+Using GitHub's private repositories lets you share documents discretely, with the confidence that you're using the same platform to which thousands of companies trust their most valuable intellectual property.
+Why should your legal agreements and other valuable documents be less secure than your source code?
+
+[NOTE]
+Unlimited private repos are link:https://techcrunch.com/2019/01/07/github-free-users-now-get-unlimited-private-repositories/[now free on GitHub] for up to three users, and infinite unlimited-user repos come with a $7/month link:https://github.com/pricing[premium membership].
+GitLab has long offered “unlimited private projects and collaborators” link:https://about.gitlab.com/pricing/[at no cost].
+
+=== Mod the Doc (Optional)
+
+This is where collaboration takes place.
+If the document is open for editing, convey this to the eligible parties, along with a workflow and instructions for proceeding.
+
+Since everyone will be editing the same file, it is safest to have the parties take turns.
+However, for purposes of compromise and mediation, it is possible for two parties to edit the same document and then reconcile the differences when merging changes to make a new draft.
+
+This is performed via a “merge request” (MR), known disingenuously on GitHub as a “pull request” (PR)&#8212; a suggestion that changes be merged into the document's `master` branch.
+After the prime doc is shared, the first party to make changes will initiate a merge request, and other parties can review.
+
+=== Sign the Doc
+
+There are a few options here, depending on how securely and verifiably your document needs to be signed.
+I detail two methods in my experimental repository, but I'll mention them briefly here.
+
+Method 1::
+The easiest way to sign would be to share the doc on a *Git-hosting platform* that has verified accounts, such as GitHub or GitLab.
+This gives you at least as much authentication as a document-signing service that sends out a link via e-mail.
+Verified e-mail addresses can be exposed on the account (via an optional setting), or else GitHub usernames can be shared during correspondence, so all parties can be reasonably assured of authenticity.
+This authentication is far and away more legitimate any document-signing service I have seen, once you add the multilateral transparency of the whole procedure.
+
+Method 2::
+Arguably the most secure method for digitally signing documents would be *GPG signing and coordination via a Git-hosting platform* that supports GPG signing.
+GPG-signed commits strongly indicate they were performed on a device under direct control of the signer, and services like GitHub, GitLab, and BitBucket make it easy to verify these crypto signatures.
+Mere access to one's account on a Git-hosting service will not do the trick; a strongly protected private key is needed.
+
+[NOTE]
+We further explore the implications of the different methods in <<verification>>.
+
+== What's Left?
+
+It's funny that lawyers seemingly have no way to deal with this crucial aspect of their jobs, whereas programmers have had it for well over a decade, largely without even realizing it.
+
+It is not that SaaS document-signing providers have added zero value at all.
+They do help you track and coordinate documents, provide signing help, workflow, and so forth.
+But they seem to do this with proprietary systems their customers cannot freely assess, rather than just using Git in the background and distributing the transparency and accountability of the whole procedure.
+
+No one who is party to a legal agreement should have to wonder what just happened or if the for-profit authorities overseeing the transaction are reliable, especially given that the other party is paying them.
+The way lawyers and document service providers handle this today should be an embarrassment to their professions.
+
+The execution of legal documents is too important to trust to opaque processes and platforms, and legal services are too technical to trust to “non-technical” people, even if they have _Esq_ in their title.
+It's time for lawyers to take their legal docs seriously and store them in secure systems with open standards.
+If that's too technical for them, you should not be trusting them to manage your important docs.
+
+== Addenda: Nuts and Bolts of Digital Contract Management with Git and AsciiDoc
+
+[[formatting]]
+=== Addendum {counter:addenda}: Legal Formatting in AsciiDoc
+
+There are many brands of markup, but AsciiDoc is the only one I recommend.
+The Python-based reStructuredText has much of the same power as AsciiDoc, but frankly legal docs will only use a subset of either language.
+AsciiDoc is a bit more like commonly used Markdown and generally more elegant than both.
+
+Markdown's lack of standards make it unworthy of professional application--as documents coded in Markdown cannot be reliably transferred between platforms, and you can rest assured people will bring the particularities of their various “flavors” to your documents.
+On the other hand, Markdown is by far the most broadly supported and heavily tooled.
+I just don't think that's a great advantage for our purposes with legal documentation; this isn't blogging, after all.
+
+==== Basic Formatting
+
+Most legal documents will use the simplest range of AsciiDoc markup.
+
+===== Inline Markup
+
+.Basic Text Formatting
+[source,asciidoc]
+----
+=== Section Heading
+
+*Bold text*
+
+`Monospace and literals`
+
+http://www.codewriting.org[Linked text]
+----
+
+.Result of previous markup
+====
+[big]#*1.2. Section Heading*#
+
+*Bold text*
+
+`Monospace and literals`
+
+http://www.codewriting.org[Linked text]
+====
+
+.Unordered List
+[source,asciidoc]
+----
+* blueberries
+* oranges
+** temple
+** navel
+* bananas
+----
+
+.Result of previous markup
+====
+* blueberries
+* oranges
+** temple
+** navel
+* bananas
+====
+
+.Ordered List
+[source,asciidoc]
+----
+. First
+. Second
+. Third
+.. Third-point-one
+.. Third-point-two
+----
+
+.Result of previous markup
+====
+. First
+. Second
+. Third
+.. Third-point-one
+.. Third-point-Two
+====
+
+===== Table of Contents
+
+AsciiDoc's free-form table formatting is very powerful, as already exemplified in <<free-form-table-example>>.
+There is plenty of clear documentation on link:https://asciidoctor.org/docs/user-manual/#tables[building tables in AsciiDoc].
+
+What is more, any AsciiDoc document can host an automatically generated table of contents (TOC).
+
+.Table of Contents instantiation
+[source,asciidoc]
+----
+:toc: macro
+
+toc::[]
+----
+
+.Result of previous markup
+====
+image::assets/images/contract-code_toc-pdf.png[]
+====
+
+[NOTE]
+AsciiDoc's handling of TOCs in PDF output that does not have a title page (as we tend not to want with contracts) is currently performing excessive pagination, but this limitation will be link:https://github.com/asciidoctor/asciidoctor-pdf/pull/985[resolved in the next release] of the Asciidoctor rendering engine, if it has not already been by the time you read this.
+
+===== Internal Links
+
+One powerful aspect of AsciiDoc that may not be advisable for legal docs is internal hyperlinking, or cross-referencing.
+While it would be extremely convenient to use AsciiDoc's cross-referencing (xref) notation, which automatically generates link text and targets the proper heading, this does not necessarily contribute to more-readable source.
+
+Let's look at an example, and you can decide for yourself.
+
+.Internal cross reference (xref)
+[source,asciidoc,role="codewrap"]
+----
+Any notice required or permitted by this Agreement shall be registered using the secure methods laid out in <<authentication>>.
+
+...
+
+[[authentication]]
+== Authentication and Authorization
+----
+
+.Result of previous markup
+====
+Any notice required or permitted by this Agreement shall be registered using the secure methods laid out in link:authentication[Authentication and Authorization].
+====
+
+In a proper rendering, this link will target the proper section ID where `\[[authentication]]` has been converted to a unique identifier.
+While this works very well in the rendered version, when reading only the source, it may not be immediately obvious that `\<<authentication>>` is a reference to the section marked with `\[[authentication]]`.
+
+==== Addendum: Whither Variables in Contracts
+
+One dynamic feature of AsciiDoc that may transfer a little better to legal documentation is the use of variable substitution.
+AsciiDoc has the power to replace tokens in `{key-name}` format with predefined values during rendering.
+This makes it tempting to define all or many variable terms at the beginning of the document as key-value pairs.
+
+[[example-variables-setting]]
+.Example--Setting and expressing parameters as variables
+[source,asciidoc,role="codewrap"]
+----
+:doctitle: Sample Git-controlled Contract
+:consultant_name_full: Brian Dominick
+:company_name_full: Your Shop, Inc
+:agreement_date: 13 January, 2019
+:reporting_to: Jack Frost
+
+This “{doctitle}” (“Agreement”) is between {consultant_name_full} (“Consultant”) and {company_name_full} (“Company”).
+----
+
+It's fairly trivial to interpret this in your head.
+
+.Rendering of <<example-variables-setting>>
+====
+This “Sample Git-controlled Contract” (“Agreement”) is between Brian Dominick (“Consultant”) and Your Shop, Inc (“Company”).
+====
+
+In fact, those words in parentheses and quotes in legal documents are a form of static variable definition, since throughout the rest of the document the text _Company_ (not italicized) is a placeholder for the actual company name, often set only once at the top of the document.
+These placeholders are not resolved (“expressed”) in legal documents--you are expected to keep them in your head, or else refer back to the original definitions section.
+
+Ostensibly, we could simply be using something more like this:
+
+[[example-variables-setting-truevars]]
+.Example--Alternate method for setting and expressing variables
+[source,asciidoc,role="codewrap"]
+----
+:doctitle: Sample Git-controlled Contract
+:Consultant: Brian Dominick
+:Client: Your Shop, Inc
+:Term_Start_Date: 13 January, 2019
+:Contact: Jack Frost
+
+This “Sample Git-controlled Contract” (“Agreement”) is between Brian Dominick (`Consultant`) and Your Shop, Inc (`Client`).
+
+The parties agree that {Consultant} shall provide services (“Services”) to {Client}, as described in <<services>>, below.
+----
+
+Here we are naming the consultant and the client explicitly twice at the top.
+This is so our document does not rely on AsciiDoc variable definitions to cement its terms.
+That should feel better to legal-minded folks than the original source (<<example-variables-setting>>).
+
+But once this is spelled out, we can see explicit names throughout the rendered document (see output below), and yet the variable tokens still work quite well in the source document (as above, where `\{Consultant}` and `\{Client}` make excellent tokens.
+
+.Rendering of <<example-variables-setting-truevars>>
+====
+This “Sample Git-controlled Contract” (“Agreement”) is between Brian Dominick (`Consultant`) and Your Shop, Inc (`Client`).
+
+The parties agree that Brian Dominick shall provide services (“Services”) to Your Shop, Inc, as described in <<services,Services>>, below.
+====
+
+In a normal legal document, all subsequent references to “Consultant” and “Client” would merely be the capitalized words _Consultant_ and _Client_ (no italic, bold, or quotes required).
+Surely the curly-braced terms in the source version (`\{Consultant}` and `{Client}`) should be at least as sound as the plain words would be, and the expressed versions in rendered documents even better.
+
+However, once again I must note that I am not a legal expert, and it is very possible that the legal world would disagree with this proposal.
+Nevertheless, no text substitution or tokens are necessary to use the overall Git/AsciiDoc-based approach--you can still do it the conventional way.
+That is, if the legal veracity of these features is shaky, entire contracts could still use explicit references or conventional tokens defined up front with bold, parentheses, and quotes, just the way they all do today.
+
+[[verification]]
+==== Addendum {counter:addenda}: Identity Verification with GPG and Git
+
+There are numerous ways to digitally sign a document, ranging from downright stupid to virtually perfect authentication.
+
+Most of the companies providing document-signing services seem to be fine with simply typing one's name into a form field after clicking an invitation link.
+As I noted before, this method is not entirely insecure, at least when _only the intended parties have access to their e-mail accounts_.
+
+Then again, we all know quite often that is not the case at all.
+In fact, the more important someone is at a company, the more likely they are to have other people opening, organizing, and even answering their e-mail.
+These folks should _never_ be using a service that has no stronger authentication, and no one should ever attempt to secure an agreement using the conventional fly-by-night method with anyone who does not have exclusive control of their e-mail.
+
+You may have trouble proving they “signed” your document themselves quite simply because they may not have signed it themselves.
+In fact, they might not even have read it themselves.
+
+Our Git-based method goes a lot farther toward solving this problem, especially if you authenticate identities using multiple methods.
+
+While technology like GPG can _secure_ a digital identity and certify that documents were “signed” by that identity, establishing the link between a digital identity and a real-world person can be a bit more complex.
+In truth, an online identity is only as good as the sources referencing it.
+
+Parties using a combination of a GitHub account and their GPG key can establish remarkably solid authenticity.
+
+GPG keys have both a public key and a fingerprint, either of which can be safely posted to public-facing digital spaces, such as social media and official websites.
+I have posted one or both of these to numerous public spots, as listed here:
+
+* link:https://github.com/briandominick.gpg[GitHub] (note this special link GH supplies!)
+* link:https://twitter.com/_codewriter/status/1085587867601195009[Twitter]
+* link:https://www.codewriting.org/assets/briandominick.asc[Codewriting.org]
+* link:https://www.linkedin.com/in/briandominick[LinkedIn profile] (see “Awards”)
+* My e-mail signature
+
+It is additionally sensible to validate one's GitHub account similarly, with links to it from multiple reliable sources, to increase confidence that the GH account you use to edit and sign documents is indeed your own.
+Together, this provides considerably greater confidence in the authenticity of each signing party.
+
+==== Addendum {counter:addenda}: Digitally Signing Rendered Docs
+
+So far we have only discussed digitally signing the source document.
+However, in truth some parties may only _read_ the rendered output, for instance if it was shared with them as a PDF and they never engaged with the source until signing time.
+
+Once the document source is signed, the document coordinator should generate a final version as rich text (probably PDF) and redistribute it.
+This time there is no need to add any names to the document--rather, the parties can acknowledge it with a simple GPG signing procedure, which writes a `.sig` signature file proving that the signer acknowledges that exact version of the PDF.
+Commit this signature and push it back to `origin`, and everyone has proof of which exact, rendered copy is acknowledged by everyone as canonical.
+This may well be overkill for most arrangement types, but since it is technically possible, I thought I would mention it.
