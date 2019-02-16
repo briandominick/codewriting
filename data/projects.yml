@@ -1,0 +1,33 @@
+- id: digi-embedded
+  name: Digi Embedded Systems Docs
+  description: |
+    Digi's complex hardware-embedded, Linux-based platforms posed the most dynamic challenge I have ever encountered.
+    I am proud to have solved it using LiquiDoc CMF.
+    Four parallel product lines, each with hardware and software variations that all require distinct references and instructions that absolutely have to be kept accurate.
+    Together with an eager senior technical writer and some of Digi's own engineers, Codewriting delivered a well-organized and -instructed documentation platform their engineers love using on a regular basis.
+    They have even begun extending and scaling the platform, sourcing with AsciiDoc and YAML files embedded in numerous product repos from which they compile the Embedded products.
+    The Digi Embedded docs site is now the *flagship LiquiDoc CMF project*.
+  url: https://www.digi.com/resources/documentation/digidocs/embedded/
+
+- id: okera
+  name: Okera Documentation Site
+  description: |
+    Just before launching its own enterprise product, Okera needed to “platformify” and systematize its Markdown-based docs.
+    In addition to content services, I tooled a basic Jekyll site to properly build and serve their content, as well as adding Algolia Search and numerous other features and theming.
+  url: https://docs.okera.com/
+
+- id: konghq-hub
+  name: Kong Developer Hub
+  description: |
+    This simple “static web app” called for some cool JavaScript (solved with jQuery) as well as Liquid templating and other cool elements of a robust Jekyll site, such as Jekyll collections.
+    This project posed a terrific set of content and data sourcing challenges, essentially solved with YAML and Liquid.
+  url: https://docs.konghq.com/hub/
+
+- id: ldcmf-ajyl
+  name: LiquiDoc CMF Guides Docset & AJYL Site
+  description: |
+    This site hosts the docs for my own documentation tool and framework--of course itself using the technologies it covers.
+    This is a fully open-sourced example of complex product docs single-sourced with LiquiDoc CMF.
+    It also documents the AJYL docstack more broadly, demonstrating how to combine AsciiDoc, Jekyll, YAML, and Liquid into a powerful, flexible documentation environment, for software products and beyond.
+    *This project is still very much a work in progress.*
+  url: https://www.ajyl.org/

@@ -8,18 +8,57 @@ I make, teach, and use powerful documentation development environments in suppor
 .Brian Dominick presents Codewriting and LiquiDoc to the Write the Docs conference in Portland, May 2017
 image::assets/images/brian-dominick-write-the-docs-2017.jpeg[nolabel]
 
-After two and a half years of reinventing docs at Big Data startup Rocana (just acquired by Splunk), I am eager to *work docs magic at new organizations*.
-If you have an exciting project with challenging internal and user-facing documentation needs, let's talk.
+After two and a half years of reinventing docs at Big Data startup Rocana (acquired by Splunk), I was eager to *work docs magic at new organizations*.
+Now I run a consultancy (Codewriting, LLC) making docs-as-code dreams come true for product-focused engineering outfits.
+If you have an exciting project with challenging internal and user-facing documentation needs, link:{codewriting_www_uri}/contact[let's talk].
 
 Like *DevOps for docs*, I specialize in documentation *tooling and workflows* for maximum accuracy and currency of complicated documentation projects, tying engineers, third-party developers, and technical writers together with *collaborative solutions*.
 
 My forthcoming book *_Codewriting_* lays out the new fundamentals of this practice, sometimes called *DocOps*.
 Across 18 chapters of fresh concepts as well as concrete examples and exercises, _Codewriting_ explores a new approach to developing and maintaining docs -- one that draws extensively from practices and tooling proven by software engineering teams.
-Early *drafts are available now* in the same open source repository from which the site you're now reading was built (details below).
+Early *drafts are available now* in the same open source repository from which the site you're now reading was built (<<resources,details below>>).
 
 My free and open source tool *LiquiDoc* enables true *single sourcing of docs and product* content, building and optimizing semi-structured data into content for rendering in docs and other user interfaces.
 In combination with several technologies like Git, Asciidoctor, and Jekyll, LiquiDoc builds the site you're reading now, as well as my book -- all from the same source repo.
 
-* I maintain a link:brian-dominick-resume[conventional resumé], also drawn from source code in this repo.
+Codewriting, LLC specializes in:
+
+* Documentation platform development, especially using
+** Ruby/Bash scripting
+** AsciiDoc/Asciidoctor
+** Jekyll
+* Documentation development and management workflows
+* Documentation planning and design
+
+Codewriting, LLC works in collaboration with other code-oriented documentarians and docs-oriented developers to provide:
+
+* Product documentation
+** Developer guides and API docs
+** User manuals and help sites
+** Rich diagrams and illustrations
+* Docs transformation, including
+** Platform/source migration
+** Content localization and internationalization
+* Other technical communications services
+** Presentation design
+** Technical white papers
+** Specifications and proposals
+
+Codewriting, LLC is sufficiently skilled and networked for full-service documentation projects, from tooling to writing to deployment.
+
+[[portfolio]]
+== Exemplary Projects
+
+My first year as an independent contractor was pretty productive.
+Besides maintaining LiquiDoc, LiquiDoc CMF, and other “side projects”, I worked for several clients that put my skills to the test.
+Here are some of my featured projects from 2018.
+
+include::assets/includes/portfolio-list.adoc[]
+
+
+[[resources]]
+== Other Resources
+
+* I maintain a link:brian-dominick-resume[conventional resumé], also drawn from source code in this repo, as described in my blog entry, link:/blog-small-data-driven-resume[“Resumé-as-code: Small Data Sourcing for Fun & Profit”].
 
 * Build link:{codewriting_source_uri}[_Codewriting_ from source], link:https://github.com/briandominick/codewriting/releases/latest[download the PDF], or go straight to the link:{codewriting_www_uri}/codewriting-book-draft.html[latest HTML draft].

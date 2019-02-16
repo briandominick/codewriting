@@ -1,0 +1,9 @@
+{% for proj in data.data %}
+[.portfolio-card.{{ proj.id }}]
+=== {{ proj.name }}
+
+image::assets/images/screenshot_portfolio_{{proj.id}}.png[link={{proj.url}}]
+
+{{ proj.description }} +
+{{ proj.url }}
+{% endfor %}
