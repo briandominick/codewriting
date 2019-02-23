@@ -104,7 +104,7 @@ Bundler is a package manager for Ruby gems; it will ensure you always have the r
 . Build the book in PDF and HTML, as well as the site and my resumé.
 +
 ----
-bundle exec liquidoc -c _configs/build-global.yml
+bundle exec liquidoc -c _config/build-global.yml
 ----
 
 Now you can open `_build/publish/codewriting-book-draft.html` in your preferred browser or open `_build/publish/codewriting-book-draft.pdf` in your favorite PDF viewer.
