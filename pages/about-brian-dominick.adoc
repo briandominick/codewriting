@@ -23,12 +23,12 @@ In combination with several technologies like Git, Asciidoctor, and Jekyll, Liqu
 
 Codewriting, LLC specializes in:
 
-* Documentation platform development, especially using
+* Documentation *platform development*, especially using
 ** Ruby/Bash scripting
 ** AsciiDoc/Asciidoctor
 ** Jekyll
-* Documentation development and management workflows
-* Documentation planning and design
+* *Workflows* for documentation development and management
+* Documentation *planning and design*
 
 Codewriting, LLC works in collaboration with other code-oriented documentarians and docs-oriented developers to provide:
 

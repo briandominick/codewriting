@@ -163,8 +163,6 @@ pre.highlight {
 }
 
 .portfolio-card h3 {
-  border-color: #e8e8e8;
-  border-width: 2px 0;
   border: #e8e8e8 solid;
   border-width: 2px 0;
   margin-top: .5em;
@@ -174,4 +172,15 @@ pre.highlight {
 .portfolio-card p {
   font-size: .8em;
   margin-top: 2em;
+  border: #e8e8e8 solid;
+  border-width: 2px 0;
+  padding: 10px 0;
+}
+
+ul {
+  font-size: .9em;
+}
+
+li p {
+  margin: .5em;
 }
