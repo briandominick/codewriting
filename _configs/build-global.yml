@@ -60,6 +60,14 @@
   - template: _templates/liquid/glossary.asciidoc
     output: _build/pages/docops-glossary.adoc
 
+- stage: build-portfolio
+  action: parse
+  message: Building Codewriting, LLC portfolio.
+  data: data/projects.yml
+  builds:
+  - template: _templates/liquid/portfolio-list.asciidoc
+    output: _build/assets/includes/portfolio-list.adoc
+
 - stage: copy-readme
   action: migrate
   message: Copying README.

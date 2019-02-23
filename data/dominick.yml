@@ -1,8 +1,9 @@
 # tag::example-snippet[]
 posts:
   paid:
-    - org: Codewriting
+    - org: Codewriting, LLC
       titles:
+        - Principal
         - Codewriter
       dates:
         start: 2017-10-01
@@ -53,8 +54,9 @@ posts:
 
     - org: WebRoot Solutions
       titles:
-        - Partner
+        - Principal
         - Consultant
+        - Developer
       dates:
         start: 2007-07-01
         end: 2011-08-01
@@ -75,6 +77,7 @@ posts:
         - Collective Member
         - Managing Editor
         - Co-founder
+        - Developer
       dates:
         start: 2003-07-01
         end:   2007-06-01
@@ -211,19 +214,19 @@ posts:
       description: Assistant volunteer coordinator, assistant editor of monthly Peace Newsletter
 
 skills:
-  - Platform development
-  - Project/product management
-  - Git, Ruby, Python, PHP, HTML5/CSS, JavaScript, Liquid, AsciiDoc, DocBook
+  - platform development
+  - project/product management
+  - Git, Ruby, Bash, Python, PHP, JavaScript, Liquid, AsciiDoc, HTML5/CSS, XML/XSLT, SQL, GraphQL
   - Linux & Windows server administration
   - website & application development
   - database design & administration
   - software purchase consulting
 
 experience:
-  - 13 years in Internet administration and application development
+  - 19 years in Internet administration and application development
   - 2 years running a startup using lean-startup methodology
   - Record of dedication to the nonprofit and cooperative sectors
-  - 21 years in publishing and media, including print, radio, and Web
+  - 23 years in publishing and media, including print, radio, and Web
   - Solutions-oriented technical, structural, and PR problem solving on a client-by-client basis
   - 17 years experience in nonprofit organizing, management, and consulting
 

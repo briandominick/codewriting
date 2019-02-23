@@ -155,3 +155,32 @@ pre.highlight {
   white-space: pre;
   padding: 0;
 }
+
+.portfolio-card {
+  border: 2px solid #e8e8e8;
+  padding: 0px 12px 12px 12px;
+  margin-bottom: 20px;
+}
+
+.portfolio-card h3 {
+  border: #e8e8e8 solid;
+  border-width: 2px 0;
+  margin-top: .5em;
+  padding: 5px;
+}
+
+.portfolio-card p {
+  font-size: .8em;
+  margin-top: 2em;
+  border: #e8e8e8 solid;
+  border-width: 2px 0;
+  padding: 10px 0;
+}
+
+ul {
+  font-size: .9em;
+}
+
+li p {
+  margin: .5em;
+}
