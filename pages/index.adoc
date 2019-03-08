@@ -88,7 +88,7 @@ Here are some more links of interest:
 
 * link:codewriter-brian-dominick[About Codewriter Brian Dominick]
 
-* link:{ajyl_www_uri}[AJYL Doctack and LiquiDoc]
+* link:{ajyl_www_uri}[AJYL Docstack and LiquiDoc]
 
 * link:http://codewriting.org/blog-asciidoctor-jekyll-hyde-docs-out-of-the-box[Under the hood of codewriting.org]
 
