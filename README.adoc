@@ -321,7 +321,7 @@ Here are some notes on what goes where and how it's all built.
 
 === Production Deployment
 
-As of January 2019, link:https://www.codewriing.org[Codewriting.org] is built and served by link:https://www.netlify.com/[Netlify].
+As of January 2019, link:https://www.codewriting.org[Codewriting.org] is built and served by link:https://www.netlify.com/[Netlify].
 Netlify's free service is simply amazing; I cannot recommend it strongly enough.
 All I do is point it to the repo, enter the build command, and tell it where to get the built files to serve.
 Nelify inegrates automatically with GitHub and analyzes the site output for security and integrity.
