@@ -112,8 +112,8 @@ include::./book-cw/part-4-managing/dissonance.adoc[]
 [[chapter-managing-complexity]]
 include::./book-cw/part-4-managing/complexity.adoc[]
 
-[[chapter-managing-scaling]]
-include::./book-cw/part-4-managing/scaling.adoc[]
+[[chapter-managing-domain]]
+include::./book-cw/part-4-managing/domain.adoc[]
 
 
 //PART FIVE: EVOLVING

@@ -87,7 +87,7 @@ documentation-attributes:
       - support-channels
     legal:
       - licensing
-      - warrantee
+      - warranty
       - notices
   localization:
     languages:

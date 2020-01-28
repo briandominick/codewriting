@@ -1,0 +1,21 @@
+= The Expanding Docs Domain
+
+[abstract]
+Product documentation goes beyond technical docs.
+
+// TODO chapter-research
+// TODO chapter-start
+
+== Release Notes
+
+Converting engineers' reports of what they have done during a product version development cycle into a user-friendly record of changes is an extremely valuable service that many or most companies get wrong.
+
+== Bill of Materials
+
+Most software products contain specially licensed open-source code from other providers.
+Managing and reporting the licenses of these "`upstream dependencies`" is a big job that can save hundreds of thousands of dollars in legal fees and penalties for failing to track and report these dependencies in a Bill of Materials, or NOTICE file.
+
+== Docs-enhanced Marketing
+
+Sales and marketing materials must always stay up-to-date with the product's capabilities and other details.
+This information should be canonically sourced for such marketing materials just as it is for technical documentation and the product itself.
