@@ -1,7 +1,6 @@
 _build/
 _site/
 _output/
-Gemfile.lock
 .sass-cache
 book-cw/_scraps/
 .travis.yml
