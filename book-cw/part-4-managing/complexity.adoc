@@ -372,7 +372,7 @@ Besides this, we would much prefer to define variables with hierarchy and nestin
 If we want our product data to be available throughout our development environment, we're stuck with a semi-structured language like YAML.
 
 .Example of static parameter setting in YAML
-[source,ruby]
+[source,yaml]
 ----
 domain: codewriting.org
   url: http://codewriting.org
@@ -389,7 +389,7 @@ Unfortunately, it is not useful for AsciiDoc, which requires flat variables.
 What if we could flatten our data structures and add variables based the key-value pairs we've already defined?
 
 .Example of _cumulative_ parameter setting in YAML
-[source,ruby]
+[source,yaml]
 ----
 domain: codewriting.org
   url: http://$domain
@@ -402,7 +402,7 @@ Here our tokens are defined using the format `$some_key-1` (alphanumeric chars, 
 Flattened and parsed, this structure would read like so:
 
 .Example of flattened and parsed parameters in YAML
-[source,ruby]
+[source,yaml]
 ----
 domain: codewriting.org
 domain_url: http://codewriting.org
