@@ -17,7 +17,6 @@ end
 
 group :jekyll_plugins do
   gem 'jekyll-asciidoc'
-  gem 'rake-jekyll', '~> 1.1.0'
   gem 'jekyll-sitemap'
   gem 'jekyll-gist'
   gem 'jekyll-feed'
