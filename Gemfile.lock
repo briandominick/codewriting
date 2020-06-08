@@ -112,9 +112,6 @@ GEM
       pdf-reader (~> 2.0)
       prawn (~> 2.2)
     public_suffix (3.0.3)
-    rake (10.5.0)
-    rake-jekyll (1.1.0)
-      rake (~> 10.0)
     rb-fsevent (0.10.3)
     rb-inotify (0.10.0)
       ffi (~> 1.0)
@@ -155,7 +152,6 @@ DEPENDENCIES
   liquid
   liquidoc
   logger
-  rake-jekyll (~> 1.1.0)
   tilt
 
 BUNDLED WITH
