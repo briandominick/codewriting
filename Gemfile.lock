@@ -66,7 +66,7 @@ GEM
       jekyll (~> 3.3)
     jekyll-watch (2.2.1)
       listen (~> 3.0)
-    json (2.2.0)
+    json (2.3.0)
     kramdown (1.17.0)
     liquid (4.0.3)
     liquidoc (0.11.0)
