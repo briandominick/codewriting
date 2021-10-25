@@ -39,7 +39,7 @@ I don't know why I find this taxonomy comforting, but it helps me to approach ea
 .HELP WANTED
 [NOTE]
 _Codewriting_ explores the first four types of UI, each at some length.
-I have no experience documenting the , but I would welcome insights in appropriate places from those with relevant expertise.
+I have no experience documenting them, but I would welcome insights in appropriate places from those with relevant expertise.
 
 Interface types are often associated with audience types.
 If I'm documenting a CLI, I know it's not for my father.
